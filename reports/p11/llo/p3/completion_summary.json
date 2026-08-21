@@ -1,40 +1,163 @@
 {
   "status": "complete",
-  "protocol": "fixed P2 per-log chronological split",
-  "stage2_train_windows": 10411,
-  "stage2_validation_windows": 2794,
-  "stage2_test_windows": 2489,
-  "stage2_lightgbm": {
-    "method": "stage2_lightgbm",
-    "runs": 1,
-    "accuracy_mean": 0.916030534351145,
-    "accuracy_std": 0.0,
-    "macro_f1_mean": 0.9062860954189523,
-    "macro_f1_std": 0.0,
-    "balanced_accuracy_mean": 0.8907848213493907,
-    "balanced_accuracy_std": 0.0,
-    "macro_precision_mean": 0.9256534695811439,
-    "macro_precision_std": 0.0,
-    "macro_recall_mean": 0.8907848213493907,
-    "macro_recall_std": 0.0,
-    "weighted_f1_mean": 0.915173450519585,
-    "weighted_f1_std": 0.0,
-    "macro_ovr_auprc_mean": 0.9739946100608,
-    "macro_ovr_auprc_std": 0.0,
-    "macro_ovr_auroc_mean": 0.9908726780770332,
-    "macro_ovr_auroc_std": 0.0
+  "protocol": "leave_log_out",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "flight_log_bootstrap": {
+    "repetitions": 1000,
+    "confidence": 0.95,
+    "unit": "flight_log"
   },
-  "majority_macro_f1": 0.16136054421768709,
-  "stratified_random_macro_f1": 0.24261849365480986,
-  "macro_f1_gain_over_majority": 0.7449255512012652,
-  "macro_f1_gain_over_random": 0.6636676017641425,
-  "channel_subsystem_counts": {
-    "Altitude": 14,
-    "External Position": 3,
-    "Global Position": 17,
-    "Mechanical/Electrical": 43,
-    "Shared": 10
+  "stage1_lightgbm": {
+    "test_auprc": {
+      "mean": 0.6296012735206646,
+      "std": 0.002310805627877636,
+      "bootstrap_mean": 0.630993639459358,
+      "ci_low": 0.4975732763022347,
+      "ci_high": 0.7382913277919243,
+      "bootstrap_repetitions": 1000,
+      "bootstrap_unit_count": 213
+    },
+    "test_auroc": {
+      "mean": 0.9265308261358614,
+      "std": 0.0008394253142317868
+    },
+    "test_best_f1": {
+      "mean": 0.6117031310049753,
+      "std": 0.004277721572076549
+    },
+    "test_event_f1": {
+      "mean": 0.42580601859477596,
+      "std": 0.02443826317956307
+    },
+    "test_at_val_threshold_f1_at_threshold": {
+      "mean": 0.5989151164875841,
+      "std": 0.004186303341527185
+    },
+    "test_at_val_threshold_log_aware_event_f1": {
+      "mean": 0.45329827555691937,
+      "std": 0.024105341657477967
+    }
   },
-  "completion_criterion": "Macro-F1 clearly exceeds majority and stratified-random baselines",
-  "criterion_passed": true
+  "methods": [
+    {
+      "method": "stage2_lightgbm",
+      "runs": 5,
+      "macro_f1_mean": 0.9041389014913305,
+      "macro_f1_std": 0.0029480905040553855,
+      "balanced_accuracy_mean": 0.8876317811951395,
+      "balanced_accuracy_std": 0.003970901816608214,
+      "accuracy_mean": 0.9136199276817999,
+      "accuracy_std": 0.0027689933210306157,
+      "weighted_f1_mean": 0.9127504429141757,
+      "weighted_f1_std": 0.0028680661879587096,
+      "macro_f1_ci_low": 0.8257753708521826,
+      "macro_f1_ci_high": 0.9537430409979324,
+      "bootstrap_repetitions": 1000,
+      "bootstrap_unit": "flight_log"
+    },
+    {
+      "method": "majority",
+      "runs": 5,
+      "macro_f1_mean": 0.161360544217687,
+      "macro_f1_std": 0.0,
+      "balanced_accuracy_mean": 0.25,
+      "balanced_accuracy_std": 0.0,
+      "accuracy_mean": 0.4764965849738851,
+      "accuracy_std": 0.0,
+      "weighted_f1_mean": 0.3075509930770219,
+      "weighted_f1_std": 0.0
+    },
+    {
+      "method": "stratified_random",
+      "runs": 5,
+      "macro_f1_mean": 0.24828052365893183,
+      "macro_f1_std": 0.009038413992840588,
+      "balanced_accuracy_mean": 0.2516810139775355,
+      "balanced_accuracy_std": 0.00965658900703603,
+      "accuracy_mean": 0.3242265970269185,
+      "accuracy_std": 0.01188105510857474,
+      "weighted_f1_mean": 0.3186603381568529,
+      "weighted_f1_std": 0.010610809681118325
+    },
+    {
+      "method": "hs_aerots_cascade",
+      "runs": 5,
+      "macro_f1_mean": 0.5961699934924123,
+      "macro_f1_std": 0.0048071920685461116,
+      "balanced_accuracy_mean": 0.5839757696737411,
+      "balanced_accuracy_std": 0.005723078887341094,
+      "accuracy_mean": 0.9393492159419828,
+      "accuracy_std": 0.0005413841338288582,
+      "weighted_f1_mean": 0.9352905812900649,
+      "weighted_f1_std": 0.0005855790363693515,
+      "macro_f1_ci_low": 0.4860280723484523,
+      "macro_f1_ci_high": 0.6789483541834243,
+      "bootstrap_repetitions": 1000,
+      "bootstrap_unit": "flight_log"
+    },
+    {
+      "method": "direct_five_class_lightgbm",
+      "runs": 5,
+      "macro_f1_mean": 0.6092023463298946,
+      "macro_f1_std": 0.004277445720562597,
+      "balanced_accuracy_mean": 0.6340530894868057,
+      "balanced_accuracy_std": 0.0021973409497613164,
+      "accuracy_mean": 0.9333375743503292,
+      "accuracy_std": 0.0007704408831501883,
+      "weighted_f1_mean": 0.9332497485433068,
+      "weighted_f1_std": 0.0006384985724247193,
+      "macro_f1_ci_low": 0.5088943034994289,
+      "macro_f1_ci_high": 0.6782320150491142,
+      "bootstrap_repetitions": 1000,
+      "bootstrap_unit": "flight_log"
+    },
+    {
+      "method": "stage2_random_forest",
+      "runs": 5,
+      "macro_f1_mean": 0.8740695665512372,
+      "macro_f1_std": 0.002753815040689106,
+      "balanced_accuracy_mean": 0.8378718781770751,
+      "balanced_accuracy_std": 0.002523222839217231,
+      "accuracy_mean": 0.8855765367617519,
+      "accuracy_std": 0.00257883592380574,
+      "weighted_f1_mean": 0.8815949705975996,
+      "weighted_f1_std": 0.002607073293906867,
+      "macro_f1_ci_low": 0.7716598526851455,
+      "macro_f1_ci_high": 0.937989475507368,
+      "bootstrap_repetitions": 1000,
+      "bootstrap_unit": "flight_log"
+    },
+    {
+      "method": "random_forest_binary",
+      "runs": 5,
+      "protocol": "leave_log_out",
+      "test_auprc_mean": 0.5645107760647677,
+      "test_auprc_std": 0.0040773461870094625,
+      "test_auroc_mean": 0.9136787717424717,
+      "test_auroc_std": 0.004183428800600022,
+      "test_best_f1_mean": 0.5602568617631991,
+      "test_best_f1_std": 0.009642871655594517,
+      "test_event_f1_mean": 0.3462305891737721,
+      "test_event_f1_std": 0.02225170084532238,
+      "test_auprc_ci_low": 0.420481422646315,
+      "test_auprc_ci_high": 0.6793759486423054,
+      "bootstrap_repetitions": 1000,
+      "bootstrap_unit": "flight_log"
+    }
+  ],
+  "cascade_vs_direct": {
+    "metric": "five_class_macro_f1",
+    "direct_minus_cascade": 0.013032352837482275,
+    "paired_bootstrap_ci_low": -0.02824265611557945,
+    "paired_bootstrap_ci_high": 0.04380815005392958,
+    "bootstrap_repetitions": 1000,
+    "bootstrap_unit": "flight_log"
+  },
+  "interpretation": "Under leave-log-out, direct five-class has a 0.0130 higher mean five-class Macro-F1 than the cascade, but the paired flight-log bootstrap 95% CI includes zero. The evaluated logs therefore do not support a stable performance difference; the cascade remains a distinct gated design with explicit anomaly detection semantics."
 }

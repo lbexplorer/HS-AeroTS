@@ -1,3 +1,5 @@
+protocol: purged_14_windows
+
 paths:
   feature_dir: data/processed/p10/features_purged
   feature_dictionary: reports/p10/purged/p2/feature_dictionary.csv

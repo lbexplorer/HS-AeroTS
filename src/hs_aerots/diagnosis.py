@@ -370,7 +370,7 @@ def run_diagnosis(config: dict[str, Any], root: Path, seeds: list[int] | None = 
         direct_summary = summaries["direct_five_class_lightgbm"]
         completion = {
             "status": "complete",
-            "protocol": "fixed P2 per-log chronological split; P1-P4 outputs unchanged",
+            "protocol": str(config.get("protocol", "fixed P2 per-log chronological split")),
             "experiment": "direct five-class LightGBM multi-seed robustness",
             "seeds": [int(seed) for seed in config["direct_five_class"].get("seeds", [0])],
             "direct_five_class_lightgbm": direct_summary,
@@ -383,7 +383,7 @@ def run_diagnosis(config: dict[str, Any], root: Path, seeds: list[int] | None = 
     random_summary = summaries["stratified_random"]
     completion = {
         "status": "complete",
-        "protocol": "fixed P2 per-log chronological split",
+        "protocol": str(config.get("protocol", "fixed P2 per-log chronological split")),
         "stage2_train_windows": int(len(subset["train"]["y"])),
         "stage2_validation_windows": int(len(subset["validation"]["y"])),
         "stage2_test_windows": int(len(subset["test"]["y"])),

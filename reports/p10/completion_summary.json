@@ -13,5 +13,5 @@
   "purged_stage2_macro_f1": 0.7982730768623023,
   "purged_cascade_macro_f1": 0.5443951033845412,
   "purged_direct_five_macro_f1": 0.5961783738983449,
-  "interpretation": "All conclusions retain the same direction under purging, but absolute performance decreases; fixed chronological results must not be presented without this sensitivity analysis."
+  "interpretation": "Purging reduces all reported metrics and reverses the fixed-split ordering between the cascade and direct five-class models: direct five-class is higher under purging. Fixed chronological results must be reported together with this sensitivity analysis."
 }

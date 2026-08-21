@@ -149,7 +149,7 @@ def run_robustness(config: dict[str, Any], root: Path) -> dict[str, Any]:
         "purged_stage2_macro_f1": float(purged["stage2"]),
         "purged_cascade_macro_f1": float(purged["cascade"]),
         "purged_direct_five_macro_f1": float(purged["direct_five_class"]),
-        "interpretation": "All conclusions retain the same direction under purging, but absolute performance decreases; fixed chronological results must not be presented without this sensitivity analysis.",
+        "interpretation": "Purging reduces all reported metrics and reverses the fixed-split ordering between the cascade and direct five-class models: direct five-class is higher under purging. Fixed chronological results must be reported together with this sensitivity analysis.",
     }
     (report_dir / "completion_summary.json").write_text(json.dumps(summary, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     return summary
@@ -168,4 +168,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

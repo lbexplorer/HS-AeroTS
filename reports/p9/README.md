@@ -1,9 +1,9 @@
-# P9 真实 ULog replay 与源码 mutation 结果
+# P9 Controlled PX4 ULog Replay with Source-Level Mutations
 
 ## 实验范围
 
 - 固定 PX4 提交：`82aa24adfca29321cfd1209e287eab6c2b16780e`。
-- 运行环境：WSL2 Ubuntu-20.04，仅 PX4 POSIX/SITL 编译依赖；未安装或运行 Gazebo、ROS、QGroundControl 和 NuttX 工具链。
+- 运行环境：WSL2 Ubuntu-20.04，使用 PX4 POSIX 构建依赖执行 system-wide ULog replay；未安装或运行 Gazebo、ROS、QGroundControl 和 NuttX 工具链。这不是完整 closed-loop SITL 仿真。
 - 输入：3 条真实 UAV-SEAD ULog。
 - 注入：Commander 导航状态覆盖、EKF2 innovation 偏置、INAV 高度状态冻结、Land Detector `landed` stuck-at，共 4 个源码 mutation。
 - 规模：24 次 replay（3 ULog × 4 mutation × baseline/fault），24 个输出 ULog 全部存在，12/12 个 mutation/log 效应检查通过，离线解析错误为 0。

@@ -1,4 +1,4 @@
-"""Validate the four controlled P9 source-mutation effects in replay ULogs."""
+"""Validate source-level mutation effects in the controlled P9 PX4 ULog replay."""
 
 from __future__ import annotations
 

@@ -1,0 +1,56 @@
+{
+  "protocol": "leave_log_out",
+  "stage1_lightgbm": {
+    "test_auprc": {
+      "mean": 0.6296012735206646,
+      "std": 0.002310805627877636,
+      "bootstrap_mean": 0.630993639459358,
+      "ci_low": 0.4975732763022347,
+      "ci_high": 0.7382913277919243,
+      "bootstrap_repetitions": 1000,
+      "bootstrap_unit_count": 213
+    },
+    "test_auroc": {
+      "mean": 0.9265308261358614,
+      "std": 0.0008394253142317868
+    },
+    "test_best_f1": {
+      "mean": 0.6117031310049753,
+      "std": 0.004277721572076549
+    },
+    "test_event_f1": {
+      "mean": 0.42580601859477596,
+      "std": 0.02443826317956307
+    },
+    "test_at_val_threshold_f1_at_threshold": {
+      "mean": 0.5989151164875841,
+      "std": 0.004186303341527185
+    },
+    "test_at_val_threshold_log_aware_event_f1": {
+      "mean": 0.45329827555691937,
+      "std": 0.024105341657477967
+    }
+  },
+  "random_forest": {
+    "method": "random_forest_binary",
+    "runs": 5,
+    "protocol": "leave_log_out",
+    "test_auprc_mean": 0.5645107760647677,
+    "test_auprc_std": 0.0040773461870094625,
+    "test_auroc_mean": 0.9136787717424717,
+    "test_auroc_std": 0.004183428800600022,
+    "test_best_f1_mean": 0.5602568617631991,
+    "test_best_f1_std": 0.009642871655594517,
+    "test_event_f1_mean": 0.3462305891737721,
+    "test_event_f1_std": 0.02225170084532238,
+    "test_auprc_ci_low": 0.420481422646315,
+    "test_auprc_ci_high": 0.6793759486423054,
+    "bootstrap_repetitions": 1000,
+    "bootstrap_unit": "flight_log"
+  },
+  "bootstrap": {
+    "repetitions": 1000,
+    "confidence": 0.95,
+    "unit": "flight_log"
+  }
+}

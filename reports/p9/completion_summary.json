@@ -1,5 +1,6 @@
 {
   "status": "complete",
+  "experiment_name": "Controlled PX4 ULog Replay with Source-Level Mutations",
   "runs": 24,
   "fault_runs": 12,
   "mutations": 4,

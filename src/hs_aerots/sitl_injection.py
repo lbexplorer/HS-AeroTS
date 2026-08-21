@@ -1,4 +1,4 @@
-"""P9 controlled PX4 SITL mutation preparation and localization evaluation."""
+"""P9 controlled PX4 ULog replay with source-level mutations."""
 
 from __future__ import annotations
 
@@ -400,6 +400,7 @@ def analyze_replay_runs(config: dict[str, Any], root: Path) -> dict[str, Any]:
     (report_dir / "localization_metrics.json").write_text(json.dumps(metrics, indent=2, ensure_ascii=False, allow_nan=True) + "\n", encoding="utf-8")
     completion = {
         "status": "complete",
+        "experiment_name": "Controlled PX4 ULog Replay with Source-Level Mutations",
         "runs": int(len(manifest)),
         "fault_runs": int(len(runs)),
         "mutations": int(manifest["mutation_id"].nunique()),
@@ -407,7 +408,7 @@ def analyze_replay_runs(config: dict[str, Any], root: Path) -> dict[str, Any]:
         "output_ulogs_present": int(sum(_windows_path(root, str(value)).exists() for value in manifest["output_ulog"])),
         "analysis_errors": int(len(errors)),
         "onset_conditioned_metrics": metrics,
-        "primary_limitation": "The unchanged P2 Stage 1 threshold detected 0/12 controlled source-mutation runs; onset-conditioned localization is reported separately and must not be described as end-to-end localization.",
+        "primary_limitation": "The unchanged P2 Stage 1 threshold detected 0/12 controlled source-mutation replay runs; onset-conditioned localization is reported separately and must not be described as end-to-end localization.",
         "legacy_replay_adapter": "The three source ULogs lack ekf2_timestamps. Generic replay therefore uses a matched EKF publication adapter in both conditions; only HS_P9_EKF_FAULT activation differs.",
         "artifacts": [
             "reports/p9/run_manifest.tsv", "reports/p9/replay_logs/",

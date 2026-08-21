@@ -1,6 +1,6 @@
 {
   "status": "complete",
-  "protocol": "fixed P2 per-log chronological split",
+  "protocol": "purged_14_windows",
   "stage2_train_windows": 6628,
   "stage2_validation_windows": 301,
   "stage2_test_windows": 1248,

@@ -121,7 +121,7 @@ def main() -> None:
         summary.append(result)
     frame.to_csv(report / "mapping_ablation_by_run.csv", index=False, encoding="utf-8-sig")
     pd.DataFrame(summary).to_csv(report / "mapping_ablation_summary.csv", index=False, encoding="utf-8-sig")
-    (report / "mapping_ablation_summary.json").write_text(json.dumps({"status": "complete", "modes": summary, "bootstrap_unit": "SITL fault run", "bootstrap_repetitions": 1000}, indent=2) + "\n", encoding="utf-8")
+    (report / "mapping_ablation_summary.json").write_text(json.dumps({"status": "complete", "experiment_name": "Controlled PX4 ULog Replay with Source-Level Mutations", "modes": summary, "bootstrap_unit": "controlled mutation replay fault run", "bootstrap_repetitions": 1000}, indent=2) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":

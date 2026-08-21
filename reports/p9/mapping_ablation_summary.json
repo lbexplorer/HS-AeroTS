@@ -1,5 +1,6 @@
 {
   "status": "complete",
+  "experiment_name": "Controlled PX4 ULog Replay with Source-Level Mutations",
   "modes": [
     {
       "mode": "bidirectional",
@@ -102,6 +103,6 @@
       "detection_recall": 0.0
     }
   ],
-  "bootstrap_unit": "SITL fault run",
+  "bootstrap_unit": "controlled mutation replay fault run",
   "bootstrap_repetitions": 1000
 }

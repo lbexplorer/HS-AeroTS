@@ -1,7 +1,7 @@
 # HS-AeroTS
 # HS-AeroTS-FL
 
-P1–P10 已完成。主数据源为 UAV-SEAD；P9 使用 Ubuntu-20.04 下的轻量 PX4 POSIX system-wide ULog replay，不安装或运行 Gazebo、ROS、QGroundControl 与 NuttX，路线 C 新实验独立写入 `reports/p8/`–`reports/p10/`，不改变 P1–P4 固定划分与主口径。
+P1–P11 已完成。主数据源为 UAV-SEAD；P9 是 Ubuntu-20.04 下的 Controlled PX4 ULog Replay with Source-Level Mutations，不是完整 closed-loop SITL，且不安装或运行 Gazebo、ROS、QGroundControl 与 NuttX。P8–P11 结果独立保存，不改变 P1–P10 已冻结结果。
 
 ## 环境
 
@@ -122,7 +122,7 @@ hs-aerots-map --config configs/p8_software_mapping.yaml
 
 该阶段只读扫描 1,389 条 ULog 的 `ver_sw`，固定占比最高的 PX4 提交 `82aa24ad...`（562 条日志），从官方源码解析 uORB 发布/订阅关系。18/18 个 P4 topic 均有映射，共 180 条边、54 个模块；三种传播模式均通过贡献守恒。静态依赖只用于生成模块嫌疑度，不宣称根因。
 
-## P9 小型 SITL 软件故障注入
+## P9 Controlled PX4 ULog Replay with Source-Level Mutations
 
 ```powershell
 hs-aerots-sitl prepare --config configs/p9_sitl_injection.yaml
@@ -154,4 +154,18 @@ hs-aerots-diagnosis --config configs/p10_purged_p3.yaml --seeds 0
 hs-aerots-robustness --config configs/p10_robustness.yaml
 ```
 
-直接五分类五种子 Macro-F1 为 `0.6599±0.0029`。在每个边界两侧剔除 14 个窗口后，Stage 1 AUPRC 为 `0.5936`，Stage 2 Macro-F1 为 `0.7983`，级联 Macro-F1 为 `0.5444`，直接五分类 Macro-F1 为 `0.5962`。`reports/p10/protocol_comparison.csv` 同时给出 1,000 次航次级 bootstrap 95% CI。严格划分下结论方向保留，但绝对性能下降，论文必须同步报告这一敏感性。
+直接五分类五种子 Macro-F1 为 `0.6599±0.0029`。在每个边界两侧剔除 14 个窗口后，Stage 1 AUPRC 为 `0.5936`，Stage 2 Macro-F1 为 `0.7983`，级联 Macro-F1 为 `0.5444`，直接五分类 Macro-F1 为 `0.5962`。`reports/p10/protocol_comparison.csv` 同时给出 1,000 次航次级 bootstrap 95% CI。Purging 降低了所有主要指标，并使 Cascade 与 Direct Five-Class 的排序相对固定划分发生反转：严格 purged 协议下 Direct Five-Class 更高。因此固定划分结果必须与该敏感性结果同时报告。
+
+## P11 Leave-log-out 严格实验
+
+P11 将每条 flight log 完整分配到 train、validation 或 test，固定为 970/206/213 条日志，不允许同一航次跨集合。复用 P2 只读对齐缓存，结果写入 `reports/p11/llo/`。
+
+```powershell
+hs-aerots-baseline --config configs/p11_leave_log_out_p2.yaml build-features
+hs-aerots-baseline --config configs/p11_leave_log_out_p2.yaml train --seeds 0 1 2 3 4
+hs-aerots-baseline --config configs/p11_leave_log_out_p2.yaml train-random-forest --seeds 0 1 2 3 4
+hs-aerots-diagnosis --config configs/p11_leave_log_out_p3.yaml --seeds 0 1 2 3 4
+python scripts/p11/aggregate_llo.py
+```
+
+五种子结果为：Stage 1 LightGBM AUPRC `0.6296±0.0023`，二元 Random Forest AUPRC `0.5645±0.0041`，Stage 2 LightGBM Macro-F1 `0.9041±0.0029`，Stage 2 Random Forest Macro-F1 `0.8741±0.0028`，HS-AeroTS Cascade 五分类 Macro-F1 `0.5962±0.0048`，Direct Five-Class Macro-F1 `0.6092±0.0043`。按 213 条测试 flight log 进行 1,000 次 bootstrap；完整 95% CI 见 `reports/p11/llo/p2/summary_5seeds_bootstrap.json` 和 `reports/p11/llo/p3/method_summary_5seeds_bootstrap.csv`。Direct Five-Class 比 Cascade 高 `0.0130` Macro-F1，但配对差值 95% CI 为 `[-0.0282, 0.0438]`，包含 0；严格 LLO 下不支持两者存在稳定性能差异，更不支持 Cascade 优于 Direct Five-Class 的性能主张。
