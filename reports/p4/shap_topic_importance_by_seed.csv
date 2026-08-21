@@ -1,0 +1,451 @@
+﻿seed,scope,level,rank,name,mean_abs_shap,scope_windows,topic,feature_count
+0,all,topic,1,vehicle_local_position,1.2387674435145848,3602,vehicle_local_position,234
+0,all,topic,2,estimator_status,1.0400081653124866,3602,estimator_status,162
+0,all,topic,3,actuator_controls_0,0.8856171678424468,3602,actuator_controls_0,72
+0,all,topic,4,actuator_outputs,0.6229305723110675,3602,actuator_outputs,144
+0,all,topic,5,ekf2_innovations,0.5926605019254052,3602,ekf2_innovations,144
+0,all,topic,6,manual_control_setpoint,0.5510044742792243,3602,manual_control_setpoint,72
+0,all,topic,7,vehicle_attitude,0.35524464835140557,3602,vehicle_attitude,126
+0,all,topic,8,cpuload,0.31925583277118164,3602,cpuload,36
+0,all,topic,9,sensor_combined,0.2550874511772642,3602,sensor_combined,108
+0,all,topic,10,battery_status,0.24698195453544008,3602,battery_status,108
+0,all,topic,11,vehicle_attitude_setpoint,0.23158430047297887,3602,vehicle_attitude_setpoint,54
+0,all,topic,12,vehicle_vision_position,0.2111567779144312,3602,vehicle_vision_position,54
+0,all,topic,13,sensor_preflight,0.12160961238084492,3602,sensor_preflight,36
+0,all,topic,14,rate_ctrl_status,0.1186867137484245,3602,rate_ctrl_status,54
+0,all,topic,15,vehicle_rates_setpoint,0.11033378312102769,3602,vehicle_rates_setpoint,54
+0,all,topic,16,distance_sensor,0.02841732453411179,3602,distance_sensor,18
+0,all,topic,17,vehicle_status,0.025901140064731456,3602,vehicle_status,36
+0,all,topic,18,vehicle_land_detected,0.017707158790686576,3602,vehicle_land_detected,54
+0,External Position,topic,1,vehicle_local_position,1.7188878531468599,1707,vehicle_local_position,234
+0,External Position,topic,2,estimator_status,0.773867479311032,1707,estimator_status,162
+0,External Position,topic,3,actuator_outputs,0.6566012438016944,1707,actuator_outputs,144
+0,External Position,topic,4,actuator_controls_0,0.605424699066062,1707,actuator_controls_0,72
+0,External Position,topic,5,ekf2_innovations,0.5259343027228656,1707,ekf2_innovations,144
+0,External Position,topic,6,manual_control_setpoint,0.3772578837023415,1707,manual_control_setpoint,72
+0,External Position,topic,7,vehicle_vision_position,0.3696531279792062,1707,vehicle_vision_position,54
+0,External Position,topic,8,vehicle_attitude,0.26226746370026177,1707,vehicle_attitude,126
+0,External Position,topic,9,cpuload,0.23934126673945147,1707,cpuload,36
+0,External Position,topic,10,vehicle_attitude_setpoint,0.21585670486844738,1707,vehicle_attitude_setpoint,54
+0,External Position,topic,11,sensor_combined,0.2082580010368684,1707,sensor_combined,108
+0,External Position,topic,12,battery_status,0.2056741942254625,1707,battery_status,108
+0,External Position,topic,13,rate_ctrl_status,0.12713181708368226,1707,rate_ctrl_status,54
+0,External Position,topic,14,sensor_preflight,0.08587416235048184,1707,sensor_preflight,36
+0,External Position,topic,15,vehicle_rates_setpoint,0.06622631870055089,1707,vehicle_rates_setpoint,54
+0,External Position,topic,16,vehicle_status,0.036843670157089226,1707,vehicle_status,36
+0,External Position,topic,17,vehicle_land_detected,0.023462831026566162,1707,vehicle_land_detected,54
+0,External Position,topic,18,distance_sensor,0.012718260625644535,1707,distance_sensor,18
+0,Global Position,topic,1,manual_control_setpoint,1.57284972316476,641,manual_control_setpoint,72
+0,Global Position,topic,2,estimator_status,1.3868360227683678,641,estimator_status,162
+0,Global Position,topic,3,cpuload,0.9088586762793972,641,cpuload,36
+0,Global Position,topic,4,vehicle_local_position,0.8922806886724741,641,vehicle_local_position,234
+0,Global Position,topic,5,actuator_controls_0,0.529824899481648,641,actuator_controls_0,72
+0,Global Position,topic,6,ekf2_innovations,0.41618689390219066,641,ekf2_innovations,144
+0,Global Position,topic,7,vehicle_attitude_setpoint,0.3101638959757585,641,vehicle_attitude_setpoint,54
+0,Global Position,topic,8,actuator_outputs,0.2445601303096158,641,actuator_outputs,144
+0,Global Position,topic,9,battery_status,0.23455756850828036,641,battery_status,108
+0,Global Position,topic,10,vehicle_attitude,0.18814144485077644,641,vehicle_attitude,126
+0,Global Position,topic,11,sensor_combined,0.17704069881799414,641,sensor_combined,108
+0,Global Position,topic,12,sensor_preflight,0.17607251157504755,641,sensor_preflight,36
+0,Global Position,topic,13,rate_ctrl_status,0.10436638727597555,641,rate_ctrl_status,54
+0,Global Position,topic,14,vehicle_rates_setpoint,0.0674523784563928,641,vehicle_rates_setpoint,54
+0,Global Position,topic,15,vehicle_vision_position,0.04968860497975688,641,vehicle_vision_position,54
+0,Global Position,topic,16,vehicle_status,0.017781777896042104,641,vehicle_status,36
+0,Global Position,topic,17,vehicle_land_detected,0.006334598804014774,641,vehicle_land_detected,54
+0,Global Position,topic,18,distance_sensor,0.005217998990000996,641,distance_sensor,18
+0,Altitude,topic,1,estimator_status,2.2210266964142624,571,estimator_status,162
+0,Altitude,topic,2,ekf2_innovations,1.3686642372189428,571,ekf2_innovations,144
+0,Altitude,topic,3,vehicle_local_position,1.0033276471393402,571,vehicle_local_position,234
+0,Altitude,topic,4,actuator_controls_0,0.7290734382529247,571,actuator_controls_0,72
+0,Altitude,topic,5,manual_control_setpoint,0.28459855619257757,571,manual_control_setpoint,72
+0,Altitude,topic,6,vehicle_rates_setpoint,0.26332783062433085,571,vehicle_rates_setpoint,54
+0,Altitude,topic,7,sensor_preflight,0.23799097673527805,571,sensor_preflight,36
+0,Altitude,topic,8,actuator_outputs,0.19240091586597194,571,actuator_outputs,144
+0,Altitude,topic,9,battery_status,0.15706938275802032,571,battery_status,108
+0,Altitude,topic,10,rate_ctrl_status,0.15551879630378684,571,rate_ctrl_status,54
+0,Altitude,topic,11,sensor_combined,0.12920903755540664,571,sensor_combined,108
+0,Altitude,topic,12,vehicle_attitude,0.12516112011237884,571,vehicle_attitude,126
+0,Altitude,topic,13,vehicle_vision_position,0.11313700845383706,571,vehicle_vision_position,54
+0,Altitude,topic,14,vehicle_attitude_setpoint,0.09238461169286567,571,vehicle_attitude_setpoint,54
+0,Altitude,topic,15,cpuload,0.08151203499730358,571,cpuload,36
+0,Altitude,topic,16,distance_sensor,0.07178988571775932,571,distance_sensor,18
+0,Altitude,topic,17,vehicle_status,0.028112187470109178,571,vehicle_status,36
+0,Altitude,topic,18,vehicle_land_detected,0.007696968240246469,571,vehicle_land_detected,54
+0,Mechanical/Electrical,topic,1,actuator_controls_0,2.0506799172072836,683,actuator_controls_0,72
+0,Mechanical/Electrical,topic,2,actuator_outputs,1.2538120524261114,683,actuator_outputs,144
+0,Mechanical/Electrical,topic,3,vehicle_attitude,0.936800874219477,683,vehicle_attitude,126
+0,Mechanical/Electrical,topic,4,vehicle_local_position,0.5608298071189152,683,vehicle_local_position,234
+0,Mechanical/Electrical,topic,5,sensor_combined,0.550610751074816,683,sensor_combined,108
+0,Mechanical/Electrical,topic,6,battery_status,0.43704997324326994,683,battery_status,108
+0,Mechanical/Electrical,topic,7,estimator_status,0.3923125769027445,683,estimator_status,162
+0,Mechanical/Electrical,topic,8,vehicle_attitude_setpoint,0.3135176932593594,683,vehicle_attitude_setpoint,54
+0,Mechanical/Electrical,topic,9,ekf2_innovations,0.2762960391567455,683,ekf2_innovations,144
+0,Mechanical/Electrical,topic,10,manual_control_setpoint,0.24895528658754787,683,manual_control_setpoint,72
+0,Mechanical/Electrical,topic,11,cpuload,0.16439558395168075,683,cpuload,36
+0,Mechanical/Electrical,topic,12,vehicle_rates_setpoint,0.13290892372336877,683,vehicle_rates_setpoint,54
+0,Mechanical/Electrical,topic,13,rate_ctrl_status,0.08022759037571929,683,rate_ctrl_status,54
+0,Mechanical/Electrical,topic,14,sensor_preflight,0.06251142171022242,683,sensor_preflight,36
+0,Mechanical/Electrical,topic,15,distance_sensor,0.05316598826715149,683,distance_sensor,18
+0,Mechanical/Electrical,topic,16,vehicle_vision_position,0.048517125868389986,683,vehicle_vision_position,54
+0,Mechanical/Electrical,topic,17,vehicle_land_detected,0.022364109375036377,683,vehicle_land_detected,54
+0,Mechanical/Electrical,topic,18,vehicle_status,0.0043244258831859625,683,vehicle_status,36
+1,all,topic,1,vehicle_local_position,1.2696304831053973,3602,vehicle_local_position,234
+1,all,topic,2,estimator_status,1.1074627187181951,3602,estimator_status,162
+1,all,topic,3,actuator_controls_0,0.9266254122488489,3602,actuator_controls_0,72
+1,all,topic,4,actuator_outputs,0.6209788958342288,3602,actuator_outputs,144
+1,all,topic,5,ekf2_innovations,0.5892319123107156,3602,ekf2_innovations,144
+1,all,topic,6,manual_control_setpoint,0.5625675159680884,3602,manual_control_setpoint,72
+1,all,topic,7,vehicle_attitude,0.36149343271556095,3602,vehicle_attitude,126
+1,all,topic,8,cpuload,0.3275182308157936,3602,cpuload,36
+1,all,topic,9,sensor_combined,0.26505558147271224,3602,sensor_combined,108
+1,all,topic,10,battery_status,0.2513984581460477,3602,battery_status,108
+1,all,topic,11,vehicle_attitude_setpoint,0.24494443865763374,3602,vehicle_attitude_setpoint,54
+1,all,topic,12,vehicle_vision_position,0.2129194770004566,3602,vehicle_vision_position,54
+1,all,topic,13,sensor_preflight,0.12394852073830788,3602,sensor_preflight,36
+1,all,topic,14,rate_ctrl_status,0.11787401403065893,3602,rate_ctrl_status,54
+1,all,topic,15,vehicle_rates_setpoint,0.10800605645048439,3602,vehicle_rates_setpoint,54
+1,all,topic,16,vehicle_status,0.029411766793582414,3602,vehicle_status,36
+1,all,topic,17,distance_sensor,0.027773197287550136,3602,distance_sensor,18
+1,all,topic,18,vehicle_land_detected,0.02102855160816626,3602,vehicle_land_detected,54
+1,External Position,topic,1,vehicle_local_position,1.7772576109881424,1707,vehicle_local_position,234
+1,External Position,topic,2,estimator_status,0.8570384360080683,1707,estimator_status,162
+1,External Position,topic,3,actuator_outputs,0.6485368681134103,1707,actuator_outputs,144
+1,External Position,topic,4,actuator_controls_0,0.643630233094533,1707,actuator_controls_0,72
+1,External Position,topic,5,ekf2_innovations,0.4838094658783827,1707,ekf2_innovations,144
+1,External Position,topic,6,vehicle_vision_position,0.3742609855154411,1707,vehicle_vision_position,54
+1,External Position,topic,7,manual_control_setpoint,0.3652630415744087,1707,manual_control_setpoint,72
+1,External Position,topic,8,vehicle_attitude,0.2714462832917896,1707,vehicle_attitude,126
+1,External Position,topic,9,cpuload,0.24034432684001758,1707,cpuload,36
+1,External Position,topic,10,vehicle_attitude_setpoint,0.23984459465197683,1707,vehicle_attitude_setpoint,54
+1,External Position,topic,11,sensor_combined,0.21617466850102512,1707,sensor_combined,108
+1,External Position,topic,12,battery_status,0.2079151111782557,1707,battery_status,108
+1,External Position,topic,13,rate_ctrl_status,0.12282090362797313,1707,rate_ctrl_status,54
+1,External Position,topic,14,sensor_preflight,0.08759305081762689,1707,sensor_preflight,36
+1,External Position,topic,15,vehicle_rates_setpoint,0.07619190493462899,1707,vehicle_rates_setpoint,54
+1,External Position,topic,16,vehicle_status,0.04234695982343049,1707,vehicle_status,36
+1,External Position,topic,17,vehicle_land_detected,0.030965866132991474,1707,vehicle_land_detected,54
+1,External Position,topic,18,distance_sensor,0.011733768700975158,1707,distance_sensor,18
+1,Global Position,topic,1,manual_control_setpoint,1.6382128392304975,641,manual_control_setpoint,72
+1,Global Position,topic,2,estimator_status,1.496024197753713,641,estimator_status,162
+1,Global Position,topic,3,cpuload,0.9306638460986293,641,cpuload,36
+1,Global Position,topic,4,vehicle_local_position,0.8713427236649425,641,vehicle_local_position,234
+1,Global Position,topic,5,actuator_controls_0,0.5084799223876596,641,actuator_controls_0,72
+1,Global Position,topic,6,ekf2_innovations,0.4523525171736793,641,ekf2_innovations,144
+1,Global Position,topic,7,vehicle_attitude_setpoint,0.29671159743575876,641,vehicle_attitude_setpoint,54
+1,Global Position,topic,8,actuator_outputs,0.2725345082875835,641,actuator_outputs,144
+1,Global Position,topic,9,battery_status,0.24302769748909536,641,battery_status,108
+1,Global Position,topic,10,vehicle_attitude,0.19427147779993778,641,vehicle_attitude,126
+1,Global Position,topic,11,sensor_combined,0.1717960627586328,641,sensor_combined,108
+1,Global Position,topic,12,sensor_preflight,0.16430206959446497,641,sensor_preflight,36
+1,Global Position,topic,13,rate_ctrl_status,0.11694040835486375,641,rate_ctrl_status,54
+1,Global Position,topic,14,vehicle_rates_setpoint,0.0524869427364005,641,vehicle_rates_setpoint,54
+1,Global Position,topic,15,vehicle_vision_position,0.046437470038642015,641,vehicle_vision_position,54
+1,Global Position,topic,16,vehicle_status,0.018846265563694696,641,vehicle_status,36
+1,Global Position,topic,17,distance_sensor,0.005362849957220692,641,distance_sensor,18
+1,Global Position,topic,18,vehicle_land_detected,0.0036077870822060955,641,vehicle_land_detected,54
+1,Altitude,topic,1,estimator_status,2.258133891839041,571,estimator_status,162
+1,Altitude,topic,2,ekf2_innovations,1.4104278208081595,571,ekf2_innovations,144
+1,Altitude,topic,3,vehicle_local_position,1.0211034916483355,571,vehicle_local_position,234
+1,Altitude,topic,4,actuator_controls_0,0.7659711217990537,571,actuator_controls_0,72
+1,Altitude,topic,5,manual_control_setpoint,0.2789422173130477,571,manual_control_setpoint,72
+1,Altitude,topic,6,sensor_preflight,0.25777633474783046,571,sensor_preflight,36
+1,Altitude,topic,7,vehicle_rates_setpoint,0.24585643606321986,571,vehicle_rates_setpoint,54
+1,Altitude,topic,8,actuator_outputs,0.1975053310096013,571,actuator_outputs,144
+1,Altitude,topic,9,battery_status,0.1621713579473132,571,battery_status,108
+1,Altitude,topic,10,rate_ctrl_status,0.15978847922314376,571,rate_ctrl_status,54
+1,Altitude,topic,11,sensor_combined,0.14339299343304987,571,sensor_combined,108
+1,Altitude,topic,12,vehicle_attitude,0.13156744935195572,571,vehicle_attitude,126
+1,Altitude,topic,13,vehicle_vision_position,0.12893496128702436,571,vehicle_vision_position,54
+1,Altitude,topic,14,vehicle_attitude_setpoint,0.11130826624357071,571,vehicle_attitude_setpoint,54
+1,Altitude,topic,15,cpuload,0.08310387831334624,571,cpuload,36
+1,Altitude,topic,16,distance_sensor,0.07831373841359585,571,distance_sensor,18
+1,Altitude,topic,17,vehicle_status,0.030913093110457004,571,vehicle_status,36
+1,Altitude,topic,18,vehicle_land_detected,0.010827373981265235,571,vehicle_land_detected,54
+1,Mechanical/Electrical,topic,1,actuator_controls_0,2.160648296091113,683,actuator_controls_0,72
+1,Mechanical/Electrical,topic,2,actuator_outputs,1.2331528332452122,683,actuator_outputs,144
+1,Mechanical/Electrical,topic,3,vehicle_attitude,0.9357064541912689,683,vehicle_attitude,126
+1,Mechanical/Electrical,topic,4,vehicle_local_position,0.5825028969084316,683,vehicle_local_position,234
+1,Mechanical/Electrical,topic,5,sensor_combined,0.5764588138431992,683,sensor_combined,108
+1,Mechanical/Electrical,topic,6,battery_status,0.4425264304280471,683,battery_status,108
+1,Mechanical/Electrical,topic,7,estimator_status,0.40669127314341036,683,estimator_status,162
+1,Mechanical/Electrical,topic,8,vehicle_attitude_setpoint,0.32082868373715023,683,vehicle_attitude_setpoint,54
+1,Mechanical/Electrical,topic,9,ekf2_innovations,0.2946388590029519,683,ekf2_innovations,144
+1,Mechanical/Electrical,topic,10,manual_control_setpoint,0.28329977235291315,683,manual_control_setpoint,72
+1,Mechanical/Electrical,topic,11,cpuload,0.18366773296696282,683,cpuload,36
+1,Mechanical/Electrical,topic,12,vehicle_rates_setpoint,0.12437785991962208,683,vehicle_rates_setpoint,54
+1,Mechanical/Electrical,topic,13,rate_ctrl_status,0.07134537723806661,683,rate_ctrl_status,54
+1,Mechanical/Electrical,topic,14,sensor_preflight,0.06505610571395695,683,sensor_preflight,36
+1,Mechanical/Electrical,topic,15,distance_sensor,0.04663950512510857,683,distance_sensor,18
+1,Mechanical/Electrical,topic,16,vehicle_vision_position,0.0361408092110185,683,vehicle_vision_position,54
+1,Mechanical/Electrical,topic,17,vehicle_land_detected,0.02107040606237478,683,vehicle_land_detected,54
+1,Mechanical/Electrical,topic,18,vehicle_status,0.005743910950935123,683,vehicle_status,36
+2,all,topic,1,vehicle_local_position,1.1414640199640187,3602,vehicle_local_position,234
+2,all,topic,2,estimator_status,0.9528032121185154,3602,estimator_status,162
+2,all,topic,3,actuator_controls_0,0.8234513231622017,3602,actuator_controls_0,72
+2,all,topic,4,actuator_outputs,0.5696133035268351,3602,actuator_outputs,144
+2,all,topic,5,manual_control_setpoint,0.5175727734397999,3602,manual_control_setpoint,72
+2,all,topic,6,ekf2_innovations,0.50354395437482,3602,ekf2_innovations,144
+2,all,topic,7,vehicle_attitude,0.2865778594299735,3602,vehicle_attitude,126
+2,all,topic,8,cpuload,0.28445923576465815,3602,cpuload,36
+2,all,topic,9,vehicle_vision_position,0.21131215317611335,3602,vehicle_vision_position,54
+2,all,topic,10,vehicle_attitude_setpoint,0.21079100180418744,3602,vehicle_attitude_setpoint,54
+2,all,topic,11,sensor_combined,0.2061195088874036,3602,sensor_combined,108
+2,all,topic,12,battery_status,0.20509531885554289,3602,battery_status,108
+2,all,topic,13,rate_ctrl_status,0.10339030197801702,3602,rate_ctrl_status,54
+2,all,topic,14,sensor_preflight,0.10014896120056468,3602,sensor_preflight,36
+2,all,topic,15,vehicle_rates_setpoint,0.08934511487954108,3602,vehicle_rates_setpoint,54
+2,all,topic,16,vehicle_status,0.026158120348754213,3602,vehicle_status,36
+2,all,topic,17,distance_sensor,0.024882540629440612,3602,distance_sensor,18
+2,all,topic,18,vehicle_land_detected,0.015334547306712987,3602,vehicle_land_detected,54
+2,External Position,topic,1,vehicle_local_position,1.5960063291905335,1707,vehicle_local_position,234
+2,External Position,topic,2,estimator_status,0.7265907110419748,1707,estimator_status,162
+2,External Position,topic,3,actuator_outputs,0.604225520043106,1707,actuator_outputs,144
+2,External Position,topic,4,actuator_controls_0,0.5523782035726978,1707,actuator_controls_0,72
+2,External Position,topic,5,ekf2_innovations,0.4214531891060751,1707,ekf2_innovations,144
+2,External Position,topic,6,vehicle_vision_position,0.37499368736723493,1707,vehicle_vision_position,54
+2,External Position,topic,7,manual_control_setpoint,0.3440405846001747,1707,manual_control_setpoint,72
+2,External Position,topic,8,cpuload,0.20859446981927432,1707,cpuload,36
+2,External Position,topic,9,vehicle_attitude,0.19970836120954774,1707,vehicle_attitude,126
+2,External Position,topic,10,vehicle_attitude_setpoint,0.17851493190456305,1707,vehicle_attitude_setpoint,54
+2,External Position,topic,11,battery_status,0.1657793196367979,1707,battery_status,108
+2,External Position,topic,12,sensor_combined,0.1567338592025914,1707,sensor_combined,108
+2,External Position,topic,13,rate_ctrl_status,0.11378227574792257,1707,rate_ctrl_status,54
+2,External Position,topic,14,sensor_preflight,0.07181810586072745,1707,sensor_preflight,36
+2,External Position,topic,15,vehicle_rates_setpoint,0.047453025663380506,1707,vehicle_rates_setpoint,54
+2,External Position,topic,16,vehicle_status,0.038652305017796804,1707,vehicle_status,36
+2,External Position,topic,17,vehicle_land_detected,0.020936112990856508,1707,vehicle_land_detected,54
+2,External Position,topic,18,distance_sensor,0.009766588887012389,1707,distance_sensor,18
+2,Global Position,topic,1,manual_control_setpoint,1.5216370557797811,641,manual_control_setpoint,72
+2,Global Position,topic,2,estimator_status,1.2499596164085482,641,estimator_status,162
+2,Global Position,topic,3,vehicle_local_position,0.846776176712733,641,vehicle_local_position,234
+2,Global Position,topic,4,cpuload,0.7872838238498288,641,cpuload,36
+2,Global Position,topic,5,actuator_controls_0,0.46597602538088545,641,actuator_controls_0,72
+2,Global Position,topic,6,ekf2_innovations,0.38104360163227413,641,ekf2_innovations,144
+2,Global Position,topic,7,vehicle_attitude_setpoint,0.32319981685889604,641,vehicle_attitude_setpoint,54
+2,Global Position,topic,8,battery_status,0.23615582793300902,641,battery_status,108
+2,Global Position,topic,9,actuator_outputs,0.20922143822127212,641,actuator_outputs,144
+2,Global Position,topic,10,sensor_combined,0.1591156544946814,641,sensor_combined,108
+2,Global Position,topic,11,vehicle_attitude,0.14537217228002197,641,vehicle_attitude,126
+2,Global Position,topic,12,sensor_preflight,0.1360408425973943,641,sensor_preflight,36
+2,Global Position,topic,13,rate_ctrl_status,0.06307830725683794,641,rate_ctrl_status,54
+2,Global Position,topic,14,vehicle_rates_setpoint,0.04319555576842764,641,vehicle_rates_setpoint,54
+2,Global Position,topic,15,vehicle_vision_position,0.0379839011684213,641,vehicle_vision_position,54
+2,Global Position,topic,16,vehicle_status,0.01979649075731928,641,vehicle_status,36
+2,Global Position,topic,17,vehicle_land_detected,0.003816446884307021,641,vehicle_land_detected,54
+2,Global Position,topic,18,distance_sensor,0.003200365535201009,641,distance_sensor,18
+2,Altitude,topic,1,estimator_status,2.001662066830094,571,estimator_status,162
+2,Altitude,topic,2,ekf2_innovations,1.195663197672046,571,ekf2_innovations,144
+2,Altitude,topic,3,vehicle_local_position,0.8627348598928081,571,vehicle_local_position,234
+2,Altitude,topic,4,actuator_controls_0,0.6490600221148537,571,actuator_controls_0,72
+2,Altitude,topic,5,manual_control_setpoint,0.26896015360849995,571,manual_control_setpoint,72
+2,Altitude,topic,6,vehicle_rates_setpoint,0.2526208429565111,571,vehicle_rates_setpoint,54
+2,Altitude,topic,7,sensor_preflight,0.20563619966928878,571,sensor_preflight,36
+2,Altitude,topic,8,actuator_outputs,0.18990632376623706,571,actuator_outputs,144
+2,Altitude,topic,9,battery_status,0.14735419505898906,571,battery_status,108
+2,Altitude,topic,10,rate_ctrl_status,0.1410512199591524,571,rate_ctrl_status,54
+2,Altitude,topic,11,vehicle_vision_position,0.12484416522823152,571,vehicle_vision_position,54
+2,Altitude,topic,12,vehicle_attitude,0.09970697941988114,571,vehicle_attitude,126
+2,Altitude,topic,13,sensor_combined,0.0993879963189515,571,sensor_combined,108
+2,Altitude,topic,14,cpuload,0.09017457749367398,571,cpuload,36
+2,Altitude,topic,15,vehicle_attitude_setpoint,0.08486313540854697,571,vehicle_attitude_setpoint,54
+2,Altitude,topic,16,distance_sensor,0.07016194819404308,571,distance_sensor,18
+2,Altitude,topic,17,vehicle_status,0.020842598231746758,571,vehicle_status,36
+2,Altitude,topic,18,vehicle_land_detected,0.00690985941934272,571,vehicle_land_detected,54
+2,Mechanical/Electrical,topic,1,actuator_controls_0,1.9822227930233045,683,actuator_controls_0,72
+2,Mechanical/Electrical,topic,2,actuator_outputs,1.1387799470274138,683,actuator_outputs,144
+2,Mechanical/Electrical,topic,3,vehicle_attitude,0.7924378175722115,683,vehicle_attitude,126
+2,Mechanical/Electrical,topic,4,vehicle_local_position,0.515029958580525,683,vehicle_local_position,234
+2,Mechanical/Electrical,topic,5,sensor_combined,0.4628903263900305,683,sensor_combined,108
+2,Mechanical/Electrical,topic,6,estimator_status,0.3624211889083148,683,estimator_status,162
+2,Mechanical/Electrical,topic,7,battery_status,0.32247863662359,683,battery_status,108
+2,Mechanical/Electrical,topic,8,vehicle_attitude_setpoint,0.291239043649725,683,vehicle_attitude_setpoint,54
+2,Mechanical/Electrical,topic,9,ekf2_innovations,0.2450543123528664,683,ekf2_innovations,144
+2,Mechanical/Electrical,topic,10,manual_control_setpoint,0.21679978265353386,683,manual_control_setpoint,72
+2,Mechanical/Electrical,topic,11,cpuload,0.16458681172206116,683,cpuload,36
+2,Mechanical/Electrical,topic,12,vehicle_rates_setpoint,0.10085495814492904,683,vehicle_rates_setpoint,54
+2,Mechanical/Electrical,topic,13,rate_ctrl_status,0.08376585867467842,683,rate_ctrl_status,54
+2,Mechanical/Electrical,topic,14,sensor_preflight,0.04908140764872524,683,sensor_preflight,36
+2,Mechanical/Electrical,topic,15,distance_sensor,0.045155838053078316,683,distance_sensor,18
+2,Mechanical/Electrical,topic,16,vehicle_vision_position,0.03718660674994414,683,vehicle_vision_position,54
+2,Mechanical/Electrical,topic,17,vehicle_land_detected,0.019187734029433016,683,vehicle_land_detected,54
+2,Mechanical/Electrical,topic,18,vehicle_status,0.005346106391016969,683,vehicle_status,36
+3,all,topic,1,vehicle_local_position,1.2661291646284718,3602,vehicle_local_position,234
+3,all,topic,2,estimator_status,1.0857906592854347,3602,estimator_status,162
+3,all,topic,3,actuator_controls_0,0.8709520359759971,3602,actuator_controls_0,72
+3,all,topic,4,actuator_outputs,0.637898786929952,3602,actuator_outputs,144
+3,all,topic,5,ekf2_innovations,0.5989528885277524,3602,ekf2_innovations,144
+3,all,topic,6,manual_control_setpoint,0.5582028617442565,3602,manual_control_setpoint,72
+3,all,topic,7,vehicle_attitude,0.3525806240861934,3602,vehicle_attitude,126
+3,all,topic,8,cpuload,0.31230495638556516,3602,cpuload,36
+3,all,topic,9,sensor_combined,0.2474611562974841,3602,sensor_combined,108
+3,all,topic,10,battery_status,0.24527761741196302,3602,battery_status,108
+3,all,topic,11,vehicle_vision_position,0.23740670297111363,3602,vehicle_vision_position,54
+3,all,topic,12,vehicle_attitude_setpoint,0.23347341107065883,3602,vehicle_attitude_setpoint,54
+3,all,topic,13,rate_ctrl_status,0.11911652164427908,3602,rate_ctrl_status,54
+3,all,topic,14,sensor_preflight,0.11673717251043202,3602,sensor_preflight,36
+3,all,topic,15,vehicle_rates_setpoint,0.11252266262796766,3602,vehicle_rates_setpoint,54
+3,all,topic,16,distance_sensor,0.02843629730089008,3602,distance_sensor,18
+3,all,topic,17,vehicle_status,0.026398633325164192,3602,vehicle_status,36
+3,all,topic,18,vehicle_land_detected,0.01782777439418024,3602,vehicle_land_detected,54
+3,External Position,topic,1,vehicle_local_position,1.7475439355036926,1707,vehicle_local_position,234
+3,External Position,topic,2,estimator_status,0.8427374318913077,1707,estimator_status,162
+3,External Position,topic,3,actuator_outputs,0.6785322140524044,1707,actuator_outputs,144
+3,External Position,topic,4,actuator_controls_0,0.5679272601414598,1707,actuator_controls_0,72
+3,External Position,topic,5,ekf2_innovations,0.5035394844912576,1707,ekf2_innovations,144
+3,External Position,topic,6,vehicle_vision_position,0.4174872618898712,1707,vehicle_vision_position,54
+3,External Position,topic,7,manual_control_setpoint,0.37204568294931883,1707,manual_control_setpoint,72
+3,External Position,topic,8,vehicle_attitude,0.2580651282958205,1707,vehicle_attitude,126
+3,External Position,topic,9,cpuload,0.22525907505558876,1707,cpuload,36
+3,External Position,topic,10,vehicle_attitude_setpoint,0.21855708102529706,1707,vehicle_attitude_setpoint,54
+3,External Position,topic,11,battery_status,0.20066642324397815,1707,battery_status,108
+3,External Position,topic,12,sensor_combined,0.19291517727362645,1707,sensor_combined,108
+3,External Position,topic,13,rate_ctrl_status,0.12020039777544038,1707,rate_ctrl_status,54
+3,External Position,topic,14,sensor_preflight,0.0886526062217134,1707,sensor_preflight,36
+3,External Position,topic,15,vehicle_rates_setpoint,0.07604274485952804,1707,vehicle_rates_setpoint,54
+3,External Position,topic,16,vehicle_status,0.038951005291860116,1707,vehicle_status,36
+3,External Position,topic,17,vehicle_land_detected,0.025782445205747854,1707,vehicle_land_detected,54
+3,External Position,topic,18,distance_sensor,0.014082451165041239,1707,distance_sensor,18
+3,Global Position,topic,1,manual_control_setpoint,1.610126206378104,641,manual_control_setpoint,72
+3,Global Position,topic,2,estimator_status,1.465917833343311,641,estimator_status,162
+3,Global Position,topic,3,vehicle_local_position,0.9355442126801093,641,vehicle_local_position,234
+3,Global Position,topic,4,cpuload,0.8837624343751761,641,cpuload,36
+3,Global Position,topic,5,actuator_controls_0,0.4646707376778384,641,actuator_controls_0,72
+3,Global Position,topic,6,ekf2_innovations,0.4545575236629068,641,ekf2_innovations,144
+3,Global Position,topic,7,vehicle_attitude_setpoint,0.30980064578856614,641,vehicle_attitude_setpoint,54
+3,Global Position,topic,8,battery_status,0.26717887936684637,641,battery_status,108
+3,Global Position,topic,9,actuator_outputs,0.2496425416827487,641,actuator_outputs,144
+3,Global Position,topic,10,vehicle_attitude,0.19839379215142647,641,vehicle_attitude,126
+3,Global Position,topic,11,sensor_combined,0.16530994967236692,641,sensor_combined,108
+3,Global Position,topic,12,sensor_preflight,0.1438394578511829,641,sensor_preflight,36
+3,Global Position,topic,13,rate_ctrl_status,0.11583888288465567,641,rate_ctrl_status,54
+3,Global Position,topic,14,vehicle_vision_position,0.05335828497994318,641,vehicle_vision_position,54
+3,Global Position,topic,15,vehicle_rates_setpoint,0.04437998232235337,641,vehicle_rates_setpoint,54
+3,Global Position,topic,16,vehicle_status,0.017431411452882496,641,vehicle_status,36
+3,Global Position,topic,17,distance_sensor,0.004467796562834969,641,distance_sensor,18
+3,Global Position,topic,18,vehicle_land_detected,0.0035686822720870006,641,vehicle_land_detected,54
+3,Altitude,topic,1,estimator_status,2.2109577851472966,571,estimator_status,162
+3,Altitude,topic,2,ekf2_innovations,1.4175316879588313,571,ekf2_innovations,144
+3,Altitude,topic,3,vehicle_local_position,1.0300272229036882,571,vehicle_local_position,234
+3,Altitude,topic,4,actuator_controls_0,0.7114245981645259,571,actuator_controls_0,72
+3,Altitude,topic,5,vehicle_rates_setpoint,0.2806868507262974,571,vehicle_rates_setpoint,54
+3,Altitude,topic,6,manual_control_setpoint,0.2725296455142413,571,manual_control_setpoint,72
+3,Altitude,topic,7,sensor_preflight,0.23958021325577203,571,sensor_preflight,36
+3,Altitude,topic,8,actuator_outputs,0.20171289523416513,571,actuator_outputs,144
+3,Altitude,topic,9,rate_ctrl_status,0.16365297040573296,571,rate_ctrl_status,54
+3,Altitude,topic,10,battery_status,0.1600014585937829,571,battery_status,108
+3,Altitude,topic,11,sensor_combined,0.1344103568794887,571,sensor_combined,108
+3,Altitude,topic,12,vehicle_vision_position,0.1321028449950441,571,vehicle_vision_position,54
+3,Altitude,topic,13,vehicle_attitude,0.1226240264052882,571,vehicle_attitude,126
+3,Altitude,topic,14,vehicle_attitude_setpoint,0.1049629137128897,571,vehicle_attitude_setpoint,54
+3,Altitude,topic,15,cpuload,0.08149713899508557,571,cpuload,36
+3,Altitude,topic,16,distance_sensor,0.07548849902190126,571,distance_sensor,18
+3,Altitude,topic,17,vehicle_status,0.024937625033373937,571,vehicle_status,36
+3,Altitude,topic,18,vehicle_land_detected,0.008332748122635233,571,vehicle_land_detected,54
+3,Mechanical/Electrical,topic,1,actuator_controls_0,2.142957558009717,683,actuator_controls_0,72
+3,Mechanical/Electrical,topic,2,actuator_outputs,1.2653850786777125,683,actuator_outputs,144
+3,Mechanical/Electrical,topic,3,vehicle_attitude,0.925753285667665,683,vehicle_attitude,126
+3,Mechanical/Electrical,topic,4,vehicle_local_position,0.5705861910410113,683,vehicle_local_position,234
+3,Mechanical/Electrical,topic,5,sensor_combined,0.5553980759286756,683,sensor_combined,108
+3,Mechanical/Electrical,topic,6,battery_status,0.4075108329564025,683,battery_status,108
+3,Mechanical/Electrical,topic,7,estimator_status,0.39583445390265126,683,estimator_status,162
+3,Mechanical/Electrical,topic,8,vehicle_attitude_setpoint,0.30655673746091,683,vehicle_attitude_setpoint,54
+3,Mechanical/Electrical,topic,9,ekf2_innovations,0.288586292764232,683,ekf2_innovations,144
+3,Mechanical/Electrical,topic,10,manual_control_setpoint,0.2750503679814505,683,manual_control_setpoint,72
+3,Mechanical/Electrical,topic,11,cpuload,0.18649871885832192,683,cpuload,36
+3,Mechanical/Electrical,topic,12,vehicle_rates_setpoint,0.1270598900108068,683,vehicle_rates_setpoint,54
+3,Mechanical/Electrical,topic,13,rate_ctrl_status,0.08225045670465374,683,rate_ctrl_status,54
+3,Mechanical/Electrical,topic,14,sensor_preflight,0.05879341480301223,683,sensor_preflight,36
+3,Mechanical/Electrical,topic,15,vehicle_vision_position,0.0481036645558233,683,vehicle_vision_position,54
+3,Mechanical/Electrical,topic,16,distance_sensor,0.04746853323689288,683,distance_sensor,18
+3,Mechanical/Electrical,topic,17,vehicle_land_detected,0.019267181386812864,683,vehicle_land_detected,54
+3,Mechanical/Electrical,topic,18,vehicle_status,0.004664117962931696,683,vehicle_status,36
+4,all,topic,1,vehicle_local_position,1.251338712480587,3602,vehicle_local_position,234
+4,all,topic,2,estimator_status,1.0429970898406202,3602,estimator_status,162
+4,all,topic,3,actuator_controls_0,0.9008192244151949,3602,actuator_controls_0,72
+4,all,topic,4,actuator_outputs,0.6110928275724622,3602,actuator_outputs,144
+4,all,topic,5,ekf2_innovations,0.5914391830703611,3602,ekf2_innovations,144
+4,all,topic,6,manual_control_setpoint,0.5381418008455394,3602,manual_control_setpoint,72
+4,all,topic,7,vehicle_attitude,0.34578404345309427,3602,vehicle_attitude,126
+4,all,topic,8,cpuload,0.31337812452423514,3602,cpuload,36
+4,all,topic,9,sensor_combined,0.24941891870175342,3602,sensor_combined,108
+4,all,topic,10,vehicle_attitude_setpoint,0.23628529558746642,3602,vehicle_attitude_setpoint,54
+4,all,topic,11,battery_status,0.23414783688191565,3602,battery_status,108
+4,all,topic,12,vehicle_vision_position,0.20667585300707775,3602,vehicle_vision_position,54
+4,all,topic,13,sensor_preflight,0.11798918120278487,3602,sensor_preflight,36
+4,all,topic,14,rate_ctrl_status,0.11202769232027758,3602,rate_ctrl_status,54
+4,all,topic,15,vehicle_rates_setpoint,0.10710284820587461,3602,vehicle_rates_setpoint,54
+4,all,topic,16,vehicle_status,0.026910894318980947,3602,vehicle_status,36
+4,all,topic,17,distance_sensor,0.02667547019346805,3602,distance_sensor,18
+4,all,topic,18,vehicle_land_detected,0.014473702140626809,3602,vehicle_land_detected,54
+4,External Position,topic,1,vehicle_local_position,1.7260831281987308,1707,vehicle_local_position,234
+4,External Position,topic,2,estimator_status,0.7886005851419289,1707,estimator_status,162
+4,External Position,topic,3,actuator_outputs,0.66519116696581,1707,actuator_outputs,144
+4,External Position,topic,4,actuator_controls_0,0.5924542939655874,1707,actuator_controls_0,72
+4,External Position,topic,5,ekf2_innovations,0.5140567204444876,1707,ekf2_innovations,144
+4,External Position,topic,6,vehicle_vision_position,0.36481602992050105,1707,vehicle_vision_position,54
+4,External Position,topic,7,manual_control_setpoint,0.3566450445783823,1707,manual_control_setpoint,72
+4,External Position,topic,8,vehicle_attitude,0.25092787154987023,1707,vehicle_attitude,126
+4,External Position,topic,9,cpuload,0.23932684231583384,1707,cpuload,36
+4,External Position,topic,10,vehicle_attitude_setpoint,0.22100422891591112,1707,vehicle_attitude_setpoint,54
+4,External Position,topic,11,sensor_combined,0.19850201351862318,1707,sensor_combined,108
+4,External Position,topic,12,battery_status,0.19830769732647352,1707,battery_status,108
+4,External Position,topic,13,rate_ctrl_status,0.11414639966054964,1707,rate_ctrl_status,54
+4,External Position,topic,14,sensor_preflight,0.08522184066801718,1707,sensor_preflight,36
+4,External Position,topic,15,vehicle_rates_setpoint,0.0718643431242166,1707,vehicle_rates_setpoint,54
+4,External Position,topic,16,vehicle_status,0.03738941499888292,1707,vehicle_status,36
+4,External Position,topic,17,vehicle_land_detected,0.019053332562658374,1707,vehicle_land_detected,54
+4,External Position,topic,18,distance_sensor,0.009607174682069354,1707,distance_sensor,18
+4,Global Position,topic,1,manual_control_setpoint,1.557931515696162,641,manual_control_setpoint,72
+4,Global Position,topic,2,estimator_status,1.4263581674333603,641,estimator_status,162
+4,Global Position,topic,3,vehicle_local_position,0.9961740939097249,641,vehicle_local_position,234
+4,Global Position,topic,4,cpuload,0.863914857282591,641,cpuload,36
+4,Global Position,topic,5,actuator_controls_0,0.4762774832737415,641,actuator_controls_0,72
+4,Global Position,topic,6,ekf2_innovations,0.42352946598072216,641,ekf2_innovations,144
+4,Global Position,topic,7,vehicle_attitude_setpoint,0.31678899791276377,641,vehicle_attitude_setpoint,54
+4,Global Position,topic,8,actuator_outputs,0.23896483693007245,641,actuator_outputs,144
+4,Global Position,topic,9,battery_status,0.23424939570227418,641,battery_status,108
+4,Global Position,topic,10,vehicle_attitude,0.17866306025401857,641,vehicle_attitude,126
+4,Global Position,topic,11,sensor_combined,0.1647247296399726,641,sensor_combined,108
+4,Global Position,topic,12,sensor_preflight,0.156902784671403,641,sensor_preflight,36
+4,Global Position,topic,13,rate_ctrl_status,0.10364512626852011,641,rate_ctrl_status,54
+4,Global Position,topic,14,vehicle_rates_setpoint,0.04918975647210524,641,vehicle_rates_setpoint,54
+4,Global Position,topic,15,vehicle_vision_position,0.04517269040143914,641,vehicle_vision_position,54
+4,Global Position,topic,16,vehicle_status,0.017161599157956117,641,vehicle_status,36
+4,Global Position,topic,17,distance_sensor,0.00580790132185482,641,distance_sensor,18
+4,Global Position,topic,18,vehicle_land_detected,0.0033293830968300973,641,vehicle_land_detected,54
+4,Altitude,topic,1,estimator_status,2.184305998441743,571,estimator_status,162
+4,Altitude,topic,2,ekf2_innovations,1.3884032343694777,571,ekf2_innovations,144
+4,Altitude,topic,3,vehicle_local_position,0.9722943509007177,571,vehicle_local_position,234
+4,Altitude,topic,4,actuator_controls_0,0.737295818771109,571,actuator_controls_0,72
+4,Altitude,topic,5,manual_control_setpoint,0.2734238611348036,571,manual_control_setpoint,72
+4,Altitude,topic,6,vehicle_rates_setpoint,0.25565929219948613,571,vehicle_rates_setpoint,54
+4,Altitude,topic,7,sensor_preflight,0.23564034138202564,571,sensor_preflight,36
+4,Altitude,topic,8,actuator_outputs,0.19974345467164079,571,actuator_outputs,144
+4,Altitude,topic,9,rate_ctrl_status,0.15395008349962971,571,rate_ctrl_status,54
+4,Altitude,topic,10,battery_status,0.13901929523560155,571,battery_status,108
+4,Altitude,topic,11,sensor_combined,0.12657585261629736,571,sensor_combined,108
+4,Altitude,topic,12,vehicle_attitude,0.12035400820804623,571,vehicle_attitude,126
+4,Altitude,topic,13,vehicle_vision_position,0.11969334276853079,571,vehicle_vision_position,54
+4,Altitude,topic,14,vehicle_attitude_setpoint,0.10282425625736634,571,vehicle_attitude_setpoint,54
+4,Altitude,topic,15,cpuload,0.08367058330876649,571,cpuload,36
+4,Altitude,topic,16,distance_sensor,0.0738441054487448,571,distance_sensor,18
+4,Altitude,topic,17,vehicle_status,0.03265906013738386,571,vehicle_status,36
+4,Altitude,topic,18,vehicle_land_detected,0.006756942154905626,571,vehicle_land_detected,54
+4,Mechanical/Electrical,topic,1,actuator_controls_0,2.2066494688836205,683,actuator_controls_0,72
+4,Mechanical/Electrical,topic,2,actuator_outputs,1.1690264565383426,683,actuator_outputs,144
+4,Mechanical/Electrical,topic,3,vehicle_attitude,0.92816264637306,683,vehicle_attitude,126
+4,Mechanical/Electrical,topic,4,sensor_combined,0.558858923198094,683,sensor_combined,108
+4,Mechanical/Electrical,topic,5,vehicle_local_position,0.5375848813460867,683,vehicle_local_position,234
+4,Mechanical/Electrical,topic,6,battery_status,0.4031557670390688,683,battery_status,108
+4,Mechanical/Electrical,topic,7,estimator_status,0.36486091996137804,683,estimator_status,162
+4,Mechanical/Electrical,topic,8,vehicle_attitude_setpoint,0.3104992942336095,683,vehicle_attitude_setpoint,54
+4,Mechanical/Electrical,topic,9,ekf2_innovations,0.27614711727977403,683,ekf2_innovations,144
+4,Mechanical/Electrical,topic,10,manual_control_setpoint,0.25598030641452607,683,manual_control_setpoint,72
+4,Mechanical/Electrical,topic,11,cpuload,0.1738093091006132,683,cpuload,36
+4,Mechanical/Electrical,topic,12,vehicle_rates_setpoint,0.12532933496339269,683,vehicle_rates_setpoint,54
+4,Mechanical/Electrical,topic,13,rate_ctrl_status,0.079551712885318,683,rate_ctrl_status,54
+4,Mechanical/Electrical,topic,14,sensor_preflight,0.0650044345074969,683,sensor_preflight,36
+4,Mechanical/Electrical,topic,15,distance_sensor,0.049484256948810035,683,distance_sensor,18
+4,Mechanical/Electrical,topic,16,vehicle_vision_position,0.035731868505189154,683,vehicle_vision_position,54
+4,Mechanical/Electrical,topic,17,vehicle_land_detected,0.01993834244591669,683,vehicle_land_detected,54
+4,Mechanical/Electrical,topic,18,vehicle_status,0.005066473697189123,683,vehicle_status,36

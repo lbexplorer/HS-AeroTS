@@ -1,0 +1,40 @@
+{
+  "status": "complete",
+  "protocol": "fixed P2 per-log chronological split",
+  "stage2_train_windows": 6628,
+  "stage2_validation_windows": 301,
+  "stage2_test_windows": 1248,
+  "stage2_lightgbm": {
+    "method": "stage2_lightgbm",
+    "runs": 1,
+    "accuracy_mean": 0.8028846153846154,
+    "accuracy_std": 0.0,
+    "macro_f1_mean": 0.7982730768623023,
+    "macro_f1_std": 0.0,
+    "balanced_accuracy_mean": 0.7828926840634964,
+    "balanced_accuracy_std": 0.0,
+    "macro_precision_mean": 0.8367941709340315,
+    "macro_precision_std": 0.0,
+    "macro_recall_mean": 0.7828926840634964,
+    "macro_recall_std": 0.0,
+    "weighted_f1_mean": 0.7988596256693357,
+    "weighted_f1_std": 0.0,
+    "macro_ovr_auprc_mean": 0.9088387123367583,
+    "macro_ovr_auprc_std": 0.0,
+    "macro_ovr_auroc_mean": 0.9599267370098864,
+    "macro_ovr_auroc_std": 0.0
+  },
+  "majority_macro_f1": 0.12967359050445104,
+  "stratified_random_macro_f1": 0.22445051962516735,
+  "macro_f1_gain_over_majority": 0.6685994863578513,
+  "macro_f1_gain_over_random": 0.5738225572371349,
+  "channel_subsystem_counts": {
+    "Altitude": 14,
+    "External Position": 3,
+    "Global Position": 17,
+    "Mechanical/Electrical": 43,
+    "Shared": 10
+  },
+  "completion_criterion": "Macro-F1 clearly exceeds majority and stratified-random baselines",
+  "criterion_passed": true
+}

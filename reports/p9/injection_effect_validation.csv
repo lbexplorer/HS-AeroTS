@@ -1,0 +1,13 @@
+﻿mutation_id,log_id,topic,field,measure,baseline_value,fault_value,first_target_time_s,passed
+commander_nav_state_override,2019-01-18__08_39_38,vehicle_status,nav_state,target_fraction,0.0,1.0,30.360299,True
+commander_nav_state_override,2019-01-25__17_38_05,vehicle_status,nav_state,target_fraction,0.0,1.0,30.178157,True
+commander_nav_state_override,2019-03-06__08_02_26,vehicle_status,nav_state,target_fraction,0.0,1.0,30.045698,True
+ekf2_innovation_bias,2019-01-18__08_39_38,ekf2_innovations,vel_pos_innov[3],post_mean,0.0,19.79591836734694,30.699933,True
+ekf2_innovation_bias,2019-01-25__17_38_05,ekf2_innovations,vel_pos_innov[3],post_mean,0.0,20.0,30.627427,True
+ekf2_innovation_bias,2019-03-06__08_02_26,ekf2_innovations,vel_pos_innov[3],post_mean,0.0,20.0,37.984647,True
+inav_local_z_freeze,2019-01-18__08_39_38,vehicle_local_position,z,post_std,14.189072900696107,0.05824727352844147,,True
+inav_local_z_freeze,2019-01-25__17_38_05,vehicle_local_position,z,post_std,0.948409857339336,0.0,,True
+inav_local_z_freeze,2019-03-06__08_02_26,vehicle_local_position,z,post_std,0.6181790204129018,0.0,,True
+land_detector_state_inversion,2019-01-18__08_39_38,vehicle_land_detected,landed,target_fraction,0.0,1.0,30.060607,True
+land_detector_state_inversion,2019-01-25__17_38_05,vehicle_land_detected,landed,target_fraction,0.0,1.0,30.998473,True
+land_detector_state_inversion,2019-03-06__08_02_26,vehicle_land_detected,landed,target_fraction,0.0,1.0,30.079582,True

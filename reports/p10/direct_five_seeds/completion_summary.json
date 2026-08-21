@@ -1,0 +1,41 @@
+{
+  "status": "complete",
+  "protocol": "fixed P2 per-log chronological split; P1-P4 outputs unchanged",
+  "experiment": "direct five-class LightGBM multi-seed robustness",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "direct_five_class_lightgbm": {
+    "method": "direct_five_class_lightgbm",
+    "runs": 5,
+    "accuracy_mean": 0.9325288470007926,
+    "accuracy_std": 0.0006756178102119366,
+    "macro_f1_mean": 0.6599069903898498,
+    "macro_f1_std": 0.0028548585826736086,
+    "balanced_accuracy_mean": 0.614363802163526,
+    "balanced_accuracy_std": 0.0021016163674637918,
+    "macro_precision_mean": 0.7435328937219058,
+    "macro_precision_std": 0.00637782437833631,
+    "macro_recall_mean": 0.614363802163526,
+    "macro_recall_std": 0.0021016163674637918,
+    "weighted_f1_mean": 0.928656851632765,
+    "weighted_f1_std": 0.0006011117201207597,
+    "anomaly_only_accuracy_mean": 0.6015546918378678,
+    "anomaly_only_accuracy_std": 0.0028407278716904992,
+    "anomaly_only_macro_f1_mean": 0.6669025992699105,
+    "anomaly_only_macro_f1_std": 0.0025650091601378214,
+    "anomaly_only_balanced_accuracy_mean": 0.5250368684741813,
+    "anomaly_only_balanced_accuracy_std": 0.0026298072990795216,
+    "anomaly_only_macro_precision_mean": 0.9739752744149237,
+    "anomaly_only_macro_precision_std": 0.004237691695965636,
+    "anomaly_only_macro_recall_mean": 0.5250368684741813,
+    "anomaly_only_macro_recall_std": 0.0026298072990795216,
+    "anomaly_only_weighted_f1_mean": 0.7270858299051504,
+    "anomaly_only_weighted_f1_std": 0.002621537555660379
+  },
+  "test_windows": 34059
+}

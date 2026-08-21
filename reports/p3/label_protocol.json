@@ -1,0 +1,26 @@
+{
+  "source": "P2 fixed 10 Hz windows and type arrays",
+  "window_size": 96,
+  "stride": 8,
+  "horizon": 12,
+  "split": "per-log chronological 70/15/15 inherited unchanged from P2",
+  "stage2_inclusion": "binary anomaly label equals 1 and anomaly type is one of 1..4",
+  "window_type_rule": "majority non-zero anomaly type within the window plus horizon segment",
+  "classes": {
+    "1": "External Position",
+    "2": "Global Position",
+    "3": "Altitude",
+    "4": "Mechanical/Electrical"
+  },
+  "excluded": {
+    "Normal": "not used to fit the conditional four-class Stage 2 model",
+    "Uncategorized": "reserved for the optional Unknown Fault experiment"
+  },
+  "primary_metrics": [
+    "Macro-F1",
+    "Balanced Accuracy",
+    "per-class Recall"
+  ],
+  "leakage_control": "no new split is created; P2 train, validation and test membership is preserved"
+}
+

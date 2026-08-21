@@ -1,0 +1,29 @@
+{
+  "train": {
+    "windows": 10411,
+    "classes": {
+      "External Position": 5170,
+      "Global Position": 2065,
+      "Altitude": 2171,
+      "Mechanical/Electrical": 1005
+    }
+  },
+  "validation": {
+    "windows": 2794,
+    "classes": {
+      "External Position": 1077,
+      "Global Position": 739,
+      "Altitude": 789,
+      "Mechanical/Electrical": 189
+    }
+  },
+  "test": {
+    "windows": 2489,
+    "classes": {
+      "External Position": 1186,
+      "Global Position": 455,
+      "Altitude": 414,
+      "Mechanical/Electrical": 434
+    }
+  }
+}

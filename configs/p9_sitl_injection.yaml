@@ -1,0 +1,92 @@
+paths:
+  px4_source_root: third_party/PX4-Autopilot
+  report_dir: reports/p9
+  patch_dir: reports/p9/mutation_patches
+  replay_script_dir: reports/p9/replay_scripts
+  run_manifest: reports/p9/run_manifest.tsv
+  module_rankings: reports/p9/module_rankings.csv
+  core_channels: reports/p1/core_channels.txt
+  feature_dictionary: reports/p2/feature_dictionary.csv
+  scaler_mean: data/processed/p2/features_original/scaler_mean.npy
+  scaler_std: data/processed/p2/features_original/scaler_std.npy
+  stage1_model: reports/p2/baseline_runs/seed0/lightgbm.joblib
+  stage1_metrics: reports/p2/baseline_runs/seed0/metrics.json
+  stage2_model: reports/p3/model_runs/seed0/stage2_lightgbm.joblib
+  topic_module_mapping: reports/p8/topic_module_mapping.csv
+
+experiment:
+  source_commit: 82aa24adfca29321cfd1209e287eab6c2b16780e
+  injection_start_s: 30
+  replay_logs:
+    - data/raw/uav_sead/ulg_files/2019-01-18/08_39_38.ulg
+    - data/raw/uav_sead/ulg_files/2019-01-25/17_38_05.ulg
+    - data/raw/uav_sead/ulg_files/2019-03-06/08_02_26.ulg
+  required_modules: 4
+  required_mutation_classes: 4
+  sitl_target: px4_sitl_default
+  mode: system_wide_replay
+  simulator: none
+  wsl_distribution: Ubuntu-20.04
+
+mutations:
+  - id: commander_nav_state_override
+    class: state_transition_error
+    module: src/modules/commander
+    topic: vehicle_status
+    source_file: src/modules/commander/commander.cpp
+    anchor: "\t\t\tstatus.timestamp = now;"
+    injected_line: "\t\t\tstatic hrt_abstime hs_start = 0; if (hs_start == 0) { hs_start = now; } if (hrt_elapsed_time(&hs_start) > 30000000ULL) { status.nav_state = vehicle_status_s::NAVIGATION_STATE_AUTO_LAND; } // HS_REPLAY_MUTATION"
+    startup_command: commander start
+    replay_mode: generic
+    restricted_topics: [vehicle_status, vehicle_control_mode, actuator_armed]
+  - id: ekf2_innovation_bias
+    class: bias
+    module: src/modules/ekf2
+    topic: ekf2_innovations
+    source_file: src/modules/ekf2/ekf2_main.cpp
+    anchor: "\t\t// publish ekf2_timestamps"
+    injected_line: |-
+      		// HS_REPLAY_MUTATION: controlled publication-layer innovation bias for legacy logs without ekf2_timestamps.
+      		ekf2_innovations_s hs_innovations{};
+      		hs_innovations.timestamp = hrt_absolute_time();
+      		static hrt_abstime hs_start = 0;
+      		if (hs_start == 0) { hs_start = now; }
+      		const char *hs_fault = getenv("HS_P9_EKF_FAULT");
+      		if (hs_fault != nullptr && hs_fault[0] == '1' && hrt_elapsed_time(&hs_start) > 30000000ULL) { hs_innovations.vel_pos_innov[3] = 20.0f; }
+      		if (_estimator_innovations_pub == nullptr) {
+      			_estimator_innovations_pub = orb_advertise(ORB_ID(ekf2_innovations), &hs_innovations);
+      		} else {
+      			orb_publish(ORB_ID(ekf2_innovations), _estimator_innovations_pub, &hs_innovations);
+      		}
+    startup_command: ekf2 start -r
+    replay_mode: generic
+    restricted_topics: [ekf2_innovations]
+  - id: inav_local_z_freeze
+    class: state_freeze
+    module: src/modules/position_estimator_inav
+    topic: vehicle_local_position
+    source_file: src/modules/position_estimator_inav/position_estimator_inav_main.cpp
+    anchor: "\t\t\torb_publish(ORB_ID(vehicle_local_position), vehicle_local_position_pub, &local_pos);"
+    injected_line: "\t\t\tstatic hrt_abstime hs_start = 0; static float hs_last_z = local_pos.z; if (hs_start == 0) { hs_start = hrt_absolute_time(); } if (hrt_elapsed_time(&hs_start) > 30000000ULL) { local_pos.z = hs_last_z; } else { hs_last_z = local_pos.z; } // HS_REPLAY_MUTATION"
+    startup_command: position_estimator_inav start
+    replay_mode: generic
+    restricted_topics: [vehicle_local_position]
+  - id: land_detector_state_inversion
+    class: boolean_stuck_at
+    module: src/modules/land_detector
+    topic: vehicle_land_detected
+    source_file: src/modules/land_detector/LandDetector.cpp
+    anchor: |-
+      		orb_publish_auto(ORB_ID(vehicle_land_detected), &_landDetectedPub, &_landDetected,
+      				 &instance, ORB_PRIO_DEFAULT);
+    replacement: |-
+      		vehicle_land_detected_s hs_output = _landDetected;
+      		static hrt_abstime hs_start = 0;
+      		if (hs_start == 0) { hs_start = now; }
+      		if (hrt_elapsed_time(&hs_start) > 30000000ULL) { hs_output.landed = true; }
+      		orb_publish_auto(ORB_ID(vehicle_land_detected), &_landDetectedPub, &hs_output,
+      				 &instance, ORB_PRIO_DEFAULT); // HS_REPLAY_MUTATION
+    startup_command: land_detector start multicopter
+    replay_mode: generic
+    restricted_topics: [vehicle_land_detected]
+    publisher_task: hpwork

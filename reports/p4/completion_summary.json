@@ -1,0 +1,92 @@
+{
+  "status": "complete",
+  "protocol": "fixed P2 per-log chronological split; validation-only ranking; training-only masking reference",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "validation_stage2_windows": 3081,
+  "test_stage2_windows": 3602,
+  "features": 1566,
+  "channels": 87,
+  "topics": 18,
+  "subsystems_including_shared": 5,
+  "max_aggregation_conservation_error": 7.105427357601002e-15,
+  "masking_macro_f1_drop_advantage_over_random": {
+    "10": 0.04038187182088551,
+    "25": 0.05298738861855807,
+    "50": 0.10728498134956431,
+    "100": 0.2646070586576504
+  },
+  "consistency": [
+    {
+      "scope": "all",
+      "k": 1,
+      "seeds": 5,
+      "windows": 3602,
+      "consistency_mean": 0.37051637978900615,
+      "consistency_std": 0.010948720709684024,
+      "hit_rate_mean": 0.37051637978900615,
+      "hit_rate_std": 0.010948720709684024,
+      "weighted_consistency_mean": 0.29905231366127044,
+      "weighted_consistency_std": 0.0037891588718986526,
+      "random_consistency": 0.17034278529807834,
+      "random_hit_rate": 0.1703427852980783,
+      "consistency_lift_mean": 0.2001735944909278,
+      "hit_rate_lift_mean": 0.2001735944909278
+    },
+    {
+      "scope": "all",
+      "k": 3,
+      "seeds": 5,
+      "windows": 3602,
+      "consistency_mean": 0.37412548584119937,
+      "consistency_std": 0.017470858326778135,
+      "hit_rate_mean": 0.5695169350360911,
+      "hit_rate_std": 0.03119258334658855,
+      "weighted_consistency_mean": 0.29905231366127044,
+      "weighted_consistency_std": 0.0037891588718986526,
+      "random_consistency": 0.17034278529807834,
+      "random_hit_rate": 0.3653705863730332,
+      "consistency_lift_mean": 0.20378270054312103,
+      "hit_rate_lift_mean": 0.20414634866305786
+    },
+    {
+      "scope": "all",
+      "k": 5,
+      "seeds": 5,
+      "windows": 3602,
+      "consistency_mean": 0.3538256524153248,
+      "consistency_std": 0.006065245287584768,
+      "hit_rate_mean": 0.737423653525819,
+      "hit_rate_std": 0.024366428559727548,
+      "weighted_consistency_mean": 0.29905231366127044,
+      "weighted_consistency_std": 0.0037891588718986526,
+      "random_consistency": 0.17034278529807834,
+      "random_hit_rate": 0.4757446622227997,
+      "consistency_lift_mean": 0.18348286711724646,
+      "hit_rate_lift_mean": 0.2616789913030193
+    },
+    {
+      "scope": "all",
+      "k": 10,
+      "seeds": 5,
+      "windows": 3602,
+      "consistency_mean": 0.2998722931704608,
+      "consistency_std": 0.0028062371143953795,
+      "hit_rate_mean": 0.8549694614103276,
+      "hit_rate_std": 0.016681224882378984,
+      "weighted_consistency_mean": 0.29905231366127044,
+      "weighted_consistency_std": 0.0037891588718986526,
+      "random_consistency": 0.17034278529807834,
+      "random_hit_rate": 0.6305642277774868,
+      "consistency_lift_mean": 0.12952950787238252,
+      "hit_rate_lift_mean": 0.22440523363284087
+    }
+  ],
+  "completion_criterion": "hierarchical conservation holds; top-k masking is more damaging than random at >=1 k; Consistency@K exceeds exact random baseline at >=1 k",
+  "criterion_passed": true
+}

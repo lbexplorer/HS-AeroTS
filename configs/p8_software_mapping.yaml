@@ -1,0 +1,24 @@
+paths:
+  dataset_inventory: reports/p1/dataset_inventory.csv
+  raw_root: data/raw/uav_sead
+  shap_topic_importance: reports/p4/shap_topic_importance.csv
+  px4_source_root: third_party/PX4-Autopilot
+  report_dir: reports/p8
+
+firmware:
+  usable_status: usable
+  minimum_commit_length: 7
+
+mapping:
+  source_globs:
+    - src/**/*.cpp
+    - src/**/*.c
+    - src/**/*.hpp
+    - src/**/*.h
+  propagation_modes:
+    - producer_only
+    - consumer_only
+    - bidirectional
+  fail_on_conservation_error: true
+  conservation_tolerance: 1.0e-10
+

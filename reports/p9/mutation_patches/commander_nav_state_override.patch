@@ -1,0 +1,10 @@
+--- a/src/modules/commander/commander.cpp
++++ b/src/modules/commander/commander.cpp
+@@ -2632,6 +2632,7 @@
+ 			control_mode.timestamp = now;
+ 			orb_publish(ORB_ID(vehicle_control_mode), control_mode_pub, &control_mode);
+ 
++			static hrt_abstime hs_start = 0; if (hs_start == 0) { hs_start = now; } if (hrt_elapsed_time(&hs_start) > 30000000ULL) { status.nav_state = vehicle_status_s::NAVIGATION_STATE_AUTO_LAND; } // HS_REPLAY_MUTATION
+ 			status.timestamp = now;
+ 			orb_publish(ORB_ID(vehicle_status), status_pub, &status);
+ 

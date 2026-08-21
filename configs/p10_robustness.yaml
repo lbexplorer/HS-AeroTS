@@ -1,0 +1,20 @@
+paths:
+  fixed_p2_metrics: reports/p2/baseline_runs/seed0/metrics.json
+  fixed_p2_scores: reports/p2/baseline_runs/seed0/test_scores.csv
+  fixed_p3_metrics: reports/p3/seed_metrics.csv
+  fixed_p3_predictions: reports/p3/predictions
+  fixed_features: data/processed/p2/features_original
+  direct_five_summary: reports/p10/direct_five_seeds/completion_summary.json
+  purged_feature_summary: reports/p10/purged/p2/feature_summary.json
+  purged_p2_metrics: reports/p10/purged/p2/baseline_runs/seed0/metrics.json
+  purged_p2_scores: reports/p10/purged/p2/baseline_runs/seed0/test_scores.csv
+  purged_p3_metrics: reports/p10/purged/p3/seed_metrics.csv
+  purged_p3_predictions: reports/p10/purged/p3/predictions
+  purged_features: data/processed/p10/features_purged
+  report_dir: reports/p10
+
+bootstrap:
+  repetitions: 1000
+  seed: 20260821
+  confidence: 0.95
+

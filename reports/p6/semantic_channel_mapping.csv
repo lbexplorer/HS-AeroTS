@@ -1,0 +1,17 @@
+﻿uav_sead_channel,file_suffix,field
+vehicle_attitude.q[0],mavros-imu-data,field.orientation.w
+vehicle_attitude.q[1],mavros-imu-data,field.orientation.x
+vehicle_attitude.q[2],mavros-imu-data,field.orientation.y
+vehicle_attitude.q[3],mavros-imu-data,field.orientation.z
+sensor_combined.gyro_rad[0],mavros-imu-data,field.angular_velocity.x
+sensor_combined.gyro_rad[1],mavros-imu-data,field.angular_velocity.y
+sensor_combined.gyro_rad[2],mavros-imu-data,field.angular_velocity.z
+sensor_combined.accelerometer_m_s2[0],mavros-imu-data,field.linear_acceleration.x
+sensor_combined.accelerometer_m_s2[1],mavros-imu-data,field.linear_acceleration.y
+sensor_combined.accelerometer_m_s2[2],mavros-imu-data,field.linear_acceleration.z
+vehicle_local_position.x,mavros-local_position-pose,field.pose.position.x
+vehicle_local_position.y,mavros-local_position-pose,field.pose.position.y
+vehicle_local_position.z,mavros-local_position-pose,field.pose.position.z
+vehicle_local_position.vx,mavros-local_position-velocity,field.twist.linear.x
+vehicle_local_position.vy,mavros-local_position-velocity,field.twist.linear.y
+vehicle_local_position.vz,mavros-local_position-velocity,field.twist.linear.z

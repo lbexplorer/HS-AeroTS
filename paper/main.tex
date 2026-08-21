@@ -1,0 +1,100 @@
+% MDPI official LaTeX class, ACS citation template downloaded 21 August 2026.
+\documentclass[drones,article,submit,oneauthor]{Definitions/mdpi}
+
+\firstpage{1}
+\makeatletter
+\setcounter{page}{\@firstpage}
+\makeatother
+\pubvolume{1}
+\issuenum{1}
+\articlenumber{0}
+\pubyear{2026}
+\copyrightyear{2026}
+\datereceived{}
+\daterevised{}
+\dateaccepted{}
+\datepublished{}
+
+\Title{Hierarchical Runtime Anomaly Diagnosis from Real PX4 Telemetry with Architecture-Aware Software Module Suspects}
+\Author{Author Name}
+\AuthorNames{Author Name}
+\address{Affiliation; author@example.edu}
+\corres{Correspondence: author@example.edu}
+
+\abstract{Runtime anomaly detection from flight telemetry can identify abnormal behavior, but an engineering diagnosis also needs an interpretable fault domain and traceable software evidence. This study develops HS-AeroTS-FL, a hierarchical framework for real PX4 telemetry. A LightGBM detector first scores anomalous windows; a second-stage classifier assigns detected anomalies to External Position, Global Position, Altitude, or Mechanical/Electrical domains. TreeSHAP contributions are aggregated from temporal-statistical features to telemetry channels, uORB topics, and subsystems. A version-matched PX4 uORB publisher/subscriber graph then produces software-module suspects. On 1,389 usable UAV-SEAD logs, the detector reproduces the AeroTSBoost reference trend, with five-seed AUPRC of 0.7522 plus or minus 0.0039. The anomaly-only subsystem classifier attains Macro-F1 of 0.8980 plus or minus 0.0020, while the full cascade attains five-class Macro-F1 of 0.6902 plus or minus 0.0071. Explanation masking and consistency analyses support the utility of the hierarchical evidence, while revealing a weak External Position consistency result. Controlled PX4 replay mutations provide conditional module-ranking evidence but expose an important domain-shift limitation: the unchanged real-flight detector identifies none of the twelve mutation runs. The study therefore reports software-module suspects rather than end-to-end root-cause localization.}
+\keyword{UAV telemetry; runtime anomaly detection; fault-domain diagnosis; explainable machine learning; PX4; uORB; software fault localization}
+
+\begin{document}
+
+\section{Introduction}
+Real flight logs contain information for detecting abnormal operation, but a binary alert does not identify the affected fault domain or provide actionable engineering evidence. This paper studies a constrained diagnostic chain from telemetry to subsystem evidence and, where a firmware version is known, to PX4 software-module suspects. The objective is not statement-level fault localization and does not treat real-flight annotations as source-code bugs.
+
+The contribution is fourfold: a reproducible real-telemetry detection and subsystem-diagnosis protocol; a quantitative TreeSHAP evidence chain from descriptors to PX4 topics; a version-matched uORB topic-to-module mapping; and a controlled replay study that states the limits of the resulting module ranks. The study emphasizes strict flight-log isolation and distinguishes real-flight runtime anomaly diagnosis from controlled software-mutation localization.
+
+\section{Related Work}
+\subsection{UAV Runtime Anomaly Detection}
+Review real-UAV telemetry anomaly datasets, AeroTSBoost, and classical and neural time-series baselines here.
+
+\subsection{Fault Diagnosis and Explainability}
+Review subsystem-level diagnosis and faithful feature-attribution evaluation here.
+
+\subsection{Software Fault Localization for PX4 Systems}
+Review spectrum-based ranking metrics and explain why uORB dependencies provide evidence paths, rather than root-cause proof.
+
+\section{Materials and Methods}
+\subsection{Data Sources and Boundaries}
+UAV-SEAD is the primary real-flight dataset. The audited corpus contains 1,389 usable logs, 1,892,063 aligned 10 Hz records, 87 core telemetry channels, and five operational labels. ALFA is used only for external binary anomaly detection. Controlled PX4 replay mutations are held separate from real-flight training and provide the only module-level ground truth.
+
+\subsection{Feature Construction and Evaluation Protocols}
+Each 96-sample window uses 18 temporal-statistical descriptors per channel, yielding 1,566 features. The fixed chronological protocol is retained for reproduction. Purged and leave-log-out analyses are reported as sensitivity tests. All thresholds are selected on validation data; flight logs, not windows, are the bootstrap unit.
+
+\subsection{Hierarchical HS-AeroTS-FL}
+Stage 1 estimates the probability of a runtime anomaly. Stage 2 classifies only annotated anomaly windows into four fault domains. For operational evaluation, the cascade outputs Normal unless the Stage 1 score exceeds its validation-selected threshold. A direct five-class LightGBM model is the no-hierarchy comparator.
+
+\subsection{Hierarchical Evidence and Module Suspects}
+Absolute TreeSHAP values are aggregated from descriptors to telemetry channels, uORB topics, and subsystems. Mapping conservation, Top-k masking, and Consistency@K test the evidence protocol. For the majority firmware commit, topic evidence is propagated over static publisher/subscriber relationships to rank software-module suspects. Static mappings are not interpreted as causal root-cause labels.
+
+\subsection{Controlled Mutation Replay}
+Four reversible source mutations in Commander, EKF2, INAV, and Land Detector are replayed against three real ULogs. Onset-conditioned rankings use fault-minus-matched-baseline evidence after the known injection time. Detector-gated metrics are reported separately because they measure the complete chain.
+
+\section{Results}
+\subsection{Data Audit and Detector Reproduction}
+Report the data inventory and the five-seed AeroTSBoost reproduction table here.
+
+\subsection{Subsystem Diagnosis and Hierarchy Comparison}
+Report Stage 2, cascade, direct five-class, and RF results. The headline comparison must use Macro-F1, balanced accuracy, and class recall rather than accuracy alone.
+
+\subsection{Explanation Fidelity and Subsystem Consistency}
+Report aggregation conservation, SHAP masking against random masking, and per-class Consistency@K. Explicitly retain the near-random External Position Consistency@1 limitation.
+
+\subsection{External and Open-Set Analyses}
+Report ALFA only as zero-shot binary anomaly detection. Report Uncategorized flights only as flight-level weak-label screening.
+
+\subsection{Firmware Mapping and Controlled Replay}
+Report mapping coverage and conservation before reporting conditional onset-based module ranks. The primary replay finding is that the fixed Stage 1 detector recalled 0 of 12 controlled mutation runs; no onset-conditioned rank may be presented as end-to-end localization performance.
+
+\subsection{Robustness Under Stricter Isolation}
+Report the fixed chronological, purged, and leave-log-out protocols with flight-log bootstrap confidence intervals. Do not use the higher fixed-split metrics without their corresponding sensitivity results.
+
+\section{Discussion}
+The evidence supports real-flight runtime anomaly diagnosis and interpretable subsystem evidence. It does not support a claim of reliable end-to-end PX4 software-module localization. Discuss the real-flight-to-replay domain shift, the static nature of uORB dependencies, the small replay benchmark, and the weak External Position evidence consistency.
+
+\section{Conclusions}
+HS-AeroTS-FL provides a reproducible hierarchy from real flight telemetry to subsystem evidence and version-aware software-module suspects. Its principal engineering contribution is the explicit, quantitatively tested evidence chain. Controlled replay results delimit the present method: static topic propagation can offer conditional suspects, but a detector trained on real-flight annotations did not detect the evaluated source mutations. Future work should build a larger, independently split mutation benchmark and evaluate domain adaptation without contaminating real-flight test data.
+
+\authorcontributions{Conceptualization, Author Name; methodology, Author Name; software, Author Name; validation, Author Name; formal analysis, Author Name; writing---original draft preparation, Author Name; writing---review and editing, Author Name.}
+\funding{To be completed.}
+\dataavailability{UAV-SEAD, ALFA, PX4-Autopilot, experiment configurations, scripts, and derived report manifests are documented in the accompanying project repository. Raw logs are used read-only and are subject to their respective source licenses.}
+\acknowledgments{To be completed.}
+\conflictsofinterest{The author declares no conflicts of interest.}
+
+\reftitle{References}
+\begin{thebibliography}{999}
+\bibitem{uavsead} Add the final UAV-SEAD dataset citation before submission.
+\bibitem{aerotsboost} Add the final AeroTSBoost citation and publication status before submission.
+\bibitem{catch} Add the CATCH citation.
+\bibitem{px4} PX4 Development Team. PX4 Autopilot. Available online: \url{https://github.com/PX4/PX4-Autopilot} (accessed on 21 August 2026).
+\bibitem{alfa} Add the ALFA dataset citation.
+\end{thebibliography}
+
+\end{document}

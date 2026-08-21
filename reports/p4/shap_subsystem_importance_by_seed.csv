@@ -1,0 +1,126 @@
+﻿seed,scope,level,rank,name,mean_abs_shap,scope_windows,subsystem,feature_count
+0,all,subsystem,1,Mechanical/Electrical,3.1935430397106095,3602,Mechanical/Electrical,774
+0,all,subsystem,2,Global Position,2.176887195250629,3602,Global Position,306
+0,all,subsystem,3,Altitude,0.8422975757814648,3602,Altitude,252
+0,all,subsystem,4,Shared,0.5490704343906067,3602,Shared,180
+0,all,subsystem,5,External Position,0.2111567779144312,3602,External Position,54
+0,External Position,subsystem,1,Mechanical/Electrical,2.594180070821624,1707,Mechanical/Electrical,774
+0,External Position,subsystem,2,Global Position,2.2647088050994872,1707,Global Position,306
+0,External Position,subsystem,3,Altitude,0.9435996937292584,1707,Altitude,252
+0,External Position,subsystem,4,External Position,0.3696531279792062,1707,External Position,54
+0,External Position,subsystem,5,Shared,0.33913958261499555,1707,Shared,180
+0,Global Position,subsystem,1,Global Position,3.5987567686299062,641,Global Position,306
+0,Global Position,subsystem,2,Mechanical/Electrical,2.7860909150090336,641,Mechanical/Electrical,774
+0,Global Position,subsystem,3,Shared,0.5727934469728726,641,Shared,180
+0,Global Position,subsystem,4,Altitude,0.28088516511692624,641,Altitude,252
+0,Global Position,subsystem,5,External Position,0.04968860497975688,641,External Position,54
+0,Altitude,subsystem,1,Mechanical/Electrical,2.196376513816082,571,Mechanical/Electrical,774
+0,Altitude,subsystem,2,Global Position,1.9864497347053838,571,Global Position,306
+0,Altitude,subsystem,3,Altitude,1.5574208686489932,571,Altitude,252
+0,Altitude,subsystem,4,Shared,1.4086172061210471,571,Shared,180
+0,Altitude,subsystem,5,External Position,0.11313700845383706,571,External Position,54
+0,Mechanical/Electrical,subsystem,1,Mechanical/Electrical,5.9075569286022445,683,Mechanical/Electrical,774
+0,Mechanical/Electrical,subsystem,2,Global Position,0.7821725619025007,683,Global Position,306
+0,Mechanical/Electrical,subsystem,3,Altitude,0.5181500496785744,683,Altitude,252
+0,Mechanical/Electrical,subsystem,4,Shared,0.3328834742993206,683,Shared,180
+0,Mechanical/Electrical,subsystem,5,External Position,0.048517125868389986,683,External Position,54
+1,all,subsystem,1,Mechanical/Electrical,3.26816649382798,3602,Mechanical/Electrical,774
+1,all,subsystem,2,Global Position,2.258419275652837,3602,Global Position,306
+1,all,subsystem,3,Altitude,0.8809896163663131,3602,Altitude,252
+1,all,subsystem,4,Shared,0.5473738010548405,3602,Shared,180
+1,all,subsystem,5,External Position,0.2129194770004566,3602,External Position,54
+1,External Position,subsystem,1,Mechanical/Electrical,2.668263930633317,1707,Mechanical/Electrical,774
+1,External Position,subsystem,2,Global Position,2.360534264654605,1707,Global Position,306
+1,External Position,subsystem,3,Altitude,0.9871154359498183,1707,Altitude,252
+1,External Position,subsystem,4,External Position,0.3742609855154411,1707,External Position,54
+1,External Position,subsystem,5,Shared,0.3069994629198998,1707,Shared,180
+1,Global Position,subsystem,1,Global Position,3.7245111705000387,641,Global Position,306
+1,Global Position,subsystem,2,Mechanical/Electrical,2.779497232482867,641,Mechanical/Electrical,774
+1,Global Position,subsystem,3,Shared,0.61709713022234,641,Shared,180
+1,Global Position,subsystem,4,Altitude,0.31585818016373074,641,Altitude,252
+1,Global Position,subsystem,5,External Position,0.046437470038642015,641,External Position,54
+1,Altitude,subsystem,1,Mechanical/Electrical,2.300614746149276,571,Mechanical/Electrical,774
+1,Altitude,subsystem,2,Global Position,2.0094573503472994,571,Global Position,306
+1,Altitude,subsystem,3,Altitude,1.5960667118247311,571,Altitude,252
+1,Altitude,subsystem,4,Shared,1.4409644669246835,571,Shared,180
+1,Altitude,subsystem,5,External Position,0.12893496128702436,571,External Position,54
+1,Mechanical/Electrical,subsystem,1,Mechanical/Electrical,6.034993316404957,683,Mechanical/Electrical,774
+1,Mechanical/Electrical,subsystem,2,Global Position,0.8354061988247037,683,Global Position,306
+1,Mechanical/Electrical,subsystem,3,Altitude,0.5483153192507144,683,Altitude,252
+1,Mechanical/Electrical,subsystem,4,Shared,0.33564037644034567,683,Shared,180
+1,Mechanical/Electrical,subsystem,5,External Position,0.0361408092110185,683,External Position,54
+2,all,subsystem,1,Mechanical/Electrical,2.8208414143719844,3602,Mechanical/Electrical,774
+2,all,subsystem,2,Global Position,2.0312107471344545,3602,Global Position,306
+2,all,subsystem,3,Altitude,0.7334018364243707,3602,Altitude,252
+2,all,subsystem,4,Shared,0.4752970997401655,3602,Shared,180
+2,all,subsystem,5,External Position,0.21131215317611335,3602,External Position,54
+2,External Position,subsystem,1,Mechanical/Electrical,2.2525618062335053,1707,Mechanical/Electrical,774
+2,External Position,subsystem,2,Global Position,2.083264691562402,1707,Global Position,306
+2,External Position,subsystem,3,Altitude,0.8337391597727862,1707,Altitude,252
+2,External Position,subsystem,4,External Position,0.37499368736723493,1707,External Position,54
+2,External Position,subsystem,5,Shared,0.28686823592634125,1707,Shared,180
+2,Global Position,subsystem,1,Global Position,3.4619643374106386,641,Global Position,306
+2,Global Position,subsystem,2,Mechanical/Electrical,2.44263899023187,641,Mechanical/Electrical,774
+2,Global Position,subsystem,3,Shared,0.4929960502365031,641,Shared,180
+2,Global Position,subsystem,4,Altitude,0.19726984047240742,641,Altitude,252
+2,Global Position,subsystem,5,External Position,0.0379839011684213,641,External Position,54
+2,Altitude,subsystem,1,Mechanical/Electrical,1.9656394581892564,571,Mechanical/Electrical,774
+2,Altitude,subsystem,2,Global Position,1.7711379144201307,571,Global Position,306
+2,Altitude,subsystem,3,Altitude,1.3994544112337002,571,Altitude,252
+2,Altitude,subsystem,4,Shared,1.2504643921715806,571,Shared,180
+2,Altitude,subsystem,5,External Position,0.12484416522823152,571,External Position,54
+2,Mechanical/Electrical,subsystem,1,Mechanical/Electrical,5.311033745186851,683,Mechanical/Electrical,774
+2,Mechanical/Electrical,subsystem,2,Global Position,0.7757677793077572,683,Global Position,306
+2,Mechanical/Electrical,subsystem,3,Altitude,0.4289637372052409,683,Altitude,252
+2,Mechanical/Electrical,subsystem,4,Shared,0.2815672597455919,683,Shared,180
+2,Mechanical/Electrical,subsystem,5,External Position,0.03718660674994414,683,External Position,54
+3,all,subsystem,1,Mechanical/Electrical,3.1671297762043857,3602,Mechanical/Electrical,774
+3,all,subsystem,2,Global Position,2.231274204554529,3602,Global Position,306
+3,all,subsystem,3,Altitude,0.8848472322340553,3602,Altitude,252
+3,all,subsystem,4,Shared,0.5468120111536762,3602,Shared,180
+3,all,subsystem,5,External Position,0.23740670297111363,3602,External Position,54
+3,External Position,subsystem,1,Mechanical/Electrical,2.5499945733507436,1707,Mechanical/Electrical,774
+3,External Position,subsystem,2,Global Position,2.3152252369862754,1707,Global Position,306
+3,External Position,subsystem,3,Altitude,0.9901258113238733,1707,Altitude,252
+3,External Position,subsystem,4,External Position,0.4174872618898712,1707,External Position,54
+3,External Position,subsystem,5,Shared,0.3161549227821914,1707,Shared,180
+3,Global Position,subsystem,1,Global Position,3.699688743064939,641,Global Position,306
+3,Global Position,subsystem,2,Mechanical/Electrical,2.6719825099581724,641,Mechanical/Electrical,774
+3,Global Position,subsystem,3,Shared,0.6169232799238146,641,Shared,180
+3,Global Position,subsystem,4,Altitude,0.3458364371784761,641,Altitude,252
+3,Global Position,subsystem,5,External Position,0.05335828497994318,641,External Position,54
+3,Altitude,subsystem,1,Mechanical/Electrical,2.206521139557461,571,Mechanical/Electrical,774
+3,Altitude,subsystem,2,Global Position,2.0173132460649326,571,Global Position,306
+3,Altitude,subsystem,3,Altitude,1.6006528791207602,571,Altitude,252
+3,Altitude,subsystem,4,Shared,1.4158713713318427,571,Shared,180
+3,Altitude,subsystem,5,External Position,0.1321028449950441,571,External Position,54
+3,Mechanical/Electrical,subsystem,1,Mechanical/Electrical,5.977300669997056,683,Mechanical/Electrical,774
+3,Mechanical/Electrical,subsystem,2,Global Position,0.822216482375027,683,Global Position,306
+3,Mechanical/Electrical,subsystem,3,Altitude,0.529166940509309,683,Altitude,252
+3,Mechanical/Electrical,subsystem,4,Shared,0.33093709447246694,683,Shared,180
+3,Mechanical/Electrical,subsystem,5,External Position,0.0481036645558233,683,External Position,54
+4,all,subsystem,1,Mechanical/Electrical,3.1529137535639324,3602,Mechanical/Electrical,774
+4,all,subsystem,2,Global Position,2.1813059042326217,3602,Global Position,306
+4,all,subsystem,3,Altitude,0.840156173629043,3602,Altitude,252
+4,all,subsystem,4,Shared,0.5456470143296405,3602,Shared,180
+4,all,subsystem,5,External Position,0.20667585300707775,3602,External Position,54
+4,External Position,subsystem,1,Mechanical/Electrical,2.558821410631732,1707,Mechanical/Electrical,774
+4,External Position,subsystem,2,Global Position,2.247637816343545,1707,Global Position,306
+4,External Position,subsystem,3,Altitude,0.937955054603045,1707,Altitude,252
+4,External Position,subsystem,4,External Position,0.36481602992050105,1707,External Position,54
+4,External Position,subsystem,5,Shared,0.34396781703970075,1707,Shared,180
+4,Global Position,subsystem,1,Global Position,3.699023093087545,641,Global Position,306
+4,Global Position,subsystem,2,Mechanical/Electrical,2.6310889838288727,641,Mechanical/Electrical,774
+4,Global Position,subsystem,3,Shared,0.5835237085224508,641,Shared,180
+4,Global Position,subsystem,4,Altitude,0.29997736956520765,641,Altitude,252
+4,Global Position,subsystem,5,External Position,0.04517269040143914,641,External Position,54
+4,Altitude,subsystem,1,Mechanical/Electrical,2.182960689834036,571,Mechanical/Electrical,774
+4,Altitude,subsystem,2,Global Position,1.9481509160141401,571,Global Position,306
+4,Altitude,subsystem,3,Altitude,1.5609389664787452,571,Altitude,252
+4,Altitude,subsystem,4,Shared,1.3943699664108196,571,Shared,180
+4,Altitude,subsystem,5,External Position,0.11969334276853079,571,External Position,54
+4,Mechanical/Electrical,subsystem,1,Mechanical/Electrical,5.938343484420747,683,Mechanical/Electrical,774
+4,Mechanical/Electrical,subsystem,2,Global Position,0.786058768425017,683,Global Position,306
+4,Mechanical/Electrical,subsystem,3,Altitude,0.5001048542514648,683,Altitude,252
+4,Mechanical/Electrical,subsystem,4,Shared,0.304602538719077,683,Shared,180
+4,Mechanical/Electrical,subsystem,5,External Position,0.035731868505189154,683,External Position,54

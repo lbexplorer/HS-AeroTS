@@ -1,0 +1,44 @@
+paths:
+  feature_dir: data/processed/p2/features_original
+  group_dictionary: reports/p2/group_dictionary.csv
+  catch_repo: third_party/CATCH
+  channels: reports/p1/core_channels.txt
+  report_dir: reports/p5
+
+sources:
+  catch_repository: https://github.com/decisionintelligence/CATCH
+  catch_commit: 3647c69be5eb56649b072596cf89098e689e20c3
+  gcad_paper: https://ojs.aaai.org/index.php/AAAI/article/view/34096
+  gcad_official_code_available: false
+
+data:
+  window_size: 96
+  channels: 87
+
+catch:
+  seeds: [0, 1, 2]
+  epochs: 3
+  batch_size: 16
+  evaluation_batch_size: 32
+  max_normal_train_windows: 4096
+  max_normal_validation_windows: 1024
+  learning_rate: 0.0001
+  mask_learning_rate: 0.00001
+  patch_size: 16
+  patch_stride: 8
+  cf_dim: 32
+  e_layers: 2
+  n_heads: 2
+  d_ff: 128
+  d_model: 64
+  head_dim: 32
+  score_lambda: 0.05
+  dc_lambda: 0.005
+  auxi_lambda: 0.005
+  topic_aggregate: true
+
+gcad_linear_ablation:
+  ridge: 1.0
+  max_normal_train_windows: 8192
+  fit_points_per_window: 12
+  batch_size: 256

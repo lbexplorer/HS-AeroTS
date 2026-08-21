@@ -1,0 +1,37 @@
+.venv/
+__pycache__/
+.pytest_cache/
+pytest-cache-files-*/
+build_tmp/
+*.py[cod]
+src/*.egg-info/
+
+# Large or reproducible data artifacts
+data/raw/uav_sead/ulg_files/
+data/raw/uav_sead/.cache/
+data/raw/alfa/
+data/processed/
+reports/p2/baseline_runs/
+reports/p3/model_runs/
+reports/p3/predictions/
+reports/p5/*.pt
+reports/p6/model_runs/
+reports/**/model_runs/
+reports/**/baseline_runs/
+reports/**/random_forest_runs/
+reports/**/predictions/
+reports/p9/replay_logs/
+third_party/ulog_annotation_tool/data/
+
+# Local run logs
+*.log
+
+# Generated manuscript build files
+paper/*.aux
+paper/*.out
+paper/*.log
+paper/*.pdf
+paper/Definitions/*-converted-to.pdf
+
+# Embedded upstream repositories are managed independently.
+third_party/

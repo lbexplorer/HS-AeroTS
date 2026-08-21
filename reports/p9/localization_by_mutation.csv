@@ -1,0 +1,5 @@
+﻿mutation_id,ground_truth_module,runs,top1_recall,top3_recall,top5_recall,mrr,mean_exam,ranks
+commander_nav_state_override,src/modules/commander,3,0.3333333333333333,0.6666666666666666,0.6666666666666666,0.5077519379844961,0.2839506172839506,43;1;2
+ekf2_innovation_bias,src/modules/ekf2,3,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6790123456790124,0.17901234567901234,1;27;1
+inav_local_z_freeze,src/modules/position_estimator_inav,3,0.0,0.0,0.0,0.06868022328548644,0.2839506172839506,16;11;19
+land_detector_state_inversion,src/modules/land_detector,3,0.0,0.0,0.0,0.035324798482693216,0.5802469135802469,38;37;19

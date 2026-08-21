@@ -1,0 +1,40 @@
+{
+  "dataset_repo": "aykutkabaoglu/uav-flight-anomaly-dataset",
+  "revision": "774a336a1d1d06b248927a35c2ea1f6869e9e1a4",
+  "mapping_logs": 1396,
+  "status_counts": {
+    "missing": 1,
+    "parse_error": 2,
+    "too_long_or_corrupt": 4,
+    "usable": 1389
+  },
+  "usable_logs": 1389,
+  "annotation_counts": {
+    "Altitude": 78,
+    "External Position": 198,
+    "Global Position": 42,
+    "Mechanical": 47,
+    "Normal": 901,
+    "Uncategorized": 141
+  },
+  "anomaly_interval_counts": {
+    "Altitude": 146,
+    "External Position": 248,
+    "Global Position": 99,
+    "Mechanical": 75,
+    "Normal": 0,
+    "Uncategorized": 0
+  },
+  "anomaly_annotations_without_ranges": 1,
+  "unique_numeric_channels": 139,
+  "core_coverage_threshold": 0.6,
+  "core_channel_count": 87,
+  "expected_aerotsboost_core_channels": 87,
+  "core_channel_count_matches_expected": true,
+  "total_usable_duration_s": 189133.202,
+  "aligned_rows_10hz": 1892063,
+  "expected_aerotsboost_usable_logs": 1389,
+  "usable_log_count_matches_expected": true,
+  "expected_aerotsboost_aligned_rows": 1892063,
+  "aligned_row_count_matches_expected": true
+}

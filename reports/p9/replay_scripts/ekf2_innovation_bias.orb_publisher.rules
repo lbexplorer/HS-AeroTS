@@ -1,0 +1,3 @@
+restrict_topics: ekf2_innovations
+module: ekf2
+ignore_others: false

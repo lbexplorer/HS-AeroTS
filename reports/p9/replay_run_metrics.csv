@@ -1,0 +1,13 @@
+﻿run_id,mutation_id,ground_truth_module,detected,detection_delay_s,ground_truth_rank,detector_gated_ground_truth_rank,module_count,top1_delay_s,top3_delay_s,top5_delay_s,detector_gated_top1_delay_s,detector_gated_top3_delay_s,detector_gated_top5_delay_s
+commander_nav_state_override__2019-01-18__08_39_38__fault,commander_nav_state_override,src/modules/commander,False,,43,,54,,,,,,
+ekf2_innovation_bias__2019-01-18__08_39_38__fault,ekf2_innovation_bias,src/modules/ekf2,False,,1,,54,0.3999999999999986,0.3999999999999986,0.3999999999999986,,,
+inav_local_z_freeze__2019-01-18__08_39_38__fault,inav_local_z_freeze,src/modules/position_estimator_inav,False,,16,,54,,,,,,
+land_detector_state_inversion__2019-01-18__08_39_38__fault,land_detector_state_inversion,src/modules/land_detector,False,,38,,54,,,,,,
+commander_nav_state_override__2019-01-25__17_38_05__fault,commander_nav_state_override,src/modules/commander,False,,1,,54,10.0,10.0,10.0,,,
+ekf2_innovation_bias__2019-01-25__17_38_05__fault,ekf2_innovation_bias,src/modules/ekf2,False,,27,,54,,,,,,
+inav_local_z_freeze__2019-01-25__17_38_05__fault,inav_local_z_freeze,src/modules/position_estimator_inav,False,,11,,54,,,,,,
+land_detector_state_inversion__2019-01-25__17_38_05__fault,land_detector_state_inversion,src/modules/land_detector,False,,37,,54,,,,,,
+commander_nav_state_override__2019-03-06__08_02_26__fault,commander_nav_state_override,src/modules/commander,False,,2,,54,,9.200000000000003,2.0,,,
+ekf2_innovation_bias__2019-03-06__08_02_26__fault,ekf2_innovation_bias,src/modules/ekf2,False,,1,,54,0.3999999999999986,0.3999999999999986,0.3999999999999986,,,
+inav_local_z_freeze__2019-03-06__08_02_26__fault,inav_local_z_freeze,src/modules/position_estimator_inav,False,,19,,54,,,,,,
+land_detector_state_inversion__2019-03-06__08_02_26__fault,land_detector_state_inversion,src/modules/land_detector,False,,19,,54,,,,,,

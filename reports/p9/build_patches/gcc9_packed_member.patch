@@ -1,0 +1,13 @@
+diff --git a/cmake/common/px4_base.cmake b/cmake/common/px4_base.cmake
+index 904db82..4a49d1c 100644
+--- a/cmake/common/px4_base.cmake
++++ b/cmake/common/px4_base.cmake
+@@ -353,6 +353,7 @@ function(px4_add_common_flags)
+ 		-Wunknown-pragmas
+ 		-Wunused-variable
+ 
++		-Wno-address-of-packed-member # GCC 9 diagnostic in locked MAVLink headers
+ 		-Wno-implicit-fallthrough # set appropriate level and update
+ 
+ 		-Wno-unused-parameter
+ 		)

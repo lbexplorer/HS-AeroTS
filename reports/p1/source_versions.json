@@ -1,0 +1,25 @@
+{
+  "uav_sead": {
+    "repository": "aykutkabaoglu/uav-flight-anomaly-dataset",
+    "revision": "774a336a1d1d06b248927a35c2ea1f6869e9e1a4",
+    "license": "CC-BY-4.0"
+  },
+  "ulog_annotation_tool": {
+    "repository": "aykutkabaoglu/ulog_annotation_tool",
+    "revision": "3e1492fcd388dbb00b96ae2aed6f3ee1c28a00d6",
+    "license": "AGPL-3.0"
+  },
+  "pyulog": {
+    "version": "1.2.4",
+    "license": "BSD-3-Clause"
+  },
+  "aerotsboost_reference": {
+    "repository": "https://anonymous.4open.science/r/AeroTSBoost-D16D/",
+    "artifact_id": "AeroTSBoost-D16D",
+    "files_used": [
+      "scripts/convert_uav_sead.py",
+      "configs/pigma_uav_sead.yaml",
+      "src/uav_pigma/data.py"
+    ]
+  }
+}

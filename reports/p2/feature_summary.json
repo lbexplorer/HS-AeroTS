@@ -1,0 +1,45 @@
+{
+  "protocol": "original",
+  "logs": 1389,
+  "windows": 218537,
+  "positive_windows": 15694,
+  "channels": 87,
+  "features": 1566,
+  "split_counts": {
+    "train": 152340,
+    "validation": 32138,
+    "test": 34059
+  },
+  "split_positive_counts": {
+    "train": 9011,
+    "validation": 3081,
+    "test": 3602
+  },
+  "scaler_window_samples": 14624640,
+  "expected": {
+    "logs": 1389,
+    "windows": 218537,
+    "positive_windows": 15694,
+    "train_windows": 152340,
+    "validation_windows": 32138,
+    "test_windows": 34059,
+    "train_positive": 9011,
+    "validation_positive": 3081,
+    "test_positive": 3602,
+    "channels": 87,
+    "features": 1566
+  },
+  "benchmark_matches": {
+    "logs": true,
+    "windows": true,
+    "positive_windows": true,
+    "train_windows": true,
+    "validation_windows": true,
+    "test_windows": true,
+    "train_positive": true,
+    "validation_positive": true,
+    "test_positive": true,
+    "channels": true,
+    "features": true
+  }
+}

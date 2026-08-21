@@ -1,0 +1,46 @@
+{
+  "status": "complete",
+  "protocol": "zero-shot UAV-SEAD -> ALFA using 16 semantically shared physical channels",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "mapped_channels": 16,
+  "alfa_sequences": 46,
+  "alfa_windows": 5273,
+  "metrics": {
+    "uav_test_auprc": {
+      "mean": 0.5670628081342945,
+      "std": 0.0023704022882863195
+    },
+    "uav_test_auroc": {
+      "mean": 0.8911768153596252,
+      "std": 0.0008143554323392119
+    },
+    "uav_test_f1_at_threshold": {
+      "mean": 0.5285231465394251,
+      "std": 0.004260339270312055
+    },
+    "alfa_auprc": {
+      "mean": 0.3181251896349746,
+      "std": 0.008588716309540176
+    },
+    "alfa_auroc": {
+      "mean": 0.6678747752701332,
+      "std": 0.0069235623221920485
+    },
+    "alfa_f1_at_threshold": {
+      "mean": 0.3120518676983143,
+      "std": 0.0006299946395678999
+    },
+    "alfa_log_aware_event_f1": {
+      "mean": 0.707059940957515,
+      "std": 0.03201556588407588
+    }
+  },
+  "threshold_policy": "fixed exclusively on UAV-SEAD validation windows",
+  "label_scope": "binary anomaly detection only; ALFA faults are not mapped to UAV-SEAD subsystem classes"
+}

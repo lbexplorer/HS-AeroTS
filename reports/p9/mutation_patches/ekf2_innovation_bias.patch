@@ -1,0 +1,21 @@
+--- a/src/modules/ekf2/ekf2_main.cpp
++++ b/src/modules/ekf2/ekf2_main.cpp
+@@ -1439,6 +1439,18 @@
+ 			}
+ 		}
+ 
++		// HS_REPLAY_MUTATION: controlled publication-layer innovation bias for legacy logs without ekf2_timestamps.
++		ekf2_innovations_s hs_innovations{};
++		hs_innovations.timestamp = hrt_absolute_time();
++		static hrt_abstime hs_start = 0;
++		if (hs_start == 0) { hs_start = now; }
++		const char *hs_fault = getenv("HS_P9_EKF_FAULT");
++		if (hs_fault != nullptr && hs_fault[0] == '1' && hrt_elapsed_time(&hs_start) > 30000000ULL) { hs_innovations.vel_pos_innov[3] = 20.0f; }
++		if (_estimator_innovations_pub == nullptr) {
++			_estimator_innovations_pub = orb_advertise(ORB_ID(ekf2_innovations), &hs_innovations);
++		} else {
++			orb_publish(ORB_ID(ekf2_innovations), _estimator_innovations_pub, &hs_innovations);
++		}
+ 		// publish ekf2_timestamps
+ 		if (_ekf2_timestamps_pub == nullptr) {
+ 			_ekf2_timestamps_pub = orb_advertise(ORB_ID(ekf2_timestamps), &ekf2_timestamps);

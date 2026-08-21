@@ -1,0 +1,3 @@
+restrict_topics: vehicle_local_position
+module: position_estimator_inav
+ignore_others: false

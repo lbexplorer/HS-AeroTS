@@ -1,0 +1,11 @@
+{
+  "tool": "third_party/ulog_annotation_tool/preprocessing/ulog2csv.py",
+  "tool_revision": "3e1492fcd388dbb00b96ae2aed6f3ee1c28a00d6",
+  "log_key": "2018-08-19/sess073/log001",
+  "annotation_class": "Normal",
+  "input_size_bytes": 243413,
+  "output_rows": 100,
+  "output_columns": 470,
+  "timestamp_monotonic_increasing": true,
+  "status": "passed"
+}

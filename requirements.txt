@@ -1,0 +1,10 @@
+huggingface-hub==1.28.0
+joblib==1.5.2
+lightgbm==4.6.0
+numpy==2.3.5
+pandas==3.0.1
+PyYAML==6.0.3
+pyulog==1.2.4
+pytest==9.1.1
+scikit-learn==1.8.0
+

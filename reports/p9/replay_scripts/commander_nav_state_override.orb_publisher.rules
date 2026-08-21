@@ -1,0 +1,3 @@
+restrict_topics: vehicle_status, vehicle_control_mode, actuator_armed
+module: commander
+ignore_others: false

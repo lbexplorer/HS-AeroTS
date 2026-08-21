@@ -1,0 +1,31 @@
+{
+  "status": "complete",
+  "scope": "flight-level weak-label screening only",
+  "unknown_logs": 139,
+  "pure_normal_logs": 898,
+  "protocol": "P2 fixed chronological test slice; Uncategorized groups excluded from retraining",
+  "threshold_policy": "95th percentile of pure-Normal validation-flight top-10%-mean score",
+  "metrics": {
+    "flight_auprc": {
+      "mean": 0.27840646427537924,
+      "std": 0.004584198489001363
+    },
+    "flight_auroc": {
+      "mean": 0.6610188841683666,
+      "std": 0.0048721561061471404
+    },
+    "flight_f1": {
+      "mean": 0.3307138703167203,
+      "std": 0.014154465343500315
+    },
+    "unknown_recall": {
+      "mean": 0.4117647058823529,
+      "std": 0.031442499048520534
+    },
+    "normal_specificity": {
+      "mean": 0.8574610244988863,
+      "std": 0.00730227007160578
+    }
+  },
+  "limitation": "Uncategorized annotations have no temporal ranges; point-wise and Event-F1 claims are unsupported."
+}

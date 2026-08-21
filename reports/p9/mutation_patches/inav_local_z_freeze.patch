@@ -1,0 +1,10 @@
+--- a/src/modules/position_estimator_inav/position_estimator_inav_main.cpp
++++ b/src/modules/position_estimator_inav/position_estimator_inav_main.cpp
+@@ -1390,6 +1390,7 @@
+ 
+ 			local_pos.timestamp = t;
+ 
++			static hrt_abstime hs_start = 0; static float hs_last_z = local_pos.z; if (hs_start == 0) { hs_start = hrt_absolute_time(); } if (hrt_elapsed_time(&hs_start) > 30000000ULL) { local_pos.z = hs_last_z; } else { hs_last_z = local_pos.z; } // HS_REPLAY_MUTATION
+ 			orb_publish(ORB_ID(vehicle_local_position), vehicle_local_position_pub, &local_pos);
+ 
+ 			if (local_pos.xy_global && local_pos.z_global) {

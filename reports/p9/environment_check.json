@@ -1,0 +1,26 @@
+{
+  "status": "blocked",
+  "source_commit": "82aa24adfca29321cfd1209e287eab6c2b16780e",
+  "expected_source_commit": "82aa24adfca29321cfd1209e287eab6c2b16780e",
+  "source_commit_matches": true,
+  "tools": {
+    "wsl": "C:\\Windows\\system32\\wsl.EXE",
+    "docker": "",
+    "bash": "C:\\Windows\\system32\\bash.EXE",
+    "make": "",
+    "cmake": "",
+    "ninja": "",
+    "gz": "",
+    "gazebo": ""
+  },
+  "wsl_distributions": [],
+  "requested_wsl_distribution": "Ubuntu-20.04",
+  "wsl_tools": {},
+  "docker_daemon_ready": false,
+  "linux_runtime_available": false,
+  "external_simulator_available": false,
+  "external_simulator_required": false,
+  "minimal_posix_toolchain_ready": false,
+  "runnable": false,
+  "blocker": "The requested WSL distribution and minimal PX4 POSIX build tools are not ready; Gazebo/ROS/QGC/NuttX are intentionally not required."
+}

@@ -1,0 +1,18 @@
+paths:
+  feature_dir: data/processed/p2/features_original
+  feature_dictionary: reports/p2/feature_dictionary.csv
+  channel_mapping: reports/p3/channel_subsystem_mapping.csv
+  p3_model_runs: reports/p3/model_runs
+  report_dir: reports/p4
+
+explanation:
+  batch_size: 256
+  reference_sample_size: 20000
+  reference_seed: 20260820
+  masking_k: [10, 25, 50, 100]
+  random_mask_repeats: 20
+  consistency_k: [1, 3, 5, 10]
+  evidence_top_k: 10
+
+experiment:
+  seeds: [0, 1, 2, 3, 4]

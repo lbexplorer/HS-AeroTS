@@ -1,0 +1,49 @@
+{
+  "status": "complete",
+  "completed_at": "2026-08-20",
+  "protocol": "per-log chronological 70/15/15",
+  "data": {
+    "logs": 1389,
+    "aligned_rows_10hz": 1892063,
+    "anomalous_aligned_rows": 87116,
+    "channels": 87
+  },
+  "windows": {
+    "length": 96,
+    "stride": 8,
+    "horizon": 12,
+    "total": 218537,
+    "positive": 15694,
+    "train": 152340,
+    "validation": 32138,
+    "test": 34059,
+    "train_positive": 9011,
+    "validation_positive": 3081,
+    "test_positive": 3602
+  },
+  "features": {
+    "descriptors_per_channel": 18,
+    "dimension": 1566,
+    "standardization": "training-window statistics only"
+  },
+  "lightgbm_five_seed": {
+    "seeds": [0, 1, 2, 3, 4],
+    "auroc_mean": 0.951214260492355,
+    "auroc_std": 0.0005600069164327497,
+    "auprc_mean": 0.7522323459535388,
+    "auprc_std": 0.003871512177768424,
+    "best_f1_mean": 0.6924102192305082,
+    "best_f1_std": 0.005564590668662979,
+    "event_f1_mean": 0.5504466956688712,
+    "event_f1_std": 0.016704983971026356
+  },
+  "paper_reference": {
+    "auroc_mean": 0.9516,
+    "auprc_mean": 0.7516,
+    "best_f1_mean": 0.6860,
+    "event_f1_mean": 0.5342
+  },
+  "primary_metric_trend_reproduced": true,
+  "tests_passed": 7
+}
+

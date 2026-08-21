@@ -1,0 +1,27 @@
+{
+  "paper": {
+    "title": "AeroTSBoost: Temporal-Statistical Boosting for Real-World UAV Telemetry Anomaly Mining",
+    "arxiv": "2605.25639v2",
+    "url": "https://arxiv.org/html/2605.25639v2"
+  },
+  "public_artifact": {
+    "url": "https://anonymous.4open.science/r/AeroTSBoost-D16D/",
+    "files_consulted": [
+      "configs/pigma_uav_sead.yaml",
+      "scripts/convert_uav_sead.py",
+      "scripts/run_uav_robustness.py",
+      "src/uav_pigma/data.py",
+      "src/uav_pigma/metrics.py",
+      "src/uav_pigma/supervised_suite.py",
+      "results/strict_protocol/meta.json",
+      "results/strict_protocol/seed_outputs/original/seed0/metrics.json"
+    ]
+  },
+  "environment": {
+    "lightgbm": "4.6.0",
+    "scikit_learn": "1.8.0",
+    "numpy": "2.3.5",
+    "pandas": "3.0.1"
+  }
+}
+

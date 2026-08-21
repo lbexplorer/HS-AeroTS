@@ -1,0 +1,25 @@
+{
+  "protocol": "leave_log_out",
+  "logs": 1389,
+  "windows": 218537,
+  "positive_windows": 15694,
+  "channels": 87,
+  "features": 1566,
+  "split_counts": {
+    "train": 149774,
+    "validation": 37324,
+    "test": 31439
+  },
+  "split_positive_counts": {
+    "train": 10411,
+    "validation": 2794,
+    "test": 2489
+  },
+  "scaler_window_samples": 14378304,
+  "expected": null,
+  "log_split_counts": {
+    "test": 213,
+    "train": 970,
+    "validation": 206
+  }
+}

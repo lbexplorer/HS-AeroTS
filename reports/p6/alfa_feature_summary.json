@@ -1,0 +1,25 @@
+{
+  "source": {
+    "dataset": "ALFA processed CSV",
+    "figshare_article_id": 12707963,
+    "figshare_file_id": 24095870,
+    "archive_size_bytes": 271996798,
+    "archive_md5": "792c36aef2fd1fd19a91a53e3b3dcfdf",
+    "dataset_commit": "eb8db8a3334a3547411ed708fe26343302b550ff",
+    "tools_commit": "23f46f31a4b95ef431498adcb5f944a48d713cac",
+    "license": "CC BY 4.0"
+  },
+  "excluded": [
+    "carbonZ_2018-07-18-12-10-11_no_ground_truth"
+  ],
+  "sequences": 46,
+  "channels": 16,
+  "features": 288,
+  "windows": 5273,
+  "positive_windows": 964,
+  "negative_windows": 4309,
+  "frequency_hz": 10.0,
+  "window_size": 96,
+  "stride": 8,
+  "horizon": 12
+}

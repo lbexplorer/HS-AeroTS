@@ -1,0 +1,12 @@
+diff --git a/cmake/common/px4_base.cmake b/cmake/common/px4_base.cmake
+index 904db82..a1b43fb 100644
+--- a/cmake/common/px4_base.cmake
++++ b/cmake/common/px4_base.cmake
+@@ -449,6 +449,7 @@ function(px4_add_common_flags)
+ 
+ 		list(APPEND cxx_warnings
+ 			-Wno-format-truncation # TODO: fix
++			-Wno-stringop-truncation # GCC 8+ diagnostic; legacy PX4 code is intentional
+ 		)
+ 	endif()
+ 

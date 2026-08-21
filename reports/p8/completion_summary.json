@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "usable_logs": 1389,
+  "firmware_parse_errors": 0,
+  "unique_firmware_commits": 7,
+  "majority_firmware_commit": "82aa24adfca29321cfd1209e287eab6c2b16780e",
+  "majority_firmware_logs": 562,
+  "source_commit": "82aa24adfca29321cfd1209e287eab6c2b16780e",
+  "source_matches_majority_firmware": true,
+  "shap_topics": 18,
+  "topics_with_any_mapping": 18,
+  "topics_with_publishers": 18,
+  "topics_with_subscribers": 16,
+  "mapping_edges": 180,
+  "mapped_modules": 54,
+  "contribution_conservation_passed": true,
+  "boundary": "Static uORB dependencies rank runtime software-module suspects; only controlled SITL injections establish module-level ground truth."
+}

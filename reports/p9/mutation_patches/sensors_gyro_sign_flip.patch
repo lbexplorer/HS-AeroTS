@@ -1,0 +1,10 @@
+--- a/src/modules/sensors/sensors.cpp
++++ b/src/modules/sensors/sensors.cpp
+@@ -685,6 +685,7 @@
+ 
+ 			_voted_sensors_update.set_relative_timestamps(raw);
+ 
++			if (hrt_absolute_time() > 30000000ULL) { raw.gyro_rad[0] = -raw.gyro_rad[0]; } // HS_SITL_MUTATION
+ 			orb_publish(ORB_ID(sensor_combined), _sensor_pub, &raw);
+ 
+ 			if (airdata.timestamp != airdata_prev_timestamp) {

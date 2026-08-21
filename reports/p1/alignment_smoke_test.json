@@ -1,0 +1,15 @@
+{
+  "log_id": "2018-07-25/sess008/log001",
+  "annotation": "External Position",
+  "frequency_hz": 10.0,
+  "rows": 1069,
+  "columns": 90,
+  "requested_channels": 87,
+  "present_source_channels": 84,
+  "missing_source_channels_filled_with_zero": 3,
+  "timestamp_step_us": 100000,
+  "anomalous_rows": 354,
+  "numeric_finite_ratio": 1.0,
+  "output": "data/processed/p1_smoke/external_position_10hz.csv.gz",
+  "passed": true
+}

@@ -1,0 +1,20 @@
+{
+  "tree_shap_target": "predicted Stage 2 class raw score",
+  "aggregation": "absolute feature contributions are summed feature -> channel -> PX4 topic -> subsystem",
+  "class_conditional_scope": "rows are grouped by ground-truth anomaly class; explained output remains each row's predicted class",
+  "masking_ranking": "mean absolute predicted-class TreeSHAP on validation anomaly windows only",
+  "masking_replacement": "per-feature median from a deterministic sample of training windows only",
+  "consistency": "fraction of top-k channels mapped to the ground-truth subsystem; Shared is a non-match",
+  "weighted_consistency": "ground-truth subsystem absolute SHAP mass divided by total channel absolute SHAP mass",
+  "random_consistency": "exact uniform-without-replacement channel baseline",
+  "lightgbm_extra_term": "the final contribution term is the expected value and is excluded from feature aggregation",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "reference_sample_size": 20000,
+  "reference_seed": 20260820
+}

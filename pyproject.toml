@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hs-aerots"
+version = "0.1.0"
+description = "Reproducible data preparation for hierarchical UAV telemetry anomaly diagnosis"
+requires-python = ">=3.11"
+dependencies = [
+  "huggingface-hub==1.28.0",
+  "joblib==1.5.2",
+  "lightgbm==4.6.0",
+  "numpy==2.3.5",
+  "pandas==3.0.1",
+  "PyYAML==6.0.3",
+  "pyulog==1.2.4",
+  "scikit-learn==1.8.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest==9.1.1"]
+
+[project.scripts]
+hs-aerots-data = "hs_aerots.data_prep:main"
+hs-aerots-baseline = "hs_aerots.baseline:main"
+hs-aerots-diagnosis = "hs_aerots.diagnosis:main"
+hs-aerots-explain = "hs_aerots.explainability:main"
+hs-aerots-alfa = "hs_aerots.external_validation:main"
+hs-aerots-unknown = "hs_aerots.unknown_validation:main"
+hs-aerots-deep = "hs_aerots.deep_baselines:main"
+hs-aerots-map = "hs_aerots.software_mapping:main"
+hs-aerots-sitl = "hs_aerots.sitl_injection:main"
+hs-aerots-robustness = "hs_aerots.robustness:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,17 @@
+{
+  "status": "complete",
+  "fixed_outputs_modified": false,
+  "direct_five_class_five_seed_macro_f1_mean": 0.6599069903898498,
+  "direct_five_class_five_seed_macro_f1_std": 0.0028548585826736086,
+  "purge_gap_windows_each_side": 14,
+  "purged_retained_split_windows": {
+    "train": 133353,
+    "validation": 8536,
+    "test": 17966
+  },
+  "purged_stage1_auprc": 0.5936413141323651,
+  "purged_stage2_macro_f1": 0.7982730768623023,
+  "purged_cascade_macro_f1": 0.5443951033845412,
+  "purged_direct_five_macro_f1": 0.5961783738983449,
+  "interpretation": "All conclusions retain the same direction under purging, but absolute performance decreases; fixed chronological results must not be presented without this sensitivity analysis."
+}

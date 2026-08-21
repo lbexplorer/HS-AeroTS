@@ -1,0 +1,69 @@
+diff --git a/platforms/posix/cmake/sitl_target.cmake b/platforms/posix/cmake/sitl_target.cmake
+index 63b638d590..65bcff4c50 100644
+--- a/platforms/posix/cmake/sitl_target.cmake
++++ b/platforms/posix/cmake/sitl_target.cmake
+@@ -21,28 +21,35 @@ add_custom_target(run_config
+ 		DEPENDS px4 logs_symlink
+ 		)
+ 
+-px4_add_git_submodule(TARGET git_gazebo PATH "${PX4_SOURCE_DIR}/Tools/sitl_gazebo")
+-px4_add_git_submodule(TARGET git_jmavsim PATH "${PX4_SOURCE_DIR}/Tools/jMAVSim")
++if(EXISTS "${PX4_SOURCE_DIR}/Tools/sitl_gazebo/CMakeLists.txt")
++	px4_add_git_submodule(TARGET git_gazebo PATH "${PX4_SOURCE_DIR}/Tools/sitl_gazebo")
++endif()
++if(EXISTS "${PX4_SOURCE_DIR}/Tools/jMAVSim/.git")
++	px4_add_git_submodule(TARGET git_jmavsim PATH "${PX4_SOURCE_DIR}/Tools/jMAVSim")
++endif()
+ 
+ # Add support for external project building
+ include(ExternalProject)
+ 
+-# project to build sitl_gazebo if necessary
+-ExternalProject_Add(sitl_gazebo
+-	SOURCE_DIR ${PX4_SOURCE_DIR}/Tools/sitl_gazebo
+-	CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}
+-	BINARY_DIR ${PX4_BINARY_DIR}/build_gazebo
+-	INSTALL_COMMAND ""
+-	DEPENDS
+-		git_gazebo
+-	)
+-set_target_properties(sitl_gazebo PROPERTIES EXCLUDE_FROM_ALL TRUE)
++# Declare Gazebo only when its optional source checkout is present. Replay-only
++# builds neither configure nor link Gazebo and do not need this submodule.
++if(EXISTS "${PX4_SOURCE_DIR}/Tools/sitl_gazebo/CMakeLists.txt")
++	ExternalProject_Add(sitl_gazebo
++		SOURCE_DIR ${PX4_SOURCE_DIR}/Tools/sitl_gazebo
++		CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}
++		BINARY_DIR ${PX4_BINARY_DIR}/build_gazebo
++		INSTALL_COMMAND ""
++		DEPENDS
++			git_gazebo
++		)
++	set_target_properties(sitl_gazebo PROPERTIES EXCLUDE_FROM_ALL TRUE)
+ 
+-ExternalProject_Add_Step(sitl_gazebo forceconfigure
+-	DEPENDEES update
+-	DEPENDERS configure
+-	ALWAYS 1
+-	)
++	ExternalProject_Add_Step(sitl_gazebo forceconfigure
++		DEPENDEES update
++		DEPENDERS configure
++		ALWAYS 1
++		)
++endif()
+ 
+ # create targets for each viewer/model/debugger combination
+ set(viewers none jmavsim gazebo replay)
+@@ -81,9 +88,9 @@ foreach(viewer ${viewers})
+ 						logs_symlink
+ 					)
+ 			list(APPEND all_posix_vmd_make_targets ${_targ_name})
+-			if (viewer STREQUAL "gazebo")
++			if (viewer STREQUAL "gazebo" AND TARGET sitl_gazebo)
+ 				add_dependencies(${_targ_name} px4 sitl_gazebo)
+-			elseif(viewer STREQUAL "jmavsim")
++			elseif(viewer STREQUAL "jmavsim" AND TARGET git_jmavsim)
+ 				add_dependencies(${_targ_name} px4 git_jmavsim)
+ 			endif()
+ 		endforeach()

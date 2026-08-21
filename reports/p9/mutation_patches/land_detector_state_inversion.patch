@@ -1,0 +1,17 @@
+--- a/src/modules/land_detector/LandDetector.cpp
++++ b/src/modules/land_detector/LandDetector.cpp
+@@ -135,8 +135,12 @@
+ 		_landDetected.alt_max = alt_max;
+ 
+ 		int instance;
+-		orb_publish_auto(ORB_ID(vehicle_land_detected), &_landDetectedPub, &_landDetected,
+-				 &instance, ORB_PRIO_DEFAULT);
++		vehicle_land_detected_s hs_output = _landDetected;
++		static hrt_abstime hs_start = 0;
++		if (hs_start == 0) { hs_start = now; }
++		if (hrt_elapsed_time(&hs_start) > 30000000ULL) { hs_output.landed = true; }
++		orb_publish_auto(ORB_ID(vehicle_land_detected), &_landDetectedPub, &hs_output,
++				 &instance, ORB_PRIO_DEFAULT); // HS_REPLAY_MUTATION
+ 	}
+ 
+ 	// set the flight time when disarming (not necessarily when landed, because all param changes should

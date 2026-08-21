@@ -1,0 +1,19 @@
+{
+  "method": "GCAD-linear-Granger-ablation",
+  "official_implementation": false,
+  "train_sample": 8192,
+  "ridge": 1.0,
+  "auroc": 0.7213912799791631,
+  "auprc": 0.19913234356156587,
+  "best_f1": 0.30932810496945934,
+  "threshold": 0.16659408807754517,
+  "f1_at_threshold": 0.30605071554104946,
+  "positive_rate": 0.3620188496432661,
+  "event_precision": 0.13647342995169082,
+  "event_recall": 0.5854922279792746,
+  "event_f1": 0.2213516160626836,
+  "log_aware_event_precision": 0.17629846378931968,
+  "log_aware_event_recall": 0.9128787878787878,
+  "log_aware_event_f1": 0.2955242182709994,
+  "limitation": "Linear VAR(1) causal-prediction ablation; not the paper's nonlinear gradient GCAD network."
+}

@@ -1,0 +1,58 @@
+paths:
+  alfa_processed_dir: data/raw/alfa/processed
+  alfa_feature_dir: data/processed/p6/alfa_features
+  p2_feature_dir: data/processed/p2/features_original
+  p2_feature_dictionary: reports/p2/feature_dictionary.csv
+  p2_channels: reports/p1/core_channels.txt
+  report_dir: reports/p6
+
+source:
+  dataset: ALFA processed CSV
+  figshare_article_id: 12707963
+  figshare_file_id: 24095870
+  archive_size_bytes: 271996798
+  archive_md5: 792c36aef2fd1fd19a91a53e3b3dcfdf
+  dataset_commit: eb8db8a3334a3547411ed708fe26343302b550ff
+  tools_commit: 23f46f31a4b95ef431498adcb5f944a48d713cac
+  license: CC BY 4.0
+
+data:
+  frequency_hz: 10.0
+  window_size: 96
+  stride: 8
+  horizon: 12
+  batch_size: 256
+
+semantic_channels:
+  - {uav_sead_channel: "vehicle_attitude.q[0]", file_suffix: mavros-imu-data, field: field.orientation.w}
+  - {uav_sead_channel: "vehicle_attitude.q[1]", file_suffix: mavros-imu-data, field: field.orientation.x}
+  - {uav_sead_channel: "vehicle_attitude.q[2]", file_suffix: mavros-imu-data, field: field.orientation.y}
+  - {uav_sead_channel: "vehicle_attitude.q[3]", file_suffix: mavros-imu-data, field: field.orientation.z}
+  - {uav_sead_channel: "sensor_combined.gyro_rad[0]", file_suffix: mavros-imu-data, field: field.angular_velocity.x}
+  - {uav_sead_channel: "sensor_combined.gyro_rad[1]", file_suffix: mavros-imu-data, field: field.angular_velocity.y}
+  - {uav_sead_channel: "sensor_combined.gyro_rad[2]", file_suffix: mavros-imu-data, field: field.angular_velocity.z}
+  - {uav_sead_channel: "sensor_combined.accelerometer_m_s2[0]", file_suffix: mavros-imu-data, field: field.linear_acceleration.x}
+  - {uav_sead_channel: "sensor_combined.accelerometer_m_s2[1]", file_suffix: mavros-imu-data, field: field.linear_acceleration.y}
+  - {uav_sead_channel: "sensor_combined.accelerometer_m_s2[2]", file_suffix: mavros-imu-data, field: field.linear_acceleration.z}
+  - {uav_sead_channel: vehicle_local_position.x, file_suffix: mavros-local_position-pose, field: field.pose.position.x}
+  - {uav_sead_channel: vehicle_local_position.y, file_suffix: mavros-local_position-pose, field: field.pose.position.y}
+  - {uav_sead_channel: vehicle_local_position.z, file_suffix: mavros-local_position-pose, field: field.pose.position.z}
+  - {uav_sead_channel: vehicle_local_position.vx, file_suffix: mavros-local_position-velocity, field: field.twist.linear.x}
+  - {uav_sead_channel: vehicle_local_position.vy, file_suffix: mavros-local_position-velocity, field: field.twist.linear.y}
+  - {uav_sead_channel: vehicle_local_position.vz, file_suffix: mavros-local_position-velocity, field: field.twist.linear.z}
+
+lightgbm:
+  n_estimators: 1600
+  learning_rate: 0.025
+  num_leaves: 64
+  min_child_samples: 80
+  subsample: 0.90
+  colsample_bytree: 0.75
+  reg_alpha: 0.20
+  reg_lambda: 8.0
+  early_stopping_rounds: 80
+  class_weight: balanced
+
+experiment:
+  seeds: [0, 1, 2, 3, 4]
+  n_jobs: -1

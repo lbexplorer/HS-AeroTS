@@ -1,0 +1,10 @@
+--- a/src/drivers/pwm_out_sim/PWMSim.cpp
++++ b/src/drivers/pwm_out_sim/PWMSim.cpp
+@@ -289,6 +289,7 @@
+ 			}
+ 
+ 			/* and publish for anyone that cares to see */
++			if (hrt_absolute_time() > 30000000ULL && num_outputs > 0) { _actuator_outputs.output[0] = 2000.0f; } // HS_SITL_MUTATION
+ 			_actuator_outputs.timestamp = hrt_absolute_time();
+ 			orb_publish(ORB_ID(actuator_outputs), _outputs_pub, &_actuator_outputs);
+ 

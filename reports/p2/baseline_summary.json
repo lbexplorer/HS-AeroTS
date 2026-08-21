@@ -1,0 +1,42 @@
+{
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "runs": 5,
+  "metrics": {
+    "test_auroc": {
+      "mean": 0.951214260492355,
+      "std": 0.0005600069164327497
+    },
+    "test_auprc": {
+      "mean": 0.7522323459535388,
+      "std": 0.003871512177768424
+    },
+    "test_best_f1": {
+      "mean": 0.6924102192305082,
+      "std": 0.005564590668662979
+    },
+    "test_event_f1": {
+      "mean": 0.5504466956688712,
+      "std": 0.016704983971026356
+    },
+    "test_at_val_threshold_f1_at_threshold": {
+      "mean": 0.6895221364238031,
+      "std": 0.0067198760258863136
+    },
+    "test_at_val_threshold_log_aware_event_f1": {
+      "mean": 0.6051001875530622,
+      "std": 0.02183075620150718
+    }
+  },
+  "paper_reference": {
+    "test_auroc_mean": 0.9516,
+    "test_auprc_mean": 0.7516,
+    "test_best_f1_mean": 0.686,
+    "test_event_f1_mean": 0.5342
+  }
+}

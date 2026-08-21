@@ -1,0 +1,36 @@
+seed: 42
+
+paths:
+  data_root: data/raw/uav_sead
+  inventory: reports/p1/dataset_inventory.csv
+  channels: reports/p1/core_channels.txt
+  aligned_dir: data/processed/p2/aligned_npz
+  feature_dir: data/processed/p2/features_original
+  report_dir: reports/p2
+
+data:
+  frequency_hz: 10.0
+  window_size: 96
+  stride: 8
+  horizon: 12
+  train_fraction: 0.70
+  validation_fraction: 0.15
+  protocol: original
+  batch_size: 256
+
+model:
+  n_estimators: 1600
+  learning_rate: 0.025
+  num_leaves: 64
+  min_child_samples: 80
+  subsample: 0.90
+  colsample_bytree: 0.75
+  reg_alpha: 0.20
+  reg_lambda: 8.0
+  early_stopping_rounds: 80
+  class_weight: balanced
+
+experiment:
+  seeds: [0, 1, 2, 3, 4]
+  n_jobs: -1
+

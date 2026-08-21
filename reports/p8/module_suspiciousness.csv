@@ -1,0 +1,646 @@
+﻿scope,mode,module,mean_abs_shap,shap_share,rank
+Altitude,producer_only,src/modules/ekf2,3.570565956934758,0.4982905106079326,1
+Altitude,producer_only,src/modules/mavlink,1.0448050156319575,0.14580781618494826,2
+Altitude,producer_only,src/modules/position_estimator_inav,0.488948757248489,0.06823526825971905,3
+Altitude,producer_only,src/modules/sensors,0.458342614203067,0.06396402643705429,4
+Altitude,producer_only,src/modules/vtol_att_control,0.29100182595887497,0.04061077436848986,5
+Altitude,producer_only,src/examples/hwtest,0.17964124995512334,0.025069843617517375,6
+Altitude,producer_only,src/examples/uuv_example_app,0.17964124995512334,0.025069843617517375,6
+Altitude,producer_only,src/modules/simulator,0.09298592068155946,0.012976654808959074,7
+Altitude,producer_only,src/examples/fixedwing_control,0.08654341683798966,0.012077570863017386,8
+Altitude,producer_only,src/modules/load_mon,0.0839916426216351,0.011721457884694182,9
+Altitude,producer_only,src/modules/fw_att_control,0.07739615493914455,0.010801024271464447,10
+Altitude,producer_only,src/modules/mc_att_control,0.07739615493914455,0.010801024271464447,10
+Altitude,producer_only,src/platforms/qurt/tests/muorb,0.0632976236803194,0.008833503036872043,11
+Altitude,producer_only,src/platforms/posix/drivers/df_bebop_bus_wrapper,0.04150011239934394,0.005791550260426554,12
+Altitude,producer_only,src/examples/px4_simple_app,0.0299706791748775,0.0041825596304449165,13
+Altitude,producer_only,src/modules/attitude_estimator_q,0.0299706791748775,0.0041825596304449165,13
+Altitude,producer_only,src/modules/commander,0.0274929127966141,0.003836774819666081,14
+Altitude,producer_only,src/modules/gnd_pos_control,0.02481715916576195,0.0034633598879550997,15
+Altitude,producer_only,src/modules/navigator,0.02481715916576195,0.0034633598879550997,15
+Altitude,producer_only,src/drivers/telemetry,0.021874733988391615,0.0030527295952392126,16
+Altitude,producer_only,src/modules/syslink,0.021874733988391615,0.0030527295952392126,16
+Altitude,producer_only,src/platforms/posix/drivers/df_ltc2946_wrapper,0.021874733988391615,0.0030527295952392126,16
+Altitude,producer_only,src/drivers/linux_pwm_out,0.01962537841095232,0.002738820665187341,17
+Altitude,producer_only,src/drivers/mkblctrl,0.01962537841095232,0.002738820665187341,17
+Altitude,producer_only,src/drivers/pwm_out_sim,0.01962537841095232,0.002738820665187341,17
+Altitude,producer_only,src/drivers/px4fmu,0.01962537841095232,0.002738820665187341,17
+Altitude,producer_only,src/drivers/px4io,0.01962537841095232,0.002738820665187341,17
+Altitude,producer_only,src/drivers/snapdragon_pwm_out,0.01962537841095232,0.002738820665187341,17
+Altitude,producer_only,src/drivers/tap_esc,0.01962537841095232,0.002738820665187341,17
+Altitude,producer_only,src/modules/uavcan,0.01962537841095232,0.002738820665187341,17
+Altitude,producer_only,src/platforms/qurt/fc_addon/uart_esc,0.01962537841095232,0.002738820665187341,17
+Altitude,producer_only,src/drivers/distance_sensor,0.0092399544199011,0.0012894823009624832,18
+Altitude,producer_only,src/drivers/px4flow,0.0092399544199011,0.0012894823009624832,18
+Altitude,producer_only,src/platforms/posix/drivers/df_bebop_rangefinder_wrapper,0.0092399544199011,0.0012894823009624832,18
+Altitude,producer_only,src/platforms/posix/drivers/df_isl29501_wrapper,0.0092399544199011,0.0012894823009624832,18
+Altitude,producer_only,src/platforms/posix/drivers/df_trone_wrapper,0.0092399544199011,0.0012894823009624832,18
+Altitude,producer_only,src/modules/land_detector,0.0040523891918395,0.0005655313762407745,19
+External Position,producer_only,src/modules/mavlink,1.5560635562599952,0.24251296920582413,1
+External Position,producer_only,src/modules/ekf2,1.351094022711359,0.21056840628765813,2
+External Position,producer_only,src/modules/position_estimator_inav,0.8565778857027959,0.13349791888778306,3
+External Position,producer_only,src/modules/sensors,0.39056819875204835,0.06087017022902614,4
+External Position,producer_only,src/modules/load_mon,0.2305731961540332,0.03593490136931695,5
+External Position,producer_only,src/modules/vtol_att_control,0.22429816737914707,0.034956936263760965,6
+External Position,producer_only,src/modules/simulator,0.2195214652433431,0.03421248581165355,7
+External Position,producer_only,src/examples/hwtest,0.14809073449201698,0.023079985125960822,8
+External Position,producer_only,src/examples/uuv_example_app,0.14809073449201698,0.023079985125960822,8
+External Position,producer_only,src/platforms/qurt/tests/muorb,0.0972583719532734,0.015157746267898481,9
+External Position,producer_only,src/platforms/posix/drivers/df_bebop_bus_wrapper,0.09301439013412757,0.014496320435980455,10
+External Position,producer_only,src/drivers/linux_pwm_out,0.0650617402595285,0.01013989161854006,11
+External Position,producer_only,src/drivers/mkblctrl,0.0650617402595285,0.01013989161854006,11
+External Position,producer_only,src/drivers/pwm_out_sim,0.0650617402595285,0.01013989161854006,11
+External Position,producer_only,src/drivers/px4fmu,0.0650617402595285,0.01013989161854006,11
+External Position,producer_only,src/drivers/px4io,0.0650617402595285,0.01013989161854006,11
+External Position,producer_only,src/drivers/snapdragon_pwm_out,0.0650617402595285,0.01013989161854006,11
+External Position,producer_only,src/drivers/tap_esc,0.0650617402595285,0.01013989161854006,11
+External Position,producer_only,src/modules/uavcan,0.0650617402595285,0.01013989161854006,11
+External Position,producer_only,src/platforms/qurt/fc_addon/uart_esc,0.0650617402595285,0.01013989161854006,11
+External Position,producer_only,src/examples/px4_simple_app,0.062120755402364475,0.00968153825165416,12
+External Position,producer_only,src/modules/attitude_estimator_q,0.062120755402364475,0.00968153825165416,12
+External Position,producer_only,src/modules/fw_att_control,0.0598081793895568,0.009321122590530324,13
+External Position,producer_only,src/modules/mc_att_control,0.0598081793895568,0.009321122590530324,13
+External Position,producer_only,src/modules/gnd_pos_control,0.05368887706830975,0.008367427499206073,14
+External Position,producer_only,src/modules/navigator,0.05368887706830975,0.008367427499206073,14
+External Position,producer_only,src/modules/commander,0.0388366710578119,0.006052706764071392,15
+External Position,producer_only,src/drivers/telemetry,0.027952649874599073,0.0043564288174403965,16
+External Position,producer_only,src/modules/syslink,0.027952649874599073,0.0043564288174403965,16
+External Position,producer_only,src/platforms/posix/drivers/df_ltc2946_wrapper,0.027952649874599073,0.0043564288174403965,16
+External Position,producer_only,src/examples/fixedwing_control,0.02251855581882033,0.0035095236385940696,17
+External Position,producer_only,src/modules/land_detector,0.012020058791882,0.00187332974666802,18
+External Position,producer_only,src/drivers/distance_sensor,0.0014477061015185624,0.00022562542757604003,19
+External Position,producer_only,src/drivers/px4flow,0.0014477061015185624,0.00022562542757604003,19
+External Position,producer_only,src/platforms/posix/drivers/df_bebop_rangefinder_wrapper,0.0014477061015185624,0.00022562542757604003,19
+External Position,producer_only,src/platforms/posix/drivers/df_isl29501_wrapper,0.0014477061015185624,0.00022562542757604003,19
+External Position,producer_only,src/platforms/posix/drivers/df_trone_wrapper,0.0014477061015185624,0.00022562542757604003,19
+Global Position,producer_only,src/modules/ekf2,1.8763966881878016,0.2602416551872212,1
+Global Position,producer_only,src/modules/mavlink,1.567388295723292,0.21738458981935813,2
+Global Position,producer_only,src/modules/sensors,1.064025101649751,0.1475720221407512,3
+Global Position,producer_only,src/modules/load_mon,0.8748967275771244,0.12134138475934365,4
+Global Position,producer_only,src/modules/position_estimator_inav,0.4542117895639984,0.06299564940921173,5
+Global Position,producer_only,src/modules/vtol_att_control,0.21720834215905443,0.03012511098521352,6
+Global Position,producer_only,src/examples/hwtest,0.12226145341008865,0.016956714537673657,7
+Global Position,producer_only,src/examples/uuv_example_app,0.12226145341008865,0.016956714537673657,7
+Global Position,producer_only,src/platforms/qurt/tests/muorb,0.0837987095383648,0.011622230528385244,8
+Global Position,producer_only,src/modules/gnd_pos_control,0.07783324769858715,0.010794867277899396,9
+Global Position,producer_only,src/modules/navigator,0.07783324769858715,0.010794867277899396,9
+Global Position,producer_only,src/platforms/posix/drivers/df_bebop_bus_wrapper,0.05901759393718312,0.008185282157054542,10
+Global Position,producer_only,src/modules/simulator,0.05858464279455533,0.008125235194340344,11
+Global Position,producer_only,src/modules/fw_att_control,0.0503869112040853,0.006988273457350235,12
+Global Position,producer_only,src/modules/mc_att_control,0.0503869112040853,0.006988273457350235,12
+Global Position,producer_only,src/examples/px4_simple_app,0.04524209736680905,0.00627472771455958,13
+Global Position,producer_only,src/modules/attitude_estimator_q,0.04524209736680905,0.00627472771455958,13
+Global Position,producer_only,src/drivers/telemetry,0.03471912482855728,0.0048152731077146195,14
+Global Position,producer_only,src/modules/syslink,0.03471912482855728,0.0048152731077146195,14
+Global Position,producer_only,src/platforms/posix/drivers/df_ltc2946_wrapper,0.03471912482855728,0.0048152731077146195,14
+Global Position,producer_only,src/drivers/linux_pwm_out,0.02429846910862584,0.0033700090493399225,15
+Global Position,producer_only,src/drivers/mkblctrl,0.02429846910862584,0.0033700090493399225,15
+Global Position,producer_only,src/drivers/pwm_out_sim,0.02429846910862584,0.0033700090493399225,15
+Global Position,producer_only,src/drivers/px4fmu,0.02429846910862584,0.0033700090493399225,15
+Global Position,producer_only,src/drivers/px4io,0.02429846910862584,0.0033700090493399225,15
+Global Position,producer_only,src/drivers/snapdragon_pwm_out,0.02429846910862584,0.0033700090493399225,15
+Global Position,producer_only,src/drivers/tap_esc,0.02429846910862584,0.0033700090493399225,15
+Global Position,producer_only,src/modules/uavcan,0.02429846910862584,0.0033700090493399225,15
+Global Position,producer_only,src/platforms/qurt/fc_addon/uart_esc,0.02429846910862584,0.0033700090493399225,15
+Global Position,producer_only,src/modules/commander,0.0182035089655789,0.002524685389416725,16
+Global Position,producer_only,src/examples/fixedwing_control,0.017113641050378634,0.0023735291696404645,17
+Global Position,producer_only,src/modules/land_detector,0.00206568981394445,0.0002864951423483233,18
+Global Position,producer_only,src/drivers/distance_sensor,0.0006014228091778,8.34126751091952e-05,19
+Global Position,producer_only,src/drivers/px4flow,0.0006014228091778,8.34126751091952e-05,19
+Global Position,producer_only,src/platforms/posix/drivers/df_bebop_rangefinder_wrapper,0.0006014228091778,8.34126751091952e-05,19
+Global Position,producer_only,src/platforms/posix/drivers/df_isl29501_wrapper,0.0006014228091778,8.34126751091952e-05,19
+Global Position,producer_only,src/platforms/posix/drivers/df_trone_wrapper,0.0006014228091778,8.34126751091952e-05,19
+Mechanical/Electrical,producer_only,src/modules/mavlink,1.3699019881677708,0.18271761461103359,1
+Mechanical/Electrical,producer_only,src/modules/ekf2,0.8925595136169738,0.11904964489072978,2
+Mechanical/Electrical,producer_only,src/modules/vtol_att_control,0.6449920387285977,0.08602907928998757,3
+Mechanical/Electrical,producer_only,src/examples/hwtest,0.527157901660752,0.07031235456752552,4
+Mechanical/Electrical,producer_only,src/examples/uuv_example_app,0.527157901660752,0.07031235456752552,4
+Mechanical/Electrical,producer_only,src/modules/sensors,0.5160259300988864,0.06882757149014462,5
+Mechanical/Electrical,producer_only,src/modules/position_estimator_inav,0.276653373499497,0.03690004461379953,6
+Mechanical/Electrical,producer_only,src/platforms/qurt/tests/muorb,0.2704216890434815,0.036068862143340666,7
+Mechanical/Electrical,producer_only,src/examples/px4_simple_app,0.2259430539011841,0.03013629894936729,8
+Mechanical/Electrical,producer_only,src/modules/attitude_estimator_q,0.2259430539011841,0.03013629894936729,8
+Mechanical/Electrical,producer_only,src/platforms/posix/drivers/df_bebop_bus_wrapper,0.17870945993802095,0.023836279172041196,9
+Mechanical/Electrical,producer_only,src/modules/load_mon,0.1745916313199279,0.023287042928153895,10
+Mechanical/Electrical,producer_only,src/drivers/linux_pwm_out,0.12120312735829586,0.016166080862416363,11
+Mechanical/Electrical,producer_only,src/drivers/mkblctrl,0.12120312735829586,0.016166080862416363,11
+Mechanical/Electrical,producer_only,src/drivers/pwm_out_sim,0.12120312735829586,0.016166080862416363,11
+Mechanical/Electrical,producer_only,src/drivers/px4fmu,0.12120312735829586,0.016166080862416363,11
+Mechanical/Electrical,producer_only,src/drivers/px4io,0.12120312735829586,0.016166080862416363,11
+Mechanical/Electrical,producer_only,src/drivers/snapdragon_pwm_out,0.12120312735829586,0.016166080862416363,11
+Mechanical/Electrical,producer_only,src/drivers/tap_esc,0.12120312735829586,0.016166080862416363,11
+Mechanical/Electrical,producer_only,src/modules/uavcan,0.12120312735829586,0.016166080862416363,11
+Mechanical/Electrical,producer_only,src/platforms/qurt/fc_addon/uart_esc,0.12120312735829586,0.016166080862416363,11
+Mechanical/Electrical,producer_only,src/modules/simulator,0.08412219310953763,0.011220223485755696,12
+Mechanical/Electrical,producer_only,src/modules/gnd_pos_control,0.0771320726170377,0.010287880768345994,13
+Mechanical/Electrical,producer_only,src/modules/navigator,0.0771320726170377,0.010287880768345994,13
+Mechanical/Electrical,producer_only,src/drivers/telemetry,0.0575063325797251,0.007670198309624835,14
+Mechanical/Electrical,producer_only,src/modules/syslink,0.0575063325797251,0.007670198309624835,14
+Mechanical/Electrical,producer_only,src/platforms/posix/drivers/df_ltc2946_wrapper,0.0575063325797251,0.007670198309624835,14
+Mechanical/Electrical,producer_only,src/examples/fixedwing_control,0.040702064450807936,0.005428843954116061,15
+Mechanical/Electrical,producer_only,src/modules/fw_att_control,0.0397140995878436,0.005297069137640467,16
+Mechanical/Electrical,producer_only,src/modules/mc_att_control,0.0397140995878436,0.005297069137640467,16
+Mechanical/Electrical,producer_only,src/modules/land_detector,0.01018277732995735,0.001358179490149958,17
+Mechanical/Electrical,producer_only,src/drivers/distance_sensor,0.006047853040776025,0.0008066630245618323,18
+Mechanical/Electrical,producer_only,src/drivers/px4flow,0.006047853040776025,0.0008066630245618323,18
+Mechanical/Electrical,producer_only,src/platforms/posix/drivers/df_bebop_rangefinder_wrapper,0.006047853040776025,0.0008066630245618323,18
+Mechanical/Electrical,producer_only,src/platforms/posix/drivers/df_isl29501_wrapper,0.006047853040776025,0.0008066630245618323,18
+Mechanical/Electrical,producer_only,src/platforms/posix/drivers/df_trone_wrapper,0.006047853040776025,0.0008066630245618323,18
+Mechanical/Electrical,producer_only,src/modules/commander,0.0050290069770517,0.0006707692715579854,19
+all,producer_only,src/modules/ekf2,1.7094667082473092,0.24841804685721927,1
+all,producer_only,src/modules/mavlink,1.4417332342973008,0.20951127765482236,2
+all,producer_only,src/modules/position_estimator_inav,0.616732982369306,0.08962303984831171,3
+all,producer_only,src/modules/sensors,0.5449470706259654,0.0791911806602324,4
+all,producer_only,src/modules/vtol_att_control,0.31338121158087373,0.04554025423664882,5
+all,producer_only,src/modules/load_mon,0.3113832760522867,0.04524991618012878,6
+all,producer_only,src/examples/hwtest,0.22037325818223447,0.03202442850339059,7
+all,producer_only,src/examples/uuv_example_app,0.22037325818223447,0.03202442850339059,7
+all,producer_only,src/modules/simulator,0.14514889389358174,0.0210928967206964,8
+all,producer_only,src/platforms/qurt/tests/muorb,0.12231426165366174,0.017774590073145607,9
+all,producer_only,src/platforms/posix/drivers/df_bebop_bus_wrapper,0.09504746446151688,0.01381220550616602,10
+all,producer_only,src/examples/px4_simple_app,0.08508403040181138,0.012364328915670486,11
+all,producer_only,src/modules/attitude_estimator_q,0.08508403040181138,0.012364328915670486,11
+all,producer_only,src/drivers/linux_pwm_out,0.061250287723490913,0.008900832506596595,12
+all,producer_only,src/drivers/mkblctrl,0.061250287723490913,0.008900832506596595,12
+all,producer_only,src/drivers/pwm_out_sim,0.061250287723490913,0.008900832506596595,12
+all,producer_only,src/drivers/px4fmu,0.061250287723490913,0.008900832506596595,12
+all,producer_only,src/drivers/px4io,0.061250287723490913,0.008900832506596595,12
+all,producer_only,src/drivers/snapdragon_pwm_out,0.061250287723490913,0.008900832506596595,12
+all,producer_only,src/drivers/tap_esc,0.061250287723490913,0.008900832506596595,12
+all,producer_only,src/modules/uavcan,0.061250287723490913,0.008900832506596595,12
+all,producer_only,src/platforms/qurt/fc_addon/uart_esc,0.061250287723490913,0.008900832506596595,12
+all,producer_only,src/modules/gnd_pos_control,0.05785392237964625,0.00840727598334819,13
+all,producer_only,src/modules/navigator,0.05785392237964625,0.00840727598334819,13
+all,producer_only,src/modules/fw_att_control,0.0571095243721657,0.008299100785661935,14
+all,producer_only,src/modules/mc_att_control,0.0571095243721657,0.008299100785661935,14
+all,producer_only,src/examples/fixedwing_control,0.03515403101899303,0.005108549749910052,15
+all,producer_only,src/drivers/telemetry,0.03379717673802597,0.004911372999569424,16
+all,producer_only,src/modules/syslink,0.03379717673802597,0.004911372999569424,16
+all,producer_only,src/platforms/posix/drivers/df_ltc2946_wrapper,0.03379717673802597,0.004911372999569424,16
+all,producer_only,src/modules/commander,0.0269561109702426,0.003917235946033621,17
+all,producer_only,src/modules/land_detector,0.00863717342403725,0.0012551456790675362,18
+all,producer_only,src/drivers/distance_sensor,0.0034046207486365123,0.0004947561906794902,19
+all,producer_only,src/drivers/px4flow,0.0034046207486365123,0.0004947561906794902,19
+all,producer_only,src/platforms/posix/drivers/df_bebop_rangefinder_wrapper,0.0034046207486365123,0.0004947561906794902,19
+all,producer_only,src/platforms/posix/drivers/df_isl29501_wrapper,0.0034046207486365123,0.0004947561906794902,19
+all,producer_only,src/platforms/posix/drivers/df_trone_wrapper,0.0034046207486365123,0.0004947561906794902,19
+Altitude,consumer_only,src/modules/commander,2.514797158888581,0.44472683672092866,1
+Altitude,consumer_only,src/modules/position_estimator_inav,0.2493724647332327,0.04410002890854447,2
+Altitude,consumer_only,src/modules/land_detector,0.23511274779278446,0.041578283254010605,3
+Altitude,consumer_only,src/modules/mc_att_control,0.19853698604892944,0.03511007854672046,4
+Altitude,consumer_only,src/modules/simulator,0.19808664496263081,0.035030438419067556,5
+Altitude,consumer_only,src/modules/vtol_att_control,0.16138979101889903,0.028540819280473306,6
+Altitude,consumer_only,src/drivers/telemetry,0.14652674355691195,0.025912378231683575,7
+Altitude,consumer_only,src/modules/fw_pos_control_l1,0.1433689245393971,0.025353936825134017,8
+Altitude,consumer_only,src/modules/mc_pos_control,0.1433689245393971,0.025353936825134017,8
+Altitude,consumer_only,src/modules/ekf2,0.115887874884988,0.02049407755601608,9
+Altitude,consumer_only,src/modules/landing_target_estimator,0.11531543031630367,0.020392844157795773,10
+Altitude,consumer_only,src/modules/wind_estimator,0.11531543031630367,0.020392844157795773,10
+Altitude,consumer_only,src/modules/navigator,0.11164596572504343,0.019743921291646264,11
+Altitude,consumer_only,src/drivers/camera_trigger,0.10865527938855311,0.01921503630012685,12
+Altitude,consumer_only,src/drivers/mkblctrl,0.10265214283149905,0.018153417504357918,13
+Altitude,consumer_only,src/drivers/px4io,0.10265214283149905,0.018153417504357918,13
+Altitude,consumer_only,src/modules/sensors,0.10265214283149905,0.018153417504357918,13
+Altitude,consumer_only,src/platforms/posix/drivers/df_bebop_bus_wrapper,0.10265214283149905,0.018153417504357918,13
+Altitude,consumer_only,src/platforms/posix/drivers/df_ltc2946_wrapper,0.10265214283149905,0.018153417504357918,13
+Altitude,consumer_only,src/platforms/qurt/fc_addon/uart_esc,0.10265214283149905,0.018153417504357918,13
+Altitude,consumer_only,src/modules/fw_att_control,0.06987968627532766,0.012357804572203375,14
+Altitude,consumer_only,src/modules/gnd_att_control,0.06688899993883733,0.011828919580683956,15
+Altitude,consumer_only,src/modules/events,0.05914099595579928,0.010458731416561597,16
+Altitude,consumer_only,src/examples/rover_steering_control,0.05340954700007081,0.009445158948142277,17
+Altitude,consumer_only,src/examples/fixedwing_control,0.033555819667461254,0.005934146013145366,18
+Altitude,consumer_only,src/drivers/vmount,0.03172295881435364,0.005610015533487748,19
+Altitude,consumer_only,src/modules/gnd_pos_control,0.02506280788660309,0.004432207675818822,20
+Altitude,consumer_only,src/examples/uuv_example_app,0.02072628952337709,0.0036653203396998127,21
+Altitude,consumer_only,src/drivers/blinkm,0.017145174644981737,0.0030320215918569135,22
+Altitude,consumer_only,src/modules/gpio_led,0.017145174644981737,0.0030320215918569135,22
+Altitude,consumer_only,src/drivers/batt_smbus,0.01531231379187413,0.0027078911121992963,23
+Altitude,consumer_only,src/examples/px4_simple_app,0.014066138595626533,0.0024875124820308856,24
+Altitude,consumer_only,src/modules/attitude_estimator_q,0.014066138595626533,0.0024875124820308856,24
+Altitude,consumer_only,src/modules/sdlog2,0.014066138595626533,0.0024875124820308856,24
+Altitude,consumer_only,src/templates/module,0.014066138595626533,0.0024875124820308856,24
+Altitude,consumer_only,src/modules/camera_feedback,0.006660150927750556,0.0011778078576689267,25
+Altitude,consumer_only,src/modules/replay,0.006660150927750556,0.0011778078576689267,25
+Altitude,consumer_only,src/modules/logger,0.0018328608531076067,0.0003241304796576171,26
+External Position,consumer_only,src/modules/commander,1.0883088073552158,0.18741200943707556,1
+External Position,consumer_only,src/modules/simulator,0.6532065139991391,0.1124853024606731,2
+External Position,consumer_only,src/modules/land_detector,0.3109344967475791,0.05354441537635173,3
+External Position,consumer_only,src/modules/vtol_att_control,0.28354524388016816,0.04882785433947475,4
+External Position,consumer_only,src/modules/position_estimator_inav,0.2651073512583386,0.045652760576850936,5
+External Position,consumer_only,src/drivers/telemetry,0.2479241914401699,0.04269373783602851,6
+External Position,consumer_only,src/modules/fw_pos_control_l1,0.2431832536293745,0.04187732554961451,7
+External Position,consumer_only,src/modules/mc_pos_control,0.2431832536293745,0.04187732554961451,7
+External Position,consumer_only,src/modules/ekf2,0.22354831913429196,0.03849609542079528,8
+External Position,consumer_only,src/modules/landing_target_estimator,0.20415525357892453,0.03515651628635015,9
+External Position,consumer_only,src/modules/wind_estimator,0.20415525357892453,0.03515651628635015,9
+External Position,consumer_only,src/modules/navigator,0.1963740551831084,0.03381655650900318,10
+External Position,consumer_only,src/drivers/camera_trigger,0.19035064126728798,0.032779295670897414,11
+External Position,consumer_only,src/modules/mc_att_control,0.1456941001452179,0.025089224571927693,12
+External Position,consumer_only,src/modules/events,0.13744256439309008,0.023668270440345997,13
+External Position,consumer_only,src/modules/fw_att_control,0.11535056892895368,0.019863922598605893,14
+External Position,consumer_only,src/modules/gnd_att_control,0.10932715501313325,0.018826661760500137,15
+External Position,consumer_only,src/examples/rover_steering_control,0.09234941150476804,0.01590301269590935,16
+External Position,consumer_only,src/drivers/mkblctrl,0.08462327685258113,0.014572535159973024,17
+External Position,consumer_only,src/drivers/px4io,0.08462327685258113,0.014572535159973024,17
+External Position,consumer_only,src/modules/sensors,0.08462327685258113,0.014572535159973024,17
+External Position,consumer_only,src/platforms/posix/drivers/df_bebop_bus_wrapper,0.08462327685258113,0.014572535159973024,17
+External Position,consumer_only,src/platforms/posix/drivers/df_ltc2946_wrapper,0.08462327685258113,0.014572535159973024,17
+External Position,consumer_only,src/platforms/qurt/fc_addon/uart_esc,0.08462327685258113,0.014572535159973024,17
+External Position,consumer_only,src/examples/fixedwing_control,0.04939830985012024,0.008506626473330219,18
+External Position,consumer_only,src/drivers/vmount,0.04680919844626611,0.008060769040611333,19
+External Position,consumer_only,src/examples/uuv_example_app,0.03541758385680842,0.006099078235102535,20
+External Position,consumer_only,src/modules/gnd_pos_control,0.03300458613462956,0.005683548425158597,21
+External Position,consumer_only,src/drivers/blinkm,0.022155966316073476,0.003815363930028559,22
+External Position,consumer_only,src/modules/gpio_led,0.022155966316073476,0.003815363930028559,22
+External Position,consumer_only,src/examples/px4_simple_app,0.021612971545171868,0.003721857619649799,23
+External Position,consumer_only,src/modules/attitude_estimator_q,0.021612971545171868,0.003721857619649799,23
+External Position,consumer_only,src/modules/sdlog2,0.021612971545171868,0.003721857619649799,23
+External Position,consumer_only,src/templates/module,0.021612971545171868,0.003721857619649799,23
+External Position,consumer_only,src/drivers/batt_smbus,0.01956685491221935,0.003369506497309673,24
+External Position,consumer_only,src/modules/camera_feedback,0.01380461231163655,0.0023772206154527354,25
+External Position,consumer_only,src/modules/replay,0.01380461231163655,0.0023772206154527354,25
+External Position,consumer_only,src/modules/logger,0.0025891114038541266,0.00044585743271888625,26
+Global Position,consumer_only,src/modules/commander,2.195118517384504,0.3284187639704325,1
+Global Position,consumer_only,src/modules/events,0.46296531843292427,0.06926573505565564,2
+Global Position,consumer_only,src/modules/vtol_att_control,0.31749668135893694,0.047501702906163276,3
+Global Position,consumer_only,src/modules/mc_att_control,0.2671579472527244,0.03997036247781285,4
+Global Position,consumer_only,src/modules/fw_pos_control_l1,0.2564436504644391,0.03836736196546982,5
+Global Position,consumer_only,src/modules/mc_pos_control,0.2564436504644391,0.03836736196546982,5
+Global Position,consumer_only,src/modules/simulator,0.24419825835063033,0.03653528934137199,6
+Global Position,consumer_only,src/modules/fw_att_control,0.24207768276685487,0.03621802318621276,7
+Global Position,consumer_only,src/modules/gnd_att_control,0.24027391841278453,0.035948156181326144,8
+Global Position,consumer_only,src/examples/rover_steering_control,0.21718409829716637,0.03249361369415953,9
+Global Position,consumer_only,src/modules/land_detector,0.20637039495856035,0.030875740647086217,10
+Global Position,consumer_only,src/drivers/telemetry,0.1551286427486225,0.02320929676663528,11
+Global Position,consumer_only,src/examples/fixedwing_control,0.15491750013829664,0.023177707039449463,12
+Global Position,consumer_only,src/drivers/vmount,0.15370393287392473,0.022996141325432852,13
+Global Position,consumer_only,src/modules/gnd_pos_control,0.14365013345907826,0.021491959956235204,14
+Global Position,consumer_only,src/modules/landing_target_estimator,0.11098975265129053,0.016605535004348002,15
+Global Position,consumer_only,src/modules/wind_estimator,0.11098975265129053,0.016605535004348002,15
+Global Position,consumer_only,src/modules/navigator,0.10273971759051442,0.015371220640036973,16
+Global Position,consumer_only,src/drivers/camera_trigger,0.10093595323644408,0.015101353635150356,17
+Global Position,consumer_only,src/modules/position_estimator_inav,0.08001598283691581,0.011971449365062307,18
+Global Position,consumer_only,src/drivers/mkblctrl,0.0698636876629078,0.01045253172753838,19
+Global Position,consumer_only,src/drivers/px4io,0.0698636876629078,0.01045253172753838,19
+Global Position,consumer_only,src/modules/sensors,0.0698636876629078,0.01045253172753838,19
+Global Position,consumer_only,src/platforms/posix/drivers/df_bebop_bus_wrapper,0.0698636876629078,0.01045253172753838,19
+Global Position,consumer_only,src/platforms/posix/drivers/df_ltc2946_wrapper,0.0698636876629078,0.01045253172753838,19
+Global Position,consumer_only,src/platforms/qurt/fc_addon/uart_esc,0.0698636876629078,0.01045253172753838,19
+Global Position,consumer_only,src/modules/ekf2,0.046095486200571745,0.0068964944182811835,20
+Global Position,consumer_only,src/examples/uuv_example_app,0.02867573486781641,0.004290269216285087,21
+Global Position,consumer_only,src/drivers/blinkm,0.025516954644362023,0.0038176739151998375,22
+Global Position,consumer_only,src/modules/gpio_led,0.025516954644362023,0.0038176739151998375,22
+Global Position,consumer_only,src/drivers/batt_smbus,0.024303387379990098,0.0036361082011832245,23
+Global Position,consumer_only,src/examples/px4_simple_app,0.018621935452969956,0.0027860878470874414,24
+Global Position,consumer_only,src/modules/attitude_estimator_q,0.018621935452969956,0.0027860878470874414,24
+Global Position,consumer_only,src/modules/sdlog2,0.018621935452969956,0.0027860878470874414,24
+Global Position,consumer_only,src/templates/module,0.018621935452969956,0.0027860878470874414,24
+Global Position,consumer_only,src/modules/camera_feedback,0.010053799414846456,0.0015041813691976462,25
+Global Position,consumer_only,src/modules/replay,0.010053799414846456,0.0015041813691976462,25
+Global Position,consumer_only,src/modules/logger,0.0012135672643719265,0.00018156571401661337,26
+Mechanical/Electrical,consumer_only,src/modules/simulator,1.2123665407147621,0.1697564489780012,1
+Mechanical/Electrical,consumer_only,src/modules/commander,0.7085506111764047,0.09921177435628181,2
+Mechanical/Electrical,consumer_only,src/modules/land_detector,0.4535108815788271,0.063500925045586,3
+Mechanical/Electrical,consumer_only,src/drivers/mkblctrl,0.3012330866632869,0.04217887692322342,4
+Mechanical/Electrical,consumer_only,src/drivers/px4io,0.3012330866632869,0.04217887692322342,4
+Mechanical/Electrical,consumer_only,src/modules/sensors,0.3012330866632869,0.04217887692322342,4
+Mechanical/Electrical,consumer_only,src/platforms/posix/drivers/df_bebop_bus_wrapper,0.3012330866632869,0.04217887692322342,4
+Mechanical/Electrical,consumer_only,src/platforms/posix/drivers/df_ltc2946_wrapper,0.3012330866632869,0.04217887692322342,4
+Mechanical/Electrical,consumer_only,src/platforms/qurt/fc_addon/uart_esc,0.3012330866632869,0.04217887692322342,4
+Mechanical/Electrical,consumer_only,src/modules/mc_att_control,0.2368323043499581,0.03316143232229387,5
+Mechanical/Electrical,consumer_only,src/modules/position_estimator_inav,0.2161157925382782,0.03026069119965594,6
+Mechanical/Electrical,consumer_only,src/drivers/telemetry,0.21237150359186938,0.02973641312520891,7
+Mechanical/Electrical,consumer_only,src/modules/vtol_att_control,0.19957740013188424,0.027944973409342305,8
+Mechanical/Electrical,consumer_only,src/modules/fw_att_control,0.1786885726251626,0.02502010451716348,9
+Mechanical/Electrical,consumer_only,src/modules/gnd_att_control,0.17544394054194276,0.024565788761828654,10
+Mechanical/Electrical,consumer_only,src/modules/fw_pos_control_l1,0.13820700917005752,0.01935184641993423,11
+Mechanical/Electrical,consumer_only,src/modules/mc_pos_control,0.13820700917005752,0.01935184641993423,11
+Mechanical/Electrical,consumer_only,src/examples/rover_steering_control,0.13552477486793862,0.0189762780128861,12
+Mechanical/Electrical,consumer_only,src/modules/events,0.12788551559757497,0.017906623347396355,13
+Mechanical/Electrical,consumer_only,src/modules/landing_target_estimator,0.11168809497792913,0.015638648675831212,14
+Mechanical/Electrical,consumer_only,src/modules/wind_estimator,0.11168809497792913,0.015638648675831212,14
+Mechanical/Electrical,consumer_only,src/examples/uuv_example_app,0.1103032762099257,0.015444745339967323,15
+Mechanical/Electrical,consumer_only,src/modules/ekf2,0.10809776041168966,0.01513592740619896,16
+Mechanical/Electrical,consumer_only,src/examples/fixedwing_control,0.07381911677430848,0.010336206674683617,17
+Mechanical/Electrical,consumer_only,src/drivers/vmount,0.07348384964250504,0.010289262325889201,18
+Mechanical/Electrical,consumer_only,src/modules/navigator,0.06472315952755249,0.009062584094045029,19
+Mechanical/Electrical,consumer_only,src/drivers/camera_trigger,0.06147852744433266,0.008608268338710206,20
+Mechanical/Electrical,consumer_only,src/examples/px4_simple_app,0.060093708676329224,0.008414365002846319,21
+Mechanical/Electrical,consumer_only,src/modules/attitude_estimator_q,0.060093708676329224,0.008414365002846319,21
+Mechanical/Electrical,consumer_only,src/modules/sdlog2,0.060093708676329224,0.008414365002846319,21
+Mechanical/Electrical,consumer_only,src/templates/module,0.060093708676329224,0.008414365002846319,21
+Mechanical/Electrical,consumer_only,src/modules/camera_feedback,0.05020956753359647,0.007030380337121005,22
+Mechanical/Electrical,consumer_only,src/modules/replay,0.05020956753359647,0.007030380337121005,22
+Mechanical/Electrical,consumer_only,src/drivers/blinkm,0.040589699937611017,0.005683399446531381,23
+Mechanical/Electrical,consumer_only,src/modules/gpio_led,0.040589699937611017,0.005683399446531381,23
+Mechanical/Electrical,consumer_only,src/drivers/batt_smbus,0.04025443280580757,0.0056364550977369655,24
+Mechanical/Electrical,consumer_only,src/modules/gnd_pos_control,0.023274282108908563,0.0032588819887681966,25
+Mechanical/Electrical,consumer_only,src/modules/logger,0.00033526713180344667,4.694434879441539e-05,26
+all,consumer_only,src/modules/commander,1.439395710426897,0.23245955734583204,1
+all,consumer_only,src/modules/simulator,0.614299951299592,0.0992082258702283,2
+all,consumer_only,src/modules/land_detector,0.3073420100567944,0.04963512611163166,3
+all,consumer_only,src/modules/vtol_att_control,0.25430095475191394,0.041069100696930726,4
+all,consumer_only,src/modules/position_estimator_inav,0.22038513527561554,0.0355917630021121,5
+all,consumer_only,src/modules/fw_pos_control_l1,0.2098148909128798,0.03388468946576671,6
+all,consumer_only,src/modules/mc_pos_control,0.2098148909128798,0.03388468946576671,6
+all,consumer_only,src/drivers/telemetry,0.20859538098680747,0.03368774102723792,7
+all,consumer_only,src/modules/mc_att_control,0.19296756136641954,0.031163879100375252,8
+all,consumer_only,src/modules/events,0.18114673580744436,0.029254839176887704,9
+all,consumer_only,src/modules/landing_target_estimator,0.1559593361713594,0.025187124004692016,10
+all,consumer_only,src/modules/wind_estimator,0.1559593361713594,0.025187124004692016,10
+all,consumer_only,src/modules/ekf2,0.15301136433573442,0.02471103238998648,11
+all,consumer_only,src/modules/fw_att_control,0.1427042786733692,0.023046458462717804,12
+all,consumer_only,src/modules/navigator,0.14131661175996782,0.02282235300367272,13
+all,consumer_only,src/modules/gnd_att_control,0.13843944077324716,0.022357695585885226,14
+all,consumer_only,src/drivers/camera_trigger,0.13705177385984577,0.02213359012684014,15
+all,consumer_only,src/drivers/mkblctrl,0.125927576104134,0.020337054214312433,16
+all,consumer_only,src/drivers/px4io,0.125927576104134,0.020337054214312433,16
+all,consumer_only,src/modules/sensors,0.125927576104134,0.020337054214312433,16
+all,consumer_only,src/platforms/posix/drivers/df_bebop_bus_wrapper,0.125927576104134,0.020337054214312433,16
+all,consumer_only,src/platforms/posix/drivers/df_ltc2946_wrapper,0.125927576104134,0.020337054214312433,16
+all,consumer_only,src/platforms/qurt/fc_addon/uart_esc,0.125927576104134,0.020337054214312433,16
+all,consumer_only,src/examples/rover_steering_control,0.11657849112131181,0.018827195500025408,17
+all,consumer_only,src/examples/fixedwing_control,0.07029535321759481,0.011352560365477693,18
+all,consumer_only,src/drivers/vmount,0.06849827915291197,0.011062336462093994,19
+all,consumer_only,src/modules/gnd_pos_control,0.04959071684139833,0.008008802584242119,20
+all,consumer_only,src/examples/uuv_example_app,0.046088509345660694,0.0074432030077705635,21
+all,consumer_only,src/examples/px4_simple_app,0.027180947034147054,0.004389669129918688,22
+all,consumer_only,src/modules/attitude_estimator_q,0.027180947034147054,0.004389669129918688,22
+all,consumer_only,src/modules/sdlog2,0.027180947034147054,0.004389669129918688,22
+all,consumer_only,src/templates/module,0.027180947034147054,0.004389669129918688,22
+all,consumer_only,src/drivers/blinkm,0.02545509778130102,0.004110947892627215,23
+all,consumer_only,src/modules/gpio_led,0.02545509778130102,0.004110947892627215,23
+all,consumer_only,src/drivers/batt_smbus,0.023658023716618178,0.003820723989243515,24
+all,consumer_only,src/modules/camera_feedback,0.01890756231151364,0.003053533877851875,25
+all,consumer_only,src/modules/replay,0.01890756231151364,0.003053533877851875,25
+all,consumer_only,src/modules/logger,0.00179707406468284,0.0002902239033837001,26
+Altitude,bidirectional,src/modules/ekf2,2.5024722996547664,0.3492326468736243,1
+Altitude,bidirectional,src/modules/commander,1.2836221632897682,0.17913595516448957,2
+Altitude,bidirectional,src/modules/mavlink,0.2948343363134876,0.041145620542609986,3
+Altitude,bidirectional,src/modules/vtol_att_control,0.24611523123924303,0.03434662339856971,4
+Altitude,bidirectional,src/modules/sensors,0.22527234373134428,0.03143789319049633,5
+Altitude,bidirectional,src/modules/position_estimator_inav,0.1969326063486963,0.027482939723394644,6
+Altitude,bidirectional,src/modules/mc_att_control,0.17967549347862546,0.025074622474151504,7
+Altitude,bidirectional,src/modules/land_detector,0.17186211343461383,0.023984225831528854,8
+Altitude,bidirectional,src/modules/fw_att_control,0.12864997430735156,0.01795375359550569,9
+Altitude,bidirectional,src/modules/fw_pos_control_l1,0.11817481771058451,0.016491892593004542,10
+Altitude,bidirectional,src/modules/mc_pos_control,0.11817481771058451,0.016491892593004542,10
+Altitude,bidirectional,src/drivers/telemetry,0.11714615046128897,0.01634833688360738,11
+Altitude,bidirectional,src/modules/navigator,0.10392719160936907,0.014503564420229306,12
+Altitude,bidirectional,src/modules/landing_target_estimator,0.0943489884406121,0.013166877798211631,13
+Altitude,bidirectional,src/modules/wind_estimator,0.0943489884406121,0.013166877798211631,13
+Altitude,bidirectional,src/platforms/posix/drivers/df_bebop_bus_wrapper,0.0927355401135592,0.012941712936275602,14
+Altitude,bidirectional,src/drivers/camera_trigger,0.08889977404517982,0.01240641241085801,15
+Altitude,bidirectional,src/drivers/mkblctrl,0.08316534399363787,0.011606143738358447,16
+Altitude,bidirectional,src/drivers/px4io,0.08316534399363787,0.011606143738358447,16
+Altitude,bidirectional,src/platforms/qurt/fc_addon/uart_esc,0.08316534399363787,0.011606143738358447,16
+Altitude,bidirectional,src/examples/uuv_example_app,0.08228196413917156,0.011482863618609403,17
+Altitude,bidirectional,src/examples/fixedwing_control,0.08030056283667861,0.01120634906079235,18
+Altitude,bidirectional,src/platforms/posix/drivers/df_ltc2946_wrapper,0.07489428701269345,0.010451875967923473,19
+Altitude,bidirectional,src/modules/simulator,0.0682786652248987,0.009528632538621533,20
+Altitude,bidirectional,src/examples/hwtest,0.06532409089277212,0.009116306770006318,21
+Altitude,bidirectional,src/modules/gnd_att_control,0.04863498138689873,0.006787257258647493,22
+Altitude,bidirectional,src/examples/rover_steering_control,0.04078309231676578,0.0056914864869594675,23
+Altitude,bidirectional,src/modules/events,0.039285717376921415,0.005482520252377681,24
+Altitude,bidirectional,src/modules/gnd_pos_control,0.033615570871545125,0.004691222673376716,25
+Altitude,bidirectional,src/modules/load_mon,0.0279972142072117,0.0039071526282313945,26
+Altitude,bidirectional,src/drivers/vmount,0.026656205684096428,0.003720008116752788,27
+Altitude,bidirectional,src/drivers/linux_pwm_out,0.017841253100865748,0.0024898369683521286,28
+Altitude,bidirectional,src/drivers/pwm_out_sim,0.017841253100865748,0.0024898369683521286,28
+Altitude,bidirectional,src/drivers/px4fmu,0.017841253100865748,0.0024898369683521286,28
+Altitude,bidirectional,src/drivers/snapdragon_pwm_out,0.017841253100865748,0.0024898369683521286,28
+Altitude,bidirectional,src/drivers/tap_esc,0.017841253100865748,0.0024898369683521286,28
+Altitude,bidirectional,src/modules/uavcan,0.017841253100865748,0.0024898369683521286,28
+Altitude,bidirectional,src/examples/px4_simple_app,0.016957873246399434,0.0023665568486030833,29
+Altitude,bidirectional,src/modules/attitude_estimator_q,0.016957873246399434,0.0023665568486030833,29
+Altitude,bidirectional,src/modules/sdlog2,0.011508658850967163,0.0016060914612494625,30
+Altitude,bidirectional,src/platforms/qurt/tests/muorb,0.011508658850967163,0.0016060914612494625,30
+Altitude,bidirectional,src/templates/module,0.011508658850967163,0.0016060914612494625,30
+Altitude,bidirectional,src/drivers/blinkm,0.011288503169709712,0.0015753676241462855,31
+Altitude,bidirectional,src/modules/gpio_led,0.011288503169709712,0.0015753676241462855,31
+Altitude,bidirectional,src/drivers/batt_smbus,0.009570196119921331,0.0013355691979171555,32
+Altitude,bidirectional,src/modules/syslink,0.009570196119921331,0.0013355691979171555,32
+Altitude,bidirectional,src/drivers/distance_sensor,0.008213292817689866,0.0011462064897444296,33
+Altitude,bidirectional,src/drivers/px4flow,0.008213292817689866,0.0011462064897444296,33
+Altitude,bidirectional,src/platforms/posix/drivers/df_bebop_rangefinder_wrapper,0.008213292817689866,0.0011462064897444296,33
+Altitude,bidirectional,src/platforms/posix/drivers/df_isl29501_wrapper,0.008213292817689866,0.0011462064897444296,33
+Altitude,bidirectional,src/platforms/posix/drivers/df_trone_wrapper,0.008213292817689866,0.0011462064897444296,33
+Altitude,bidirectional,src/modules/camera_feedback,0.005449214395432273,0.0007604653873536213,34
+Altitude,bidirectional,src/modules/replay,0.005449214395432273,0.0007604653873536213,34
+Altitude,bidirectional,src/modules/logger,0.0017183070497883812,0.00023979842622913006,35
+External Position,bidirectional,src/modules/ekf2,1.0190659406423317,0.1588217306982576,1
+External Position,bidirectional,src/modules/commander,0.5918898540739596,0.09224621023788974,2
+External Position,bidirectional,src/modules/mavlink,0.40041763526520974,0.06240520784635333,3
+External Position,bidirectional,src/modules/position_estimator_inav,0.29457799491263664,0.045910068339795544,4
+External Position,bidirectional,src/modules/vtol_att_control,0.29184094644344344,0.04548349851978146,5
+External Position,bidirectional,src/modules/land_detector,0.23821499318071399,0.03712587771443671,6
+External Position,bidirectional,src/modules/fw_pos_control_l1,0.20006149018019434,0.03117964289579069,7
+External Position,bidirectional,src/modules/mc_pos_control,0.20006149018019434,0.03117964289579069,7
+External Position,bidirectional,src/drivers/telemetry,0.19937603318096556,0.031072814218082032,8
+External Position,bidirectional,src/modules/navigator,0.1876842884153866,0.029250652310304884,9
+External Position,bidirectional,src/modules/simulator,0.17015101736245092,0.02651808678890821,10
+External Position,bidirectional,src/modules/landing_target_estimator,0.16703611656457462,0.02603262857080677,11
+External Position,bidirectional,src/modules/wind_estimator,0.16703611656457462,0.02603262857080677,11
+External Position,bidirectional,src/drivers/camera_trigger,0.1557414337641447,0.024272348888687827,12
+External Position,bidirectional,src/modules/mc_att_control,0.15404196797521683,0.024007486638763276,13
+External Position,bidirectional,src/modules/sensors,0.15360673494458232,0.02393965544116791,14
+External Position,bidirectional,src/modules/fw_att_control,0.1432019586598984,0.022318067954866395,15
+External Position,bidirectional,src/platforms/posix/drivers/df_bebop_bus_wrapper,0.1252274970986237,0.019516742761197796,16
+External Position,bidirectional,src/drivers/mkblctrl,0.11299821277848662,0.017610805153567624,17
+External Position,bidirectional,src/drivers/px4io,0.11299821277848662,0.017610805153567624,17
+External Position,bidirectional,src/platforms/qurt/fc_addon/uart_esc,0.11299821277848662,0.017610805153567624,17
+External Position,bidirectional,src/modules/events,0.09151430831259473,0.014262532236823616,18
+External Position,bidirectional,src/examples/uuv_example_app,0.08282919933448579,0.012908955412995325,19
+External Position,bidirectional,src/modules/gnd_att_control,0.07829536315325458,0.01220235569232205,20
+External Position,bidirectional,src/modules/load_mon,0.0768577320513444,0.011978300456438983,21
+External Position,bidirectional,src/examples/rover_steering_control,0.06849337077423073,0.01067471225744634,22
+External Position,bidirectional,src/platforms/posix/drivers/df_ltc2946_wrapper,0.06608046049905236,0.010298659471615927,23
+External Position,bidirectional,src/drivers/linux_pwm_out,0.059147036599571365,0.009218083289581873,24
+External Position,bidirectional,src/drivers/pwm_out_sim,0.059147036599571365,0.009218083289581873,24
+External Position,bidirectional,src/drivers/px4fmu,0.059147036599571365,0.009218083289581873,24
+External Position,bidirectional,src/drivers/snapdragon_pwm_out,0.059147036599571365,0.009218083289581873,24
+External Position,bidirectional,src/drivers/tap_esc,0.059147036599571365,0.009218083289581873,24
+External Position,bidirectional,src/modules/uavcan,0.059147036599571365,0.009218083289581873,24
+External Position,bidirectional,src/examples/fixedwing_control,0.05516006573136806,0.008596712690999745,25
+External Position,bidirectional,src/modules/gnd_pos_control,0.05477139603268758,0.008536138402572939,26
+External Position,bidirectional,src/examples/hwtest,0.053851176178915265,0.008392721863985753,27
+External Position,bidirectional,src/drivers/vmount,0.039221640298962614,0.00611270433508884,28
+External Position,bidirectional,src/examples/px4_simple_app,0.02897802315557052,0.004516233549009571,29
+External Position,bidirectional,src/modules/attitude_estimator_q,0.02897802315557052,0.004516233549009571,29
+External Position,bidirectional,src/modules/sdlog2,0.017683340355140617,0.002755953866890633,30
+External Position,bidirectional,src/platforms/qurt/tests/muorb,0.017683340355140617,0.002755953866890633,30
+External Position,bidirectional,src/templates/module,0.017683340355140617,0.002755953866890633,30
+External Position,bidirectional,src/drivers/blinkm,0.014656576261250338,0.0022842317803846357,31
+External Position,bidirectional,src/modules/gpio_led,0.014656576261250338,0.0022842317803846357,31
+External Position,bidirectional,src/drivers/batt_smbus,0.012229284320137094,0.0019059376076301733,32
+External Position,bidirectional,src/modules/syslink,0.012229284320137094,0.0019059376076301733,32
+External Position,bidirectional,src/modules/camera_feedback,0.011294682800429905,0.0017602796821189382,33
+External Position,bidirectional,src/modules/replay,0.011294682800429905,0.0017602796821189382,33
+External Position,bidirectional,src/modules/logger,0.0024272919411132436,0.000378294172754462,34
+External Position,bidirectional,src/drivers/distance_sensor,0.0012868498680164999,0.0002005559356231467,35
+External Position,bidirectional,src/drivers/px4flow,0.0012868498680164999,0.0002005559356231467,35
+External Position,bidirectional,src/platforms/posix/drivers/df_bebop_rangefinder_wrapper,0.0012868498680164999,0.0002005559356231467,35
+External Position,bidirectional,src/platforms/posix/drivers/df_isl29501_wrapper,0.0012868498680164999,0.0002005559356231467,35
+External Position,bidirectional,src/platforms/posix/drivers/df_trone_wrapper,0.0012868498680164999,0.0002005559356231467,35
+Global Position,bidirectional,src/modules/commander,1.2336560493478685,0.17109851783211258,1
+Global Position,bidirectional,src/modules/ekf2,1.1652689562551724,0.16161375887260168,2
+Global Position,bidirectional,src/modules/mavlink,0.3338187342855406,0.046298067189019375,3
+Global Position,bidirectional,src/modules/events,0.30795957894855064,0.04271160307457825,4
+Global Position,bidirectional,src/modules/vtol_att_control,0.30646247154203415,0.0425039658985389,5
+Global Position,bidirectional,src/modules/load_mon,0.29163224252570813,0.040447128253114556,6
+Global Position,bidirectional,src/modules/sensors,0.2741503360062722,0.038022523521563815,7
+Global Position,bidirectional,src/modules/mc_att_control,0.2456750049182353,0.0340732161384263,8
+Global Position,bidirectional,src/modules/fw_att_control,0.23586586246888466,0.03271276422383054,9
+Global Position,bidirectional,src/modules/fw_pos_control_l1,0.21395667204192076,0.029674129580943957,10
+Global Position,bidirectional,src/modules/mc_pos_control,0.21395667204192076,0.029674129580943957,10
+Global Position,bidirectional,src/modules/gnd_att_control,0.18388218977357415,0.025503032342453245,11
+Global Position,bidirectional,src/examples/rover_steering_control,0.16983029197142901,0.023554143194666644,12
+Global Position,bidirectional,src/modules/gnd_pos_control,0.16046673677620596,0.02225549077336272,13
+Global Position,bidirectional,src/modules/land_detector,0.15205488655844354,0.0210888324448556,14
+Global Position,bidirectional,src/examples/fixedwing_control,0.1411818527523626,0.019580827057501225,15
+Global Position,bidirectional,src/drivers/vmount,0.12977594881178675,0.017998916718878398,16
+Global Position,bidirectional,src/modules/position_estimator_inav,0.12848075689199837,0.017819283653486253,17
+Global Position,bidirectional,src/modules/navigator,0.1230973470794276,0.01707264650101526,18
+Global Position,bidirectional,src/drivers/telemetry,0.12237326305360108,0.01697222166731034,19
+Global Position,bidirectional,src/modules/landing_target_estimator,0.09080979762378316,0.012594614022503876,20
+Global Position,bidirectional,src/modules/wind_estimator,0.09080979762378316,0.012594614022503876,20
+Global Position,bidirectional,src/drivers/camera_trigger,0.08258396173890879,0.011453754438038498,21
+Global Position,bidirectional,src/platforms/posix/drivers/df_bebop_bus_wrapper,0.08173784481491317,0.011336404588633678,22
+Global Position,bidirectional,src/examples/uuv_example_app,0.06792067522279112,0.009420070421507663,23
+Global Position,bidirectional,src/drivers/mkblctrl,0.06654822770241936,0.009229722604008533,24
+Global Position,bidirectional,src/drivers/px4io,0.06654822770241936,0.009229722604008533,24
+Global Position,bidirectional,src/platforms/qurt/fc_addon/uart_esc,0.06654822770241936,0.009229722604008533,24
+Global Position,bidirectional,src/platforms/posix/drivers/df_ltc2946_wrapper,0.05964832744343514,0.008272759998324658,25
+Global Position,bidirectional,src/modules/simulator,0.05058349942533314,0.0070155387176280394,26
+Global Position,bidirectional,src/examples/hwtest,0.04445871033094133,0.006166078013699513,27
+Global Position,bidirectional,src/examples/px4_simple_app,0.02346196489184979,0.0032539924078081504,28
+Global Position,bidirectional,src/modules/attitude_estimator_q,0.02346196489184979,0.0032539924078081504,28
+Global Position,bidirectional,src/drivers/linux_pwm_out,0.022089517371478035,0.0030636445903090203,29
+Global Position,bidirectional,src/drivers/pwm_out_sim,0.022089517371478035,0.0030636445903090203,29
+Global Position,bidirectional,src/drivers/px4fmu,0.022089517371478035,0.0030636445903090203,29
+Global Position,bidirectional,src/drivers/snapdragon_pwm_out,0.022089517371478035,0.0030636445903090203,29
+Global Position,bidirectional,src/drivers/tap_esc,0.022089517371478035,0.0030636445903090203,29
+Global Position,bidirectional,src/modules/uavcan,0.022089517371478035,0.0030636445903090203,29
+Global Position,bidirectional,src/drivers/blinkm,0.01632733642284249,0.002264474821463691,30
+Global Position,bidirectional,src/modules/gpio_led,0.01632733642284249,0.002264474821463691,30
+Global Position,bidirectional,src/modules/sdlog2,0.015236129006975418,0.0021131328233427718,31
+Global Position,bidirectional,src/platforms/qurt/tests/muorb,0.015236129006975418,0.0021131328233427718,31
+Global Position,bidirectional,src/templates/module,0.015236129006975418,0.0021131328233427718,31
+Global Position,bidirectional,src/drivers/batt_smbus,0.015189617112493812,0.002106681984625146,32
+Global Position,bidirectional,src/modules/syslink,0.015189617112493812,0.002106681984625146,32
+Global Position,bidirectional,src/modules/camera_feedback,0.008225835884874372,0.0011408595844653784,33
+Global Position,bidirectional,src/modules/replay,0.008225835884874372,0.0011408595844653784,33
+Global Position,bidirectional,src/modules/logger,0.0011377193103486811,0.00015779283683854534,34
+Global Position,bidirectional,src/drivers/distance_sensor,0.0005345980526024888,7.414460009706242e-05,35
+Global Position,bidirectional,src/drivers/px4flow,0.0005345980526024888,7.414460009706242e-05,35
+Global Position,bidirectional,src/platforms/posix/drivers/df_bebop_rangefinder_wrapper,0.0005345980526024888,7.414460009706242e-05,35
+Global Position,bidirectional,src/platforms/posix/drivers/df_isl29501_wrapper,0.0005345980526024888,7.414460009706242e-05,35
+Global Position,bidirectional,src/platforms/posix/drivers/df_trone_wrapper,0.0005345980526024888,7.414460009706242e-05,35
+Mechanical/Electrical,bidirectional,src/modules/ekf2,0.5768417259308319,0.07693918621956557,1
+Mechanical/Electrical,bidirectional,src/modules/commander,0.4181318614102908,0.05577045436071224,2
+Mechanical/Electrical,bidirectional,src/modules/mavlink,0.4088375823667074,0.054530782828704154,3
+Mechanical/Electrical,bidirectional,src/modules/vtol_att_control,0.3680186887489807,0.04908635619284825,4
+Mechanical/Electrical,bidirectional,src/platforms/posix/drivers/df_bebop_bus_wrapper,0.3270374641605358,0.043620277841757746,5
+Mechanical/Electrical,bidirectional,src/modules/sensors,0.31575868451307293,0.04211591349255037,6
+Mechanical/Electrical,bidirectional,src/modules/land_detector,0.31081112388675,0.04145600754045062,7
+Mechanical/Electrical,bidirectional,src/drivers/mkblctrl,0.3018784436569061,0.04026456608129688,8
+Mechanical/Electrical,bidirectional,src/drivers/px4io,0.3018784436569061,0.04026456608129688,8
+Mechanical/Electrical,bidirectional,src/platforms/qurt/fc_addon/uart_esc,0.3018784436569061,0.04026456608129688,8
+Mechanical/Electrical,bidirectional,src/examples/uuv_example_app,0.28194191750293995,0.03760543095050163,9
+Mechanical/Electrical,bidirectional,src/platforms/posix/drivers/df_ltc2946_wrapper,0.21685280292572137,0.028923840694106504,10
+Mechanical/Electrical,bidirectional,src/examples/hwtest,0.19169378242209165,0.02556812893364564,11
+Mechanical/Electrical,bidirectional,src/modules/mc_att_control,0.18894888658422604,0.025202014551607723,12
+Mechanical/Electrical,bidirectional,src/modules/position_estimator_inav,0.1806298602289749,0.024092422285411485,13
+Mechanical/Electrical,bidirectional,src/modules/fw_att_control,0.16679048732039847,0.022246525843615854,14
+Mechanical/Electrical,bidirectional,src/drivers/telemetry,0.16602208188408865,0.022144035877480053,15
+Mechanical/Electrical,bidirectional,src/modules/simulator,0.1513178677886068,0.02018278686297951,16
+Mechanical/Electrical,bidirectional,src/modules/gnd_att_control,0.12449923538983196,0.016605715962025244,17
+Mechanical/Electrical,bidirectional,src/modules/fw_pos_control_l1,0.1136519442839512,0.015158903582032349,18
+Mechanical/Electrical,bidirectional,src/modules/mc_pos_control,0.1136519442839512,0.015158903582032349,18
+Mechanical/Electrical,bidirectional,src/drivers/linux_pwm_out,0.11018466123481442,0.01469643714765124,19
+Mechanical/Electrical,bidirectional,src/drivers/pwm_out_sim,0.11018466123481442,0.01469643714765124,19
+Mechanical/Electrical,bidirectional,src/drivers/px4fmu,0.11018466123481442,0.01469643714765124,19
+Mechanical/Electrical,bidirectional,src/drivers/snapdragon_pwm_out,0.11018466123481442,0.01469643714765124,19
+Mechanical/Electrical,bidirectional,src/drivers/tap_esc,0.11018466123481442,0.01469643714765124,19
+Mechanical/Electrical,bidirectional,src/modules/uavcan,0.11018466123481442,0.01469643714765124,19
+Mechanical/Electrical,bidirectional,src/examples/rover_steering_control,0.09965452782226795,0.013291927281036755,20
+Mechanical/Electrical,bidirectional,src/modules/navigator,0.09144380201478668,0.012196780148813965,21
+Mechanical/Electrical,bidirectional,src/modules/landing_target_estimator,0.09138116861830564,0.012188426102393967,22
+Mechanical/Electrical,bidirectional,src/modules/wind_estimator,0.09138116861830564,0.012188426102393967,22
+Mechanical/Electrical,bidirectional,src/examples/px4_simple_app,0.0902481350808483,0.012037302016855992,23
+Mechanical/Electrical,bidirectional,src/modules/attitude_estimator_q,0.0902481350808483,0.012037302016855992,23
+Mechanical/Electrical,bidirectional,src/examples/fixedwing_control,0.08550973018423387,0.011405293269333395,24
+Mechanical/Electrical,bidirectional,src/modules/events,0.08367054387967143,0.011159982482651206,25
+Mechanical/Electrical,bidirectional,src/drivers/vmount,0.06077417857768337,0.008106063817391382,26
+Mechanical/Electrical,bidirectional,src/modules/gnd_pos_control,0.058259659631441474,0.0077706771198612365,27
+Mechanical/Electrical,bidirectional,src/modules/load_mon,0.058197210439975965,0.007762347642717965,28
+Mechanical/Electrical,bidirectional,src/drivers/camera_trigger,0.050300613363544903,0.0067090990206908245,29
+Mechanical/Electrical,bidirectional,src/modules/sdlog2,0.04916757982608755,0.006557974935152849,30
+Mechanical/Electrical,bidirectional,src/platforms/qurt/tests/muorb,0.04916757982608755,0.006557974935152849,30
+Mechanical/Electrical,bidirectional,src/templates/module,0.04916757982608755,0.006557974935152849,30
+Mechanical/Electrical,bidirectional,src/modules/camera_feedback,0.041080555254760745,0.0054793270817031425,31
+Mechanical/Electrical,bidirectional,src/modules/replay,0.041080555254760745,0.0054793270817031425,31
+Mechanical/Electrical,bidirectional,src/drivers/blinkm,0.025473333439695465,0.00339763483993324,32
+Mechanical/Electrical,bidirectional,src/modules/gpio_led,0.025473333439695465,0.00339763483993324,32
+Mechanical/Electrical,bidirectional,src/drivers/batt_smbus,0.025159020503629732,0.0033557117604608657,33
+Mechanical/Electrical,bidirectional,src/modules/syslink,0.025159020503629732,0.0033557117604608657,33
+Mechanical/Electrical,bidirectional,src/drivers/distance_sensor,0.005375869369578689,0.0007170337996105176,34
+Mechanical/Electrical,bidirectional,src/drivers/px4flow,0.005375869369578689,0.0007170337996105176,34
+Mechanical/Electrical,bidirectional,src/platforms/posix/drivers/df_bebop_rangefinder_wrapper,0.005375869369578689,0.0007170337996105176,34
+Mechanical/Electrical,bidirectional,src/platforms/posix/drivers/df_isl29501_wrapper,0.005375869369578689,0.0007170337996105176,34
+Mechanical/Electrical,bidirectional,src/platforms/posix/drivers/df_trone_wrapper,0.005375869369578689,0.0007170337996105176,34
+Mechanical/Electrical,bidirectional,src/modules/logger,0.00031431293606573124,4.192307947237409e-05,35
+all,bidirectional,src/modules/ekf2,1.1963846595085101,0.17385746032443167,1
+all,bidirectional,src/modules/commander,0.7828045044747136,0.1137563926424876,2
+all,bidirectional,src/modules/mavlink,0.37342509352198977,0.054265773023048955,3
+all,bidirectional,src/modules/vtol_att_control,0.3016389509413002,0.0438338802899096,4
+all,bidirectional,src/modules/position_estimator_inav,0.2279343462646134,0.03312319850252427,5
+all,bidirectional,src/modules/land_detector,0.2261292171097323,0.03286087888154707,6
+all,bidirectional,src/modules/sensors,0.21716567232744266,0.031558305232706245,7
+all,bidirectional,src/modules/mc_att_control,0.18103112543020694,0.0263072678647511,8
+all,bidirectional,src/modules/fw_pos_control_l1,0.1731685978276362,0.025164692966410915,9
+all,bidirectional,src/modules/mc_pos_control,0.1731685978276362,0.025164692966410915,9
+all,bidirectional,src/drivers/telemetry,0.1663130716539409,0.024168454540689232,10
+all,bidirectional,src/modules/fw_att_control,0.1618580786908194,0.023521059276820078,11
+all,bidirectional,src/platforms/posix/drivers/df_bebop_bus_wrapper,0.15060407481959973,0.0218856383309051,12
+all,bidirectional,src/modules/navigator,0.14466435951916357,0.021022484654554696,13
+all,bidirectional,src/drivers/mkblctrl,0.13581780999671336,0.01973691264359348,14
+all,bidirectional,src/drivers/px4io,0.13581780999671336,0.01973691264359348,14
+all,bidirectional,src/platforms/qurt/fc_addon/uart_esc,0.13581780999671336,0.01973691264359348,14
+all,bidirectional,src/modules/simulator,0.12915297926495783,0.018768385894854273,15
+all,bidirectional,src/modules/landing_target_estimator,0.12760309323111224,0.01854315795708767,16
+all,bidirectional,src/modules/wind_estimator,0.12760309323111224,0.01854315795708767,16
+all,bidirectional,src/modules/events,0.12026544710928876,0.017476858327314982,17
+all,bidirectional,src/examples/uuv_example_app,0.11784451062180765,0.017125050181017683,18
+all,bidirectional,src/drivers/camera_trigger,0.11213326952169199,0.01629509815423849,19
+all,bidirectional,src/modules/load_mon,0.10379442535076223,0.015083305393376259,20
+all,bidirectional,src/modules/gnd_att_control,0.10114442551100525,0.014698209982516034,21
+all,bidirectional,src/platforms/posix/drivers/df_ltc2946_wrapper,0.09492199507097163,0.013793972415817288,22
+all,bidirectional,src/examples/rover_steering_control,0.08804291762375906,0.012794311541831513,23
+all,bidirectional,src/examples/fixedwing_control,0.08020837504533175,0.01165580340010345,24
+all,bidirectional,src/examples/hwtest,0.08013573024808526,0.011645246728505665,25
+all,bidirectional,src/modules/gnd_pos_control,0.07088833697869865,0.010301424492355233,26
+all,bidirectional,src/drivers/vmount,0.05743119949829577,0.008345846303530318,27
+all,bidirectional,src/drivers/linux_pwm_out,0.055682079748628106,0.008091665915087814,28
+all,bidirectional,src/drivers/pwm_out_sim,0.055682079748628106,0.008091665915087814,28
+all,bidirectional,src/drivers/px4fmu,0.055682079748628106,0.008091665915087814,28
+all,bidirectional,src/drivers/snapdragon_pwm_out,0.055682079748628106,0.008091665915087814,28
+all,bidirectional,src/drivers/tap_esc,0.055682079748628106,0.008091665915087814,28
+all,bidirectional,src/modules/uavcan,0.055682079748628106,0.008091665915087814,28
+all,bidirectional,src/examples/px4_simple_app,0.037708780373722384,0.005479803452512017,29
+all,bidirectional,src/modules/attitude_estimator_q,0.037708780373722384,0.005479803452512017,29
+all,bidirectional,src/modules/sdlog2,0.022238956664302135,0.0032317436496628374,30
+all,bidirectional,src/platforms/qurt/tests/muorb,0.022238956664302135,0.0032317436496628374,30
+all,bidirectional,src/templates/module,0.022238956664302135,0.0032317436496628374,30
+all,bidirectional,src/drivers/blinkm,0.016471021758526525,0.0023935529339387243,31
+all,bidirectional,src/modules/gpio_led,0.016471021758526525,0.0023935529339387243,31
+all,bidirectional,src/modules/camera_feedback,0.01546982370942025,0.0022480598028491792,32
+all,bidirectional,src/modules/replay,0.01546982370942025,0.0022480598028491792,32
+all,bidirectional,src/drivers/batt_smbus,0.014786264822886362,0.0021487256873116227,33
+all,bidirectional,src/modules/syslink,0.014786264822886362,0.0021487256873116227,33
+all,bidirectional,src/drivers/distance_sensor,0.0030263295543435666,0.00043978328060399123,34
+all,bidirectional,src/drivers/px4flow,0.0030263295543435666,0.00043978328060399123,34
+all,bidirectional,src/platforms/posix/drivers/df_bebop_rangefinder_wrapper,0.0030263295543435666,0.00043978328060399123,34
+all,bidirectional,src/platforms/posix/drivers/df_isl29501_wrapper,0.0030263295543435666,0.00043978328060399123,34
+all,bidirectional,src/platforms/posix/drivers/df_trone_wrapper,0.0030263295543435666,0.00043978328060399123,34
+all,bidirectional,src/modules/logger,0.0016847569356401625,0.0002448272466271013,35
