@@ -1,0 +1,11 @@
+{
+  "status": "complete",
+  "audit_scope": "all unambiguous same-statement uORB declarations/calls for the 18 evaluated topics",
+  "audited_occurrences": 244,
+  "topics_audited": 18,
+  "publisher_occurrences": 130,
+  "subscriber_occurrences": 114,
+  "role_agreement": 1.0,
+  "explicit_edge_recall": 1.0,
+  "boundary": "This source-grounded audit measures agreement and recall on explicit unambiguous declarations; it does not estimate recall for macro-generated or runtime-created relations."
+}

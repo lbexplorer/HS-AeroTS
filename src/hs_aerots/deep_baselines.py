@@ -155,10 +155,17 @@ def run_catch(config: dict[str, Any], root: Path) -> list[dict[str, Any]]:
         g_val, _, y_val = store.metadata("validation"); g_test, _, y_test = store.metadata("test")
         val_metrics = evaluate_scores(y_val, val_scores, g_val)
         metrics = evaluate_scores(y_test, test_scores, g_test, val_metrics["threshold"])
-        row = {"method": "CATCH-official-model-adaptation", "seed": seed, "train_sample": len(train_idx),
+        method_name = "CATCH-official-full-channel" if channel_groups is None else "CATCH-official-model-adaptation"
+        row = {"method": method_name, "seed": seed, "train_sample": len(train_idx),
                "input_channels": catch_channels, "topic_aggregation": bool(channel_groups),
                "best_normal_validation_loss": best, **metrics}
         rows.append(row); torch.save(best_state, report_dir / f"catch_seed{seed}.pt")
+        pd.DataFrame({"group": g_val, "label": y_val, "score": val_scores}).to_csv(
+            report_dir / f"catch_validation_scores_seed{seed}.csv", index=False, encoding="utf-8-sig"
+        )
+        pd.DataFrame({"group": g_test, "label": y_test, "score": test_scores}).to_csv(
+            report_dir / f"catch_test_scores_seed{seed}.csv", index=False, encoding="utf-8-sig"
+        )
         print(json.dumps(row), flush=True)
     pd.DataFrame(rows).to_csv(report_dir / "catch_seed_metrics.csv", index=False, encoding="utf-8-sig")
     return rows

@@ -1,18 +1,18 @@
 \begin{table}[H]
-\setcounter{table}{3}
-\caption{Experimental protocols, configurations, and evaluation roles. Complete hyperparameters and per-run settings are provided in Supplementary Table S1.\label{tab:protocol}}
+\caption{Experimental protocols, configurations, and evaluation roles. Frozen hyperparameters and per-run records can be supplied for confidential assessment as described in the Data Availability Statement.\label{tab:protocol}}
 \small
 \begin{tabularx}{\textwidth}{p{2.2cm} p{2.4cm} X p{2.6cm}}
 \toprule
 \textbf{Protocol} & \textbf{Role} & \textbf{Configuration and counts} & \textbf{Primary outputs}\\
 \midrule
 Fixed chronological & Primary UAV-SEAD reproduction & 96-sample windows, stride 8, horizon 12; 1389 logs; 218,537 windows; train/validation/test: 152,340/32,138/34,059; 87 channels, 1566 features; five seeds & Stage 1/2 LightGBM, Cascade, Direct Five-Class; AUPRC, AUROC, Macro-F1, Balanced Accuracy\\
-Purged & Temporal-proximity sensitivity & Same feature/model configuration; 14 windows removed at each boundary; train/validation/test: 133,353/8,536/17,966 windows & Same task definitions; protocol sensitivity metrics\\
+Purged & Temporal-proximity sensitivity & Same feature/model configuration; 14 windows removed at each boundary; train/validation/test: 133,353/8,536/17,966 windows; five seeds & Same task definitions; protocol sensitivity metrics\\
 Leave-log-out & Unseen-log generalization & Same feature/model configuration; 970/206/213 complete logs for train/validation/test; 149,774/37,324/31,439 windows; 1000 flight-log bootstraps & Detection, diagnosis, and hierarchy comparison\\
 ALFA & Zero-shot external binary reference & 16 semantically shared channels; no four-class label transfer; UAV-SEAD validation threshold & Binary AUPRC and AUROC only\\
 Uncategorized & Flight-level weak-label screening & 139 Uncategorized logs versus 898 pure-Normal logs; no temporal event labels & Flight-level screening metrics only\\
-PX4 replay & Source-mutation module ground truth & 3 ULogs $\times$ 4 mutations $\times$ baseline/fault; 24 cases, 12 fault runs; 30 s injection & Onset-conditioned and detector-gated Top-$k$, MRR, and EXAM\\
+CATCH & Recent unsupervised reference & Official model core; all 87 raw channels; fixed chronological split; 4096 normal training windows; two epochs; three seeds & AUPRC, AUROC, validation-threshold F1, and event metrics\\
+PX4 replay & Source-mutation module ground truth & 3 ULogs $\times$ 4 mutations $\times$ baseline/fault; 24 cases, 12 fault runs; 30 s injection; 5000 two-way cluster bootstraps & Onset-conditioned and detector-gated Top-$k$, MRR, and EXAM\\
 \bottomrule
 \end{tabularx}
-\noindent{\small Core model configurations: Stage 1 LightGBM uses 1600 trees, learning rate 0.025, 64 leaves, minimum child size 80, class-balanced weighting, and 80-round early stopping. Stage 2 LightGBM uses 1200 trees with the same learning rate, 64 leaves, class-balanced weighting, and minimum child size 30; Direct Five-Class uses the Stage 2 configuration with five labels. The Random Forest reference uses 500 trees, square-root feature subsampling, minimum leaf size 2, and balanced subsampling. Full hyperparameters and per-run settings are provided in Supplementary Table S1.}
+\noindent{\small Core model configurations: Stage 1 LightGBM uses 1600 trees, learning rate 0.025, 64 leaves, minimum child size 80, class-balanced weighting, and 80-round early stopping. Stage 2 LightGBM uses 1200 trees with the same learning rate, 64 leaves, class-balanced weighting, and minimum child size 30; Direct Five-Class uses the Stage 2 configuration with five labels. The Random Forest reference uses 500 trees, square-root feature subsampling, minimum leaf size 2, and balanced subsampling.}
 \end{table}

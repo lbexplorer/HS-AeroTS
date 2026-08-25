@@ -1,7 +1,24 @@
 \subsection{Data Preprocessing and Feature Representation}
 
-UAV-SEAD was used as the primary real-flight dataset. Raw PX4 ULog files were retained as read-only inputs, and the dataset revision was fixed to \texttt{\seqsplit{774a336a1d1d06b248927a35c2ea1f6869e9e1a4}}. After the inventory and parsing checks, 1389 usable logs remained. Core channels were selected from the mapped PX4 topic fields using a minimum 60\% log-coverage criterion, yielding 87 telemetry channels.
+UAV-SEAD was used as the primary real-flight dataset \cite{kabaoglu2026uavsead}. To make the data inventory reproducible, the dataset revision was fixed to \texttt{\seqsplit{774a336a1d1d06b248927a35c2ea1f6869e9e1a4}}, and the original PX4 ULog files were retained as read-only inputs. Inventory and parsing checks excluded one missing file, two parse failures, and four excessive-duration or corrupt logs, leaving 1,389 usable logs. Numeric fields from the mapped PX4 topics were then screened by log-level availability. A channel was retained when it occurred in at least 60\% of the usable logs, producing a common set of 87 telemetry channels; all aligned arrays and feature matrices were generated as derived artifacts by versioned scripts and configuration files.
 
-The selected channels were aligned to a common 10 Hz grid by timestamp interpolation, while flight-log identity and annotation intervals were retained for split assignment and evaluation. Each aligned log was transformed into overlapping windows of 96 samples with stride 8 and horizon 12. The feature vector consisted of 18 temporal-statistical descriptors for each channel, yielding 1566 features per window. The feature dictionary retained the descriptor, channel, and PX4 topic for every feature so that later attribution could be aggregated from statistical feature to channel, topic, and subsystem.
+Because uORB topics are logged asynchronously, each flight was resampled independently onto a uniform 10 Hz grid. Finite samples within a channel were linearly interpolated by timestamp, values outside the observed interval were extended from the nearest finite endpoint, and a channel absent from an entire log was filled with zero. Flight boundaries were never crossed during interpolation. This procedure yielded 1,892,063 aligned records across the 1,389 logs. The log identifier and the original annotation intervals were retained alongside every aligned sequence so that subsequent partitioning and window labeling could remain flight-aware.
 
-Standardization statistics were estimated from the training windows only and then applied to validation and test windows. The primary chronological representation, together with the alternative purged and leave-log-out assignments, is summarized in Table~\ref{tab:protocol}.
+Each aligned sequence was converted into overlapping input windows of $L=96$ samples with stride $s=8$. A horizon of $h=12$ additional samples was used for label assignment but was not included in the input representation: a binary window label was positive if an annotated anomaly occurred anywhere from the window start through the end of this horizon, and the fault-domain label was the majority nonzero annotated class over the same interval. Under the primary chronological protocol, this construction produced 218,537 windows. Split assignment preceded normalization. For channel $c$, the mean $\mu_c^{\mathrm{tr}}$ and standard deviation $\sigma_c^{\mathrm{tr}}$ were estimated only from samples participating in training windows, after which all partitions were transformed as
+\begin{equation}
+z_{c,t}=\frac{x_{c,t}-\mu_c^{\mathrm{tr}}}{\widetilde{\sigma}_c^{\mathrm{tr}}},\qquad
+\widetilde{\sigma}_c^{\mathrm{tr}}=
+\begin{cases}
+\sigma_c^{\mathrm{tr}}, & \sigma_c^{\mathrm{tr}}\geq 10^{-6},\\
+1, & \sigma_c^{\mathrm{tr}}<10^{-6}.
+\end{cases}
+\label{eq:channel_standardization}
+\end{equation}
+This ordering prevents validation and test telemetry from influencing the feature scale. The fixed chronological, purged, and leave-log-out assignments are detailed in Table~\ref{tab:protocol}.
+
+Following the temporal-statistical representation used by AeroTSBoost \cite{wei2026aerotsboost}, each normalized channel window was summarized by 18 descriptors: mean, standard deviation, minimum, maximum, range, five quantiles (10th, 25th, 50th, 75th, and 90th), start value, end value, endpoint difference, mean and standard deviation of first differences, mean and maximum absolute first difference, and lag-one autocorrelation. For window $w$, concatenation over the 87 channels gives
+\begin{equation}
+\mathbf{f}_w=\left[d_k\!\left(\mathbf{z}_{w,c}\right)\right]_{k=1,\ldots,18;\,c=1,\ldots,87}\in\mathbb{R}^{1566}.
+\label{eq:window_feature_vector}
+\end{equation}
+The accompanying feature dictionary stores the descriptor, telemetry channel, and PX4 topic for every coordinate of $\mathbf{f}_w$. This explicit provenance enables later attribution to be aggregated from statistical feature to channel, topic, and subsystem without relying on name reconstruction.

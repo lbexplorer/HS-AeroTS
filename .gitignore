@@ -20,6 +20,9 @@ reports/**/model_runs/
 reports/**/baseline_runs/
 reports/**/random_forest_runs/
 reports/**/predictions/
+reports/**/*.pt
+reports/**/catch_validation_scores_seed*.csv
+reports/**/catch_test_scores_seed*.csv
 reports/p9/replay_logs/
 third_party/ulog_annotation_tool/data/
 
@@ -31,7 +34,13 @@ paper/*.aux
 paper/*.out
 paper/*.log
 paper/*.pdf
+paper/*.fdb_latexmk
+paper/*.fls
 paper/Definitions/*-converted-to.pdf
+
+# Local render and review scratch files
+tmp/pdfs/
+tmp/revision_pdf/
 
 # Embedded upstream repositories are managed independently.
 third_party/

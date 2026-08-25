@@ -1,0 +1,117 @@
+{
+  "status": "complete",
+  "comparisons": [
+    {
+      "protocol": "fixed_chronological",
+      "seed": 0,
+      "contrast": "direct_minus_cascade_macro_f1",
+      "estimate": -0.02946664167646773,
+      "ci_low": -0.05533045358091908,
+      "ci_high": -0.003623179507579083,
+      "flight_logs": 1369
+    },
+    {
+      "protocol": "fixed_chronological",
+      "seed": 1,
+      "contrast": "direct_minus_cascade_macro_f1",
+      "estimate": -0.029434725365391268,
+      "ci_low": -0.05311942593896582,
+      "ci_high": -0.006319050378260174,
+      "flight_logs": 1369
+    },
+    {
+      "protocol": "fixed_chronological",
+      "seed": 2,
+      "contrast": "direct_minus_cascade_macro_f1",
+      "estimate": -0.044277650642532085,
+      "ci_low": -0.06885267416106991,
+      "ci_high": -0.022214158320466044,
+      "flight_logs": 1369
+    },
+    {
+      "protocol": "fixed_chronological",
+      "seed": 3,
+      "contrast": "direct_minus_cascade_macro_f1",
+      "estimate": -0.022484782096033773,
+      "ci_low": -0.047791427198358036,
+      "ci_high": 0.0011556990211060124,
+      "flight_logs": 1369
+    },
+    {
+      "protocol": "fixed_chronological",
+      "seed": 4,
+      "contrast": "direct_minus_cascade_macro_f1",
+      "estimate": -0.025848772262792696,
+      "ci_low": -0.05174615231814675,
+      "ci_high": -0.0028787673642582993,
+      "flight_logs": 1369
+    },
+    {
+      "protocol": "purged",
+      "seed": 0,
+      "contrast": "direct_minus_cascade_macro_f1",
+      "estimate": 0.051783270513803714,
+      "ci_low": 0.004019161752760745,
+      "ci_high": 0.09931569077610451,
+      "flight_logs": 826
+    },
+    {
+      "protocol": "purged",
+      "seed": 1,
+      "contrast": "direct_minus_cascade_macro_f1",
+      "estimate": 0.018108975654920312,
+      "ci_low": -0.030414972203104712,
+      "ci_high": 0.06380758342238771,
+      "flight_logs": 826
+    },
+    {
+      "protocol": "purged",
+      "seed": 2,
+      "contrast": "direct_minus_cascade_macro_f1",
+      "estimate": 0.04280959302733123,
+      "ci_low": -0.0023272333830214784,
+      "ci_high": 0.0940972181732965,
+      "flight_logs": 826
+    },
+    {
+      "protocol": "purged",
+      "seed": 3,
+      "contrast": "direct_minus_cascade_macro_f1",
+      "estimate": 0.03252456747060117,
+      "ci_low": -0.013987675555906468,
+      "ci_high": 0.07170165525201443,
+      "flight_logs": 826
+    },
+    {
+      "protocol": "purged",
+      "seed": 4,
+      "contrast": "direct_minus_cascade_macro_f1",
+      "estimate": 0.024951816710041763,
+      "ci_low": -0.014724576290239913,
+      "ci_high": 0.06443567119274245,
+      "flight_logs": 826
+    }
+  ],
+  "aggregate": [
+    {
+      "protocol": "fixed_chronological",
+      "seeds": 5,
+      "estimate_mean": -0.03030251440864351,
+      "seed_sd": 0.008332300573927334,
+      "paired_flight_log_ci_low": -0.05241307625298257,
+      "paired_flight_log_ci_high": -0.008574771420073313,
+      "flight_logs": 1369,
+      "interpretation": "flight logs are paired within each seed; bootstrap contrasts are averaged across model seeds"
+    },
+    {
+      "protocol": "purged",
+      "seeds": 5,
+      "estimate_mean": 0.034035644675339635,
+      "seed_sd": 0.013513127538557889,
+      "paired_flight_log_ci_low": -0.004690154833428504,
+      "paired_flight_log_ci_high": 0.07620791364685164,
+      "flight_logs": 826,
+      "interpretation": "flight logs are paired within each seed; bootstrap contrasts are averaged across model seeds"
+    }
+  ]
+}

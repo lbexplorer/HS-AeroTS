@@ -15,15 +15,20 @@ The manuscript deliberately distinguishes real-flight runtime anomaly diagnosis,
 
 - `sections/`: LaTeX subsection sources grouped by top-level manuscript section. Each completed subsection is the canonical source included by `main.tex`.
 - `figures/`: manuscript figures and figure source assets.
+- `references/`: verified literature pool and BibTeX metadata used while drafting Sections 1--3.
 - `main.tex`: assembled MDPI manuscript source.
 
 Current subsection layout:
 
 ```text
 sections/
+  section_1_introduction/
+  section_2_related_work/
   section_3_methodology/
   section_4_experimental_setup/
   section_5_results/
+  section_6_discussion/
+  section_7_conclusions/
 ```
 
 Top-level `\section{...}` commands remain in `main.tex`; subsection files begin with `\subsection{...}` and are loaded with `\input`.

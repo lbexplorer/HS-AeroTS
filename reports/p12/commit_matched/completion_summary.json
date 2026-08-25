@@ -1,0 +1,111 @@
+{
+  "status": "complete",
+  "firmware_commit": "82aa24adfca29321cfd1209e287eab6c2b16780e",
+  "matching_logs_in_corpus": 562,
+  "fixed_test_windows": 34059,
+  "matching_fixed_test_windows": 14419,
+  "matching_fixed_test_fraction": 0.4233535922957221,
+  "stage2_anomaly_test_windows": 3602,
+  "matching_stage2_anomaly_test_windows": 1393,
+  "matching_stage2_anomaly_fraction": 0.386729594669628,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "top_producer_modules": [
+    {
+      "mode": "producer_only",
+      "module": "src/modules/ekf2",
+      "mean_abs_shap": 1.6406892160461417,
+      "seed_std": 0.09990594631670144,
+      "seeds": 5,
+      "shap_share": 0.2273565442345966,
+      "rank": 1
+    },
+    {
+      "mode": "producer_only",
+      "module": "src/modules/mavlink",
+      "mean_abs_shap": 1.4922115976169033,
+      "seed_std": 0.05637592523204339,
+      "seeds": 5,
+      "shap_share": 0.20678143598612178,
+      "rank": 2
+    },
+    {
+      "mode": "producer_only",
+      "module": "src/modules/sensors",
+      "mean_abs_shap": 0.7477734933338909,
+      "seed_std": 0.034362868198842135,
+      "seeds": 5,
+      "shap_share": 0.1036218167657197,
+      "rank": 3
+    },
+    {
+      "mode": "producer_only",
+      "module": "src/modules/position_estimator_inav",
+      "mean_abs_shap": 0.5111298423143392,
+      "seed_std": 0.02094187827462311,
+      "seeds": 5,
+      "shap_share": 0.07082920608438635,
+      "rank": 4
+    },
+    {
+      "mode": "producer_only",
+      "module": "src/modules/load_mon",
+      "mean_abs_shap": 0.47873457656963286,
+      "seed_std": 0.027503391073075204,
+      "seeds": 5,
+      "shap_share": 0.06634007091043352,
+      "rank": 5
+    },
+    {
+      "mode": "producer_only",
+      "module": "src/modules/vtol_att_control",
+      "mean_abs_shap": 0.3339774360762927,
+      "seed_std": 0.011476289122866825,
+      "seeds": 5,
+      "shap_share": 0.04628052343857263,
+      "rank": 6
+    },
+    {
+      "mode": "producer_only",
+      "module": "src/examples/hwtest",
+      "mean_abs_shap": 0.2341433559338407,
+      "seed_std": 0.008247594475165772,
+      "seeds": 5,
+      "shap_share": 0.032446135282644555,
+      "rank": 7
+    },
+    {
+      "mode": "producer_only",
+      "module": "src/examples/uuv_example_app",
+      "mean_abs_shap": 0.2341433559338407,
+      "seed_std": 0.008247594475165772,
+      "seeds": 5,
+      "shap_share": 0.032446135282644555,
+      "rank": 7
+    },
+    {
+      "mode": "producer_only",
+      "module": "src/platforms/qurt/tests/muorb",
+      "mean_abs_shap": 0.11817829395525607,
+      "seed_std": 0.008020827044676604,
+      "seeds": 5,
+      "shap_share": 0.016376415627304096,
+      "rank": 8
+    },
+    {
+      "mode": "producer_only",
+      "module": "src/platforms/posix/drivers/df_bebop_bus_wrapper",
+      "mean_abs_shap": 0.10578379034395073,
+      "seed_std": 0.006534996124739198,
+      "seeds": 5,
+      "shap_share": 0.014658862125391909,
+      "rank": 9
+    }
+  ],
+  "boundary": "All SHAP windows in this report originate from logs whose firmware commit matches the static PX4 graph."
+}

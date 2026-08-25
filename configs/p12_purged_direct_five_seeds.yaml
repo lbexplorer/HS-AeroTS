@@ -1,0 +1,42 @@
+protocol: purged_14_windows
+
+paths:
+  feature_dir: data/processed/p10/features_purged
+  feature_dictionary: reports/p10/purged/p2/feature_dictionary.csv
+  p2_model_runs: reports/p10/purged/p2/baseline_runs
+  report_dir: reports/p12/statistics/purged_direct
+
+labels:
+  0: Normal
+  1: External Position
+  2: Global Position
+  3: Altitude
+  4: Mechanical/Electrical
+
+stage2_model:
+  n_estimators: 1200
+  learning_rate: 0.025
+  num_leaves: 64
+  min_child_samples: 30
+  subsample: 0.90
+  colsample_bytree: 0.75
+  reg_alpha: 0.20
+  reg_lambda: 8.0
+  early_stopping_rounds: 80
+  class_weight: balanced
+
+random_forest:
+  n_estimators: 500
+  max_features: sqrt
+  min_samples_leaf: 2
+  class_weight: balanced_subsample
+  n_jobs: 1
+
+direct_five_class:
+  enabled: true
+  seeds: [0, 1, 2, 3, 4]
+
+experiment:
+  seeds: []
+  run_stage2: false
+  n_jobs: -1

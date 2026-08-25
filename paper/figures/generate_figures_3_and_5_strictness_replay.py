@@ -15,30 +15,52 @@ def load_protocol_values():
     fixed_p2 = json.loads((REPORTS / "p2" / "completion_summary.json").read_text())
     fixed_p3 = json.loads((REPORTS / "p3" / "completion_summary.json").read_text())
     fixed_p3_methods = pd.read_csv(REPORTS / "p3" / "method_summary.csv").set_index("method")
-    purged = json.loads((REPORTS / "p10" / "completion_summary.json").read_text())
+    purged_p2 = pd.read_csv(REPORTS / "p10" / "purged" / "p2" / "seed_metrics.csv")
+    purged_p3 = pd.read_csv(REPORTS / "p10" / "purged" / "p3" / "method_summary.csv").set_index("method")
+    purged_direct = pd.read_csv(REPORTS / "p12" / "statistics" / "purged_direct" / "method_summary.csv").set_index("method")
     fixed_direct = pd.read_csv(REPORTS / "p10" / "direct_five_seeds" / "method_summary.csv").set_index("method")
     llo = json.loads((REPORTS / "p11" / "llo" / "p3" / "completion_summary.json").read_text())
     return {
         "protocol": ["Fixed chronological", "Purged", "Leave-log-out"],
         "stage1_auprc": [
             fixed_p2["lightgbm_five_seed"]["auprc_mean"],
-            purged["purged_stage1_auprc"],
+            purged_p2["test_at_val_threshold_auprc"].mean(),
             llo["stage1_lightgbm"]["test_auprc"]["mean"],
         ],
         "stage2_macro_f1": [
             fixed_p3["stage2_lightgbm"]["macro_f1_mean"],
-            purged["purged_stage2_macro_f1"],
+            purged_p3.loc["stage2_lightgbm", "macro_f1_mean"],
             llo["methods"][0]["macro_f1_mean"],
         ],
         "cascade_macro_f1": [
             fixed_p3_methods.loc["hs_aerots_cascade", "macro_f1_mean"],
-            purged["purged_cascade_macro_f1"],
+            purged_p3.loc["hs_aerots_cascade", "macro_f1_mean"],
             next(item["macro_f1_mean"] for item in llo["methods"] if item["method"] == "hs_aerots_cascade"),
         ],
         "direct_macro_f1": [
             fixed_direct.loc["direct_five_class_lightgbm", "macro_f1_mean"],
-            purged["purged_direct_five_macro_f1"],
+            purged_direct.loc["direct_five_class_lightgbm", "macro_f1_mean"],
             next(item["macro_f1_mean"] for item in llo["methods"] if item["method"] == "direct_five_class_lightgbm"),
+        ],
+        "stage1_auprc_sd": [
+            fixed_p2["lightgbm_five_seed"]["auprc_std"],
+            purged_p2["test_at_val_threshold_auprc"].std(ddof=1),
+            llo["stage1_lightgbm"]["test_auprc"]["std"],
+        ],
+        "stage2_macro_f1_sd": [
+            fixed_p3["stage2_lightgbm"]["macro_f1_std"],
+            purged_p3.loc["stage2_lightgbm", "macro_f1_std"],
+            llo["methods"][0]["macro_f1_std"],
+        ],
+        "cascade_macro_f1_sd": [
+            fixed_p3_methods.loc["hs_aerots_cascade", "macro_f1_std"],
+            purged_p3.loc["hs_aerots_cascade", "macro_f1_std"],
+            next(item["macro_f1_std"] for item in llo["methods"] if item["method"] == "hs_aerots_cascade"),
+        ],
+        "direct_macro_f1_sd": [
+            fixed_direct.loc["direct_five_class_lightgbm", "macro_f1_std"],
+            purged_direct.loc["direct_five_class_lightgbm", "macro_f1_std"],
+            next(item["macro_f1_std"] for item in llo["methods"] if item["method"] == "direct_five_class_lightgbm"),
         ],
     }
 
@@ -72,7 +94,8 @@ def main():
     fig, axes = plt.subplots(1, 2, figsize=(7.2, 3.45), constrained_layout=True)
     ax = axes[0]
     x = np.arange(3)
-    ax.bar(x, protocol["stage1_auprc"], color=colors["stage1"], width=0.56)
+    ax.bar(x, protocol["stage1_auprc"], yerr=protocol["stage1_auprc_sd"], capsize=3,
+           color=colors["stage1"], width=0.56)
     ax.set_title("(a) Stage 1 AUPRC")
     ax.set_ylabel("AUPRC")
     ax.set_xticks(x, ["Fixed\nchrono.", "Purged", "Leave-log-\nout"])
@@ -88,7 +111,8 @@ def main():
         (0.5, "direct_macro_f1", "Direct Five-Class", colors["direct"]),
     ]:
         values = protocol[key]
-        ax.bar(x + offset * width, values, width=width, label=label, color=color)
+        ax.bar(x + offset * width, values, yerr=protocol[f"{key}_sd"], capsize=2,
+               width=width, label=label, color=color)
     ax.set_title("(b) Diagnostic Macro-F1")
     ax.set_ylabel("Macro-F1")
     ax.set_xticks(x, ["Fixed\nchrono.", "Purged", "Leave-log-\nout"])

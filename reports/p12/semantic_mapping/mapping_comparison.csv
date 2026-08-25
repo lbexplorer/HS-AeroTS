@@ -1,0 +1,88 @@
+﻿channel,topic,subsystem_original,rationale_original,feature_count_original,subsystem_document,rationale_document,feature_count_document,agreement
+actuator_controls_0.control[0],actuator_controls_0,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+actuator_controls_0.control[1],actuator_controls_0,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+actuator_controls_0.control[2],actuator_controls_0,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+actuator_controls_0.control[3],actuator_controls_0,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+actuator_outputs.output[0],actuator_outputs,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+actuator_outputs.output[1],actuator_outputs,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+actuator_outputs.output[2],actuator_outputs,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+actuator_outputs.output[3],actuator_outputs,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+actuator_outputs.output[4],actuator_outputs,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+actuator_outputs.output[5],actuator_outputs,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+actuator_outputs.output[6],actuator_outputs,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+actuator_outputs.output[7],actuator_outputs,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+battery_status.current_a,battery_status,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+battery_status.current_filtered_a,battery_status,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+battery_status.discharged_mah,battery_status,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+battery_status.remaining,battery_status,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+battery_status.voltage_filtered_v,battery_status,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+battery_status.voltage_v,battery_status,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+cpuload.load,cpuload,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+cpuload.ram_usage,cpuload,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+distance_sensor.current_distance,distance_sensor,Altitude,vertical/range state,18,Altitude,vertical position/range/landing-state field,18,True
+ekf2_innovations.hagl_innov,ekf2_innovations,Altitude,vertical/range state,18,Altitude,vertical position/range/landing-state field,18,True
+ekf2_innovations.heading_innov,ekf2_innovations,Global Position,horizontal/global state,18,Global Position,horizontal position/velocity/accuracy field,18,True
+ekf2_innovations.output_tracking_error[0],ekf2_innovations,Shared,context/control state,18,Shared,control/context or cross-domain estimator field,18,True
+ekf2_innovations.output_tracking_error[1],ekf2_innovations,Shared,context/control state,18,Shared,control/context or cross-domain estimator field,18,True
+ekf2_innovations.output_tracking_error[2],ekf2_innovations,Shared,context/control state,18,Shared,control/context or cross-domain estimator field,18,True
+ekf2_innovations.vel_pos_innov[3],ekf2_innovations,Global Position,horizontal/global state,18,Global Position,horizontal position/velocity/accuracy field,18,True
+ekf2_innovations.vel_pos_innov[4],ekf2_innovations,Global Position,horizontal/global state,18,Global Position,horizontal position/velocity/accuracy field,18,True
+ekf2_innovations.vel_pos_innov[5],ekf2_innovations,Shared,context/control state,18,Altitude,vertical position/range/landing-state field,18,False
+estimator_status.hagl_test_ratio,estimator_status,Altitude,vertical/range state,18,Altitude,vertical position/range/landing-state field,18,True
+estimator_status.hgt_test_ratio,estimator_status,Altitude,vertical/range state,18,Altitude,vertical position/range/landing-state field,18,True
+estimator_status.mag_test_ratio,estimator_status,Shared,context/control state,18,Shared,control/context or cross-domain estimator field,18,True
+estimator_status.pos_horiz_accuracy,estimator_status,Global Position,horizontal/global state,18,Global Position,horizontal position/velocity/accuracy field,18,True
+estimator_status.pos_test_ratio,estimator_status,Global Position,horizontal/global state,18,Global Position,horizontal position/velocity/accuracy field,18,True
+estimator_status.pos_vert_accuracy,estimator_status,Altitude,vertical/range state,18,Altitude,vertical position/range/landing-state field,18,True
+estimator_status.vibe[0],estimator_status,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+estimator_status.vibe[1],estimator_status,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+estimator_status.vibe[2],estimator_status,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+manual_control_setpoint.r,manual_control_setpoint,Shared,context/control state,18,Shared,control/context or cross-domain estimator field,18,True
+manual_control_setpoint.x,manual_control_setpoint,Global Position,horizontal/global state,18,Shared,control/context or cross-domain estimator field,18,False
+manual_control_setpoint.y,manual_control_setpoint,Global Position,horizontal/global state,18,Shared,control/context or cross-domain estimator field,18,False
+manual_control_setpoint.z,manual_control_setpoint,Altitude,vertical/range state,18,Shared,control/context or cross-domain estimator field,18,False
+rate_ctrl_status.pitchspeed_integ,rate_ctrl_status,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+rate_ctrl_status.rollspeed_integ,rate_ctrl_status,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+rate_ctrl_status.yawspeed_integ,rate_ctrl_status,Global Position,horizontal/global state,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,False
+sensor_combined.accelerometer_m_s2[0],sensor_combined,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+sensor_combined.accelerometer_m_s2[1],sensor_combined,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+sensor_combined.accelerometer_m_s2[2],sensor_combined,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+sensor_combined.gyro_rad[0],sensor_combined,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+sensor_combined.gyro_rad[1],sensor_combined,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+sensor_combined.gyro_rad[2],sensor_combined,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+sensor_preflight.accel_inconsistency_m_s_s,sensor_preflight,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+sensor_preflight.gyro_inconsistency_rad_s,sensor_preflight,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+vehicle_attitude.pitchspeed,vehicle_attitude,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+vehicle_attitude.q[0],vehicle_attitude,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+vehicle_attitude.q[1],vehicle_attitude,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+vehicle_attitude.q[2],vehicle_attitude,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+vehicle_attitude.q[3],vehicle_attitude,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+vehicle_attitude.rollspeed,vehicle_attitude,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+vehicle_attitude.yawspeed,vehicle_attitude,Global Position,horizontal/global state,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,False
+vehicle_attitude_setpoint.pitch_body,vehicle_attitude_setpoint,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+vehicle_attitude_setpoint.roll_body,vehicle_attitude_setpoint,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+vehicle_attitude_setpoint.yaw_body,vehicle_attitude_setpoint,Global Position,horizontal/global state,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,False
+vehicle_land_detected.ground_contact,vehicle_land_detected,Altitude,vertical/range state,18,Altitude,vertical position/range/landing-state field,18,True
+vehicle_land_detected.landed,vehicle_land_detected,Altitude,vertical/range state,18,Altitude,vertical position/range/landing-state field,18,True
+vehicle_land_detected.maybe_landed,vehicle_land_detected,Altitude,vertical/range state,18,Altitude,vertical position/range/landing-state field,18,True
+vehicle_local_position.ax,vehicle_local_position,Shared,context/control state,18,Global Position,horizontal position/velocity/accuracy field,18,False
+vehicle_local_position.ay,vehicle_local_position,Shared,context/control state,18,Global Position,horizontal position/velocity/accuracy field,18,False
+vehicle_local_position.az,vehicle_local_position,Altitude,vertical/range state,18,Altitude,vertical position/range/landing-state field,18,True
+vehicle_local_position.dist_bottom,vehicle_local_position,Altitude,vertical/range state,18,Altitude,vertical position/range/landing-state field,18,True
+vehicle_local_position.dist_bottom_rate,vehicle_local_position,Altitude,vertical/range state,18,Altitude,vertical position/range/landing-state field,18,True
+vehicle_local_position.eph,vehicle_local_position,Global Position,horizontal/global state,18,Global Position,horizontal position/velocity/accuracy field,18,True
+vehicle_local_position.epv,vehicle_local_position,Global Position,horizontal/global state,18,Altitude,vertical position/range/landing-state field,18,False
+vehicle_local_position.vx,vehicle_local_position,Global Position,horizontal/global state,18,Global Position,horizontal position/velocity/accuracy field,18,True
+vehicle_local_position.vy,vehicle_local_position,Global Position,horizontal/global state,18,Global Position,horizontal position/velocity/accuracy field,18,True
+vehicle_local_position.vz,vehicle_local_position,Altitude,vertical/range state,18,Altitude,vertical position/range/landing-state field,18,True
+vehicle_local_position.x,vehicle_local_position,Global Position,horizontal/global state,18,Global Position,horizontal position/velocity/accuracy field,18,True
+vehicle_local_position.y,vehicle_local_position,Global Position,horizontal/global state,18,Global Position,horizontal position/velocity/accuracy field,18,True
+vehicle_local_position.z,vehicle_local_position,Altitude,vertical/range state,18,Altitude,vertical position/range/landing-state field,18,True
+vehicle_rates_setpoint.pitch,vehicle_rates_setpoint,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+vehicle_rates_setpoint.roll,vehicle_rates_setpoint,Mechanical/Electrical,actuation/inertial/system health,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,True
+vehicle_rates_setpoint.yaw,vehicle_rates_setpoint,Global Position,horizontal/global state,18,Mechanical/Electrical,actuation/power/inertial/control-health field,18,False
+vehicle_status.arming_state,vehicle_status,Shared,context/control state,18,Shared,control/context or cross-domain estimator field,18,True
+vehicle_status.nav_state,vehicle_status,Shared,context/control state,18,Shared,control/context or cross-domain estimator field,18,True
+vehicle_vision_position.x,vehicle_vision_position,External Position,visual-position estimate,18,External Position,external-vision position field,18,True
+vehicle_vision_position.y,vehicle_vision_position,External Position,visual-position estimate,18,External Position,external-vision position field,18,True
+vehicle_vision_position.z,vehicle_vision_position,External Position,visual-position estimate,18,External Position,external-vision position field,18,True

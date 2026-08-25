@@ -16,8 +16,8 @@ def short_module(name):
 
 def main():
     masking = pd.read_csv(REPORTS / "p4" / "masking_results.csv")
-    consistency = pd.read_csv(REPORTS / "p4" / "consistency_at_k.csv")
-    modules = pd.read_csv(REPORTS / "p8" / "module_suspiciousness.csv")
+    consistency = pd.read_csv(REPORTS / "p12" / "semantic_mapping" / "consistency_summary.csv")
+    modules = pd.read_csv(REPORTS / "p12" / "commit_matched" / "module_rankings.csv")
 
     shap_mask = masking[masking["mask"] == "validation_shap_top_k"].sort_values("k")
     random_mask = masking[masking["mask"] == "uniform_random_k"].sort_values("k")
@@ -41,9 +41,7 @@ def main():
         class_consistency["scope"], categories=class_order, ordered=True
     )
     class_consistency = class_consistency.sort_values("scope")
-    top_modules = modules[
-        (modules["scope"] == "all") & (modules["mode"] == "producer_only")
-    ].sort_values("rank").head(5).copy()
+    top_modules = modules[modules["mode"] == "producer_only"].sort_values("rank").head(5).copy()
     top_modules["label"] = top_modules["module"].map(short_module)
     top_modules = top_modules.sort_values("shap_share")
 
@@ -107,7 +105,7 @@ def main():
         linewidth=1.7,
         color=colors["consistency"],
         capsize=2,
-        label="SHAP consistency",
+        label="Document-map agreement",
     )
     ax.plot(
         all_consistency["k"],
@@ -118,7 +116,7 @@ def main():
         color=colors["baseline"],
         label="Random baseline",
     )
-    ax.set_title("(b) Overall Consistency@K")
+    ax.set_title("(b) Document-map Consistency@K")
     ax.set_xlabel("K channels")
     ax.set_ylabel("Consistency")
     ax.set_xticks(all_consistency["k"])
@@ -146,7 +144,7 @@ def main():
         color=colors["baseline"],
         label="Random baseline",
     )
-    ax.set_title("(c) Class Consistency@1")
+    ax.set_title("(c) Document-map Consistency@1")
     ax.set_ylabel("Consistency")
     ax.set_xticks(xpos, ["External\nPosition", "Global\nPosition", "Altitude", "Mechanical/\nElectrical"])
     ax.set_ylim(0, 1.0)
@@ -154,7 +152,7 @@ def main():
 
     ax = axes[1, 1]
     ax.barh(top_modules["label"], top_modules["shap_share"], color=colors["module"])
-    ax.set_title("(d) Aggregate module suspects")
+    ax.set_title("(d) Commit-matched module suspects")
     ax.set_xlabel("Allocated SHAP share")
     ax.set_xlim(0, 0.28)
     for y, value in enumerate(top_modules["shap_share"]):

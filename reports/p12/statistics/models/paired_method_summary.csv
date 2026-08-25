@@ -1,0 +1,3 @@
+﻿protocol,seeds,estimate_mean,seed_sd,paired_flight_log_ci_low,paired_flight_log_ci_high,flight_logs,interpretation
+fixed_chronological,5,-0.03030251440864351,0.008332300573927334,-0.05241307625298257,-0.008574771420073313,1369,flight logs are paired within each seed; bootstrap contrasts are averaged across model seeds
+purged,5,0.034035644675339635,0.013513127538557889,-0.004690154833428504,0.07620791364685164,826,flight logs are paired within each seed; bootstrap contrasts are averaged across model seeds

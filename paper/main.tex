@@ -16,39 +16,45 @@
 \datepublished{}
 
 \Title{Hierarchical Runtime Anomaly Diagnosis from Real PX4 Telemetry with Architecture-Aware Software Module Suspects}
-\Author{Author Name}
-\AuthorNames{Author Name}
-\address{Affiliation; author@example.edu}
-\corres{Correspondence: author@example.edu}
+\Author{[AUTHOR ACTION REQUIRED: Insert author names]}
+\AuthorNames{[AUTHOR ACTION REQUIRED: Insert author names]}
+\address{[AUTHOR ACTION REQUIRED: Insert affiliations and institutional addresses]}
+\corres{Correspondence: [AUTHOR ACTION REQUIRED: Insert corresponding-author email]}
 \setlength{\headheight}{20pt}
 
-\abstract{Runtime anomaly detection from flight telemetry can identify abnormal behavior, but an engineering diagnosis also needs an interpretable fault domain and traceable software evidence. This study develops HS-AeroTS-FL, a hierarchical framework for real PX4 telemetry. A LightGBM detector first scores anomalous windows; a second-stage classifier assigns detected anomalies to External Position, Global Position, Altitude, or Mechanical/Electrical domains. TreeSHAP contributions are aggregated from temporal-statistical features to telemetry channels, uORB topics, and subsystems. A version-matched PX4 uORB publisher/subscriber graph then produces software-module suspects. On 1,389 usable UAV-SEAD logs, the detector reproduces the AeroTSBoost reference trend, with five-seed AUPRC of 0.7522 plus or minus 0.0039. The anomaly-only subsystem classifier attains Macro-F1 of 0.8980 plus or minus 0.0020, while the full cascade attains five-class Macro-F1 of 0.6902 plus or minus 0.0071. Under strict leave-log-out isolation, detector AUPRC is 0.6296 plus or minus 0.0023; the cascade and direct five-class Macro-F1 scores are 0.5962 plus or minus 0.0048 and 0.6092 plus or minus 0.0043, respectively. Explanation masking and consistency analyses support the utility of the hierarchical evidence, while revealing a weak External Position consistency result. Controlled mutation replay provides conditional module-ranking evidence but exposes an important domain-shift limitation: the unchanged real-flight detector identifies none of the twelve mutation runs. The study therefore reports software-module suspects rather than end-to-end root-cause localization.}
-\keyword{UAV telemetry; runtime anomaly detection; fault-domain diagnosis; explainable machine learning; PX4; uORB; software fault localization}
+\abstract{Runtime anomaly detection identifies abnormal UAV telemetry but does not provide fault-domain or software inspection evidence. HS-AeroTS is a hierarchical framework for real PX4 telemetry. A LightGBM detector identifies anomalous temporal-statistical windows, a conditional classifier assigns four UAV fault domains, and TreeSHAP evidence is aggregated from features to channels, uORB topics, and subsystems. A static PX4 publisher/subscriber graph then produces commit-specific software-module suspect rankings. On 1,389 UAV-SEAD logs, five-seed fixed-chronological AUPRC was \texorpdfstring{$0.7522 \pm 0.0039$}{0.7522 +/- 0.0039}, and anomaly-only fault-domain Macro-F1 was \texorpdfstring{$0.8980 \pm 0.0020$}{0.8980 +/- 0.0020}. The complete five-class Cascade obtained Macro-F1 of \texorpdfstring{$0.6902 \pm 0.0071$}{0.6902 +/- 0.0071}. Under leave-log-out isolation, detector AUPRC decreased to \texorpdfstring{$0.6296 \pm 0.0023$}{0.6296 +/- 0.0023}, while Cascade and Direct Five-Class Macro-F1 were \texorpdfstring{$0.5962 \pm 0.0048$}{0.5962 +/- 0.0048} and \texorpdfstring{$0.6092 \pm 0.0043$}{0.6092 +/- 0.0043}, respectively, with no stable difference. Hierarchical aggregation conserved evidence mass, and attribution-guided masking caused greater degradation than random masking. A document-derived semantic-map sensitivity showed near-random External Position and below-random Global Position Consistency@1. The architecture analysis retained 1,393 anomalous windows whose firmware matched the selected commit and mapped 18 topics to 54 modules. In controlled replay, onset-conditioned ranking produced nonzero module recall with wide confidence intervals, but the unchanged detector identified 0 of 12 mutation runs, yielding zero detector-gated ranking performance. HS-AeroTS therefore provides traceable, architecture-aware diagnostic evidence for engineering inspection, not causal root-cause localization.}
+\keyword{UAV telemetry; runtime anomaly detection; fault-domain diagnosis; explainable machine learning; PX4; uORB; software-module suspect ranking}
 
 \begin{document}
 
 \section{Introduction}
-Real flight logs contain information for detecting abnormal operation, but a binary alert does not identify the affected fault domain or provide actionable engineering evidence. This paper studies a constrained diagnostic chain from telemetry to subsystem evidence and, where a firmware version is known, to PX4 software-module suspects. The objective is not statement-level fault localization and does not treat real-flight annotations as source-code bugs.
-
-The contribution is fourfold: a reproducible real-telemetry detection and subsystem-diagnosis protocol; a quantitative TreeSHAP evidence chain from descriptors to PX4 topics; a version-matched uORB topic-to-module mapping; and a controlled replay study that states the limits of the resulting module ranks. The study emphasizes strict flight-log isolation and distinguishes real-flight runtime anomaly diagnosis from controlled software-mutation localization.
+\input{sections/section_1_introduction/1_1_engineering_problem}
+\input{sections/section_1_introduction/1_2_research_gap_proposed_approach}
+\input{sections/section_1_introduction/1_3_research_questions_contributions}
 
 \section{Related Work}
-\subsection{UAV Runtime Anomaly Detection}
-Review real-UAV telemetry anomaly datasets, AeroTSBoost, and classical and neural time-series baselines here.
+\input{sections/section_2_related_work/2_1_uav_telemetry_anomaly_detection_fault_diagnosis}
 
-\subsection{Fault Diagnosis and Explainability}
-Review subsystem-level diagnosis and faithful feature-attribution evaluation here.
+\input{sections/section_2_related_work/2_2_explainable_time_series_models}
 
-\subsection{Software Fault Localization for PX4 Systems}
-Review spectrum-based ranking metrics and explain why uORB dependencies provide evidence paths, rather than root-cause proof.
+\input{sections/section_2_related_work/2_3_px4_architecture_aware_diagnostic_evidence}
 
-\section{Methodology}
+\input{sections/section_2_related_work/2_4_positioning_summary}
+
+\section{Materials and Methods}
 \input{sections/section_3_methodology/3_1_data_preprocessing_feature_representation}
 \input{sections/section_3_methodology/3_2_hierarchical_anomaly_detection_fault_domain_diagnosis}
 \input{sections/section_3_methodology/3_3_shap_based_explainable_evidence}
 \input{sections/section_3_methodology/3_4_px4_software_module_suspect_ranking}
 
-\section{Experimental Setup}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/figure-2-hs-aerots-fl-methodological-pipeline-preview2.png}
+    \caption{Methodological pipeline. Runtime telemetry is transformed into temporal-statistical windows for anomaly detection and conditional fault-domain diagnosis. TreeSHAP evidence is aggregated through the feature--channel--topic--subsystem hierarchy, while a static graph reconstructed at the majority PX4 firmware commit maps topic evidence to software-module inspection suspects. The architecture branch is associative and version-dependent, not causal.}
+    \label{fig:methodological_pipeline}
+\end{figure}
+
+\section{Experimental Protocols}
 \input{sections/section_4_experimental_setup/4_1_data_sources_and_experimental_roles}
 \input{sections/section_4_experimental_setup/4_2_data_splits_and_statistical_protocol}
 \input{sections/section_4_experimental_setup/4_3_controlled_px4_replay_and_evaluation_layers}
@@ -60,24 +66,58 @@ Review spectrum-based ranking metrics and explain why uORB dependencies provide 
 \input{sections/section_5_results/5_3_strict_external_and_capability_boundaries}
 
 \section{Discussion}
-The evidence supports real-flight runtime anomaly diagnosis and interpretable subsystem evidence. It does not support a claim of reliable end-to-end PX4 software-module localization. Discuss the real-flight-to-replay domain shift, the static nature of uORB dependencies, the small replay benchmark, and the weak External Position evidence consistency.
+\input{sections/section_6_discussion/6_1_principal_findings}
+\input{sections/section_6_discussion/6_2_hierarchical_model_and_strict_protocols}
+\input{sections/section_6_discussion/6_3_replay_negative_result_and_capability_boundary}
+\input{sections/section_6_discussion/6_4_limitations_and_future_work}
 
 \section{Conclusions}
-HS-AeroTS-FL provides a reproducible hierarchy from real flight telemetry to subsystem evidence and version-aware software-module suspects. Its principal engineering contribution is the explicit, quantitatively tested evidence chain. Controlled replay results delimit the present method: static topic propagation can offer conditional suspects, but a detector trained on real-flight annotations did not detect the evaluated source mutations. Future work should build a larger, independently split mutation benchmark and evaluate domain adaptation without contaminating real-flight test data.
+\input{sections/section_7_conclusions/7_1_conclusion_summary}
 
-\authorcontributions{Conceptualization, Author Name; methodology, Author Name; software, Author Name; validation, Author Name; formal analysis, Author Name; writing---original draft preparation, Author Name; writing---review and editing, Author Name.}
-\funding{To be completed.}
-\dataavailability{UAV-SEAD, ALFA, PX4-Autopilot, experiment configurations, scripts, and derived report manifests are documented in the accompanying project repository. Raw logs are used read-only and are subject to their respective source licenses.}
-\acknowledgments{To be completed.}
+\authorcontributions{[AUTHOR ACTION REQUIRED: Replace this marker with a CRediT-compliant contribution statement for all authors.]}
+\funding{[AUTHOR ACTION REQUIRED: State the funding source and grant number, or state that this research received no external funding.]}
+\dataavailability{UAV-SEAD and ALFA are third-party datasets available from the sources cited in this article and remain subject to their source licenses. PX4-Autopilot is open-source software. The aggregate results supporting the reported numerical claims are included in the article's tables and figures. The analysis source code is not publicly available; frozen configurations, split manifests, and derived machine-readable reports can be made available to editors and reviewers for confidential assessment, and may be requested from the corresponding author subject to applicable dataset licenses.}
+\acknowledgments{[AUTHOR ACTION REQUIRED: Insert acknowledgments or state that there are none.]}
 \conflictsofinterest{The author declares no conflicts of interest.}
 
 \reftitle{References}
 \begin{thebibliography}{999}
-\bibitem{uavsead} Add the final UAV-SEAD dataset citation before submission.
-\bibitem{aerotsboost} Add the final AeroTSBoost citation and publication status before submission.
-\bibitem{catch} Add the CATCH citation.
-\bibitem{px4} PX4 Development Team. PX4 Autopilot. Available online: \url{https://github.com/PX4/PX4-Autopilot} (accessed on 21 August 2026).
-\bibitem{alfa} Add the ALFA dataset citation.
+\bibitem{keipour2019automatic} Keipour, A.; Mousaei, M.; Scherer, S. Automatic Real-Time Anomaly Detection for Autonomous Aerial Vehicles. In Proceedings of the 2019 International Conference on Robotics and Automation (ICRA), Montreal, QC, Canada, 20--24 May 2019; pp. 5679--5685. \href{https://doi.org/10.1109/ICRA.2019.8794286}{https://doi.org/10.1109/ICRA.2019.8794286}.
+\bibitem{wei2026aerotsboost} Wei, J.; Li, H.; Li, Y.; Zhao, Y.; Yao, D.; Lu, B.; Ye, X.; Im, S.-K.; Wang, Y.; Yang, X. AeroTSBoost: Temporal-Statistical Boosting for Real-World UAV Telemetry Anomaly Mining. \textit{arXiv} \textbf{2026}, arXiv:2605.25639. \href{https://arxiv.org/abs/2605.25639}{https://arxiv.org/abs/2605.25639}.
+\bibitem{fourlas2021survey} Fourlas, G.K.; Karras, G.C. A Survey on Fault Diagnosis and Fault-Tolerant Control Methods for Unmanned Aerial Vehicles. \textit{Machines} \textbf{2021}, \textit{9}, 197. \href{https://doi.org/10.3390/machines9090197}{https://doi.org/10.3390/machines9090197}.
+\bibitem{puchalski2022uav} Puchalski, R.; Giernacki, W. UAV Fault Detection Methods, State-of-the-Art. \textit{Drones} \textbf{2022}, \textit{6}, 330. \href{https://doi.org/10.3390/drones6110330}{https://doi.org/10.3390/drones6110330}.
+\bibitem{tan2026anomaly} Tan, I.W.H.; Poskitt, C.M.; Jiang, L.; Shar, L.K. Anomaly Management in Unmanned Aerial Vehicles: A Systematic Literature Review. \textit{IEEE Access} \textbf{2026}, \textit{14}, 117991--118010. \href{https://doi.org/10.1109/ACCESS.2026.3716292}{https://doi.org/10.1109/ACCESS.2026.3716292}.
+\bibitem{kabaoglu2026uavsead} Kabaoglu, A.; Sariel, S. UAV-SEAD: State Estimation Anomaly Dataset for UAVs. \textit{arXiv} \textbf{2026}, arXiv:2602.13900. \href{https://arxiv.org/abs/2602.13900}{https://arxiv.org/abs/2602.13900}.
+\bibitem{meier2015px4} Meier, L.; Honegger, D.; Pollefeys, M. PX4: A Node-Based Multithreaded Open Source Robotics Framework for Deeply Embedded Platforms. In Proceedings of the 2015 IEEE International Conference on Robotics and Automation (ICRA), Seattle, WA, USA, 26--30 May 2015; pp. 6235--6240. \href{https://doi.org/10.1109/ICRA.2015.7140074}{https://doi.org/10.1109/ICRA.2015.7140074}.
+\bibitem{px4uorbdocs2026} PX4 Development Team. uORB Messaging and Publication/Subscription Graph. Available online: \url{https://docs.px4.io/main/en/middleware/uorb} (accessed on 25 August 2026).
+\bibitem{lundberg2017shap} Lundberg, S.M.; Lee, S.-I. A Unified Approach to Interpreting Model Predictions. In \textit{Advances in Neural Information Processing Systems}; Curran Associates, Inc.: Red Hook, NY, USA, 2017; Volume 30.
+\bibitem{lundberg2020trees} Lundberg, S.M.; Erion, G.; Chen, H.; DeGrave, A.; Prutkin, J.M.; Nair, B.; Katz, R.; Himmelfarb, J.; Bansal, N.; Lee, S.-I. From Local Explanations to Global Understanding with Explainable AI for Trees. \textit{Nat. Mach. Intell.} \textbf{2020}, \textit{2}, 56--67. \href{https://doi.org/10.1038/s42256-019-0138-9}{https://doi.org/10.1038/s42256-019-0138-9}.
+\bibitem{jones2002visualization} Jones, J.A.; Harrold, M.J.; Stasko, J.T. Visualization of Test Information to Assist Fault Localization. In Proceedings of the 24th International Conference on Software Engineering (ICSE 2002), Orlando, FL, USA, 19--25 May 2002; pp. 467--477. \href{https://doi.org/10.1145/581339.581397}{https://doi.org/10.1145/581339.581397}.
+\bibitem{wong2016survey} Wong, W.E.; Gao, R.; Li, Y.; Abreu, R.; Wotawa, F. A Survey on Software Fault Localization. \textit{IEEE Trans. Softw. Eng.} \textbf{2016}, \textit{42}, 707--740. \href{https://doi.org/10.1109/TSE.2016.2521368}{https://doi.org/10.1109/TSE.2016.2521368}.
+\bibitem{pearson2017evaluating} Pearson, S.; Campos, J.; Just, R.; Fraser, G.; Abreu, R.; Ernst, M.D.; Pang, D.; Keller, B. Evaluating and Improving Fault Localization. In Proceedings of the 2017 IEEE/ACM 39th International Conference on Software Engineering (ICSE), Buenos Aires, Argentina, 20--28 May 2017; pp. 609--620. \href{https://doi.org/10.1109/ICSE.2017.62}{https://doi.org/10.1109/ICSE.2017.62}.
+\bibitem{papadakis2019mutation} Papadakis, M.; Kintis, M.; Zhang, J.; Jia, Y.; Le Traon, Y.; Harman, M. Mutation Testing Advances: An Analysis and Survey. \textit{Adv. Comput.} \textbf{2019}, \textit{112}, 275--378. \href{https://doi.org/10.1016/bs.adcom.2018.03.015}{https://doi.org/10.1016/bs.adcom.2018.03.015}.
+\bibitem{adaika2025fdd} Adaika, Z.; Al-Haddad, L.A.; Giernacki, W.; Jaber, A.A.; Boumehraz, M.; Hamzah, M.N.; Flayyih, M.A. Fault Detection and Diagnosis Methodologies for Unmanned Aerial Vehicles: State-of-the-Art. \textit{J. Intell. Robot. Syst.} \textbf{2025}, \textit{111}, 63. \href{https://doi.org/10.1007/s10846-025-02267-8}{https://doi.org/10.1007/s10846-025-02267-8}.
+\bibitem{keipour2021alfa} Keipour, A.; Mousaei, M.; Scherer, S. ALFA: A Dataset for UAV Fault and Anomaly Detection. \textit{Int. J. Robot. Res.} \textbf{2021}, \textit{40}, 515--520. \href{https://doi.org/10.1177/0278364920966642}{https://doi.org/10.1177/0278364920966642}.
+\bibitem{liu2008isolation} Liu, F.T.; Ting, K.M.; Zhou, Z.-H. Isolation Forest. In Proceedings of the 2008 Eighth IEEE International Conference on Data Mining, Pisa, Italy, 15--19 December 2008; pp. 413--422. \href{https://doi.org/10.1109/ICDM.2008.17}{https://doi.org/10.1109/ICDM.2008.17}.
+\bibitem{zhang2019mscred} Zhang, C.; Song, D.; Chen, Y.; Feng, X.; Lumezanu, C.; Cheng, W.; Ni, J.; Zong, B.; Chen, H.; Chawla, N.V. A Deep Neural Network for Unsupervised Anomaly Detection and Diagnosis in Multivariate Time Series Data. \textit{Proc. AAAI Conf. Artif. Intell.} \textbf{2019}, \textit{33}, 1409--1416. \href{https://doi.org/10.1609/aaai.v33i01.33011409}{https://doi.org/10.1609/aaai.v33i01.33011409}.
+\bibitem{su2019omnianomaly} Su, Y.; Zhao, Y.; Niu, C.; Liu, R.; Sun, W.; Pei, D. Robust Anomaly Detection for Multivariate Time Series through Stochastic Recurrent Neural Network. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery \& Data Mining, Anchorage, AK, USA, 4--8 August 2019; pp. 2828--2837. \href{https://doi.org/10.1145/3292500.3330672}{https://doi.org/10.1145/3292500.3330672}.
+\bibitem{deng2021gdn} Deng, A.; Hooi, B. Graph Neural Network-Based Anomaly Detection in Multivariate Time Series. \textit{Proc. AAAI Conf. Artif. Intell.} \textbf{2021}, \textit{35}, 4027--4035. \href{https://doi.org/10.1609/aaai.v35i5.16523}{https://doi.org/10.1609/aaai.v35i5.16523}.
+\bibitem{tuli2022tranad} Tuli, S.; Casale, G.; Jennings, N.R. TranAD: Deep Transformer Networks for Anomaly Detection in Multivariate Time Series Data. \textit{Proc. VLDB Endow.} \textbf{2022}, \textit{15}, 1201--1214. \href{https://doi.org/10.14778/3514061.3514067}{https://doi.org/10.14778/3514061.3514067}.
+\bibitem{xu2022anomaly} Xu, J.; Wu, H.; Wang, J.; Long, M. Anomaly Transformer: Time Series Anomaly Detection with Association Discrepancy. In Proceedings of the International Conference on Learning Representations, Virtual, 25--29 April 2022. Available online: \url{https://openreview.net/forum?id=LzQQ89U1qm_} (accessed on 25 August 2026).
+\bibitem{wu2025catch} Wu, X.; Qiu, X.; Li, Z.; Wang, Y.; Hu, J.; Guo, C.; Xiong, H.; Yang, B. CATCH: Channel-Aware Multivariate Time Series Anomaly Detection via Frequency Patching. In Proceedings of the International Conference on Learning Representations, Singapore, 24--28 April 2025. Available online: \url{https://openreview.net/forum?id=m08aK3xxdJ} (accessed on 25 August 2026).
+\bibitem{liu2025gcad} Liu, Z.; Gao, M.; Jiao, P. GCAD: Anomaly Detection in Multivariate Time Series from the Perspective of Granger Causality. \textit{Proc. AAAI Conf. Artif. Intell.} \textbf{2025}, \textit{39}, 19041--19049. \href{https://doi.org/10.1609/aaai.v39i18.34096}{https://doi.org/10.1609/aaai.v39i18.34096}.
+\bibitem{ke2017lightgbm} Ke, G.; Meng, Q.; Finley, T.; Wang, T.; Chen, W.; Ma, W.; Ye, Q.; Liu, T.-Y. LightGBM: A Highly Efficient Gradient Boosting Decision Tree. In \textit{Advances in Neural Information Processing Systems}; Curran Associates, Inc.: Red Hook, NY, USA, 2017; Volume 30.
+\bibitem{davis2006relationship} Davis, J.; Goadrich, M. The Relationship between Precision-Recall and ROC Curves. In Proceedings of the 23rd International Conference on Machine Learning, Pittsburgh, PA, USA, 25--29 June 2006; pp. 233--240. \href{https://doi.org/10.1145/1143844.1143874}{https://doi.org/10.1145/1143844.1143874}.
+\bibitem{saito2015precision} Saito, T.; Rehmsmeier, M. The Precision--Recall Plot Is More Informative than the ROC Plot When Evaluating Binary Classifiers on Imbalanced Datasets. \textit{PLoS ONE} \textbf{2015}, \textit{10}, e0118432. \href{https://doi.org/10.1371/journal.pone.0118432}{https://doi.org/10.1371/journal.pone.0118432}.
+\bibitem{tatbul2018precision} Tatbul, N.; Lee, T.J.; Zdonik, S.; Alam, M.; Gottschlich, J. Precision and Recall for Time Series. In \textit{Advances in Neural Information Processing Systems}; Curran Associates, Inc.: Red Hook, NY, USA, 2018; Volume 31.
+\bibitem{wenig2022timeeval} Wenig, P.; Schmidl, S.; Papenbrock, T. TimeEval: A Benchmarking Toolkit for Time Series Anomaly Detection Algorithms. \textit{Proc. VLDB Endow.} \textbf{2022}, \textit{15}, 3678--3681. \href{https://doi.org/10.14778/3554821.3554873}{https://doi.org/10.14778/3554821.3554873}.
+\bibitem{wu2023benchmarks} Wu, R.; Keogh, E.J. Current Time Series Anomaly Detection Benchmarks Are Flawed and Are Creating the Illusion of Progress. \textit{IEEE Trans. Knowl. Data Eng.} \textbf{2023}, \textit{35}, 2421--2429. \href{https://doi.org/10.1109/TKDE.2021.3112126}{https://doi.org/10.1109/TKDE.2021.3112126}.
+\bibitem{ribeiro2016lime} Ribeiro, M.T.; Singh, S.; Guestrin, C. Why Should I Trust You?: Explaining the Predictions of Any Classifier. In Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, San Francisco, CA, USA, 13--17 August 2016; pp. 1135--1144. \href{https://doi.org/10.1145/2939672.2939778}{https://doi.org/10.1145/2939672.2939778}.
+\bibitem{sundararajan2017axiomatic} Sundararajan, M.; Taly, A.; Yan, Q. Axiomatic Attribution for Deep Networks. In Proceedings of the 34th International Conference on Machine Learning, Sydney, Australia, 6--11 August 2017; Volume 70, pp. 3319--3328.
+\bibitem{bento2021timeshap} Bento, J.; Saleiro, P.; Cruz, A.F.; Figueiredo, M.A.T.; Bizarro, P. TimeSHAP: Explaining Recurrent Models through Sequence Perturbations. In Proceedings of the 27th ACM SIGKDD Conference on Knowledge Discovery \& Data Mining, Virtual, 14--18 August 2021; pp. 2565--2573. \href{https://doi.org/10.1145/3447548.3467166}{https://doi.org/10.1145/3447548.3467166}.
+\bibitem{adebayo2018sanity} Adebayo, J.; Gilmer, J.; Muelly, M.; Goodfellow, I.; Hardt, M.; Kim, B. Sanity Checks for Saliency Maps. In \textit{Advances in Neural Information Processing Systems}; Curran Associates, Inc.: Red Hook, NY, USA, 2018; Volume 31.
+\bibitem{hooker2019benchmark} Hooker, S.; Erhan, D.; Kindermans, P.-J.; Kim, B. A Benchmark for Interpretability Methods in Deep Neural Networks. In \textit{Advances in Neural Information Processing Systems}; Curran Associates, Inc.: Red Hook, NY, USA, 2019; Volume 32.
+\bibitem{hedstrom2023quantus} Hedstr{\"o}m, A.; Weber, L.; Krakowczyk, D.; Bareeva, D.; Motzkus, F.; Samek, W.; Lapuschkin, S.; H{\"o}hne, M.M.-C. Quantus: An Explainable AI Toolkit for Responsible Evaluation of Neural Network Explanations and Beyond. \textit{J. Mach. Learn. Res.} \textbf{2023}, \textit{24}, 1--11.
 \end{thebibliography}
 
 \end{document}

@@ -1,0 +1,256 @@
+{
+  "status": "complete",
+  "results": [
+    {
+      "mode": "bidirectional",
+      "metric": "top1",
+      "estimate": 0.25,
+      "ci_low": 0.0,
+      "ci_high": 0.5833333333333334,
+      "source_logs": 3,
+      "mutation_types": 4,
+      "repetitions": 5000
+    },
+    {
+      "mode": "bidirectional",
+      "metric": "top3",
+      "estimate": 0.3333333333333333,
+      "ci_low": 0.0,
+      "ci_high": 0.75,
+      "source_logs": 3,
+      "mutation_types": 4,
+      "repetitions": 5000
+    },
+    {
+      "mode": "bidirectional",
+      "metric": "top5",
+      "estimate": 0.3333333333333333,
+      "ci_low": 0.0,
+      "ci_high": 0.75,
+      "source_logs": 3,
+      "mutation_types": 4,
+      "repetitions": 5000
+    },
+    {
+      "mode": "bidirectional",
+      "metric": "mrr",
+      "estimate": 0.32269232635792205,
+      "ci_low": 0.04550004550004547,
+      "ci_high": 0.6790123456790124,
+      "source_logs": 3,
+      "mutation_types": 4,
+      "repetitions": 5000
+    },
+    {
+      "mode": "bidirectional",
+      "metric": "exam",
+      "estimate": 0.3317901234567901,
+      "ci_low": 0.10648148148148147,
+      "ci_high": 0.5771604938271604,
+      "source_logs": 3,
+      "mutation_types": 4,
+      "repetitions": 5000
+    },
+    {
+      "mode": "consumer_only",
+      "metric": "top1",
+      "estimate": 0.08333333333333333,
+      "ci_low": 0.0,
+      "ci_high": 0.3333333333333333,
+      "source_logs": 3,
+      "mutation_types": 4,
+      "repetitions": 5000
+    },
+    {
+      "mode": "consumer_only",
+      "metric": "top3",
+      "estimate": 0.16666666666666666,
+      "ci_low": 0.0,
+      "ci_high": 0.5,
+      "source_logs": 3,
+      "mutation_types": 4,
+      "repetitions": 5000
+    },
+    {
+      "mode": "consumer_only",
+      "metric": "top5",
+      "estimate": 0.25,
+      "ci_low": 0.0,
+      "ci_high": 0.5833333333333334,
+      "source_logs": 3,
+      "mutation_types": 4,
+      "repetitions": 5000
+    },
+    {
+      "mode": "consumer_only",
+      "metric": "mrr",
+      "estimate": 0.18187121187121183,
+      "ci_low": 0.03492867867867863,
+      "ci_high": 0.5095238095238095,
+      "source_logs": 3,
+      "mutation_types": 4,
+      "repetitions": 5000
+    },
+    {
+      "mode": "consumer_only",
+      "metric": "exam",
+      "estimate": 0.37499999999999994,
+      "ci_low": 0.16666666666666666,
+      "ci_high": 0.5648148148148149,
+      "source_logs": 3,
+      "mutation_types": 4,
+      "repetitions": 5000
+    },
+    {
+      "mode": "producer_only",
+      "metric": "top1",
+      "estimate": 0.25,
+      "ci_low": 0.0,
+      "ci_high": 0.5833333333333334,
+      "source_logs": 3,
+      "mutation_types": 4,
+      "repetitions": 5000
+    },
+    {
+      "mode": "producer_only",
+      "metric": "top3",
+      "estimate": 0.5,
+      "ci_low": 0.16666666666666666,
+      "ci_high": 0.8333333333333334,
+      "source_logs": 3,
+      "mutation_types": 4,
+      "repetitions": 5000
+    },
+    {
+      "mode": "producer_only",
+      "metric": "top5",
+      "estimate": 0.5,
+      "ci_low": 0.16666666666666666,
+      "ci_high": 0.8333333333333334,
+      "source_logs": 3,
+      "mutation_types": 4,
+      "repetitions": 5000
+    },
+    {
+      "mode": "producer_only",
+      "metric": "mrr",
+      "estimate": 0.4143557422969188,
+      "ci_low": 0.14325163398692806,
+      "ci_high": 0.6904761904761904,
+      "source_logs": 3,
+      "mutation_types": 4,
+      "repetitions": 5000
+    },
+    {
+      "mode": "producer_only",
+      "metric": "exam",
+      "estimate": 0.22685185185185183,
+      "ci_low": 0.04629629629629627,
+      "ci_high": 0.46141975308641975,
+      "source_logs": 3,
+      "mutation_types": 4,
+      "repetitions": 5000
+    },
+    {
+      "mode": "random_mapping",
+      "metric": "top1",
+      "estimate": 0.08333333333333333,
+      "ci_low": 0.0,
+      "ci_high": 0.3333333333333333,
+      "source_logs": 3,
+      "mutation_types": 4,
+      "repetitions": 5000
+    },
+    {
+      "mode": "random_mapping",
+      "metric": "top3",
+      "estimate": 0.08333333333333333,
+      "ci_low": 0.0,
+      "ci_high": 0.3333333333333333,
+      "source_logs": 3,
+      "mutation_types": 4,
+      "repetitions": 5000
+    },
+    {
+      "mode": "random_mapping",
+      "metric": "top5",
+      "estimate": 0.16666666666666666,
+      "ci_low": 0.0,
+      "ci_high": 0.5,
+      "source_logs": 3,
+      "mutation_types": 4,
+      "repetitions": 5000
+    },
+    {
+      "mode": "random_mapping",
+      "metric": "mrr",
+      "estimate": 0.1498514090387796,
+      "ci_low": 0.03055555555555552,
+      "ci_high": 0.410042735042735,
+      "source_logs": 3,
+      "mutation_types": 4,
+      "repetitions": 5000
+    },
+    {
+      "mode": "random_mapping",
+      "metric": "exam",
+      "estimate": 0.4475308641975308,
+      "ci_low": 0.16203703703703695,
+      "ci_high": 0.7391975308641975,
+      "source_logs": 3,
+      "mutation_types": 4,
+      "repetitions": 5000
+    },
+    {
+      "mode": "topic_only",
+      "metric": "top1",
+      "estimate": 0.16666666666666666,
+      "ci_low": 0.0,
+      "ci_high": 0.5,
+      "source_logs": 3,
+      "mutation_types": 4,
+      "repetitions": 5000
+    },
+    {
+      "mode": "topic_only",
+      "metric": "top3",
+      "estimate": 0.5,
+      "ci_low": 0.16666666666666666,
+      "ci_high": 0.8333333333333334,
+      "source_logs": 3,
+      "mutation_types": 4,
+      "repetitions": 5000
+    },
+    {
+      "mode": "topic_only",
+      "metric": "top5",
+      "estimate": 0.5,
+      "ci_low": 0.16666666666666666,
+      "ci_high": 0.8333333333333334,
+      "source_logs": 3,
+      "mutation_types": 4,
+      "repetitions": 5000
+    },
+    {
+      "mode": "topic_only",
+      "metric": "mrr",
+      "estimate": 0.37266865079365075,
+      "ci_low": 0.14718171296296298,
+      "ci_high": 0.625,
+      "source_logs": 3,
+      "mutation_types": 4,
+      "repetitions": 5000
+    },
+    {
+      "mode": "topic_only",
+      "metric": "exam",
+      "estimate": 0.35648148148148145,
+      "ci_low": 0.1481481481481481,
+      "ci_high": 0.6576388888888856,
+      "source_logs": 3,
+      "mutation_types": 4,
+      "repetitions": 5000
+    }
+  ],
+  "boundary": "Two-way cluster bootstrap resamples three source logs and four mutation types independently; intervals remain low-resolution because both cluster counts are small."
+}

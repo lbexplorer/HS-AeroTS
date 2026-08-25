@@ -1,0 +1,29 @@
+{
+  "status": "complete",
+  "channels": 87,
+  "mapping_agreement_channels": 76,
+  "mapping_agreement_fraction": 0.8735632183908046,
+  "changed_channels": 11,
+  "document_mapping_counts": {
+    "Mechanical/Electrical": 47,
+    "Altitude": 15,
+    "Global Position": 12,
+    "Shared": 10,
+    "External Position": 3
+  },
+  "consistency_at_1": [
+    {
+      "scope": "all",
+      "k": 1,
+      "seeds": 5,
+      "windows": 3602,
+      "consistency_mean": 0.24997223764575235,
+      "consistency_std": 0.005582235601406331,
+      "hit_rate_mean": 0.24997223764575235,
+      "hit_rate_std": 0.005582235601406331,
+      "random_consistency": 0.1706555106677644,
+      "random_hit_rate": 0.17065551066776438
+    }
+  ],
+  "boundary": "The reference mapping is derived from PX4 message-field semantics and is independent of SHAP values; it is not a substitute for external human-expert adjudication."
+}
