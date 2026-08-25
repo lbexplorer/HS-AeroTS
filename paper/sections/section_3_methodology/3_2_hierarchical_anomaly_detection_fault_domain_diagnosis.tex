@@ -1,0 +1,7 @@
+\subsection{Hierarchical Anomaly Detection and Fault-Domain Diagnosis}
+
+HS-AeroTS-FL separates runtime anomaly detection from conditional fault-domain diagnosis. Stage 1 is a class-balanced binary LightGBM model that produces an anomaly score for each feature window. Its operating threshold is selected on the validation precision-recall curve by maximizing F1 and is then frozen for test evaluation. AUPRC and AUROC assess threshold-independent detection, while threshold-dependent F1 and event-level measures assess the operating point.
+
+Stage 2 is a four-class LightGBM model trained only on windows with an explicit anomalous fault-domain label: External Position, Global Position, Altitude, or Mechanical/Electrical. Normal windows and Uncategorized windows are excluded from this conditional training task. Stage 2 uses the same log membership as Stage 1 and is evaluated with Macro-F1, Balanced Accuracy, Macro Recall, and per-class metrics. Full model parameters are reported in Table~\ref{tab:protocol} and Supplementary Table S1.
+
+For the operational Cascade, a window below the Stage 1 threshold is assigned Normal; otherwise, the window is passed to Stage 2. This preserves the distinction between conditional four-class diagnosis and complete five-class runtime prediction. Direct Five-Class is the comparator that predicts Normal plus the four fault domains in one multiclass model. Random Forest, majority, and stratified-random methods are used as reference methods under the corresponding task definitions.

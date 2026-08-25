@@ -1,0 +1,23 @@
+\subsection{SHAP-Based Explainable Evidence}
+
+For each Stage 2 prediction, TreeSHAP contributions for the predicted class raw score were retained and converted to non-negative evidence magnitudes. For feature $j$ and predicted class $\hat{c}(x)$,
+
+\[
+e_j(x)=\left|\phi_j^{(\hat{c}(x))}(x)\right|.
+\]
+
+The feature dictionary defines the aggregation sets. Channel-, topic-, and subsystem-level evidence is obtained by summing feature evidence through the hierarchy:
+
+\[
+E_q(x)=\sum_{j\in\mathcal{F}(q)}e_j(x),\qquad
+E_t(x)=\sum_{q\in\mathcal{Q}(t)}E_q(x),\qquad
+E_s(x)=\sum_{q\in\mathcal{Q}(s)}E_q(x).
+\]
+
+Aggregation conservation is checked at each level using
+
+\[
+\epsilon_L(x)=\sum_{u\in L}E_u(x)-\sum_j e_j(x).
+\]
+
+Evidence quality is evaluated by validation-derived SHAP top-$k$ masking against equal-size random masking, and by channel-level Consistency@K and Hit@K against the mapped ground-truth subsystem. Shared channels are treated as non-matches for a specific subsystem. These tests assess organization, necessity, and label alignment of the evidence; they do not establish physical causality. Detailed masking settings and full class-specific results are provided in Supplementary Materials.

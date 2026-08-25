@@ -1,0 +1,16 @@
+\subsection{PX4 Software-Module Suspect Ranking}
+
+The architecture-aware layer maps topic-level SHAP evidence to version-aware PX4 software-module suspects. Firmware provenance was read from ULog headers, and the majority firmware commit was matched to the PX4 source tree used for static analysis. The source scanner identifies uORB topic occurrences, assigns publisher or subscriber roles from local API context, and converts source paths into module identifiers. It is a deterministic static approximation of topic dependencies, not a runtime execution trace.
+
+For propagation mode $r$, let $\mathcal{M}_t^{(r)}$ be the modules connected to topic $t$ and $E_t$ its topic-level evidence. Evidence is allocated uniformly across the connected modules:
+
+\[
+A_{t,m}^{(r)}=\begin{cases}
+E_t/|\mathcal{M}_t^{(r)}|,&m\in\mathcal{M}_t^{(r)},\\
+0,&\text{otherwise},
+\end{cases}
+\qquad
+S_m^{(r)}=\sum_t A_{t,m}^{(r)}.
+\]
+
+Producer-only, consumer-only, and bidirectional modes represent different engineering interpretations of the same topic evidence. The resulting ranking is architecture-aware diagnostic evidence and a software-module suspect ranking. It is version-dependent and static; it is not root-cause localization. Mapping coverage, edge counts, module counts, and empirical conservation results are reported in Section 5.2 rather than repeated here.

@@ -1,0 +1,7 @@
+\subsection{Data Preprocessing and Feature Representation}
+
+UAV-SEAD was used as the primary real-flight dataset. Raw PX4 ULog files were retained as read-only inputs, and the dataset revision was fixed to \texttt{\seqsplit{774a336a1d1d06b248927a35c2ea1f6869e9e1a4}}. After the inventory and parsing checks, 1389 usable logs remained. Core channels were selected from the mapped PX4 topic fields using a minimum 60\% log-coverage criterion, yielding 87 telemetry channels.
+
+The selected channels were aligned to a common 10 Hz grid by timestamp interpolation, while flight-log identity and annotation intervals were retained for split assignment and evaluation. Each aligned log was transformed into overlapping windows of 96 samples with stride 8 and horizon 12. The feature vector consisted of 18 temporal-statistical descriptors for each channel, yielding 1566 features per window. The feature dictionary retained the descriptor, channel, and PX4 topic for every feature so that later attribution could be aggregated from statistical feature to channel, topic, and subsystem.
+
+Standardization statistics were estimated from the training windows only and then applied to validation and test windows. The primary chronological representation, together with the alternative purged and leave-log-out assignments, is summarized in Table~\ref{tab:protocol}.
