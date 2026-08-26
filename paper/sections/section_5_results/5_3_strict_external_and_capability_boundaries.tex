@@ -6,16 +6,44 @@ Leave-log-out evaluation assigned complete logs to the partitions, with 970 logs
 
 The paired Direct-minus-Cascade Macro-F1 difference under leave-log-out was 0.0130, with a flight-log bootstrap 95\% confidence interval of $[-0.0282, 0.0438]$ based on 1000 repetitions. Because the interval includes zero, these results do not support a stable performance difference or a general performance advantage for the hierarchical Cascade. The Cascade remains a distinct gated decision structure, but its fixed-split performance ordering should not be interpreted as a protocol-independent superiority.
 
-The ALFA experiment evaluated zero-shot binary anomaly detection using 16 semantically shared physical channels and a threshold fixed from UAV-SEAD validation data. On 46 ALFA sequences and 5273 ALFA windows, the transferred detector obtained AUPRC of $0.3181 \pm 0.0086$ and AUROC of $0.6679 \pm 0.0069$. The ALFA faults were not mapped to the four UAV-SEAD fault domains; these values therefore assess binary score transfer only. The separate flight-level screening of 139 Uncategorized logs against 898 pure-Normal logs produced flight-level AUPRC of $0.2784 \pm 0.0046$, AUROC of $0.6610 \pm 0.0049$, F1 of $0.3307 \pm 0.0142$, Uncategorized recall of $0.4118 \pm 0.0314$, and Normal specificity of $0.8575 \pm 0.0073$. Because Uncategorized annotations have no temporal ranges, this screening does not support point-wise or event-level claims.
+The ALFA experiment evaluated zero-shot binary anomaly detection using 16 semantically shared physical channels and a threshold fixed from UAV-SEAD validation data. On 46 ALFA sequences and 5273 ALFA windows, the transferred detector obtained AUPRC of $0.3181 \pm 0.0086$ (95\% sequence-cluster CI [0.2540, 0.3956]) and AUROC of $0.6679 \pm 0.0069$. The ALFA faults were not mapped to the four UAV-SEAD fault domains; these values therefore assess binary score transfer only. The separate flight-level screening of 139 Uncategorized logs against 898 pure-Normal logs produced flight-level AUPRC of $0.2784 \pm 0.0046$ (95\% flight-cluster CI [0.2086, 0.3664]), AUROC of $0.6610 \pm 0.0049$, F1 of $0.3307 \pm 0.0142$, Uncategorized recall of $0.4118 \pm 0.0314$, and Normal specificity of $0.8575 \pm 0.0073$. Because Uncategorized annotations have no temporal ranges, this screening does not support point-wise or event-level claims.
+
+Table~\ref{tab:absolute_uncertainty} separates model-seed standard deviations from sampling uncertainty for the principal absolute metrics. The cluster intervals are wider than the seed dispersions because logs or sequences, rather than highly overlapping windows, are the resampling units.
+
+\begin{table}[H]
+\caption{Principal absolute metrics with model-seed standard deviation and 95\% cluster-bootstrap sampling intervals (1000 repetitions; seed 20260825). UAV-SEAD intervals resample complete test flight logs, ALFA resamples sequences, and Uncategorized resamples flights.\label{tab:absolute_uncertainty}}
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{l l c c c}
+\toprule
+\textbf{Dataset/protocol} & \textbf{Metric} & \textbf{Point estimate} & \textbf{Seed SD} & \textbf{95\% cluster CI}\\
+\midrule
+UAV-SEAD fixed & Stage 1 AUPRC & 0.7522 & 0.0039 & [0.6915, 0.8080]\\
+UAV-SEAD fixed & Stage 2 Macro-F1 & 0.8980 & 0.0020 & [0.8581, 0.9296]\\
+UAV-SEAD fixed & Cascade Macro-F1 & 0.6902 & 0.0071 & [0.6308, 0.7350]\\
+UAV-SEAD fixed & Direct Five-Class Macro-F1 & 0.6599 & 0.0029 & [0.5991, 0.7070]\\
+UAV-SEAD purged & Stage 1 AUPRC & 0.6006 & 0.0062 & [0.4968, 0.7109]\\
+UAV-SEAD purged & Stage 2 Macro-F1 & 0.7944 & 0.0049 & [0.7040, 0.8489]\\
+UAV-SEAD purged & Cascade Macro-F1 & 0.5683 & 0.0177 & [0.4532, 0.6338]\\
+UAV-SEAD purged & Direct Five-Class Macro-F1 & 0.6024 & 0.0049 & [0.4890, 0.6664]\\
+UAV-SEAD leave-log-out & Stage 1 AUPRC & 0.6296 & 0.0023 & [0.4945, 0.7456]\\
+UAV-SEAD leave-log-out & Stage 2 Macro-F1 & 0.9041 & 0.0029 & [0.8276, 0.9549]\\
+UAV-SEAD leave-log-out & Cascade Macro-F1 & 0.5962 & 0.0048 & [0.4889, 0.6799]\\
+UAV-SEAD leave-log-out & Direct Five-Class Macro-F1 & 0.6092 & 0.0043 & [0.5091, 0.6836]\\
+ALFA zero-shot & Stage 1 AUPRC & 0.3181 & 0.0086 & [0.2540, 0.3956]\\
+Uncategorized screening & Flight-level AUPRC & 0.2784 & 0.0046 & [0.2086, 0.3664]\\
+\bottomrule
+\end{tabularx}
+\end{table}
 
 The controlled PX4 replay provided the only module-level ground truth, but its evaluation exposed a detector-gated capability boundary. In the onset-conditioned bidirectional analysis, which supplied the known 30-s injection time and used matched baseline evidence, overall Top-1, Top-3, and Top-5 recalls were 0.250 (95\% two-way cluster-bootstrap CI [0.000, 0.583]), 0.333 [0.000, 0.750], and 0.333 [0.000, 0.750], respectively. MRR was 0.3227 [0.0455, 0.6790], and mean EXAM was 0.3318 [0.1065, 0.5772]. These intervals independently resample the three source logs and four mutation types and remain wide because both cluster counts are small. The conditional ranks were uneven across mutations: EKF2 innovation bias reached Top-1 in two of three runs, whereas INAV local-z freeze and Land Detector state inversion did not enter Top-5 in any run. These results quantify conditional ranking behavior after onset information is supplied.
 
-The unchanged real-flight Stage 1 detector, however, detected 0 of 12 controlled mutation runs at its fixed threshold of 0.3374776883. Consequently, detector-gated Top-1, Top-3, Top-5, and MRR were all zero; detection delay and detector-gated ranking delay were undefined. Figure~\ref{fig:replay_gated_boundary} contrasts the onset-conditioned and detector-gated metrics. The onset-conditioned values must therefore not be presented as end-to-end software-module localization performance. Taken together, the replay results support conditional software-module suspect ranking while identifying real-flight-to-replay domain shift as a current limit of the complete evidence chain.
+The unchanged real-flight Stage 1 detector, however, detected 0 of 12 controlled mutation runs at its fixed threshold of 0.3374776883. Consequently, detector-gated Top-1, Top-3, Top-5, and MRR were all zero; detection delay and detector-gated ranking delay were undefined. Figure~\ref{fig:replay_gated_boundary} contrasts the onset-conditioned and detector-gated metrics. The onset-conditioned values must therefore not be presented as end-to-end software-module localization performance. Taken together, the replay results support only conditional source-tree inspection ranking while identifying real-flight-to-replay domain shift as a current limit of the complete evidence chain.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{figures/figure_3_protocol_robustness.pdf}
-    \caption{Primary protocol comparison for Stage 1 detection and complete or conditional diagnosis. The fixed chronological, purged, and leave-log-out protocols are evaluated with their respective split definitions; error bars show standard deviations across five seeds. Purging reverses the mean ordering of Cascade and Direct Five-Class Macro-F1, but the paired flight-log interval for their difference includes zero.}
+    \caption{Primary protocol comparison for Stage 1 detection and complete or conditional diagnosis. The fixed chronological, purged, and leave-log-out protocols are evaluated with their respective split definitions. In every panel, error bars show standard deviations across five frozen model seeds, not sampling confidence intervals; absolute flight-log cluster intervals are reported in Table~\ref{tab:absolute_uncertainty}. Purging reverses the mean ordering of Cascade and Direct Five-Class Macro-F1, but the paired flight-log interval for their difference includes zero.}
     \label{fig:protocol_robustness}
 \end{figure}
 

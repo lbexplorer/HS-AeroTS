@@ -66,3 +66,30 @@
 | M10 naming | 全文将 HS-AeroTS-FL 改为 HS-AeroTS | 消除 FL 歧义 | **RESOLVED** |
 
 第二轮新增/更新的主要证据目录：`reports/p12/commit_matched/`、`semantic_mapping/`、`uorb_audit/`、`statistics/`、`baselines/catch_full_channels/`。完整数字与投稿决定见 `HS-AeroTS_submission_readiness_round2.md`。
+
+## 投稿元数据修订（2026-08-26）
+
+- 写入五位作者的姓名、顺序和单位编号；Jiao Wu 与 Bo Liu 标记为共同第一作者，Junsheng Wu 标记为通讯作者。
+- 按多作者稿件将 MDPI class 切换为 `moreauthors`，并加入 equal-contribution 脚注。
+- Funding 填写为无外部资助；Conflicts of Interest 填写为全体作者无冲突。
+- Data Availability 按实际使用的数据源写入 UAV-SEAD Hugging Face repository/revision、ALFA Figshare article/file、PX4-Autopilot commit 和相应许可边界；明确本研究分析源码不公开。
+- 单位 1--3 的英文名称与地址、Jiao Wu 的邮箱及 Junsheng Wu 的通讯邮箱已按作者提供的信息写入，并使用 MDPI 原生 `\addhighlights` 区块加入四条证据受限的 Highlights。
+- 尚待作者提供：五位作者的 CRediT 分工，以及 Acknowledgments。
+
+## P13 零新实验、有限复算与投稿稿修订（2026-08-26）
+
+本轮不采集数据、不训练或调参模型、不增加基线、不运行 PX4/SITL replay。统一复算器只读取冻结预测、模型、SHAP、uORB 边表和分组信息；85 个受保护输入在运行前后 SHA-256 完全一致。
+
+| ID | 原 Major 问题 | 本轮处理 | 稿件位置 | 状态 |
+|---|---|---|---|---|
+| M1 | 条件化解释与部署链混用 | 报告 Stage-1-gated TP/FN/FP/TN；单列 detected true anomalies 与 false-positive suspect distribution；保留 ground-truth-anomaly-conditioned 分析但不混称 | Abstract；§1.2；§3.4；§5.2；§6；§7 | **ADDRESSED** |
+| M2 | uORB `1.000 audit` 被当作独立验证 | 全文统一为 explicit same-statement internal consistency check，明确没有独立 gold audit | §3.4；§5.2；§6.4 | **MITIGATED**；残余限制保留 |
+| M3 | whole-source-tree 图含明显不适用路径 | 按 PX4FMU_V2 + NuttX 做 conservative-exclusion sensitivity；180/54 降至 145/36，保留 18 topics；报告排除规则、Top-K overlap、排名变化和 degree-normalized sensitivity | §3.4；§5.2；Appendix B.3；Figure 3(d) | **MITIGATED**；不称 build graph |
+| M4 | Consistency/Hit/weighted consistency/随机基线定义不完整 | 加入正式公式；Shared 固定为 non-match；随机基线为无放回精确基线 | §3.3 | **ADDRESSED** |
+| M5 | 近期基线可能被解释为优越性证据 | CATCH 与 GCAD 统一定位为 budget-constrained feasibility references，禁止比较排名、superiority 或 SOTA 主张 | §4.1；§4.4；§5.1；§6.2 | **MITIGATED**；公平重训仍缺失 |
+| M6 | seed SD 与 sampling uncertainty 混淆 | fixed/purged/leave-log-out/ALFA/Uncategorized 增加 cluster-bootstrap CI；Table 5 同时报告 point estimate、seed SD、95% cluster CI；图注逐项定义误差条 | §4.2；§5.1；§5.3；Table 5；Figures 3–5 | **ADDRESSED** |
+| M7 | 无公开 Supplement 导致方法细节不足 | 正文附录加入完整 87-channel mapping、软件版本、bootstrap、过滤、split/window/log 摘要；Data Availability 如实说明保密材料范围 | Appendix A–B；Data Availability | **MITIGATED**；不提供机器可读公开 Supplement |
+
+其他完成项：标题收缩为 commit-level inspection evidence；作者元数据、Highlights、CRediT、Funding、IRB、Informed Consent、Data Availability、AI-use Acknowledgments 与 Conflicts of Interest 全部填写；submit 模式 DOI footer 已抑制。
+
+验证：新增 8 项单元测试；全套可运行测试为 37 passed、1 deselected（Windows sandbox 临时目录权限）；最终 LaTeX 为 30 页，无未定义 citation/reference、重复 label、overfull 或 DOI footer；渲染后检查首页、Figures 3–5、Table 5、Appendices A–B 和末页通过。

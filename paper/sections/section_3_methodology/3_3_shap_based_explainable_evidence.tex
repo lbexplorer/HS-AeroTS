@@ -20,6 +20,25 @@ Aggregation conservation is checked at each level using
 \epsilon_L(x)=\sum_{u\in L}E_u(x)-\sum_j e_j(x).
 \]
 
-Evidence quality is evaluated by validation-derived SHAP top-$k$ masking against equal-size random masking, and by channel-level Consistency@K and Hit@K against a document-derived semantic channel-to-subsystem mapping. The reference mapping is defined from PX4 message topics and field semantics without access to SHAP values. It corrects generic string-token leakage in the original rule, such as attitude yaw and manual-control axes being interpreted as global-position fields; 11 of 87 channel assignments change. Shared channels are treated as non-matches for a specific subsystem. Because the reference is still author-defined rather than independently expert-adjudicated, Consistency@K is reported as mapping sensitivity, not subsystem ground-truth validation.
+Evidence quality is evaluated by validation-derived SHAP top-$k$ masking against equal-size random masking, and by channel-level agreement with a document-derived semantic channel-to-subsystem mapping. Let $T_i^{K}$ be the $K$ highest-evidence channels for sample $i$, $g(q)$ the declared subsystem of channel $q$, and $y_i$ the fault-domain label. We report
+
+\[
+C_i(K)=\frac{1}{K}\sum_{q\in T_i^K}\mathbb{I}[g(q)=y_i],\qquad
+\mathrm{Consistency@}K=\frac{1}{N}\sum_{i=1}^{N}C_i(K),
+\]
+
+\[
+\mathrm{Hit@}K=\frac{1}{N}\sum_{i=1}^{N}
+\mathbb{I}\!\left[\sum_{q\in T_i^K}\mathbb{I}[g(q)=y_i]>0\right].
+\]
+
+For non-negative channel evidence $E_q(x_i)$, weighted consistency is
+
+\[
+\mathrm{WeightedConsistency}=\frac{1}{N}\sum_{i=1}^{N}
+\frac{\sum_q E_q(x_i)\mathbb{I}[g(q)=y_i]}{\sum_q E_q(x_i)}.
+\]
+
+If $Q=87$ and $n_y$ channels are assigned to domain $y$, the exact without-replacement random baselines are $n_y/Q$ for Consistency@K and $1-\binom{Q-n_y}{K}/\binom{Q}{K}$ for Hit@K, averaged over the evaluated labels. The reference mapping is defined from PX4 message topics and field semantics without access to SHAP values. It corrects generic string-token leakage in the original rule, such as attitude yaw and manual-control axes being interpreted as global-position fields; 11 of 87 channel assignments change. Channels assigned ``Shared'' count as non-matches for every specific fault domain. Because the reference is author-defined rather than independently expert-adjudicated, all of these quantities are mapping sensitivities, not subsystem ground-truth validation. The complete 87-channel mapping is given in Appendix~\ref{app:semantic_mapping}.
 
 The primary masking test replaces selected test features with feature-wise medians computed from training windows. A sensitivity analysis instead replaces all selected features in each test window with their joint values from one deterministically sampled training-window donor. The donor preserves dependence within the replaced block, although combining it with unreplaced test features can still be off-manifold. Random feature subsets are nested within each model seed. Paired uncertainty is estimated by resampling complete flight logs and averaging the contrast across the five model seeds. These tests assess numerical organization and prediction sensitivity under specified perturbations; they do not establish physical causality or feature necessity.

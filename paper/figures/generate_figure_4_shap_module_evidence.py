@@ -17,7 +17,7 @@ def short_module(name):
 def main():
     masking = pd.read_csv(REPORTS / "p4" / "masking_results.csv")
     consistency = pd.read_csv(REPORTS / "p12" / "semantic_mapping" / "consistency_summary.csv")
-    modules = pd.read_csv(REPORTS / "p12" / "commit_matched" / "module_rankings.csv")
+    modules = pd.read_csv(REPORTS / "p13" / "conservative_graph" / "module_rankings.csv")
 
     shap_mask = masking[masking["mask"] == "validation_shap_top_k"].sort_values("k")
     random_mask = masking[masking["mask"] == "uniform_random_k"].sort_values("k")
@@ -152,7 +152,7 @@ def main():
 
     ax = axes[1, 1]
     ax.barh(top_modules["label"], top_modules["shap_share"], color=colors["module"])
-    ax.set_title("(d) Commit-matched module suspects")
+    ax.set_title("(d) Conservative source-tree candidates")
     ax.set_xlabel("Allocated SHAP share")
     ax.set_xlim(0, 0.28)
     for y, value in enumerate(top_modules["shap_share"]):

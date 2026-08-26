@@ -32,6 +32,7 @@ hs-aerots-deep = "hs_aerots.deep_baselines:main"
 hs-aerots-map = "hs_aerots.software_mapping:main"
 hs-aerots-sitl = "hs_aerots.sitl_injection:main"
 hs-aerots-robustness = "hs_aerots.robustness:main"
+hs-aerots-p13 = "hs_aerots.low_cost_revision:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

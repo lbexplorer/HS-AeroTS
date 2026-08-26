@@ -1,5 +1,7 @@
 # HS-AeroTS 投稿准备度第二轮报告
 
+> 历史报告：本文档记录 P12 状态。P13 最终状态见 `HS-AeroTS_submission_readiness_final.md`；其中已关闭本文件所列的 CRediT 与 Acknowledgments 占位问题。
+
 日期：2026-08-25
 目标期刊：MDPI *Drones*
 范围：完成固件一致性、映射审计、统计/敏感性和近期基线四项工作；不公开源代码，不制作公共复现包。
@@ -8,7 +10,7 @@
 
 四项科学补强均已执行，原稿中的跨版本模块汇总、单种子 purged 结果、未聚类回放区间和无配对区间的 SHAP 遮蔽主张均已替换。论文的最强结论现被限定为：HS-AeroTS 提供可追踪的异常检测、故障域诊断与版本一致的架构检查证据，不构成因果根因定位或可靠的 detector-gated 软件故障定位。
 
-在作者补齐姓名、单位、通信邮箱、CRediT、Funding 和 Acknowledgments 后，稿件具备科学内容层面的投稿条件。源码不公开已在 Data Availability 中如实声明；配置、划分清单和派生报告仅承诺可供编辑/审稿人保密核查。
+作者姓名、顺序、单位、共同第一作者、通讯作者、通讯邮箱、无外部资助和无利益冲突声明已补齐，并加入 Highlights。稿件仍需补充 CRediT 和 Acknowledgments 后提交。源码不公开已在 Data Availability 中如实声明；配置、划分清单和派生报告仅承诺可供编辑/审稿人保密核查。
 
 ## 1. 固件一致的模块映射
 
@@ -71,9 +73,9 @@
 
 ### Editorial / Author action
 
-1. `[AUTHOR ACTION REQUIRED]`：作者、单位、通信邮箱。
-2. `[AUTHOR ACTION REQUIRED]`：CRediT、Funding、Acknowledgments。
-3. 提交系统中确认源码不公开政策与 Data Availability 文本一致；若编辑要求匿名代码核查，应准备保密提供，而非公共发布。
+1. `[AUTHOR ACTION REQUIRED]`：五位作者的 CRediT 分工与 Acknowledgments。
+2. Funding 已填写为无外部资助；Conflicts of Interest 已填写为全体作者无冲突。
+3. 提交系统中确认源码不公开政策与 Data Availability 文本一致；若编辑要求匿名材料核查，可保密提供配置、划分清单和派生报告，但不承诺公开分析源码。
 
 ## 投稿决定
 

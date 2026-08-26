@@ -1,0 +1,273 @@
+{
+  "status": "complete",
+  "hardware_scope": "PX4FMU_V2 / NuttX",
+  "filter_type": "conservative source-path exclusion sensitivity; not a compiled build-target graph",
+  "original_edges": 180,
+  "filtered_edges": 145,
+  "excluded_edges": 35,
+  "original_modules": 54,
+  "filtered_modules": 36,
+  "excluded_reason_counts": {
+    "examples": 14,
+    "posix_platform": 8,
+    "simulation_or_replay": 7,
+    "qurt_platform": 2,
+    "linux_specific": 1,
+    "snapdragon_specific": 1,
+    "tests": 1,
+    "templates": 1
+  },
+  "topics_retained": 18,
+  "contribution_conservation_passed": true,
+  "ranking_comparison": [
+    {
+      "mode": "producer_only",
+      "k": 1,
+      "top_k_overlap": 0,
+      "top_k_jaccard": 0.0,
+      "spearman_common_modules": 0.8202633085289068,
+      "common_modules": 22
+    },
+    {
+      "mode": "producer_only",
+      "k": 3,
+      "top_k_overlap": 3,
+      "top_k_jaccard": 1.0,
+      "spearman_common_modules": 0.8202633085289068,
+      "common_modules": 22
+    },
+    {
+      "mode": "producer_only",
+      "k": 5,
+      "top_k_overlap": 4,
+      "top_k_jaccard": 0.6666666666666666,
+      "spearman_common_modules": 0.8202633085289068,
+      "common_modules": 22
+    },
+    {
+      "mode": "producer_only",
+      "k": 10,
+      "top_k_overlap": 6,
+      "top_k_jaccard": 0.42857142857142855,
+      "spearman_common_modules": 0.8202633085289068,
+      "common_modules": 22
+    },
+    {
+      "mode": "consumer_only",
+      "k": 1,
+      "top_k_overlap": 1,
+      "top_k_jaccard": 1.0,
+      "spearman_common_modules": 0.9643444871091608,
+      "common_modules": 28
+    },
+    {
+      "mode": "consumer_only",
+      "k": 3,
+      "top_k_overlap": 2,
+      "top_k_jaccard": 0.5,
+      "spearman_common_modules": 0.9643444871091608,
+      "common_modules": 28
+    },
+    {
+      "mode": "consumer_only",
+      "k": 5,
+      "top_k_overlap": 4,
+      "top_k_jaccard": 0.6666666666666666,
+      "spearman_common_modules": 0.9643444871091608,
+      "common_modules": 28
+    },
+    {
+      "mode": "consumer_only",
+      "k": 10,
+      "top_k_overlap": 7,
+      "top_k_jaccard": 0.5384615384615384,
+      "spearman_common_modules": 0.9643444871091608,
+      "common_modules": 28
+    },
+    {
+      "mode": "bidirectional",
+      "k": 1,
+      "top_k_overlap": 1,
+      "top_k_jaccard": 1.0,
+      "spearman_common_modules": 0.959278350515464,
+      "common_modules": 36
+    },
+    {
+      "mode": "bidirectional",
+      "k": 3,
+      "top_k_overlap": 3,
+      "top_k_jaccard": 1.0,
+      "spearman_common_modules": 0.959278350515464,
+      "common_modules": 36
+    },
+    {
+      "mode": "bidirectional",
+      "k": 5,
+      "top_k_overlap": 5,
+      "top_k_jaccard": 1.0,
+      "spearman_common_modules": 0.959278350515464,
+      "common_modules": 36
+    },
+    {
+      "mode": "bidirectional",
+      "k": 10,
+      "top_k_overlap": 8,
+      "top_k_jaccard": 0.6666666666666666,
+      "spearman_common_modules": 0.959278350515464,
+      "common_modules": 36
+    }
+  ],
+  "top_modules": [
+    {
+      "scope": "all",
+      "mode": "bidirectional",
+      "module": "src/modules/ekf2",
+      "mean_abs_shap": 1.100256163559591,
+      "seed_std": 0.06648171049730901,
+      "seeds": 5,
+      "shap_share": 0.1524666808760744,
+      "rank": 1
+    },
+    {
+      "scope": "all",
+      "mode": "bidirectional",
+      "module": "src/modules/commander",
+      "mean_abs_shap": 0.9310819722280745,
+      "seed_std": 0.05297906639048452,
+      "seeds": 5,
+      "shap_share": 0.12902356981113622,
+      "rank": 2
+    },
+    {
+      "scope": "all",
+      "mode": "bidirectional",
+      "module": "src/modules/mavlink",
+      "mean_abs_shap": 0.47706060130242867,
+      "seed_std": 0.01835668026568734,
+      "seeds": 5,
+      "shap_share": 0.06610810179150257,
+      "rank": 3
+    },
+    {
+      "scope": "all",
+      "mode": "bidirectional",
+      "module": "src/modules/vtol_att_control",
+      "mean_abs_shap": 0.4179882097942641,
+      "seed_std": 0.015226860380604263,
+      "seeds": 5,
+      "shap_share": 0.0579222158469754,
+      "rank": 4
+    },
+    {
+      "scope": "all",
+      "mode": "bidirectional",
+      "module": "src/modules/sensors",
+      "mean_abs_shap": 0.3601860734812655,
+      "seed_std": 0.01659448524766072,
+      "seeds": 5,
+      "shap_share": 0.049912353995643005,
+      "rank": 5
+    },
+    {
+      "scope": "all",
+      "mode": "consumer_only",
+      "module": "src/modules/commander",
+      "mean_abs_shap": 1.65389555228349,
+      "seed_std": 0.09523922207400924,
+      "seeds": 5,
+      "shap_share": 0.27735921132161334,
+      "rank": 1
+    },
+    {
+      "scope": "all",
+      "mode": "consumer_only",
+      "module": "src/modules/land_detector",
+      "mean_abs_shap": 0.4031818226186566,
+      "seed_std": 0.016073464126815012,
+      "seeds": 5,
+      "shap_share": 0.06761381768414923,
+      "rank": 2
+    },
+    {
+      "scope": "all",
+      "mode": "consumer_only",
+      "module": "src/modules/vtol_att_control",
+      "mean_abs_shap": 0.3076476289131228,
+      "seed_std": 0.010212327366984115,
+      "seeds": 5,
+      "shap_share": 0.05159267984153942,
+      "rank": 3
+    },
+    {
+      "scope": "all",
+      "mode": "consumer_only",
+      "module": "src/modules/mc_att_control",
+      "mean_abs_shap": 0.2747312619444128,
+      "seed_std": 0.01184106874359413,
+      "seeds": 5,
+      "shap_share": 0.046072586647377824,
+      "rank": 4
+    },
+    {
+      "scope": "all",
+      "mode": "consumer_only",
+      "module": "src/modules/events",
+      "mean_abs_shap": 0.26959499135994286,
+      "seed_std": 0.015658241183559685,
+      "seeds": 5,
+      "shap_share": 0.045211231190876305,
+      "rank": 5
+    },
+    {
+      "scope": "all",
+      "mode": "producer_only",
+      "module": "src/modules/mavlink",
+      "mean_abs_shap": 1.8561665967036205,
+      "seed_std": 0.07222297271123548,
+      "seeds": 5,
+      "shap_share": 0.25721606433619604,
+      "rank": 1
+    },
+    {
+      "scope": "all",
+      "mode": "producer_only",
+      "module": "src/modules/ekf2",
+      "mean_abs_shap": 1.6724655557053985,
+      "seed_std": 0.1023694441702087,
+      "seeds": 5,
+      "shap_share": 0.23175991246710304,
+      "rank": 2
+    },
+    {
+      "scope": "all",
+      "mode": "producer_only",
+      "module": "src/modules/sensors",
+      "mean_abs_shap": 0.8968698899464475,
+      "seed_std": 0.0443541947949719,
+      "seeds": 5,
+      "shap_share": 0.1242826714602802,
+      "rank": 3
+    },
+    {
+      "scope": "all",
+      "mode": "producer_only",
+      "module": "src/modules/vtol_att_control",
+      "mean_abs_shap": 0.5855552472345377,
+      "seed_std": 0.020956133398646853,
+      "seeds": 5,
+      "shap_share": 0.08114261748517233,
+      "rank": 4
+    },
+    {
+      "scope": "all",
+      "mode": "producer_only",
+      "module": "src/modules/position_estimator_inav",
+      "mean_abs_shap": 0.5111298423143392,
+      "seed_std": 0.02094187827462309,
+      "seeds": 5,
+      "shap_share": 0.07082920608438636,
+      "rank": 5
+    }
+  ],
+  "boundary": "Filtering removes clearly incompatible source paths but does not prove that every retained module was compiled or active in the logged firmware."
+}

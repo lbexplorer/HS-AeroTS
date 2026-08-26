@@ -1,0 +1,112 @@
+\section{Document-Derived Semantic Channel Mapping}
+\label{app:semantic_mapping}
+
+Table~\ref{tab:semantic_mapping_complete} gives the complete mapping used for the semantic agreement sensitivity. It was defined from PX4 topic and field semantics without access to SHAP values. ``Shared'' is a contextual or cross-domain assignment and is counted as a non-match for every specific fault-domain label. Each channel contributes 18 temporal--statistical features.
+
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{p{6.3cm} p{3.5cm} p{3.4cm}}
+\caption{Complete 87-channel document-derived semantic mapping.}\label{tab:semantic_mapping_complete}\\
+\toprule
+\textbf{Telemetry channel} & \textbf{PX4 topic} & \textbf{Declared subsystem}\\
+\midrule
+\endfirsthead
+\multicolumn{3}{c}{\tablename\ \thetable{} -- continued from previous page}\\
+\toprule
+\textbf{Telemetry channel} & \textbf{PX4 topic} & \textbf{Declared subsystem}\\
+\midrule
+\endhead
+\midrule
+\multicolumn{3}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+\path{actuator_controls_0.control[0]} & \path{actuator_controls_0} & Mechanical/Electrical\\
+\path{actuator_controls_0.control[1]} & \path{actuator_controls_0} & Mechanical/Electrical\\
+\path{actuator_controls_0.control[2]} & \path{actuator_controls_0} & Mechanical/Electrical\\
+\path{actuator_controls_0.control[3]} & \path{actuator_controls_0} & Mechanical/Electrical\\
+\path{actuator_outputs.output[0]} & \path{actuator_outputs} & Mechanical/Electrical\\
+\path{actuator_outputs.output[1]} & \path{actuator_outputs} & Mechanical/Electrical\\
+\path{actuator_outputs.output[2]} & \path{actuator_outputs} & Mechanical/Electrical\\
+\path{actuator_outputs.output[3]} & \path{actuator_outputs} & Mechanical/Electrical\\
+\path{actuator_outputs.output[4]} & \path{actuator_outputs} & Mechanical/Electrical\\
+\path{actuator_outputs.output[5]} & \path{actuator_outputs} & Mechanical/Electrical\\
+\path{actuator_outputs.output[6]} & \path{actuator_outputs} & Mechanical/Electrical\\
+\path{actuator_outputs.output[7]} & \path{actuator_outputs} & Mechanical/Electrical\\
+\path{battery_status.current_a} & \path{battery_status} & Mechanical/Electrical\\
+\path{battery_status.current_filtered_a} & \path{battery_status} & Mechanical/Electrical\\
+\path{battery_status.discharged_mah} & \path{battery_status} & Mechanical/Electrical\\
+\path{battery_status.remaining} & \path{battery_status} & Mechanical/Electrical\\
+\path{battery_status.voltage_filtered_v} & \path{battery_status} & Mechanical/Electrical\\
+\path{battery_status.voltage_v} & \path{battery_status} & Mechanical/Electrical\\
+\path{cpuload.load} & \path{cpuload} & Mechanical/Electrical\\
+\path{cpuload.ram_usage} & \path{cpuload} & Mechanical/Electrical\\
+\path{distance_sensor.current_distance} & \path{distance_sensor} & Altitude\\
+\path{ekf2_innovations.hagl_innov} & \path{ekf2_innovations} & Altitude\\
+\path{ekf2_innovations.heading_innov} & \path{ekf2_innovations} & Global Position\\
+\path{ekf2_innovations.output_tracking_error[0]} & \path{ekf2_innovations} & Shared\\
+\path{ekf2_innovations.output_tracking_error[1]} & \path{ekf2_innovations} & Shared\\
+\path{ekf2_innovations.output_tracking_error[2]} & \path{ekf2_innovations} & Shared\\
+\path{ekf2_innovations.vel_pos_innov[3]} & \path{ekf2_innovations} & Global Position\\
+\path{ekf2_innovations.vel_pos_innov[4]} & \path{ekf2_innovations} & Global Position\\
+\path{ekf2_innovations.vel_pos_innov[5]} & \path{ekf2_innovations} & Altitude\\
+\path{estimator_status.hagl_test_ratio} & \path{estimator_status} & Altitude\\
+\path{estimator_status.hgt_test_ratio} & \path{estimator_status} & Altitude\\
+\path{estimator_status.mag_test_ratio} & \path{estimator_status} & Shared\\
+\path{estimator_status.pos_horiz_accuracy} & \path{estimator_status} & Global Position\\
+\path{estimator_status.pos_test_ratio} & \path{estimator_status} & Global Position\\
+\path{estimator_status.pos_vert_accuracy} & \path{estimator_status} & Altitude\\
+\path{estimator_status.vibe[0]} & \path{estimator_status} & Mechanical/Electrical\\
+\path{estimator_status.vibe[1]} & \path{estimator_status} & Mechanical/Electrical\\
+\path{estimator_status.vibe[2]} & \path{estimator_status} & Mechanical/Electrical\\
+\path{manual_control_setpoint.r} & \path{manual_control_setpoint} & Shared\\
+\path{manual_control_setpoint.x} & \path{manual_control_setpoint} & Shared\\
+\path{manual_control_setpoint.y} & \path{manual_control_setpoint} & Shared\\
+\path{manual_control_setpoint.z} & \path{manual_control_setpoint} & Shared\\
+\path{rate_ctrl_status.pitchspeed_integ} & \path{rate_ctrl_status} & Mechanical/Electrical\\
+\path{rate_ctrl_status.rollspeed_integ} & \path{rate_ctrl_status} & Mechanical/Electrical\\
+\path{rate_ctrl_status.yawspeed_integ} & \path{rate_ctrl_status} & Mechanical/Electrical\\
+\path{sensor_combined.accelerometer_m_s2[0]} & \path{sensor_combined} & Mechanical/Electrical\\
+\path{sensor_combined.accelerometer_m_s2[1]} & \path{sensor_combined} & Mechanical/Electrical\\
+\path{sensor_combined.accelerometer_m_s2[2]} & \path{sensor_combined} & Mechanical/Electrical\\
+\path{sensor_combined.gyro_rad[0]} & \path{sensor_combined} & Mechanical/Electrical\\
+\path{sensor_combined.gyro_rad[1]} & \path{sensor_combined} & Mechanical/Electrical\\
+\path{sensor_combined.gyro_rad[2]} & \path{sensor_combined} & Mechanical/Electrical\\
+\path{sensor_preflight.accel_inconsistency_m_s_s} & \path{sensor_preflight} & Mechanical/Electrical\\
+\path{sensor_preflight.gyro_inconsistency_rad_s} & \path{sensor_preflight} & Mechanical/Electrical\\
+\path{vehicle_attitude.pitchspeed} & \path{vehicle_attitude} & Mechanical/Electrical\\
+\path{vehicle_attitude.q[0]} & \path{vehicle_attitude} & Mechanical/Electrical\\
+\path{vehicle_attitude.q[1]} & \path{vehicle_attitude} & Mechanical/Electrical\\
+\path{vehicle_attitude.q[2]} & \path{vehicle_attitude} & Mechanical/Electrical\\
+\path{vehicle_attitude.q[3]} & \path{vehicle_attitude} & Mechanical/Electrical\\
+\path{vehicle_attitude.rollspeed} & \path{vehicle_attitude} & Mechanical/Electrical\\
+\path{vehicle_attitude.yawspeed} & \path{vehicle_attitude} & Mechanical/Electrical\\
+\path{vehicle_attitude_setpoint.pitch_body} & \path{vehicle_attitude_setpoint} & Mechanical/Electrical\\
+\path{vehicle_attitude_setpoint.roll_body} & \path{vehicle_attitude_setpoint} & Mechanical/Electrical\\
+\path{vehicle_attitude_setpoint.yaw_body} & \path{vehicle_attitude_setpoint} & Mechanical/Electrical\\
+\path{vehicle_land_detected.ground_contact} & \path{vehicle_land_detected} & Altitude\\
+\path{vehicle_land_detected.landed} & \path{vehicle_land_detected} & Altitude\\
+\path{vehicle_land_detected.maybe_landed} & \path{vehicle_land_detected} & Altitude\\
+\path{vehicle_local_position.ax} & \path{vehicle_local_position} & Global Position\\
+\path{vehicle_local_position.ay} & \path{vehicle_local_position} & Global Position\\
+\path{vehicle_local_position.az} & \path{vehicle_local_position} & Altitude\\
+\path{vehicle_local_position.dist_bottom} & \path{vehicle_local_position} & Altitude\\
+\path{vehicle_local_position.dist_bottom_rate} & \path{vehicle_local_position} & Altitude\\
+\path{vehicle_local_position.eph} & \path{vehicle_local_position} & Global Position\\
+\path{vehicle_local_position.epv} & \path{vehicle_local_position} & Altitude\\
+\path{vehicle_local_position.vx} & \path{vehicle_local_position} & Global Position\\
+\path{vehicle_local_position.vy} & \path{vehicle_local_position} & Global Position\\
+\path{vehicle_local_position.vz} & \path{vehicle_local_position} & Altitude\\
+\path{vehicle_local_position.x} & \path{vehicle_local_position} & Global Position\\
+\path{vehicle_local_position.y} & \path{vehicle_local_position} & Global Position\\
+\path{vehicle_local_position.z} & \path{vehicle_local_position} & Altitude\\
+\path{vehicle_rates_setpoint.pitch} & \path{vehicle_rates_setpoint} & Mechanical/Electrical\\
+\path{vehicle_rates_setpoint.roll} & \path{vehicle_rates_setpoint} & Mechanical/Electrical\\
+\path{vehicle_rates_setpoint.yaw} & \path{vehicle_rates_setpoint} & Mechanical/Electrical\\
+\path{vehicle_status.arming_state} & \path{vehicle_status} & Shared\\
+\path{vehicle_status.nav_state} & \path{vehicle_status} & Shared\\
+\path{vehicle_vision_position.x} & \path{vehicle_vision_position} & External Position\\
+\path{vehicle_vision_position.y} & \path{vehicle_vision_position} & External Position\\
+\path{vehicle_vision_position.z} & \path{vehicle_vision_position} & External Position\\
+\end{longtable}
+\normalsize

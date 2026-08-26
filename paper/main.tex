@@ -1,5 +1,6 @@
 % MDPI official LaTeX class, ACS citation template downloaded 21 August 2026.
-\documentclass[drones,article,submit,oneauthor]{Definitions/mdpi}
+\documentclass[drones,article,submit,moreauthors]{Definitions/mdpi}
+\usepackage{longtable}
 
 \firstpage{1}
 \makeatletter
@@ -15,15 +16,37 @@
 \dateaccepted{}
 \datepublished{}
 
-\Title{Hierarchical Runtime Anomaly Diagnosis from Real PX4 Telemetry with Architecture-Aware Software Module Suspects}
-\Author{[AUTHOR ACTION REQUIRED: Insert author names]}
-\AuthorNames{[AUTHOR ACTION REQUIRED: Insert author names]}
-\address{[AUTHOR ACTION REQUIRED: Insert affiliations and institutional addresses]}
-\corres{Correspondence: [AUTHOR ACTION REQUIRED: Insert corresponding-author email]}
+% A DOI is assigned only after acceptance/publication.  The MDPI class builds
+% a placeholder DOI from the volume, issue, and article number even in submit
+% mode, so suppress that footer field while this manuscript is unpublished.
+\makeatletter
+\ifthenelse{\equal{\@status}{submit}}{%
+    \rfoot{}%
+    \fancypagestyle{plain}{\fancyfoot[R]{}}%
+}{}
+\makeatother
+
+\Title{Hierarchical Runtime Anomaly Diagnosis from Real PX4 Telemetry with Commit-Level Architecture-Aware Inspection Evidence}
+\Author{Jiao Wu $^{1,2,\dagger}$, Bo Liu $^{1,\dagger}$, Yilan Li $^{3}$, Chenglie Du $^{1}$ and Junsheng Wu $^{1,*}$}
+\AuthorNames{Jiao Wu, Bo Liu, Yilan Li, Chenglie Du and Junsheng Wu}
+\address{$^{1}$ \quad Northwestern Polytechnical University, Xi'an 710072, Shaanxi, China; wjiao@mail.nwpu.edu.cn\\
+$^{2}$ \quad Xi'an Aeronautics Computing Technique Research Institute, Aviation Industry Corporation of China, Ltd., Xi'an 710065, Shaanxi, China;\\
+$^{3}$ \quad Xi'an University of Technology, Xi'an, Shaanxi, China}
+\corres{Correspondence: wujunsheng@mail.nwpu.edu.cn}
+\firstnote{These authors contributed equally to this work.}
 \setlength{\headheight}{20pt}
 
-\abstract{Runtime anomaly detection identifies abnormal UAV telemetry but does not provide fault-domain or software inspection evidence. HS-AeroTS is a hierarchical framework for real PX4 telemetry. A LightGBM detector identifies anomalous temporal-statistical windows, a conditional classifier assigns four UAV fault domains, and TreeSHAP evidence is aggregated from features to channels, uORB topics, and subsystems. A static PX4 publisher/subscriber graph then produces commit-specific software-module suspect rankings. On 1,389 UAV-SEAD logs, five-seed fixed-chronological AUPRC was \texorpdfstring{$0.7522 \pm 0.0039$}{0.7522 +/- 0.0039}, and anomaly-only fault-domain Macro-F1 was \texorpdfstring{$0.8980 \pm 0.0020$}{0.8980 +/- 0.0020}. The complete five-class Cascade obtained Macro-F1 of \texorpdfstring{$0.6902 \pm 0.0071$}{0.6902 +/- 0.0071}. Under leave-log-out isolation, detector AUPRC decreased to \texorpdfstring{$0.6296 \pm 0.0023$}{0.6296 +/- 0.0023}, while Cascade and Direct Five-Class Macro-F1 were \texorpdfstring{$0.5962 \pm 0.0048$}{0.5962 +/- 0.0048} and \texorpdfstring{$0.6092 \pm 0.0043$}{0.6092 +/- 0.0043}, respectively, with no stable difference. Hierarchical aggregation conserved evidence mass, and attribution-guided masking caused greater degradation than random masking. A document-derived semantic-map sensitivity showed near-random External Position and below-random Global Position Consistency@1. The architecture analysis retained 1,393 anomalous windows whose firmware matched the selected commit and mapped 18 topics to 54 modules. In controlled replay, onset-conditioned ranking produced nonzero module recall with wide confidence intervals, but the unchanged detector identified 0 of 12 mutation runs, yielding zero detector-gated ranking performance. HS-AeroTS therefore provides traceable, architecture-aware diagnostic evidence for engineering inspection, not causal root-cause localization.}
-\keyword{UAV telemetry; runtime anomaly detection; fault-domain diagnosis; explainable machine learning; PX4; uORB; software-module suspect ranking}
+\addhighlights{enabled}
+\renewcommand{\addhighlights}{
+\begin{itemize}[leftmargin=*,nosep]
+    \item A two-stage hierarchy separates real-flight anomaly detection from four-domain diagnosis.
+    \item TreeSHAP evidence is conserved across features, channels, uORB topics, and subsystems.
+    \item Commit-matched, Stage-1-gated analysis exposes detector losses before module inspection.
+    \item Strict isolation and controlled replay expose leakage sensitivity and detector-gated limits.
+\end{itemize}}
+
+\abstract{Runtime anomaly detection identifies abnormal UAV telemetry but does not directly provide fault-domain or software inspection evidence. HS-AeroTS combines a LightGBM detector, a conditional four-domain classifier, hierarchical TreeSHAP aggregation, and a static PX4 uORB source-tree graph. On 1,389 UAV-SEAD logs, five-seed fixed-chronological AUPRC was \texorpdfstring{$0.7522 \pm 0.0039$}{0.7522 +/- 0.0039} (95\% flight-log CI [0.6915, 0.8080]); anomaly-only fault-domain Macro-F1 was \texorpdfstring{$0.8980 \pm 0.0020$}{0.8980 +/- 0.0020} [0.8581, 0.9296], and complete Cascade Macro-F1 was \texorpdfstring{$0.6902 \pm 0.0071$}{0.6902 +/- 0.0071} [0.6308, 0.7350]. Under leave-log-out isolation, detector AUPRC decreased to \texorpdfstring{$0.6296 \pm 0.0023$}{0.6296 +/- 0.0023} [0.4945, 0.7456]. Hierarchical aggregation conserved evidence mass, and attribution-guided masking caused greater degradation than random masking, but a document-derived semantic-map sensitivity showed near-random External Position and below-random Global Position Consistency@1. The ground-truth-anomaly-conditioned architecture analysis contained 1,393 matching-commit anomalous windows. Applying the frozen Stage 1 gate retained an average of 937.2 of these windows, missed 455.8, and introduced 532.2 matching-commit false-positive windows. Conservative source-path exclusion reduced the graph from 180 edges and 54 modules to 145 edges and 36 modules while retaining all 18 topics; this is a source-tree sensitivity, not build-target validation. In controlled replay, onset-conditioned ranking produced nonzero module recall with wide confidence intervals, but the unchanged detector identified 0 of 12 mutation runs. HS-AeroTS therefore provides conditional, traceable evidence for engineering inspection rather than causal or deployment-validated root-cause localization.}
+\keyword{UAV telemetry; runtime anomaly detection; fault-domain diagnosis; explainable machine learning; PX4; uORB; source-tree inspection candidates}
 
 \begin{document}
 
@@ -50,7 +73,7 @@
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{figures/figure-2-hs-aerots-fl-methodological-pipeline-preview2.png}
-    \caption{Methodological pipeline. Runtime telemetry is transformed into temporal-statistical windows for anomaly detection and conditional fault-domain diagnosis. TreeSHAP evidence is aggregated through the feature--channel--topic--subsystem hierarchy, while a static graph reconstructed at the majority PX4 firmware commit maps topic evidence to software-module inspection suspects. The architecture branch is associative and version-dependent, not causal.}
+    \caption{Methodological pipeline. Runtime telemetry is transformed into temporal-statistical windows for anomaly detection and conditional fault-domain diagnosis. TreeSHAP evidence is aggregated through the feature--channel--topic--subsystem hierarchy, while a static source-tree graph reconstructed at the majority PX4 firmware commit maps topic evidence to software-module inspection candidates. Ground-truth-anomaly-conditioned and Stage-1-gated evaluations are reported separately. The architecture branch is associative and version-dependent, not causal or deployment-build validated.}
     \label{fig:methodological_pipeline}
 \end{figure}
 
@@ -74,11 +97,19 @@
 \section{Conclusions}
 \input{sections/section_7_conclusions/7_1_conclusion_summary}
 
-\authorcontributions{[AUTHOR ACTION REQUIRED: Replace this marker with a CRediT-compliant contribution statement for all authors.]}
-\funding{[AUTHOR ACTION REQUIRED: State the funding source and grant number, or state that this research received no external funding.]}
-\dataavailability{UAV-SEAD and ALFA are third-party datasets available from the sources cited in this article and remain subject to their source licenses. PX4-Autopilot is open-source software. The aggregate results supporting the reported numerical claims are included in the article's tables and figures. The analysis source code is not publicly available; frozen configurations, split manifests, and derived machine-readable reports can be made available to editors and reviewers for confidential assessment, and may be requested from the corresponding author subject to applicable dataset licenses.}
-\acknowledgments{[AUTHOR ACTION REQUIRED: Insert acknowledgments or state that there are none.]}
-\conflictsofinterest{The author declares no conflicts of interest.}
+\authorcontributions{Conceptualization, Jiao Wu, Chenglie Du and Junsheng Wu; methodology, Jiao Wu and Bo Liu; software, Jiao Wu and Bo Liu; validation, Jiao Wu, Bo Liu and Yilan Li; formal analysis, Jiao Wu, Bo Liu and Yilan Li; investigation, Jiao Wu; data curation, Jiao Wu; writing---original draft preparation, Jiao Wu; writing---review and editing, all authors; visualization, Jiao Wu; supervision, Chenglie Du and Junsheng Wu; project administration, Chenglie Du and Junsheng Wu. All authors have read and agreed to the published version of the manuscript.}
+\funding{This research received no external funding.}
+\institutionalreview{Not applicable.}
+\informedconsent{Not applicable.}
+\dataavailability{The UAV-SEAD data used for the primary experiments and weak-label screening are publicly available from Hugging Face at \url{https://huggingface.co/datasets/aykutkabaoglu/uav-flight-anomaly-dataset} under the Creative Commons Attribution 4.0 International license; the analyses used repository revision \texttt{\seqsplit{774a336a1d1d06b248927a35c2ea1f6869e9e1a4}}. The processed ALFA data used for zero-shot external validation are publicly available from Figshare at \url{https://figshare.com/articles/dataset/12707963} (article 12707963, file 24095870) under the Creative Commons Attribution 4.0 International license. The controlled replay experiments used PX4-Autopilot source code at commit \texttt{\seqsplit{82aa24adfca29321cfd1209e287eab6c2b16780e}}, available at \url{https://github.com/PX4/PX4-Autopilot/commit/82aa24adfca29321cfd1209e287eab6c2b16780e}. No new primary flight data were collected. The authors' analysis source code and a public machine-readable Supplement are not provided. Aggregate numerical results, the complete semantic mapping, software versions, exclusion rules, split counts, and statistical settings are included in the article and its appendices. Subject to third-party licenses, selected frozen configurations, split manifests, the 180-edge table, per-seed predictions, and derived machine-readable reports may be obtained from the corresponding author on reasonable request for confidential editorial or peer-review assessment.}
+\acknowledgments{During the preparation of this manuscript and study, the authors used OpenAI Codex (GPT-5-based Codex agent, accessed in August 2026) to generate inference-only recalculation code, assist with statistical interpretation, and revise the language and structure of the manuscript. The authors executed and checked the analyses, reviewed and edited the output, and take full responsibility for the content of this publication. No individuals or organizations are otherwise acknowledged.}
+\conflictsofinterest{The authors declare no conflicts of interest.}
+
+\appendixtitles{yes}
+\appendixstart
+\appendix
+\input{sections/appendices/appendix_a_semantic_mapping}
+\input{sections/appendices/appendix_b_reproducibility_details}
 
 \reftitle{References}
 \begin{thebibliography}{999}
