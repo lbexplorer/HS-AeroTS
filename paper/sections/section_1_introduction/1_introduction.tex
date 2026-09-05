@@ -1,0 +1,51 @@
+This study addresses runtime anomaly detection and fault-domain diagnosis for autonomous unmanned aerial vehicles (UAVs) using heterogeneous PX4 flight telemetry. Reliable autonomous flight requires more than recognizing that a multivariate telemetry sequence has departed from normal operation: an alert should also help an engineer determine which fault domain is implicated, which telemetry channels provide the strongest model-relevant evidence, and which parts of the flight-control software should be inspected. This extends the usual distinction between fault detection and fault diagnosis in UAV systems \cite{fourlas2021survey,puchalski2022uav,tan2026anomaly}. Prior studies have demonstrated anomaly detection from flight data, including methods designed for real-time use \cite{keipour2019automatic,wei2026aerotsboost}; however, the present study evaluates recorded flight logs and does not treat recorded-data performance as evidence of onboard, online, or real-time deployment.
+
+The distinction is especially important for heterogeneous PX4 logs. Position estimates, estimator innovations, actuator responses, inertial measurements, battery states, and system-health variables are coupled through the closed-loop vehicle dynamics. Consequently, a high anomaly score alone cannot distinguish an external-position disturbance from a global-position, altitude, or mechanical/electrical anomaly. These domains imply different follow-up checks even when their telemetry deviations overlap. The UAV-SEAD corpus provides real PX4 flight logs with these runtime anomaly categories \cite{kabaoglu2026uavsead}; our audit retained 1,389 usable logs, providing a class-imbalanced basis for evaluating binary detection and the subsequent fault-domain task under the label definitions available in that corpus.
+
+Existing studies address this task from complementary perspectives. UAV fault-diagnosis studies and general multivariate time-series methods determine whether telemetry is abnormal or assign it to a fault category, using signal-based, model-based, probabilistic, graph-based, attention-based, or temporal-statistical representations \cite{fourlas2021survey,puchalski2022uav,tan2026anomaly,wei2026aerotsboost}. Explainable machine-learning methods attribute predictions to model inputs, whereas software fault-localization methods rank program entities using execution evidence and known faulty entities \cite{lundberg2017shap,lundberg2020trees,wong2016survey}. These methods provide the necessary foundations for detection, diagnosis, explanation, and code inspection, but they address different stages and use different evidence assumptions.
+
+Several common issues remain when these methodological components are considered together. A telemetry alarm is not by itself a fault-domain diagnosis or an engineering inspection lead. Temporal-statistical models operate on descriptors such as windowed means, extrema, variations, or slopes, while engineers reason about physical telemetry channels, logged topics, and functional subsystems; an attribution therefore requires explicit provenance before it can be interpreted at the engineering level. Moreover, a PX4 module relationship depends on firmware provenance and on the uORB topics published or subscribed by each module \cite{meier2015px4,px4uorbdocs2026}. Static topic dependencies indicate architectural connectivity, not execution, defect, or causality, and real-flight labels do not provide source-code ground truth. Controlled source mutations can provide such ground truth, but mutation evidence must still be interpreted cautiously because artificial and real faults are not equivalent \cite{wong2016survey,pearson2017evaluating,papadakis2019mutation}. These overlooked links motivate a framework that preserves the distinction among runtime labels, model evidence, architectural associations, and source-level mutation ground truth.
+
+Motivated by this need for traceable and bounded evidence, this paper develops HS-AeroTS as a hierarchical diagnostic evidence framework. The earlier ``FL'' suffix is removed because the evaluated system does not establish fault localization. The first-stage LightGBM detector addresses runtime screening by separating normal from anomalous telemetry windows. The second-stage LightGBM classifier addresses fault-domain diagnosis by assigning anomalous windows to External Position, Global Position, Altitude, or Mechanical/Electrical domains. The TreeSHAP evidence layer addresses representation mismatch by aggregating feature contributions through an explicit feature--channel--topic--subsystem hierarchy, thereby preserving the provenance needed to interpret statistical evidence as telemetry evidence. The architecture-aware layer addresses the lack of source-code leads by propagating topic evidence through a static PX4 uORB graph reconstructed at the majority firmware commit, producing commit-specific source-tree inspection candidates. This graph narrows the inspection surface through documented architectural connectivity, but it does not establish that a connected module caused the observed behavior.
+
+The proposed modules are evaluated at their corresponding evidence levels rather than as a single unsupported localization claim. Runtime detection and fault-domain diagnosis use real-flight labels under fixed chronological, purged, leave-log-out, and external-data protocols. The explanation layer is assessed through numerical conservation, attribution-guided versus random masking, and sensitivity to a predefined semantic channel-to-subsystem mapping; these tests examine whether the evidence is retained, prediction-relevant, and semantically organized. The architecture-aware layer is evaluated with controlled PX4 source mutations under onset-conditioned ranking, which supplies the known anomalous interval, and detector-gated ranking, which first requires the unchanged Stage 1 detector to activate. Ground-truth-anomaly-conditioned, Stage-1-gated, and detector-gated results are therefore kept distinct, so that evidence at one level is not used as unsupported evidence at another and failure of the runtime gate remains visible as an end-to-end capability boundary.
+
+The study is organized around three research questions that progress from runtime behavior to architecture-aware diagnostic evidence:
+
+\begin{enumerate}[label=\textbf{RQ\arabic*.},leftmargin=1.35cm,labelwidth=0.95cm,labelsep=0.15cm]
+    \item How accurately and reproducibly can real PX4 telemetry support runtime anomaly detection and four-class fault-domain diagnosis under fixed chronological, purged, leave-log-out, and external-data protocols?
+    \item To what extent does hierarchical SHAP aggregation provide conserved, prediction-relevant under masking, and label-consistent evidence from temporal-statistical features to telemetry channels, uORB topics, and functional subsystems?
+    \item To what extent can uORB dependencies reconstructed at a specified PX4 commit convert topic evidence into useful software-module suspect rankings under controlled source mutations, and how do firmware-version coverage and the runtime detection gate constrain the end-to-end capability?
+\end{enumerate}
+
+Figure~\ref{fig:framework_overview} summarizes the model chain, the SHAP/uORB evidence chain, and the three validation branches. Table~\ref{tab:research_questions} links each research question to its experiments, primary metrics, and permitted evidence level. The work makes three contributions:
+
+\begin{enumerate}
+    \item A reproducible real-flight protocol for runtime anomaly detection and four-class fault-domain diagnosis, with fixed data provenance, log-level isolation, feature construction, model configuration, imbalance-aware metrics, and evaluation under chronological, purged, leave-log-out, external, and weak-label settings.
+    \item A traceable SHAP evidence chain that maps temporal-statistical feature contributions to telemetry channels, uORB topics, and functional subsystems, and validates the intermediate evidence through conservation, attribution-guided masking, and semantic-map sensitivity tests within a non-causal scope.
+    \item A commit-specific architecture-aware inspection layer that propagates matching-commit topic evidence to software-module suspects and evaluates the boundary between onset-conditioned ranking and detector-gated behavior through strict protocols and controlled source-mutation replay.
+\end{enumerate}
+
+\begin{figure}[H]
+    \centering
+    \resizebox{\textwidth}{!}{\input{figures/figure_1_hs_aerots_fl_overview}}
+    \caption{Overview of HS-AeroTS. The model chain performs runtime anomaly detection followed by four-domain diagnosis. TreeSHAP evidence is aggregated from statistical features to telemetry channels, uORB topics, and subsystems, and a static uORB graph reconstructed at the selected majority firmware commit produces software-module suspects. Three validation branches separately test real-flight robustness, external or weak-label transfer, and controlled replay under onset-conditioned and detector-gated protocols.}
+    \label{fig:framework_overview}
+\end{figure}
+
+\begin{table}[H]
+\caption{Research questions and the evidence used to answer them.}
+\label{tab:research_questions}
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.14}
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{0.65cm} >{\RaggedRight\arraybackslash}p{4.35cm} >{\RaggedRight\arraybackslash}p{3.45cm} >{\RaggedRight\arraybackslash}X@{}}
+\toprule
+\textbf{RQ} & \textbf{Evaluation} & \textbf{Primary measures} & \textbf{Permitted conclusion}\\
+\midrule
+RQ1 & Fixed, purged, leave-log-out, ALFA zero-shot, and weak-label protocols & AUPRC, AUROC, Macro-F1, balanced accuracy, per-class recall & Runtime anomaly detection and fault-domain diagnosis\\
+RQ2 & SHAP conservation, guided masking, semantic-map agreement, and commit-specific uORB propagation & Conservation error, Macro-F1 decrease, Consistency@$K$, Hit@$K$, mapping coverage & Feature-to-subsystem evidence and static architecture associations\\
+RQ3 & Controlled PX4 replay with onset-conditioned and detector-gated ranking & Detector recall, Top-1/3/5, MRR, EXAM & Mutation-ground-truth module ranking, conditional on the stated gate\\
+\bottomrule
+\end{tabularx}
+\end{table}

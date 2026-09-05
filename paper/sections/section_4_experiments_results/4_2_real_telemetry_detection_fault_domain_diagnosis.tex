@@ -1,6 +1,36 @@
 \subsection{Real-Telemetry Detection and Fault-Domain Diagnosis}
+\label{sec:real_telemetry_results}
 
-The audited UAV-SEAD corpus contained 1396 mapped logs, of which 1389 were retained as usable after excluding missing, unparsable, or corrupt records. The retained logs yielded 1,892,063 aligned records at 10 Hz and 87 core telemetry channels. Applying the fixed AeroTSBoost-compatible representation produced 218,537 overlapping windows with 1566 temporal-statistical features per window, including 15,694 anomalous windows. Under the fixed per-log chronological split, 152,340, 32,138, and 34,059 windows were assigned to training, validation, and test partitions, respectively; the corresponding anomalous-window counts were 9011, 3081, and 3602. These audit values matched the expected dataset and representation counts before model evaluation.
+This experiment asks whether recorded PX4 telemetry supports reproducible binary runtime anomaly detection, conditional four-domain diagnosis, and complete five-class prediction under the primary fixed chronological protocol. Dataset and split counts are summarized in Table~\ref{tab:protocol}; the results below distinguish the detector, anomaly-only Stage 2, and complete Cascade tasks.
+
+Table~\ref{tab:main_results} provides the principal fixed-chronological comparison. Results are grouped by prediction task because detection metrics, conditional-diagnosis metrics, and complete five-class metrics answer different questions and should not be compared across groups.
+
+\begin{table}[H]
+\caption{Primary fixed-chronological test results grouped by prediction task.}
+\label{tab:main_results}
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.12}
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{3.05cm} >{\RaggedRight\arraybackslash}X c c c c@{}}
+\toprule
+\textbf{Task} & \textbf{Method} & \textbf{AUPRC $\uparrow$} & \textbf{AUROC $\uparrow$} & \shortstack{\textbf{Macro-F1}\\$\uparrow$} & \shortstack{\textbf{Balanced}\\\textbf{accuracy $\uparrow$}}\\
+\midrule
+Binary detection & \textbf{HS-AeroTS Stage 1} & $0.7522\pm0.0039$ & $0.9512\pm0.0006$ & -- & --\\
+ & CATCH$^{\dagger}$ & $0.2094\pm0.0038$ & $0.7318\pm0.0052$ & -- & --\\
+ & GCAD-inspired VAR(1)$^{\ddagger}$ & 0.1991 & -- & -- & --\\
+\addlinespace[2pt]
+Conditional four-domain diagnosis & \textbf{HS-AeroTS Stage 2} & -- & -- & $0.8980\pm0.0020$ & $0.8863\pm0.0021$\\
+ & Random Forest & -- & -- & $0.8724\pm0.0037$ & $0.8382\pm0.0052$\\
+ & Majority & -- & -- & 0.1608 & --\\
+ & Stratified random & -- & -- & $0.2358\pm0.0090$ & --\\
+\addlinespace[2pt]
+Complete five-class prediction & \textbf{HS-AeroTS Cascade} & -- & -- & $0.6902\pm0.0071$ & $0.6755\pm0.0152$\\
+ & Direct Five-Class & -- & -- & $0.6599\pm0.0029$ & $0.6144\pm0.0021$\\
+\bottomrule
+\end{tabularx}
+\par\vspace{2pt}{\scriptsize Values are mean $\pm$ model-seed standard deviation over five seeds unless noted; ``--'' denotes a metric that is not applicable or was not reported. $^{\dagger}$Three seeds and a budget-limited normal-only objective. $^{\ddagger}$Single ridge-regularized linear VAR(1) ablation, not the published nonlinear GCAD architecture.}
+\end{table}
 
 The five-seed LightGBM detector reproduced the reference performance level on the fixed chronological test partition. The mean AUROC was $0.9512 \pm 0.0006$ and the mean AUPRC was $0.7522 \pm 0.0039$, with a 95\% flight-log cluster-bootstrap CI of [0.6915, 0.8080]. The independently optimized test-set F1 was $0.6924 \pm 0.0056$; this is an oracle descriptive value and is not an operational estimate because its threshold uses test labels. These values were close to the reference values of 0.9516, 0.7516, and 0.6860, respectively, and preserved the reported detector performance trend. The AUPRC result is the primary threshold-independent measure because anomalous windows were a minority of the evaluated windows.
 

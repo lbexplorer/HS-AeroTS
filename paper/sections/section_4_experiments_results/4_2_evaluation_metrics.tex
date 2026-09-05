@@ -1,0 +1,40 @@
+\subsection{Evaluation Metrics}
+\label{sec:evaluation_metrics}
+
+Metrics are assigned to the three evidence levels defined in Section~\ref{sec:problem_formulation}; a metric at one level is not used as evidence for another. For binary anomaly detection, area under the precision--recall curve (AUPRC) is the primary threshold-independent measure because anomalous windows are the minority class, while area under the receiver-operating-characteristic curve (AUROC) is reported as a complementary ranking measure. At the operating point, the threshold $\tau$ is selected on validation data and frozen before test evaluation. Window-level precision $P$, recall $R$, and F1 are related by
+\begin{equation}
+\mathrm{F1}=\frac{2PR}{P+R}.
+\label{eq:f1_metric}
+\end{equation}
+The independently optimized test F1 is reported only as an oracle descriptive quantity and is not treated as an operational estimate.
+
+Log-aware event precision and recall are computed after separating windows by source flight. Within each log, consecutive positive windows form an event, and a predicted event is matched at most once to a ground-truth event when their index ranges overlap. Event F1 is then obtained from Equation~\eqref{eq:f1_metric}. This grouping prevents events at adjacent log boundaries from being merged. Detection delay is defined only for a detected run and is measured from the annotated or injected onset to the first subsequent positive detector window; it is left undefined when the detector never activates.
+
+For a $K$-class task, let $P_k$ and $R_k$ denote the precision and recall for class $k$. Macro-F1 and balanced accuracy are
+\begin{equation}
+\mathrm{MacroF1}=\frac{1}{K}\sum_{k=1}^{K}\frac{2P_kR_k}{P_k+R_k},
+\qquad
+\mathrm{BalancedAccuracy}=\frac{1}{K}\sum_{k=1}^{K}R_k.
+\label{eq:multiclass_metrics}
+\end{equation}
+These metrics give each class equal weight. They are reported separately for the conditional four-domain Stage 2 task and the complete five-class task; values across these two label spaces are not directly comparable. Per-class recall and F1 are additionally reported to expose class-specific failure modes.
+
+Explanation quality is evaluated with complementary numerical, predictive, and semantic criteria. Conservation error measures the difference between total absolute feature evidence and its aggregate at each hierarchy level, as defined in Section~\ref{sec:shap_evidence}. For a mask size $k$, the masking effect is
+\begin{equation}
+\Delta_m(k)=\mathrm{MacroF1}_{\mathrm{unmasked}}-\mathrm{MacroF1}_{m,k},
+\label{eq:masking_drop}
+\end{equation}
+where $m$ denotes SHAP-ranked or random masking; the paired advantage is $\Delta_{\mathrm{SHAP}}(k)-\Delta_{\mathrm{random}}(k)$. Consistency@$K$, Hit@$K$, and WeightedConsistency use the declared channel-to-subsystem map and the definitions in Section~\ref{sec:shap_evidence}. They measure agreement with that semantic reference, not physical causality or independently adjudicated subsystem truth.
+
+For controlled replay, let $r_b$ be the rank of the known mutated module in run $b$, let $M_b$ be the number of ranked modules, and let $B$ be the number of evaluated runs. Module-ranking performance is summarized as
+\begin{equation}
+\mathrm{Top}\text{-}K=\frac{1}{B}\sum_{b=1}^{B}\mathbb{I}[r_b\leq K],
+\qquad
+\mathrm{MRR}=\frac{1}{B}\sum_{b=1}^{B}\frac{1}{r_b},
+\qquad
+\mathrm{EXAM}=\frac{1}{B}\sum_{b=1}^{B}\frac{r_b}{M_b}.
+\label{eq:ranking_metrics}
+\end{equation}
+Lower EXAM indicates a smaller inspected fraction; higher Top-$K$ and MRR indicate better ranking. Detector-gated Top-$K$, MRR, EXAM, and delay are computed only after applying the unchanged Stage 1 gate. A run with no detector activation is assigned Top-$K=0$, reciprocal rank 0, and the worst-case EXAM value 1, while its delay remains undefined. Onset-conditioned and detector-gated results are therefore always reported separately.
+
+Across repeated model fits, tables report the mean and sample standard deviation over seeds. Sampling uncertainty is represented by 95\% cluster-bootstrap confidence intervals, with complete flight logs as clusters for UAV-SEAD, sequences for ALFA, and flights for Uncategorized screening. Controlled replay uses two-way cluster bootstrapping over source logs and mutation types. Paired method contrasts are recomputed within each bootstrap replicate before aggregation; overlapping telemetry windows are never treated as independent bootstrap units.

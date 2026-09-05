@@ -50,10 +50,9 @@ $^{3}$ \quad Xi'an University of Technology, Xi'an, Shaanxi, China}
 
 \begin{document}
 
+% Keep this entry point synchronized with every manuscript-body revision.
 \section{Introduction}
-\input{sections/section_1_introduction/1_1_engineering_problem}
-\input{sections/section_1_introduction/1_2_research_gap_proposed_approach}
-\input{sections/section_1_introduction/1_3_research_questions_contributions}
+\input{sections/section_1_introduction/1_introduction}
 
 \section{Related Work}
 \input{sections/section_2_related_work/2_1_uav_telemetry_anomaly_detection_fault_diagnosis}
@@ -62,40 +61,29 @@ $^{3}$ \quad Xi'an University of Technology, Xi'an, Shaanxi, China}
 
 \input{sections/section_2_related_work/2_3_px4_architecture_aware_diagnostic_evidence}
 
-\input{sections/section_2_related_work/2_4_positioning_summary}
-
 \section{Materials and Methods}
+\input{sections/section_3_methodology/3_0_problem_formulation}
+\input{sections/section_3_methodology/3_0_method_overview}
 \input{sections/section_3_methodology/3_1_data_preprocessing_feature_representation}
 \input{sections/section_3_methodology/3_2_hierarchical_anomaly_detection_fault_domain_diagnosis}
 \input{sections/section_3_methodology/3_3_shap_based_explainable_evidence}
 \input{sections/section_3_methodology/3_4_px4_software_module_suspect_ranking}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{figures/figure-2-hs-aerots-fl-methodological-pipeline-preview2.png}
-    \caption{Methodological pipeline. Runtime telemetry is transformed into temporal-statistical windows for anomaly detection and conditional fault-domain diagnosis. TreeSHAP evidence is aggregated through the feature--channel--topic--subsystem hierarchy, while a static source-tree graph reconstructed at the majority PX4 firmware commit maps topic evidence to software-module inspection candidates. Ground-truth-anomaly-conditioned and Stage-1-gated evaluations are reported separately. The architecture branch is associative and version-dependent, not causal or deployment-build validated.}
-    \label{fig:methodological_pipeline}
-\end{figure}
-
-\section{Experimental Protocols}
-\input{sections/section_4_experimental_setup/4_1_data_sources_and_experimental_roles}
-\input{sections/section_4_experimental_setup/4_2_data_splits_and_statistical_protocol}
-\input{sections/section_4_experimental_setup/4_3_controlled_px4_replay_and_evaluation_layers}
-\input{sections/section_4_experimental_setup/4_4_protocol_summary_table}
-
-\section{Results}
-\input{sections/section_5_results/5_1_real_telemetry_detection_fault_domain_diagnosis}
-\input{sections/section_5_results/5_2_shap_evidence_and_software_module_suspect_ranking}
-\input{sections/section_5_results/5_3_strict_external_and_capability_boundaries}
+\section{Experiments and Results}
+\input{sections/section_4_experiments_results/4_1_experimental_setup_protocols}
+\input{sections/section_4_experiments_results/4_2_evaluation_metrics}
+\input{sections/section_4_experiments_results/4_2_real_telemetry_detection_fault_domain_diagnosis}
+\input{sections/section_4_experiments_results/4_3_shap_evidence_software_module_suspect_ranking}
+\input{sections/section_4_experiments_results/4_4_strict_external_capability_boundaries}
 
 \section{Discussion}
-\input{sections/section_6_discussion/6_1_principal_findings}
-\input{sections/section_6_discussion/6_2_hierarchical_model_and_strict_protocols}
-\input{sections/section_6_discussion/6_3_replay_negative_result_and_capability_boundary}
-\input{sections/section_6_discussion/6_4_limitations_and_future_work}
+\input{sections/section_5_discussion/5_1_principal_findings}
+\input{sections/section_5_discussion/5_2_hierarchical_model_and_strict_protocols}
+\input{sections/section_5_discussion/5_3_replay_negative_result_and_capability_boundary}
+\input{sections/section_5_discussion/5_4_limitations_and_future_work}
 
 \section{Conclusions}
-\input{sections/section_7_conclusions/7_1_conclusion_summary}
+\input{sections/section_6_conclusions/6_1_conclusion_summary}
 
 \authorcontributions{Conceptualization, Jiao Wu, Chenglie Du and Junsheng Wu; methodology, Jiao Wu and Bo Liu; software, Jiao Wu and Bo Liu; validation, Jiao Wu, Bo Liu and Yilan Li; formal analysis, Jiao Wu, Bo Liu and Yilan Li; investigation, Jiao Wu; data curation, Jiao Wu; writing---original draft preparation, Jiao Wu; writing---review and editing, all authors; visualization, Jiao Wu; supervision, Chenglie Du and Junsheng Wu; project administration, Chenglie Du and Junsheng Wu. All authors have read and agreed to the published version of the manuscript.}
 \funding{This research received no external funding.}

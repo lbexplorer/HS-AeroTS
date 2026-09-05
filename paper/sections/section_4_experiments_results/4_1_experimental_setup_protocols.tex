@@ -1,0 +1,33 @@
+\subsection{Experimental Setup and Protocols}
+\label{sec:experimental_protocols}
+
+The experiments address three questions: whether recorded PX4 telemetry supports runtime anomaly detection and conditional fault-domain diagnosis; whether hierarchical SHAP aggregation provides traceable, prediction-relevant diagnostic evidence; and whether commit-specific uORB relations can convert topic evidence into useful software-module suspect rankings under controlled source mutations. Table~\ref{tab:protocol} summarizes the datasets, splits, evaluation roles, and permitted outputs. Detailed preprocessing and model definitions are given in Section 3 and are not repeated here; the measures used across all experiments are defined centrally in Section~\ref{sec:evaluation_metrics}.
+
+UAV-SEAD is the only dataset used to fit the supervised Stage 1 and Stage 2 models. The fixed chronological split provides the primary reproduction protocol, the 14-window purged split tests sensitivity to temporal proximity, and leave-log-out assigns complete flights to partitions to test unseen-log generalization. ALFA is used only for zero-shot binary detection because its labels are not mapped to the four UAV-SEAD fault domains. Uncategorized UAV-SEAD logs support only flight-level weak-label screening because they have no temporal anomaly ranges. Controlled PX4 replay is separate from real-flight model fitting and provides the only source-mutation ground truth for module-level ranking.
+
+Baseline comparisons preserve their implemented task definitions. Direct Five-Class is the principal structural comparator to the two-stage Cascade, and Random Forest, majority, and stratified-random references use the corresponding supervised task and split. CATCH uses its official model core with all 87 raw channels and the same fixed chronological windows, but follows a budget-limited normal-only objective with 4096 training windows and two epochs. The GCAD-inspired reference is a ridge-regularized linear VAR(1) Granger-prediction score fitted on 8192 normal windows, not a reproduction of the published nonlinear GCAD network. These references therefore test specific modeling alternatives and do not support unrestricted state-of-the-art comparisons.
+
+Thresholds and early stopping are selected on validation data only. Five model seeds are used for the principal real-flight experiments. Seed standard deviations describe fitted-model variation, whereas 95\% cluster-bootstrap intervals describe sampling variation: complete flight logs are resampled for UAV-SEAD, sequences for ALFA, and flights for Uncategorized screening. Absolute and paired real-flight analyses use 1000 repetitions with seed 20260825. Replay intervals use 5000 two-way repetitions that independently resample the three source logs and four mutation types.
+
+The replay protocol fixes PX4 commit \texttt{\seqsplit{82aa24adfca29321cfd1209e287eab6c2b16780e}} and Ubuntu 20.04 WSL, and uses system-wide ULog replay without Gazebo, ROS, QGroundControl, or NuttX. Three real ULogs are paired with mutations in Commander, EKF2, INAV, and Land Detector; each pair has matched baseline and fault conditions with activation at 30 s. Because the source logs lack \texttt{ekf2\_timestamps}, both EKF2 conditions use the same generic publication adapter and differ only in fault activation. Onset-conditioned ranking uses the known onset and matched baseline, whereas detector-gated ranking additionally requires the unchanged Stage 1 detector to activate.
+
+\begin{table}[H]
+\caption{Evaluation protocols and data partitions.}
+\label{tab:protocol}
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.14}
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{2.15cm} >{\RaggedRight\arraybackslash}p{2.85cm} >{\RaggedRight\arraybackslash}p{5.05cm} >{\RaggedRight\arraybackslash}X@{}}
+\toprule
+\textbf{Protocol} & \textbf{Purpose} & \textbf{Data and evaluation set} & \textbf{Isolation / scope}\\
+\midrule
+Fixed chronological & Primary reproduction & 1389 UAV-SEAD logs; 152,340/32,138/34,059 train/validation/test windows; five seeds & Chronological windows; overlapping source logs may span partitions\\
+Purged & Temporal-proximity sensitivity & 133,353/8,536/17,966 windows; 14-window boundary purge; five seeds & Removes overlap near split boundaries\\
+Leave-log-out & Unseen-flight generalization & 970/206/213 complete train/validation/test logs; 149,774/37,324/31,439 windows & No flight log crosses a partition\\
+ALFA zero-shot & External binary transfer & 46 sequences; 5273 windows; 16 shared channels & Frozen UAV-SEAD detector and validation threshold; no four-class transfer\\
+Uncategorized & Weak-label screening & 139 Uncategorized versus 898 pure-Normal logs & Flight-level metrics only; no temporal event labels\\
+PX4 replay & Module-ranking ground truth & 3 ULogs $\times$ 4 mutations $\times$ baseline/fault; 12 fault runs; 30-s injection & Onset-conditioned and detector-gated results reported separately\\
+\bottomrule
+\end{tabularx}
+\par\vspace{2pt}{\scriptsize All UAV-SEAD protocols use 96-sample windows, stride 8, horizon 12, 87 channels, and 1566 derived features. Sampling intervals use 1000 flight- or sequence-cluster bootstrap repetitions; replay uses 5000 two-way repetitions. Frozen model configurations and per-run records are described in the Data Availability Statement.}
+\end{table}

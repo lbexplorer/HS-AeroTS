@@ -1,26 +1,31 @@
 \subsection{SHAP-Based Explainable Evidence}
+\label{sec:shap_evidence}
 
-For each Stage 2 prediction, TreeSHAP contributions for the predicted class raw score were retained and converted to non-negative evidence magnitudes. For feature $j$ and predicted class $\hat{c}(x)$,
-
-\[
-e_j(x)=\left|\phi_j^{(\hat{c}(x))}(x)\right|.
-\]
-
-The feature dictionary defines the aggregation sets. Channel-, topic-, and subsystem-level evidence is obtained by summing feature evidence through the hierarchy:
+For each Stage 2 input $\mathbf{f}_i$, the LightGBM native contribution interface returns one contribution vector for each class. The class is selected by the maximum predicted probability, and the contribution associated with that predicted class is retained; the final expected-value term returned by LightGBM is excluded from feature aggregation. Let $i\in\{1,\ldots,N\}$ index an evaluated anomalous window, $j\in\{1,\ldots,1566\}$ index a temporal-statistical feature, and $\hat{c}_i$ denote the Stage 2 predicted fault domain. If $\phi_{ij}^{(\hat{c}_i)}$ is the TreeSHAP contribution of feature $j$ to the raw score for class $\hat{c}_i$, then
 
 \[
-E_q(x)=\sum_{j\in\mathcal{F}(q)}e_j(x),\qquad
-E_t(x)=\sum_{q\in\mathcal{Q}(t)}E_q(x),\qquad
-E_s(x)=\sum_{q\in\mathcal{Q}(s)}E_q(x).
+e_{ij}=\left|\phi_{ij}^{(\hat{c}_i)}\right|.
 \]
 
-Aggregation conservation is checked at each level using
+The feature dictionary and the declared semantic mapping define the aggregation sets. Let $q\in\{1,\ldots,Q\}$ index telemetry channels, $t$ index PX4 uORB topics, and $s$ index functional subsystems. Let $\mathcal{F}(q)$ be the set of feature indices belonging to channel $q$, $\mathcal{Q}(t)$ the set of channels mapped to topic $t$, and $\mathcal{Q}(s)$ the set of channels assigned to subsystem $s$. Channel-, topic-, and subsystem-level evidence is obtained by summing feature evidence through the hierarchy:
 
 \[
-\epsilon_L(x)=\sum_{u\in L}E_u(x)-\sum_j e_j(x).
+E_{iq}=\sum_{j\in\mathcal{F}(q)}e_{ij},\qquad
+E_{it}=\sum_{q\in\mathcal{Q}(t)}E_{iq},\qquad
+E_{is}=\sum_{q\in\mathcal{Q}(s)}E_{iq}.
 \]
 
-Evidence quality is evaluated by validation-derived SHAP top-$k$ masking against equal-size random masking, and by channel-level agreement with a document-derived semantic channel-to-subsystem mapping. Let $T_i^{K}$ be the $K$ highest-evidence channels for sample $i$, $g(q)$ the declared subsystem of channel $q$, and $y_i$ the fault-domain label. We report
+Here, the first sum groups the 18 descriptor contributions belonging to a channel, the second maps channels to their logged uORB topics, and the third maps channels to the declared functional subsystems. The sets are applied to evidence for the same window $i$; no evidence from different windows is mixed during local aggregation.
+
+Aggregation conservation is checked at each level. For an aggregation level $L$ with units $\mathcal{U}_L$ and unit evidence $E_{iu}^{(L)}$, define
+
+\[
+\epsilon_{i,L}=\sum_{u\in\mathcal{U}_L}E_{iu}^{(L)}-\sum_{j=1}^{1566}e_{ij},\qquad L\in\{\mathrm{channel},\mathrm{topic},\mathrm{subsystem}\}.
+\]
+
+For example, $E_{iq}^{(\mathrm{channel})}=E_{iq}$, $E_{it}^{(\mathrm{topic})}=E_{it}$, and $E_{is}^{(\mathrm{subsystem})}=E_{is}$. A value close to zero indicates numerical conservation under the specified mapping; it does not indicate physical causality.
+
+Evidence quality is evaluated by validation-derived SHAP top-$k$ masking against equal-size random masking, and by channel-level agreement with a document-derived semantic channel-to-subsystem mapping. Let $T_i^{K}$ be the set of $K$ highest-evidence channels for window $i$, $g(q)$ the declared subsystem of channel $q$, and $y_i$ the fault-domain label. Let $\mathbb{I}[\cdot]$ be the indicator function. We report
 
 \[
 C_i(K)=\frac{1}{K}\sum_{q\in T_i^K}\mathbb{I}[g(q)=y_i],\qquad
@@ -32,13 +37,13 @@ C_i(K)=\frac{1}{K}\sum_{q\in T_i^K}\mathbb{I}[g(q)=y_i],\qquad
 \mathbb{I}\!\left[\sum_{q\in T_i^K}\mathbb{I}[g(q)=y_i]>0\right].
 \]
 
-For non-negative channel evidence $E_q(x_i)$, weighted consistency is
+For non-negative channel evidence $E_{iq}$, weighted consistency is
 
 \[
 \mathrm{WeightedConsistency}=\frac{1}{N}\sum_{i=1}^{N}
-\frac{\sum_q E_q(x_i)\mathbb{I}[g(q)=y_i]}{\sum_q E_q(x_i)}.
+\frac{\sum_{q=1}^{Q} E_{iq}\mathbb{I}[g(q)=y_i]}{\sum_{q=1}^{Q} E_{iq}}.
 \]
 
 If $Q=87$ and $n_y$ channels are assigned to domain $y$, the exact without-replacement random baselines are $n_y/Q$ for Consistency@K and $1-\binom{Q-n_y}{K}/\binom{Q}{K}$ for Hit@K, averaged over the evaluated labels. The reference mapping is defined from PX4 message topics and field semantics without access to SHAP values. It corrects generic string-token leakage in the original rule, such as attitude yaw and manual-control axes being interpreted as global-position fields; 11 of 87 channel assignments change. Channels assigned ``Shared'' count as non-matches for every specific fault domain. Because the reference is author-defined rather than independently expert-adjudicated, all of these quantities are mapping sensitivities, not subsystem ground-truth validation. The complete 87-channel mapping is given in Appendix~\ref{app:semantic_mapping}.
 
-The primary masking test replaces selected test features with feature-wise medians computed from training windows. A sensitivity analysis instead replaces all selected features in each test window with their joint values from one deterministically sampled training-window donor. The donor preserves dependence within the replaced block, although combining it with unreplaced test features can still be off-manifold. Random feature subsets are nested within each model seed. Paired uncertainty is estimated by resampling complete flight logs and averaging the contrast across the five model seeds. These tests assess numerical organization and prediction sensitivity under specified perturbations; they do not establish physical causality or feature necessity.
+The primary masking test ranks features by mean absolute predicted-class TreeSHAP on validation anomaly windows, then replaces selected test features with feature-wise medians computed from a deterministic sample of 20,000 training windows (seed 20260820). Equal-size random masks are repeated 20 times within each model seed. A sensitivity analysis instead replaces all selected features in each test window with their joint values from one deterministically sampled training-window donor. The donor preserves dependence within the replaced block, although combining it with unreplaced test features can still be off-manifold. Random feature subsets are nested within each model seed. Paired uncertainty is estimated by resampling complete flight logs and averaging the contrast across the five model seeds. These tests assess numerical organization and prediction sensitivity under specified perturbations; they do not establish physical causality or feature necessity.

@@ -1,6 +1,7 @@
 \subsection{Strict Validation, External Validation, and Capability Boundaries}
+\label{sec:strict_validation_results}
 
-The stricter protocols reduced fixed chronological performance and changed the numerical ordering of the complete five-class models. Across five seeds under the 14-window purged protocol, Stage 1 AUPRC was $0.6006 \pm 0.0062$, Stage 2 Macro-F1 was $0.7944 \pm 0.0049$, Cascade Macro-F1 was $0.5683 \pm 0.0177$, and Direct Five-Class Macro-F1 was $0.6024 \pm 0.0049$. The paired Direct-minus-Cascade difference was 0.0340, with a flight-log-bootstrap 95\% CI of $[-0.0047, 0.0762]$. The mean ordering reversed relative to the fixed chronological split, but the paired interval included zero and therefore did not support a stable purged-protocol advantage. Figure~\ref{fig:protocol_robustness} summarizes these protocol-level comparisons.
+This experiment asks how stricter isolation, external data, weak labels, and controlled source mutations constrain the evidence established by the primary protocol. The stricter protocols reduced fixed chronological performance and changed the numerical ordering of the complete five-class models. Across five seeds under the 14-window purged protocol, Stage 1 AUPRC was $0.6006 \pm 0.0062$, Stage 2 Macro-F1 was $0.7944 \pm 0.0049$, Cascade Macro-F1 was $0.5683 \pm 0.0177$, and Direct Five-Class Macro-F1 was $0.6024 \pm 0.0049$. The paired Direct-minus-Cascade difference was 0.0340, with a flight-log-bootstrap 95\% CI of $[-0.0047, 0.0762]$. The mean ordering reversed relative to the fixed chronological split, but the paired interval included zero and therefore did not support a stable purged-protocol advantage. Figure~\ref{fig:protocol_robustness} summarizes these protocol-level comparisons.
 
 Leave-log-out evaluation assigned complete logs to the partitions, with 970 logs for training, 206 for validation, and 213 for testing. Across five seeds, Stage 1 AUPRC was $0.6296 \pm 0.0023$ and AUROC was $0.9265 \pm 0.0008$. At the validation-derived operating threshold, Stage 1 F1 was $0.5989 \pm 0.0042$ and log-aware event F1 was $0.4533 \pm 0.0241$. The anomaly-only Stage 2 LightGBM classifier achieved Macro-F1 of $0.9041 \pm 0.0029$ and Balanced Accuracy of $0.8876 \pm 0.0040$. On the complete five-class task, the Cascade achieved Macro-F1 of $0.5962 \pm 0.0048$ and Balanced Accuracy of $0.5840 \pm 0.0057$, while Direct Five-Class achieved Macro-F1 of $0.6092 \pm 0.0043$ and Balanced Accuracy of $0.6341 \pm 0.0022$.
 
@@ -11,29 +12,35 @@ The ALFA experiment evaluated zero-shot binary anomaly detection using 16 semant
 Table~\ref{tab:absolute_uncertainty} separates model-seed standard deviations from sampling uncertainty for the principal absolute metrics. The cluster intervals are wider than the seed dispersions because logs or sequences, rather than highly overlapping windows, are the resampling units.
 
 \begin{table}[H]
-\caption{Principal absolute metrics with model-seed standard deviation and 95\% cluster-bootstrap sampling intervals (1000 repetitions; seed 20260825). UAV-SEAD intervals resample complete test flight logs, ALFA resamples sequences, and Uncategorized resamples flights.\label{tab:absolute_uncertainty}}
+\caption{Model and sampling uncertainty for the principal absolute metrics.}
+\label{tab:absolute_uncertainty}
 \centering
-\scriptsize
-\begin{tabularx}{\textwidth}{l l c c c}
+\footnotesize
+\renewcommand{\arraystretch}{1.08}
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{2.55cm} >{\RaggedRight\arraybackslash}X c c c@{}}
 \toprule
-\textbf{Dataset/protocol} & \textbf{Metric} & \textbf{Point estimate} & \textbf{Seed SD} & \textbf{95\% cluster CI}\\
+\textbf{Protocol} & \textbf{Metric} & \textbf{Mean} & \textbf{Seed SD} & \textbf{95\% cluster CI}\\
 \midrule
-UAV-SEAD fixed & Stage 1 AUPRC & 0.7522 & 0.0039 & [0.6915, 0.8080]\\
-UAV-SEAD fixed & Stage 2 Macro-F1 & 0.8980 & 0.0020 & [0.8581, 0.9296]\\
-UAV-SEAD fixed & Cascade Macro-F1 & 0.6902 & 0.0071 & [0.6308, 0.7350]\\
-UAV-SEAD fixed & Direct Five-Class Macro-F1 & 0.6599 & 0.0029 & [0.5991, 0.7070]\\
-UAV-SEAD purged & Stage 1 AUPRC & 0.6006 & 0.0062 & [0.4968, 0.7109]\\
-UAV-SEAD purged & Stage 2 Macro-F1 & 0.7944 & 0.0049 & [0.7040, 0.8489]\\
-UAV-SEAD purged & Cascade Macro-F1 & 0.5683 & 0.0177 & [0.4532, 0.6338]\\
-UAV-SEAD purged & Direct Five-Class Macro-F1 & 0.6024 & 0.0049 & [0.4890, 0.6664]\\
-UAV-SEAD leave-log-out & Stage 1 AUPRC & 0.6296 & 0.0023 & [0.4945, 0.7456]\\
-UAV-SEAD leave-log-out & Stage 2 Macro-F1 & 0.9041 & 0.0029 & [0.8276, 0.9549]\\
-UAV-SEAD leave-log-out & Cascade Macro-F1 & 0.5962 & 0.0048 & [0.4889, 0.6799]\\
-UAV-SEAD leave-log-out & Direct Five-Class Macro-F1 & 0.6092 & 0.0043 & [0.5091, 0.6836]\\
+Fixed & Stage 1 AUPRC & 0.7522 & 0.0039 & [0.6915, 0.8080]\\
+Fixed & Stage 2 Macro-F1 & 0.8980 & 0.0020 & [0.8581, 0.9296]\\
+Fixed & Cascade Macro-F1 & 0.6902 & 0.0071 & [0.6308, 0.7350]\\
+Fixed & Direct Five-Class Macro-F1 & 0.6599 & 0.0029 & [0.5991, 0.7070]\\
+\addlinespace[2pt]
+Purged & Stage 1 AUPRC & 0.6006 & 0.0062 & [0.4968, 0.7109]\\
+Purged & Stage 2 Macro-F1 & 0.7944 & 0.0049 & [0.7040, 0.8489]\\
+Purged & Cascade Macro-F1 & 0.5683 & 0.0177 & [0.4532, 0.6338]\\
+Purged & Direct Five-Class Macro-F1 & 0.6024 & 0.0049 & [0.4890, 0.6664]\\
+\addlinespace[2pt]
+Leave-log-out & Stage 1 AUPRC & 0.6296 & 0.0023 & [0.4945, 0.7456]\\
+Leave-log-out & Stage 2 Macro-F1 & 0.9041 & 0.0029 & [0.8276, 0.9549]\\
+Leave-log-out & Cascade Macro-F1 & 0.5962 & 0.0048 & [0.4889, 0.6799]\\
+Leave-log-out & Direct Five-Class Macro-F1 & 0.6092 & 0.0043 & [0.5091, 0.6836]\\
+\addlinespace[2pt]
 ALFA zero-shot & Stage 1 AUPRC & 0.3181 & 0.0086 & [0.2540, 0.3956]\\
-Uncategorized screening & Flight-level AUPRC & 0.2784 & 0.0046 & [0.2086, 0.3664]\\
+Uncategorized & Flight-level AUPRC & 0.2784 & 0.0046 & [0.2086, 0.3664]\\
 \bottomrule
 \end{tabularx}
+\par\vspace{2pt}{\scriptsize Cluster intervals use 1000 repetitions (seed 20260825). UAV-SEAD resamples complete test logs, ALFA resamples sequences, and Uncategorized screening resamples flights.}
 \end{table}
 
 The controlled PX4 replay provided the only module-level ground truth, but its evaluation exposed a detector-gated capability boundary. In the onset-conditioned bidirectional analysis, which supplied the known 30-s injection time and used matched baseline evidence, overall Top-1, Top-3, and Top-5 recalls were 0.250 (95\% two-way cluster-bootstrap CI [0.000, 0.583]), 0.333 [0.000, 0.750], and 0.333 [0.000, 0.750], respectively. MRR was 0.3227 [0.0455, 0.6790], and mean EXAM was 0.3318 [0.1065, 0.5772]. These intervals independently resample the three source logs and four mutation types and remain wide because both cluster counts are small. The conditional ranks were uneven across mutations: EKF2 innovation bias reached Top-1 in two of three runs, whereas INAV local-z freeze and Land Detector state inversion did not enter Top-5 in any run. These results quantify conditional ranking behavior after onset information is supplied.

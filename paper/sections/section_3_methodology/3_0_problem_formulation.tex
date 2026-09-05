@@ -1,0 +1,23 @@
+\subsection{Problem Formulation}
+\label{sec:problem_formulation}
+
+Let the recorded-flight corpus be $\mathcal{D}=\{(\mathbf{X}^{(n)},\mathcal{A}^{(n)},v_n)\}_{n=1}^{N_{\mathrm{log}}}$, where $\mathbf{X}^{(n)}\in\mathbb{R}^{T_n\times C}$ is the aligned multivariate telemetry of flight log $n$, $\mathcal{A}^{(n)}$ is its set of annotated anomaly intervals and fault types, and $v_n$ is the PX4 firmware revision stored in the ULog metadata. A flight-aware windowing operator transforms each log into windows $w\in\mathcal{W}$ without crossing log boundaries. Each window is represented by a temporal--statistical feature vector $\mathbf{f}_w\in\mathbb{R}^{D}$ and retains its source-log identifier $g(w)$. In this study, $C=87$ channels and $D=1566$ features; the alignment, labeling, and feature construction are specified in Section~\ref{sec:data_preprocessing}.
+
+Each window has a binary runtime label $y_w^{\mathrm{bin}}\in\{0,1\}$, where 1 denotes overlap with an annotated anomalous interval under the stated prediction horizon. When an explicit anomaly type is available, it also has a fault-domain label $y_w^{\mathrm{dom}}\in\mathcal{Y}_{\mathrm{dom}}$, with
+\[
+\mathcal{Y}_{\mathrm{dom}}=\{\text{External Position},\text{Global Position},\text{Altitude},\text{Mechanical/Electrical}\}.
+\]
+Normal and Uncategorized windows do not belong to this conditional four-domain label space. The predictive problem therefore comprises a binary detector $h_1:\mathbb{R}^{D}\rightarrow[0,1]$ and a conditional domain classifier $h_2:\mathbb{R}^{D}\rightarrow\Delta^{4}$, where $\Delta^{4}$ denotes the four-class probability simplex. With anomaly score $p_1(\mathbf{f}_w)=h_1(\mathbf{f}_w)$, domain probabilities $\mathbf{p}_2(\mathbf{f}_w)=h_2(\mathbf{f}_w)$, and a validation-selected threshold $\tau$, the complete Cascade prediction is
+\begin{equation}
+\hat{y}_w^{\mathrm{cas}}=
+\begin{cases}
+\text{Normal}, & p_1(\mathbf{f}_w)\leq\tau,\\
+\displaystyle\arg\max_{d\in\mathcal{Y}_{\mathrm{dom}}}p_{2,d}(\mathbf{f}_w), & p_1(\mathbf{f}_w)>\tau.
+\end{cases}
+\label{eq:problem_cascade}
+\end{equation}
+Thus, binary detection, ground-truth-anomaly-conditioned diagnosis, and complete five-class prediction are distinct evaluation tasks. In particular, performance of $h_2$ on labelled anomalous windows is not an end-to-end estimate of Equation~\eqref{eq:problem_cascade}.
+
+For diagnostic evidence, let $\boldsymbol{\phi}_w^{(\hat d)}\in\mathbb{R}^{D}$ be the TreeSHAP contribution vector for the predicted fault domain $\hat d$. Fixed provenance maps aggregate its absolute contributions through feature, telemetry-channel, uORB-topic, and functional-subsystem levels. For logs whose firmware matches revision $v$, a static uORB graph $G_v=(\mathcal{T},\mathcal{M},\mathcal{E}_v)$ relates topics $\mathcal{T}$ to source-tree modules $\mathcal{M}$. A propagation rule converts topic evidence into module scores $S_{w,m}$ and a ranked inspection list. This second problem is to preserve and test the model evidence while reducing the source-tree inspection space; it is not to infer a causal defective module from real-flight labels.
+
+Accordingly, the study evaluates three linked but non-interchangeable outputs: (i) runtime detection and fault-domain predictions against real-flight labels, (ii) hierarchical attribution evidence through conservation, masking, and semantic-map agreement, and (iii) module rankings against controlled source-mutation ground truth. The third output is reported separately under onset-conditioned and detector-gated protocols so that supplied onset information or failure of the runtime gate is not hidden. The following subsection presents the overall framework implementing these definitions.

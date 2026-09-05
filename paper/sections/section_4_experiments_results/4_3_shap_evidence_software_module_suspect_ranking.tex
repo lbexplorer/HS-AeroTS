@@ -1,6 +1,7 @@
 \subsection{SHAP Evidence and Software-Module Suspect Ranking}
+\label{sec:shap_module_results}
 
-The primary explanation analysis was ground-truth-anomaly-conditioned: it used all 3602 labelled anomalous test windows from the fixed chronological protocol and did not require Stage 1 to detect them. For each window, the TreeSHAP contributions of the predicted Stage 2 class were converted to absolute evidence and aggregated from statistical features to telemetry channels, PX4 topics, and subsystems. The aggregation preserved the total evidence mass: the maximum absolute conservation error across the hierarchy was $7.11 \times 10^{-15}$. This verifies only the numerical redistribution of evidence; it does not establish that the attributed channel or subsystem is the physical source of the anomaly.
+This experiment asks whether predicted-class TreeSHAP contributions can be organized into conserved and prediction-relevant telemetry evidence, and whether commit-specific uORB propagation provides useful software-module inspection candidates. The primary explanation analysis was ground-truth-anomaly-conditioned: it used all 3602 labelled anomalous test windows from the fixed chronological protocol and did not require Stage 1 to detect them. For each window, the TreeSHAP contributions of the predicted Stage 2 class were converted to absolute evidence and aggregated from statistical features to telemetry channels, PX4 topics, and subsystems. The aggregation preserved the total evidence mass: the maximum absolute conservation error across the hierarchy was $7.11 \times 10^{-15}$. This verifies only the numerical redistribution of evidence; it does not establish that the attributed channel or subsystem is the physical source of the anomaly.
 
 The masking analysis tested whether the validation-derived SHAP ranking was more informative than an equal-size random feature selection. The top-$k$ SHAP features were ranked on validation anomaly windows and replaced in the test data by feature-wise medians calculated from the training windows. The Macro-F1 decrease for SHAP masking increased from 0.0409 at $k=10$ to 0.2683 at $k=100$. Across 20 random subsets nested within each of five model seeds, the paired SHAP-minus-random advantage was 0.0404 (95\% flight-log-bootstrap CI [0.0102, 0.0713]) at $k=10$ and 0.2646 [0.2052, 0.3300] at $k=100$. Replacing the selected feature block with values from sampled training rows produced drops of 0.0516 [0.0277, 0.0752] and 0.4955 [0.4604, 0.5283], respectively. The direction therefore persisted under both median and joint-donor perturbations, although donor replacement can still create cross-block combinations with unreplaced features. These results support prediction-relevant feature concentration, not causal influence or physical necessity.
 
@@ -13,20 +14,24 @@ The separate Stage-1-gated matching-commit analysis used the frozen validation-d
 The controlled-replay propagation ablation is reported in Table~\ref{tab:mapping_ablation}. Bidirectional propagation achieved Top-1/3/5 of 0.250/0.333/0.333 and MRR of 0.323, while producer-only and topic-only achieved higher Top-3 and Top-5 values of 0.500. The random-mapping control was lower, but the confidence intervals were wide and overlapping. With only 12 dependent mutation runs, the ablation does not identify a uniquely superior propagation rule.
 
 \begin{table}[H]
-\caption{Controlled-replay propagation ablation with 95\% two-way cluster-bootstrap confidence intervals. The bootstrap independently resamples the three source logs and four mutation types; the intervals remain low-resolution because both cluster counts are small.\label{tab:mapping_ablation}}
+\caption{Controlled-replay propagation ablation.}
+\label{tab:mapping_ablation}
 \centering
-\scriptsize
-\begin{tabularx}{\textwidth}{l c c c c}
+\footnotesize
+\renewcommand{\arraystretch}{1.20}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}>{\RaggedRight\arraybackslash}p{3.30cm} *{4}{>{\centering\arraybackslash}p{2.30cm}}@{}}
 \toprule
-\textbf{Mode} & \textbf{Top-1 (95\% CI)} & \textbf{Top-3 (95\% CI)} & \textbf{Top-5 (95\% CI)} & \textbf{MRR (95\% CI)}\\
+\textbf{Propagation mode} & \textbf{Top-1 $\uparrow$} & \textbf{Top-3 $\uparrow$} & \textbf{Top-5 $\uparrow$} & \textbf{MRR $\uparrow$}\\
 \midrule
-Bidirectional & 0.250 [0.000, 0.583] & 0.333 [0.000, 0.750] & 0.333 [0.000, 0.750] & 0.323 [0.046, 0.679]\\
-Producer-only & 0.250 [0.000, 0.583] & 0.500 [0.167, 0.833] & 0.500 [0.167, 0.833] & 0.414 [0.143, 0.690]\\
-Consumer-only & 0.083 [0.000, 0.333] & 0.167 [0.000, 0.500] & 0.250 [0.000, 0.583] & 0.182 [0.035, 0.510]\\
-Topic-only & 0.167 [0.000, 0.500] & 0.500 [0.167, 0.833] & 0.500 [0.167, 0.833] & 0.373 [0.147, 0.625]\\
-Random mapping & 0.083 [0.000, 0.333] & 0.083 [0.000, 0.333] & 0.167 [0.000, 0.500] & 0.150 [0.031, 0.410]\\
+Bidirectional & \shortstack{0.250\\{\scriptsize [0.000, 0.583]}} & \shortstack{0.333\\{\scriptsize [0.000, 0.750]}} & \shortstack{0.333\\{\scriptsize [0.000, 0.750]}} & \shortstack{0.323\\{\scriptsize [0.046, 0.679]}}\\
+Producer-only & \shortstack{0.250\\{\scriptsize [0.000, 0.583]}} & \shortstack{0.500\\{\scriptsize [0.167, 0.833]}} & \shortstack{0.500\\{\scriptsize [0.167, 0.833]}} & \shortstack{0.414\\{\scriptsize [0.143, 0.690]}}\\
+Consumer-only & \shortstack{0.083\\{\scriptsize [0.000, 0.333]}} & \shortstack{0.167\\{\scriptsize [0.000, 0.500]}} & \shortstack{0.250\\{\scriptsize [0.000, 0.583]}} & \shortstack{0.182\\{\scriptsize [0.035, 0.510]}}\\
+Topic-only & \shortstack{0.167\\{\scriptsize [0.000, 0.500]}} & \shortstack{0.500\\{\scriptsize [0.167, 0.833]}} & \shortstack{0.500\\{\scriptsize [0.167, 0.833]}} & \shortstack{0.373\\{\scriptsize [0.147, 0.625]}}\\
+Random mapping & \shortstack{0.083\\{\scriptsize [0.000, 0.333]}} & \shortstack{0.083\\{\scriptsize [0.000, 0.333]}} & \shortstack{0.167\\{\scriptsize [0.000, 0.500]}} & \shortstack{0.150\\{\scriptsize [0.031, 0.410]}}\\
 \bottomrule
-\end{tabularx}
+\end{tabular}
+\par\vspace{2pt}\parbox{\textwidth}{\scriptsize Each cell reports the point estimate with its 95\% two-way cluster-bootstrap interval below. The bootstrap independently resamples three source logs and four mutation types; intervals are necessarily low-resolution.}
 \end{table}
 
 Figure~\ref{fig:shap_module_evidence} summarizes the masking comparison, document-derived semantic-map agreement, class-specific Consistency@1, and the conservatively filtered commit-level source-tree candidates. Selected frozen analysis records are described in the Data Availability Statement.

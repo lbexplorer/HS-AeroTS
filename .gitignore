@@ -30,6 +30,7 @@ third_party/ulog_annotation_tool/data/
 *.log
 
 # Generated manuscript build files
+paper/build/
 paper/*.aux
 paper/*.out
 paper/*.log
@@ -41,6 +42,10 @@ paper/Definitions/*-converted-to.pdf
 # Local render and review scratch files
 tmp/pdfs/
 tmp/revision_pdf/
+tmp/pytest-*/
+
+# Local reading materials and submission forms
+/材料/
 
 # Embedded upstream repositories are managed independently.
 third_party/

@@ -1,5 +1,0 @@
-\subsection{Controlled PX4 Replay and Evaluation Layers}
-
-The replay protocol fixed the PX4 source commit and Ubuntu 20.04 WSL environment and used system-wide ULog replay without Gazebo, ROS, QGroundControl, or NuttX. Three real ULogs were paired with four source mutations in Commander, EKF2, INAV, and Land Detector. Each log-mutation pair included a matched baseline and fault replay, with injection at 30 s, yielding 24 cases and 12 fault runs.
-
-Because the source ULogs lacked \texttt{ekf2\_timestamps}, EKF2 used the same generic publication adapter in baseline and fault conditions; only fault activation differed after the injection time. This compatibility detail is retained as a replay limitation. Evaluation separates onset-conditioned module ranking, which uses the known onset and matched baseline, from detector-gated ranking, which first requires the unchanged Stage 1 detector to exceed its validation threshold. Only the latter measures the complete detection-gated evidence chain, and neither is interpreted as causal localization.
