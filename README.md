@@ -1,7 +1,14 @@
-# HS-AeroTS
 # HS-AeroTS-FL
 
-P1–P11 已完成。主数据源为 UAV-SEAD；P9 是 Ubuntu-20.04 下的 Controlled PX4 ULog Replay with Source-Level Mutations，不是完整 closed-loop SITL，且不安装或运行 Gazebo、ROS、QGroundControl 与 NuttX。P8–P11 结果独立保存，不改变 P1–P10 已冻结结果。
+## Start Here
+
+- `PROJECT_OVERVIEW.md`: compact AI-friendly project summary, methods,
+  experiments, results, and scientific limits.
+- `reports/p9/INDEX.md`: P9 report and artifact index.
+- `docs/INDEX.md`: archived research plans, paper materials, and references.
+- `AGENT.md`: project-specific engineering and evidence constraints.
+
+P1–P13 及 P9 后续独立验证已经完成。主数据源为 UAV-SEAD；P9 是 Ubuntu-20.04 下的 Controlled PX4 ULog Replay with Source-Level Mutations，不是完整 closed-loop SITL，且不安装或运行 Gazebo、ROS、QGroundControl 与 NuttX。后续实验和投稿阶段复算独立保存，不改变已冻结的上游结果。
 
 ## 环境
 
@@ -123,6 +130,10 @@ hs-aerots-map --config configs/p8_software_mapping.yaml
 该阶段只读扫描 1,389 条 ULog 的 `ver_sw`，固定占比最高的 PX4 提交 `82aa24ad...`（562 条日志），从官方源码解析 uORB 发布/订阅关系。18/18 个 P4 topic 均有映射，共 180 条边、54 个模块；三种传播模式均通过贡献守恒。静态依赖只用于生成模块嫌疑度，不宣称根因。
 
 ## P9 Controlled PX4 ULog Replay with Source-Level Mutations
+
+配对 replay 后续优化与独立新源航次验证已完成。开发集配对残差结果为检测 10/12、Top-1/3/5 为 4/12、10/12、10/12、MRR 0.5833、正常误报 1/12；独立集冻结主配置检测 12/12，但正常误报 11/12，且多数故障在 onset 前报警。Normal-only 门控优化未能同时保持低误报、较高 Recall 和稳定排名，因此不晋升为主方法。完整结果见 [P9 报告索引](reports/p9/INDEX.md)。
+
+2026-09-06 专项复评已修复旧 replay 从 Windows 挂载盘读取时回放不完整的问题。复用原输入、二进制和模型，仅重跑 P9 并排除无输入更新尾段后：detector recall 为 10/12，门控 Top-1/3/5 为 2/12、5/12、5/12，MRR 为 0.3259；但 baseline 也报警 10/12，原注入效应检查为 11/12 通过，仍不能支撑可靠端到端诊断。新复现命令及完整证据见 [P9 专项报告](reports/p9/stage1_reassessment/README.md)。以下为历史流程与原始结果，予以保留。
 
 ```powershell
 hs-aerots-sitl prepare --config configs/p9_sitl_injection.yaml

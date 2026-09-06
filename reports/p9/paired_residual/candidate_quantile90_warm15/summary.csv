@@ -1,0 +1,4 @@
+method,fault_runs,detected_runs,detector_recall,top1,top3,top5,mrr,normal_false_alarm_runs,normal_runs,normal_false_alarm_rate,fault_pre_onset_alarm_runs,clean_fault_only_detected_runs
+paired_residual,12,9,0.75,0.25,0.5,0.75,0.4375,2,12,0.16666666666666666,0,7
+residual_gate_original_shap,12,9,0.75,0.3333333333333333,0.4166666666666667,0.5,0.40178571428571425,2,12,0.16666666666666666,0,7
+original_stage1_original_shap,12,10,0.8333333333333334,0.16666666666666666,0.4166666666666667,0.4166666666666667,0.3259259259259259,10,12,0.8333333333333334,0,0

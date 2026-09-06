@@ -1,0 +1,19 @@
+# Frozen before native-replay outcome evaluation. No fault-label selection.
+normal_calibration:
+  split: leave_source_log_out
+  quantile: 0.99
+  source: baseline_conditions_only
+gate:
+  consecutive: 3
+  use_injection_onset: false
+  use_ground_truth_module: false
+  aggregation: all_causally_gated_windows
+mapping: unchanged_bidirectional_54_modules
+model: unchanged_P2_seed0
+evaluation:
+  injection_start_s: 30
+  expected_fault_runs: 12
+  report_pre_onset_alarms: true
+  report_held_out_baseline_false_alarms: true
+  compare_fixed_threshold: true
+  compare_uncalibrated_native_replay: true

@@ -1,0 +1,6 @@
+uorb start
+param set SDLOG_DIRS_MAX 100
+commander start
+logger start -f -t -b 1000
+sleep 0.5
+replay start

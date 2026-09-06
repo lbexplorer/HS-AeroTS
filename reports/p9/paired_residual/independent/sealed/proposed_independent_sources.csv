@@ -1,0 +1,4 @@
+log_key,relative_path,duration_s,firmware_commit,selection,sha256
+2018-12-19/07_49_17,ulg_files/2018-12-19/07_49_17.ulg,87.552919,82aa24adfca29321cfd1209e287eab6c2b16780e,P11 test / Normal / full core fields / distinct dates / lexical order / no model scores,e7416d5f0df474a0c66146dc285a0a0e7ce5062eeef6f82710b1d0a129fa6758
+2018-12-20/07_47_50,ulg_files/2018-12-20/07_47_50.ulg,123.427472,82aa24adfca29321cfd1209e287eab6c2b16780e,P11 test / Normal / full core fields / distinct dates / lexical order / no model scores,f4a74efd3927d50942d36129bc7b8a2f427eb3323b1688e36e7835165a75e9e2
+2018-12-25/08_44_40,ulg_files/2018-12-25/08_44_40.ulg,141.947061,82aa24adfca29321cfd1209e287eab6c2b16780e,P11 test / Normal / full core fields / distinct dates / lexical order / no model scores,02a5d8ab513013afe12c0e9d9c046c5641fe7a3042fa44508800de08e1672232

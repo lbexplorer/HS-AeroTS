@@ -1,0 +1,7 @@
+{
+  "model_artifact_hashes_unchanged": true,
+  "calibration_flight_separation_passed": true,
+  "primary_metric_count_check_passed": true,
+  "maximum_paired_sensor_end_offset_s": 0.12327999999999406,
+  "tests_passed": 15
+}

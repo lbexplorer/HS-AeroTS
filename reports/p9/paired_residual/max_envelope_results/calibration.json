@@ -1,0 +1,80 @@
+[
+  {
+    "held_out_source": "2019-01-18__08_39_38",
+    "normal_pair_ids": [
+      "normal:commander_nav_state_override__2019-01-25__17_38_05__baseline",
+      "normal:commander_nav_state_override__2019-03-06__08_02_26__baseline",
+      "normal:ekf2_innovation_bias__2019-01-25__17_38_05__baseline",
+      "normal:ekf2_innovation_bias__2019-03-06__08_02_26__baseline",
+      "normal:inav_local_z_freeze__2019-01-25__17_38_05__baseline",
+      "normal:inav_local_z_freeze__2019-03-06__08_02_26__baseline",
+      "normal:land_detector_state_inversion__2019-01-25__17_38_05__baseline",
+      "normal:land_detector_state_inversion__2019-03-06__08_02_26__baseline"
+    ],
+    "normal_event_maxima": [
+      0.3212867753393764,
+      0.5865115090000982,
+      1.0,
+      1.0,
+      1.0,
+      0.4400917887687683,
+      1.0,
+      1.0
+    ],
+    "threshold": 3.0,
+    "faults_used": false,
+    "topic_thresholds": null
+  },
+  {
+    "held_out_source": "2019-01-25__17_38_05",
+    "normal_pair_ids": [
+      "normal:commander_nav_state_override__2019-01-18__08_39_38__baseline",
+      "normal:commander_nav_state_override__2019-03-06__08_02_26__baseline",
+      "normal:ekf2_innovation_bias__2019-01-18__08_39_38__baseline",
+      "normal:ekf2_innovation_bias__2019-03-06__08_02_26__baseline",
+      "normal:inav_local_z_freeze__2019-01-18__08_39_38__baseline",
+      "normal:inav_local_z_freeze__2019-03-06__08_02_26__baseline",
+      "normal:land_detector_state_inversion__2019-01-18__08_39_38__baseline",
+      "normal:land_detector_state_inversion__2019-03-06__08_02_26__baseline"
+    ],
+    "normal_event_maxima": [
+      1.0,
+      0.5540812572287409,
+      1.0,
+      1.0,
+      1.0,
+      0.46244919300079346,
+      1.0,
+      1.0
+    ],
+    "threshold": 3.0,
+    "faults_used": false,
+    "topic_thresholds": null
+  },
+  {
+    "held_out_source": "2019-03-06__08_02_26",
+    "normal_pair_ids": [
+      "normal:commander_nav_state_override__2019-01-18__08_39_38__baseline",
+      "normal:commander_nav_state_override__2019-01-25__17_38_05__baseline",
+      "normal:ekf2_innovation_bias__2019-01-18__08_39_38__baseline",
+      "normal:ekf2_innovation_bias__2019-01-25__17_38_05__baseline",
+      "normal:inav_local_z_freeze__2019-01-18__08_39_38__baseline",
+      "normal:inav_local_z_freeze__2019-01-25__17_38_05__baseline",
+      "normal:land_detector_state_inversion__2019-01-18__08_39_38__baseline",
+      "normal:land_detector_state_inversion__2019-01-25__17_38_05__baseline"
+    ],
+    "normal_event_maxima": [
+      1.0,
+      0.32789161817377505,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "threshold": 3.0,
+    "faults_used": false,
+    "topic_thresholds": null
+  }
+]

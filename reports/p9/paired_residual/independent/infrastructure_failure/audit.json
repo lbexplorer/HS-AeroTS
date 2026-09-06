@@ -1,0 +1,34 @@
+{
+  "reason": "Four contemporaneous baseline processes killed; Bad address copying outputs; local consoles corrupted. No prediction scores read.",
+  "action": "Preserve first 12 completed trials; retry four incomplete baselines and run remaining planned trials in fresh work directories; unchanged binaries, inputs, timeouts and method.",
+  "attempts": [
+    {
+      "run_id": "commander_nav_state_override__2018-12-20__07_47_50__baseline",
+      "console_bytes": 36864,
+      "nul_bytes": 3869,
+      "replay_done": false,
+      "exit_code": 137
+    },
+    {
+      "run_id": "ekf2_innovation_bias__2018-12-20__07_47_50__baseline",
+      "console_bytes": 32768,
+      "nul_bytes": 3877,
+      "replay_done": false,
+      "exit_code": 137
+    },
+    {
+      "run_id": "inav_local_z_freeze__2018-12-20__07_47_50__baseline",
+      "console_bytes": 36864,
+      "nul_bytes": 3878,
+      "replay_done": false,
+      "exit_code": 137
+    },
+    {
+      "run_id": "land_detector_state_inversion__2018-12-20__07_47_50__baseline",
+      "console_bytes": 36864,
+      "nul_bytes": 3868,
+      "replay_done": false,
+      "exit_code": 137
+    }
+  ]
+}

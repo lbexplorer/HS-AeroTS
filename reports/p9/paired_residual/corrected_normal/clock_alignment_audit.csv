@@ -1,0 +1,13 @@
+run_id,matched_prefix_samples,max_offset_deviation_us,origin_us,anchor_limit
+commander_nav_state_override__2019-01-18__08_39_38__baseline,256,0,96515,256
+commander_nav_state_override__2019-01-25__17_38_05__baseline,256,0,20111,256
+commander_nav_state_override__2019-03-06__08_02_26__baseline,256,0,22054,256
+ekf2_innovation_bias__2019-01-18__08_39_38__baseline,256,0,25419,256
+ekf2_innovation_bias__2019-01-25__17_38_05__baseline,256,0,24041,256
+ekf2_innovation_bias__2019-03-06__08_02_26__baseline,256,0,21679,256
+inav_local_z_freeze__2019-01-18__08_39_38__baseline,256,0,93140,256
+inav_local_z_freeze__2019-01-25__17_38_05__baseline,256,0,21844,256
+inav_local_z_freeze__2019-03-06__08_02_26__baseline,256,0,21331,256
+land_detector_state_inversion__2019-01-18__08_39_38__baseline,256,0,103502,256
+land_detector_state_inversion__2019-01-25__17_38_05__baseline,256,0,22901,256
+land_detector_state_inversion__2019-03-06__08_02_26__baseline,256,0,23647,256

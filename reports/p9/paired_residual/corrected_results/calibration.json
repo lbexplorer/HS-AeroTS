@@ -1,0 +1,80 @@
+[
+  {
+    "held_out_source": "2019-01-18__08_39_38",
+    "normal_pair_ids": [
+      "normal:commander_nav_state_override__2019-01-25__17_38_05__baseline",
+      "normal:commander_nav_state_override__2019-03-06__08_02_26__baseline",
+      "normal:ekf2_innovation_bias__2019-01-25__17_38_05__baseline",
+      "normal:ekf2_innovation_bias__2019-03-06__08_02_26__baseline",
+      "normal:inav_local_z_freeze__2019-01-25__17_38_05__baseline",
+      "normal:inav_local_z_freeze__2019-03-06__08_02_26__baseline",
+      "normal:land_detector_state_inversion__2019-01-25__17_38_05__baseline",
+      "normal:land_detector_state_inversion__2019-03-06__08_02_26__baseline"
+    ],
+    "normal_event_maxima": [
+      0.7018565717373141,
+      0.7610855440521732,
+      3.8717491712743057,
+      26.47158145904541,
+      2.646767646074295,
+      0.45225637412622605,
+      3.390907049179077,
+      5.726318940038813
+    ],
+    "threshold": 26.47158145904541,
+    "faults_used": false,
+    "topic_thresholds": null
+  },
+  {
+    "held_out_source": "2019-01-25__17_38_05",
+    "normal_pair_ids": [
+      "normal:commander_nav_state_override__2019-01-18__08_39_38__baseline",
+      "normal:commander_nav_state_override__2019-03-06__08_02_26__baseline",
+      "normal:ekf2_innovation_bias__2019-01-18__08_39_38__baseline",
+      "normal:ekf2_innovation_bias__2019-03-06__08_02_26__baseline",
+      "normal:inav_local_z_freeze__2019-01-18__08_39_38__baseline",
+      "normal:inav_local_z_freeze__2019-03-06__08_02_26__baseline",
+      "normal:land_detector_state_inversion__2019-01-18__08_39_38__baseline",
+      "normal:land_detector_state_inversion__2019-03-06__08_02_26__baseline"
+    ],
+    "normal_event_maxima": [
+      1.1692409664561616,
+      0.6440998125129072,
+      5.059418181766653,
+      22.396470781348455,
+      2.4560300603412095,
+      0.46244919300079346,
+      1.479949951171875,
+      6.997909551762889
+    ],
+    "threshold": 22.396470781348455,
+    "faults_used": false,
+    "topic_thresholds": null
+  },
+  {
+    "held_out_source": "2019-03-06__08_02_26",
+    "normal_pair_ids": [
+      "normal:commander_nav_state_override__2019-01-18__08_39_38__baseline",
+      "normal:commander_nav_state_override__2019-01-25__17_38_05__baseline",
+      "normal:ekf2_innovation_bias__2019-01-18__08_39_38__baseline",
+      "normal:ekf2_innovation_bias__2019-01-25__17_38_05__baseline",
+      "normal:inav_local_z_freeze__2019-01-18__08_39_38__baseline",
+      "normal:inav_local_z_freeze__2019-01-25__17_38_05__baseline",
+      "normal:land_detector_state_inversion__2019-01-18__08_39_38__baseline",
+      "normal:land_detector_state_inversion__2019-01-25__17_38_05__baseline"
+    ],
+    "normal_event_maxima": [
+      1.620379631516426,
+      0.5349211136665497,
+      17.025179862976074,
+      2.7744202315807343,
+      2.5321507186972934,
+      2.646767646074295,
+      1.479949951171875,
+      3.390907049179077
+    ],
+    "threshold": 17.025179862976074,
+    "faults_used": false,
+    "topic_thresholds": null
+  }
+]

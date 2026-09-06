@@ -1,0 +1,9 @@
+{
+  "protocol": "fixed_fresh; original effect-check pass subset; sensitivity only",
+  "runs": 11,
+  "detector_recall": 0.8181818181818182,
+  "top1": 0.18181818181818182,
+  "top3": 0.36363636363636365,
+  "top5": 0.36363636363636365,
+  "mrr": 0.3101010101010101
+}

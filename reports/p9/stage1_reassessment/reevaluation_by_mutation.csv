@@ -1,0 +1,13 @@
+mode,mutation_id,detected,top1,top3,top5,mrr
+calibrated_fresh,commander_nav_state_override,0.0,0.0,0.0,0.0,0.0
+calibrated_fresh,ekf2_innovation_bias,0.0,0.0,0.0,0.0,0.0
+calibrated_fresh,inav_local_z_freeze,0.0,0.0,0.0,0.0,0.0
+calibrated_fresh,land_detector_state_inversion,0.0,0.0,0.0,0.0,0.0
+fixed_all,commander_nav_state_override,0.0,0.0,0.0,0.0,0.0
+fixed_all,ekf2_innovation_bias,0.0,0.0,0.0,0.0,0.0
+fixed_all,inav_local_z_freeze,0.0,0.0,0.0,0.0,0.0
+fixed_all,land_detector_state_inversion,0.0,0.0,0.0,0.0,0.0
+fixed_fresh,commander_nav_state_override,0.0,0.0,0.0,0.0,0.0
+fixed_fresh,ekf2_innovation_bias,0.0,0.0,0.0,0.0,0.0
+fixed_fresh,inav_local_z_freeze,0.0,0.0,0.0,0.0,0.0
+fixed_fresh,land_detector_state_inversion,0.0,0.0,0.0,0.0,0.0

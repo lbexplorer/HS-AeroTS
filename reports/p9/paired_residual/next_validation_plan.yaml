@@ -1,0 +1,30 @@
+status: prepared_not_executed
+scope: matched-reference controlled replay, not standalone online diagnosis
+candidate_specification: reports/p9/paired_residual/candidate_specification.yaml
+separation:
+  noise_fit: P11 train Normal flights only
+  threshold_calibration: separate P11 validation Normal flights only
+  confirmation: untouched P11 test source flights; all conditions and repeats stay
+    together
+normal_flight_inventory_same_commit:
+  train: 249
+  validation: 64
+  test: 62
+mandatory_before_execution:
+- check field coverage and usable duration without consulting outcomes
+- use P11 training-only scaler or fit a new scaler only to the selected normal training
+  flights
+- freeze missing-channel, failed-run, mutation-effect and tie policies
+- freeze time-varying injection schedules and severities before reading their outcomes
+proposed_acceptance_not_user_mandated:
+  normal_flight_false_alarm_upper_95_one_sided: 0.05
+  paired_detector_recall_point_target: 0.9
+  gated_top3_point_target: 0.8
+  include_clustered_intervals: true
+  include_per_mutation_minimum: true
+minimum_independent_zero_false_alarm_flights_for_5_percent_upper_bound: 59
+no_retune_on_confirmation: true
+baseline_comparison: same target normals and faults under identical preprocessing
+timing: report false alarms per flight and per hour; report detection and localization
+  delay including failures
+initial_compatibility_candidates: reports/p9/paired_residual/proposed_independent_sources.csv

@@ -24,6 +24,12 @@ reports/**/*.pt
 reports/**/catch_validation_scores_seed*.csv
 reports/**/catch_test_scores_seed*.csv
 reports/p9/replay_logs/
+reports/p9/stage1_reassessment/**/cache/
+reports/p9/stage1_reassessment/cache/
+reports/p9/stage1_reassessment/native_replay/logs/
+reports/p9/paired_residual/**/logs/
+reports/p9/paired_residual/**/cache/
+reports/p9/paired_residual/independent/*.pid
 third_party/ulog_annotation_tool/data/
 
 # Local run logs
@@ -46,6 +52,7 @@ tmp/pytest-*/
 
 # Local reading materials and submission forms
 /材料/
+docs/references/
 
 # Embedded upstream repositories are managed independently.
 third_party/

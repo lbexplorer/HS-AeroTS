@@ -1,0 +1,4 @@
+mode,fault_runs,detected_runs,detector_recall,top1,top3,top5,mrr,baseline_false_alarm_runs,baseline_false_alarm_rate,fault_pre_onset_alarm_runs,clean_fault_only_detected_runs,fresh_post_supported_fault_runs
+fixed_all,12,0,0.0,0.0,0.0,0.0,0.0,0,0.0,0,0,12
+fixed_fresh,12,0,0.0,0.0,0.0,0.0,0.0,0,0.0,0,0,0
+calibrated_fresh,12,0,0.0,0.0,0.0,0.0,0.0,0,0.0,0,0,0

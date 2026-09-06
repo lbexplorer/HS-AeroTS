@@ -1,0 +1,13 @@
+{
+  "completed_runs": 36,
+  "all_replays_done": true,
+  "original_binaries_unchanged": true,
+  "frozen_method_hashes_unchanged": true,
+  "all_source_hashes_verified": true,
+  "independent_p9_sources": true,
+  "globally_unseen_training_sources": false,
+  "effect_checks_passed": 11,
+  "effect_trials": 12,
+  "maximum_clock_offset_spread_us": 0.0,
+  "tests_passed": 28
+}

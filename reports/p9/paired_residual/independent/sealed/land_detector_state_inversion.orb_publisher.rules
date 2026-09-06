@@ -1,0 +1,3 @@
+restrict_topics: vehicle_land_detected
+module: hpwork
+ignore_others: false

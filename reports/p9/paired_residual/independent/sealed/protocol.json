@@ -1,0 +1,51 @@
+{
+  "sealed_at_utc": "2026-09-06T09:45:08.705374+00:00",
+  "primary_calibration": "2019-01-18__08_39_38",
+  "primary_rule": "Existing largest numerical threshold and its paired noise vector; chosen before replay; not a guarantee of conservative behavior across noise vectors",
+  "other_calibrations": "Report all two as sensitivity; never select by test performance",
+  "fit_on_test": false,
+  "refit_on_development": false,
+  "onset_evaluation_only_s": 30.0,
+  "sources": [
+    {
+      "log_key": "2018-12-19/07_49_17",
+      "relative_path": "ulg_files/2018-12-19/07_49_17.ulg",
+      "duration_s": 87.552919,
+      "firmware_commit": "82aa24adfca29321cfd1209e287eab6c2b16780e",
+      "selection": "P11 test / Normal / full core fields / distinct dates / lexical order / no model scores",
+      "sha256": "e7416d5f0df474a0c66146dc285a0a0e7ce5062eeef6f82710b1d0a129fa6758"
+    },
+    {
+      "log_key": "2018-12-20/07_47_50",
+      "relative_path": "ulg_files/2018-12-20/07_47_50.ulg",
+      "duration_s": 123.427472,
+      "firmware_commit": "82aa24adfca29321cfd1209e287eab6c2b16780e",
+      "selection": "P11 test / Normal / full core fields / distinct dates / lexical order / no model scores",
+      "sha256": "f4a74efd3927d50942d36129bc7b8a2f427eb3323b1688e36e7835165a75e9e2"
+    },
+    {
+      "log_key": "2018-12-25/08_44_40",
+      "relative_path": "ulg_files/2018-12-25/08_44_40.ulg",
+      "duration_s": 141.947061,
+      "firmware_commit": "82aa24adfca29321cfd1209e287eab6c2b16780e",
+      "selection": "P11 test / Normal / full core fields / distinct dates / lexical order / no model scores",
+      "sha256": "02a5d8ab513013afe12c0e9d9c046c5641fe7a3042fa44508800de08e1672232"
+    }
+  ],
+  "n_sources": 3,
+  "faults": 12,
+  "independent_normal_targets": 12,
+  "matched_references": 12,
+  "conditions_per_source_per_mutation": [
+    "baseline",
+    "fault",
+    "normal"
+  ],
+  "protocol": "Existing generic replay, original binaries and schedules, EKF no -r; exact sensor clock; original features/scalers; 3-window global residual gate; 54 publisher-mapped candidates; worst ties",
+  "missing_or_incomplete": "Keep all planned trials; report unavailable outputs and coverage, no replacements or tuning",
+  "effect_failures": "Retain all 12 faults in primary denominator; report effect audit separately",
+  "latency": "First post-onset causal gate minus 30 s; misses explicitly censored, aggregate delay conditional on detection; ranking uses all gated windows",
+  "independence": "No P9 development source overlap. Normal metadata/field coverage inspected before seal. P2 historical scaler exposure is not excluded; no globally unseen-training claim.",
+  "previous_plan_superseded": "User now requires freezing existing scalers/thresholds; no proposed P11 scaler refit",
+  "execution": "Four parallel mutation workers; baseline/fault/normal serial within each, sources serial; timeout ceil(source duration)+20 s"
+}

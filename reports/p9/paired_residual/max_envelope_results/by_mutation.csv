@@ -1,0 +1,9 @@
+method,mutation_id,detected,top1,top3,top5,mrr
+paired_residual,commander_nav_state_override,1.0,1.0,1.0,1.0,1.0
+paired_residual,ekf2_innovation_bias,1.0,1.0,1.0,1.0,1.0
+paired_residual,inav_local_z_freeze,1.0,0.0,1.0,1.0,0.5
+paired_residual,land_detector_state_inversion,1.0,0.0,1.0,1.0,0.5
+residual_gate_original_shap,commander_nav_state_override,1.0,0.0,0.3333333333333333,0.3333333333333333,0.21652421652421652
+residual_gate_original_shap,ekf2_innovation_bias,1.0,0.6666666666666666,1.0,1.0,0.8333333333333334
+residual_gate_original_shap,inav_local_z_freeze,1.0,0.0,0.0,0.0,0.07817460317460317
+residual_gate_original_shap,land_detector_state_inversion,1.0,0.0,0.3333333333333333,0.3333333333333333,0.12626262626262627

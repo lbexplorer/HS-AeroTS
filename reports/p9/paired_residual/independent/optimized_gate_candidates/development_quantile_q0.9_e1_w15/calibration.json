@@ -1,0 +1,25 @@
+{
+  "calibration": "development",
+  "normal_pairs": 12,
+  "noise_quantile": 0.99,
+  "topic_aggregation": "quantile",
+  "topic_quantile": 0.9,
+  "event_quantile": 1.0,
+  "warmup_s": 15.0,
+  "consecutive": 3,
+  "threshold": 3.302305723115219,
+  "normal_event_maxima": [
+    1.0,
+    0.1094507272467764,
+    0.28833880925074395,
+    0.816693954669937,
+    1.0,
+    2.1883926589880356,
+    0.7978499131871766,
+    0.26671273632728565,
+    0.08770262444372758,
+    0.7333580365845259,
+    0.7021315652236191,
+    3.302305723115219
+  ]
+}

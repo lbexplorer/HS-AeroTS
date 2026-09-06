@@ -1,0 +1,13 @@
+run_id,mutation_id,measure,baseline_value,fault_value,passed,retained_in_primary
+commander_nav_state_override__2018-12-19__07_49_17__fault,commander_nav_state_override,target_fraction,0.0,1.0,True,True
+commander_nav_state_override__2018-12-20__07_47_50__fault,commander_nav_state_override,target_fraction,0.11458333333333333,1.0,False,True
+commander_nav_state_override__2018-12-25__08_44_40__fault,commander_nav_state_override,target_fraction,0.07079646017699115,1.0,True,True
+ekf2_innovation_bias__2018-12-19__07_49_17__fault,ekf2_innovation_bias,post_mean,-1.4864642855147242e-05,19.50519957326932,True,True
+ekf2_innovation_bias__2018-12-20__07_47_50__fault,ekf2_innovation_bias,post_mean,-3.819040873128435e-05,19.304303376081034,True,True
+ekf2_innovation_bias__2018-12-25__08_44_40__fault,ekf2_innovation_bias,post_mean,0.00037829564099851475,19.628997648184072,True,True
+inav_local_z_freeze__2018-12-19__07_49_17__fault,inav_local_z_freeze,post_std,4.867719994568786,0.10710271896527102,True,True
+inav_local_z_freeze__2018-12-20__07_47_50__fault,inav_local_z_freeze,post_std,1.0405371172598634,0.006286071945482033,True,True
+inav_local_z_freeze__2018-12-25__08_44_40__fault,inav_local_z_freeze,post_std,1.0998095598229276,0.0032882582578055847,True,True
+land_detector_state_inversion__2018-12-19__07_49_17__fault,land_detector_state_inversion,target_fraction,0.0,1.0,True,True
+land_detector_state_inversion__2018-12-20__07_47_50__fault,land_detector_state_inversion,target_fraction,0.0,1.0,True,True
+land_detector_state_inversion__2018-12-25__08_44_40__fault,land_detector_state_inversion,target_fraction,0.0,1.0,True,True

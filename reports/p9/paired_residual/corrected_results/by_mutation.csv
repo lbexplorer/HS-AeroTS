@@ -1,0 +1,13 @@
+method,mutation_id,detected,top1,top3,top5,mrr
+original_stage1_original_shap,commander_nav_state_override,1.0,0.3333333333333333,0.6666666666666666,0.6666666666666666,0.511904761904762
+original_stage1_original_shap,ekf2_innovation_bias,0.6666666666666666,0.3333333333333333,0.6666666666666666,0.6666666666666666,0.5
+original_stage1_original_shap,inav_local_z_freeze,0.6666666666666666,0.0,0.0,0.0,0.034210526315789476
+original_stage1_original_shap,land_detector_state_inversion,1.0,0.0,0.0,0.0,0.028769841269841268
+paired_residual,commander_nav_state_override,1.0,1.0,1.0,1.0,1.0
+paired_residual,ekf2_innovation_bias,0.3333333333333333,0.3333333333333333,0.3333333333333333,0.3333333333333333,0.3333333333333333
+paired_residual,inav_local_z_freeze,1.0,0.0,1.0,1.0,0.5
+paired_residual,land_detector_state_inversion,1.0,0.0,1.0,1.0,0.5
+residual_gate_original_shap,commander_nav_state_override,1.0,0.0,0.3333333333333333,0.3333333333333333,0.22037037037037036
+residual_gate_original_shap,ekf2_innovation_bias,0.3333333333333333,0.3333333333333333,0.3333333333333333,0.3333333333333333,0.3333333333333333
+residual_gate_original_shap,inav_local_z_freeze,1.0,0.3333333333333333,0.3333333333333333,0.3333333333333333,0.3666666666666667
+residual_gate_original_shap,land_detector_state_inversion,1.0,0.0,0.3333333333333333,0.3333333333333333,0.12626262626262627

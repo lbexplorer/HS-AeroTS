@@ -1,0 +1,13 @@
+mode,run_id,source_log,condition,mutation_id,threshold,any_alarm,pre_onset_alarm,detected,detection_delay_s,fresh_post_windows,gated_windows,ground_truth_rank,top1,top3,top5,mrr,legacy_effect_check,fresh_score_max
+fixed_fresh,commander_nav_state_override__2019-01-18__08_39_38__fault,2019-01-18__08_39_38,fault,commander_nav_state_override,0.3374776883274057,True,False,True,15.6,49,25,2.0,0.0,1.0,1.0,0.5,False,0.982167312797904
+fixed_fresh,commander_nav_state_override__2019-01-25__17_38_05__fault,2019-01-25__17_38_05,fault,commander_nav_state_override,0.3374776883274057,True,False,True,50.0,80,3,2.0,0.0,1.0,1.0,0.5,True,0.4899106301107962
+fixed_fresh,commander_nav_state_override__2019-03-06__08_02_26__fault,2019-03-06__08_02_26,fault,commander_nav_state_override,0.3374776883274057,True,False,True,50.8,85,16,2.0,0.0,1.0,1.0,0.5,True,0.7305564813467841
+fixed_fresh,ekf2_innovation_bias__2019-01-18__08_39_38__fault,2019-01-18__08_39_38,fault,ekf2_innovation_bias,0.3374776883274057,True,False,True,18.8,47,17,1.0,1.0,1.0,1.0,1.0,True,0.7387770685248574
+fixed_fresh,ekf2_innovation_bias__2019-01-25__17_38_05__fault,2019-01-25__17_38_05,fault,ekf2_innovation_bias,0.3374776883274057,False,False,False,,79,0,,0.0,0.0,0.0,0.0,True,0.10669138460516121
+fixed_fresh,ekf2_innovation_bias__2019-03-06__08_02_26__fault,2019-03-06__08_02_26,fault,ekf2_innovation_bias,0.3374776883274057,True,False,True,50.8,83,11,1.0,1.0,1.0,1.0,1.0,True,0.685980346526537
+fixed_fresh,inav_local_z_freeze__2019-01-18__08_39_38__fault,2019-01-18__08_39_38,fault,inav_local_z_freeze,0.3374776883274057,True,False,True,19.6,49,14,12.0,0.0,0.0,0.0,0.0833333333333333,True,0.8884753592753186
+fixed_fresh,inav_local_z_freeze__2019-01-25__17_38_05__fault,2019-01-25__17_38_05,fault,inav_local_z_freeze,0.3374776883274057,False,False,False,,80,0,,0.0,0.0,0.0,0.0,True,0.1257084454399634
+fixed_fresh,inav_local_z_freeze__2019-03-06__08_02_26__fault,2019-03-06__08_02_26,fault,inav_local_z_freeze,0.3374776883274057,True,False,True,46.0,85,8,9.0,0.0,0.0,0.0,0.1111111111111111,True,0.6409476780808618
+fixed_fresh,land_detector_state_inversion__2019-01-18__08_39_38__fault,2019-01-18__08_39_38,fault,land_detector_state_inversion,0.3374776883274057,True,False,True,18.0,47,23,20.0,0.0,0.0,0.0,0.05,True,0.9807384044745541
+fixed_fresh,land_detector_state_inversion__2019-01-25__17_38_05__fault,2019-01-25__17_38_05,fault,land_detector_state_inversion,0.3374776883274057,True,False,True,50.0,79,3,6.0,0.0,0.0,0.0,0.1666666666666666,True,0.46204303695117366
+fixed_fresh,land_detector_state_inversion__2019-03-06__08_02_26__fault,2019-03-06__08_02_26,fault,land_detector_state_inversion,0.3374776883274057,True,False,True,50.8,83,17,,0.0,0.0,0.0,0.0,True,0.713852778779849

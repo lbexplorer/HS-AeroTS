@@ -1,0 +1,137 @@
+[
+  {
+    "held_out_source": "2019-01-18__08_39_38",
+    "normal_pair_ids": [
+      "normal:commander_nav_state_override__2019-01-25__17_38_05__baseline",
+      "normal:commander_nav_state_override__2019-03-06__08_02_26__baseline",
+      "normal:ekf2_innovation_bias__2019-01-25__17_38_05__baseline",
+      "normal:ekf2_innovation_bias__2019-03-06__08_02_26__baseline",
+      "normal:inav_local_z_freeze__2019-01-25__17_38_05__baseline",
+      "normal:inav_local_z_freeze__2019-03-06__08_02_26__baseline",
+      "normal:land_detector_state_inversion__2019-01-25__17_38_05__baseline",
+      "normal:land_detector_state_inversion__2019-03-06__08_02_26__baseline"
+    ],
+    "normal_event_maxima": [
+      0.7640691087616875,
+      1.154429314206944,
+      5.802002336648402,
+      5.192040772780359,
+      0.8219746511735593,
+      0.2535804891632219,
+      0.7436946551701422,
+      2.06600590632116
+    ],
+    "threshold": 5.802002336648402,
+    "faults_used": false,
+    "topic_thresholds": {
+      "actuator_controls_0": 13.26353119960149,
+      "actuator_outputs": 25.236596677649114,
+      "battery_status": 15.817495584487915,
+      "cpuload": 3.0,
+      "distance_sensor": 3.0,
+      "ekf2_innovations": 3.0,
+      "estimator_status": 9.10658549313327,
+      "manual_control_setpoint": 8.046193679383247,
+      "rate_ctrl_status": 7.539343155268963,
+      "sensor_combined": 4.8315977577209415,
+      "sensor_preflight": 3.0,
+      "vehicle_attitude": 3.551321134573841,
+      "vehicle_attitude_setpoint": 3.0,
+      "vehicle_land_detected": 86.45513534545898,
+      "vehicle_local_position": 7.005107920541846,
+      "vehicle_rates_setpoint": 3.0,
+      "vehicle_status": 3.0,
+      "vehicle_vision_position": 3.265885319560766
+    }
+  },
+  {
+    "held_out_source": "2019-01-25__17_38_05",
+    "normal_pair_ids": [
+      "normal:commander_nav_state_override__2019-01-18__08_39_38__baseline",
+      "normal:commander_nav_state_override__2019-03-06__08_02_26__baseline",
+      "normal:ekf2_innovation_bias__2019-01-18__08_39_38__baseline",
+      "normal:ekf2_innovation_bias__2019-03-06__08_02_26__baseline",
+      "normal:inav_local_z_freeze__2019-01-18__08_39_38__baseline",
+      "normal:inav_local_z_freeze__2019-03-06__08_02_26__baseline",
+      "normal:land_detector_state_inversion__2019-01-18__08_39_38__baseline",
+      "normal:land_detector_state_inversion__2019-03-06__08_02_26__baseline"
+    ],
+    "normal_event_maxima": [
+      3.4736343031900323,
+      1.1384687639053486,
+      0.9507877793256856,
+      11.085207140294072,
+      3.344036921872639,
+      0.24970050390232731,
+      0.9856688026824423,
+      1.799263237573759
+    ],
+    "threshold": 11.085207140294072,
+    "faults_used": false,
+    "topic_thresholds": {
+      "actuator_controls_0": 7.167563960926136,
+      "actuator_outputs": 19.457774786396694,
+      "battery_status": 9.345154020493505,
+      "cpuload": 3.0,
+      "distance_sensor": 3.0,
+      "ekf2_innovations": 3.8021610898167775,
+      "estimator_status": 11.754527120603562,
+      "manual_control_setpoint": 41.130924224853516,
+      "rate_ctrl_status": 5.5340939443985375,
+      "sensor_combined": 13.527965541436462,
+      "sensor_preflight": 3.0,
+      "vehicle_attitude": 8.104099349500222,
+      "vehicle_attitude_setpoint": 7.687658749694714,
+      "vehicle_land_detected": 22.236548099812147,
+      "vehicle_local_position": 8.060622158079894,
+      "vehicle_rates_setpoint": 3.0479425191879272,
+      "vehicle_status": 3.0,
+      "vehicle_vision_position": 3.0
+    }
+  },
+  {
+    "held_out_source": "2019-03-06__08_02_26",
+    "normal_pair_ids": [
+      "normal:commander_nav_state_override__2019-01-18__08_39_38__baseline",
+      "normal:commander_nav_state_override__2019-01-25__17_38_05__baseline",
+      "normal:ekf2_innovation_bias__2019-01-18__08_39_38__baseline",
+      "normal:ekf2_innovation_bias__2019-01-25__17_38_05__baseline",
+      "normal:inav_local_z_freeze__2019-01-18__08_39_38__baseline",
+      "normal:inav_local_z_freeze__2019-01-25__17_38_05__baseline",
+      "normal:land_detector_state_inversion__2019-01-18__08_39_38__baseline",
+      "normal:land_detector_state_inversion__2019-01-25__17_38_05__baseline"
+    ],
+    "normal_event_maxima": [
+      3.6756782940408645,
+      0.8159798364638425,
+      0.964663971815154,
+      6.275785506726819,
+      3.5238149291054284,
+      0.8420646844979195,
+      0.7900789990513492,
+      0.767720659915135
+    ],
+    "threshold": 6.275785506726819,
+    "faults_used": false,
+    "topic_thresholds": {
+      "actuator_controls_0": 8.230063915252686,
+      "actuator_outputs": 27.185500860214233,
+      "battery_status": 12.764019576013371,
+      "cpuload": 3.0,
+      "distance_sensor": 3.0,
+      "ekf2_innovations": 3.800541651296129,
+      "estimator_status": 10.819450786389908,
+      "manual_control_setpoint": 16.515121459960938,
+      "rate_ctrl_status": 3.0,
+      "sensor_combined": 3.0,
+      "sensor_preflight": 3.0,
+      "vehicle_attitude": 8.104099349500222,
+      "vehicle_attitude_setpoint": 5.048315574191145,
+      "vehicle_land_detected": 86.45512580871582,
+      "vehicle_local_position": 5.220462083816528,
+      "vehicle_rates_setpoint": 3.0,
+      "vehicle_status": 3.9158248901367188,
+      "vehicle_vision_position": 3.265885319560766
+    }
+  }
+]

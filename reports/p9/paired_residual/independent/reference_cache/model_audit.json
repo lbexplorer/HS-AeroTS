@@ -1,0 +1,30 @@
+{
+  "stage1_classes": [
+    0,
+    1
+  ],
+  "stage1_features": 1566,
+  "stage1_best_iteration": 606,
+  "stage2_features": 1566,
+  "channels": 87,
+  "scaler_finite": true,
+  "scaler_positive": true,
+  "feature_order_valid": true,
+  "feature_protocol": {
+    "frequency_hz": 10.0,
+    "window_size": 96,
+    "stride": 8,
+    "horizon": 12,
+    "preserve_header_start": true,
+    "source_clock": true,
+    "preprocessing": "unchanged P2 align_log_arrays and descriptor_batch"
+  },
+  "sha256": {
+    "stage1_model": "4e67f97cb6cda6c9d8cbe9994ea4f7b894254c4907dc9fbd8af616f482b3a9c9",
+    "stage2_model": "59b2917c4280acbc8ef9bd0ed97a96be0938ef17da81ba0f78913d4ce65d501a",
+    "scaler_mean": "b7e92db7c4843280138e271ead26f0bc68deecccfa7d2b3040b4383645ddfe45",
+    "scaler_std": "62602af2f562410a3674dfd25cd548da8f36b1a7b197553ac09a7ae6e26bbc22",
+    "feature_dictionary": "bf771c3efd3695c90cbb3a80d0983c21eb6cf24f0cd2e5343e8c7201781f96e1",
+    "core_channels": "15cf7f3e30351ca1578f6315fdcff4c25f929d8bcfd2bbc4084cfb2a836734c6"
+  }
+}

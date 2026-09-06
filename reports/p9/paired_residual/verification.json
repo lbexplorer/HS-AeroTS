@@ -1,0 +1,13 @@
+{
+  "normal_repeats": 12,
+  "ekf_corrected_reruns": 9,
+  "clock_audited_runs": 36,
+  "minimum_prefix_anchors": 256,
+  "maximum_clock_offset_spread_us": 0,
+  "normal_reference_independent": true,
+  "calibration_source_isolation": true,
+  "original_model_and_scaler_hashes_unchanged": true,
+  "corrected_ekf_quaternions_all_valid": true,
+  "original_injection_effect_checks_passed": 11,
+  "tests_passed": 25
+}

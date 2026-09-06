@@ -1,0 +1,5 @@
+{
+  "prediction_index_sha256": "90c7c1704f0077d5c651294d35a70cd99713d00a1c84bfb2ad9be13603bfc64b",
+  "evaluator_sha256": "de5eaa295b419be438c5d2df03f505820ccb95ed226465ada8643ad4e4973f3e",
+  "truth_accessed_by_inference": false
+}

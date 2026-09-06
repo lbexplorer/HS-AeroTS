@@ -1,0 +1,2 @@
+fault_runs,detected_runs,detector_recall,normal_runs,normal_false_alarm_runs,normal_false_alarm_rate,fault_pre_onset_alarm_runs,top1,top3,top5,mrr,delay_detected_n,delay_median_s
+12,12,1.0,12,11,0.9166666666666666,9,0.3333333333333333,0.4166666666666667,0.4166666666666667,0.4115913521176679,12,1.224489499999999

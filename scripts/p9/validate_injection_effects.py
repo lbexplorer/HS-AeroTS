@@ -3,16 +3,19 @@
 from __future__ import annotations
 
 from pathlib import Path
+import argparse
 
 import numpy as np
 import pandas as pd
 from pyulog import ULog
 
 from hs_aerots.baseline import _ulog_time_bounds
+from hs_aerots.sitl_injection import _windows_path
 
 
 ROOT = Path(__file__).resolve().parents[2]
 LOG_ROOT = ROOT / "reports" / "p9" / "replay_logs"
+LOG_PATHS: dict[str, Path] = {}
 LOG_IDS = ["2019-01-18__08_39_38", "2019-01-25__17_38_05", "2019-03-06__08_02_26"]
 SPECS = {
     "commander_nav_state_override": ("vehicle_status", "nav_state", "target_fraction", 18.0),
@@ -23,7 +26,8 @@ SPECS = {
 
 
 def load_post(mutation: str, log_id: str, condition: str, topic: str, field: str) -> tuple[np.ndarray, np.ndarray]:
-    path = LOG_ROOT / f"{mutation}__{log_id}__{condition}.ulg"
+    run_id = f"{mutation}__{log_id}__{condition}"
+    path = LOG_PATHS.get(run_id, LOG_ROOT / f"{run_id}.ulg")
     ulog = ULog(str(path))
     start, _ = _ulog_time_bounds(ulog)
     dataset = next(item for item in ulog.data_list if item.name == topic)
@@ -33,6 +37,16 @@ def load_post(mutation: str, log_id: str, condition: str, topic: str, field: str
 
 
 def main() -> None:
+    global LOG_ROOT, LOG_PATHS
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--log-root', type=Path, default=LOG_ROOT)
+    parser.add_argument('--output', type=Path, default=ROOT / 'reports/p9/injection_effect_validation.csv')
+    parser.add_argument('--manifest', type=Path, default=None)
+    args = parser.parse_args()
+    LOG_ROOT = args.log_root
+    if args.manifest is not None:
+        LOG_PATHS = {r.run_id: _windows_path(ROOT,r.output_ulog)
+                     for r in pd.read_csv(args.manifest,sep='\t').itertuples()}
     rows = []
     for mutation, (topic, field, measure, target) in SPECS.items():
         for log_id in LOG_IDS:
@@ -58,7 +72,7 @@ def main() -> None:
                 "passed": bool(passed),
             })
     frame = pd.DataFrame(rows)
-    output = ROOT / "reports" / "p9" / "injection_effect_validation.csv"
+    output = args.output
     frame.to_csv(output, index=False, encoding="utf-8-sig")
     if not frame["passed"].all():
         raise SystemExit(f"injection effect validation failed:\n{frame.loc[~frame['passed']].to_string(index=False)}")

@@ -1,0 +1,36 @@
+{
+  "scope": "matched_healthy_reference_controlled_replay_only",
+  "original_model": "retained_as_comparator_not_retrained",
+  "features": "original_87_channels_18_descriptors",
+  "alignment": "elapsed_time_linear_interpolation_within_sensor_support",
+  "normal_controls": "independently_reexecuted_same_binary_same_source",
+  "calibration": {
+    "split": "leave_source_log_out",
+    "noise_quantile": 0.99,
+    "standardized_descriptor_noise_floor": 0.05,
+    "threshold": "maximum_normal_run_sustained_score",
+    "minimum_threshold": 3.0
+  },
+  "detector": {
+    "channel_aggregation": "maximum_descriptor_residual",
+    "topic_aggregation": "maximum_channel_residual",
+    "run_score": "maximum_topic_residual",
+    "consecutive_windows": 3
+  },
+  "localization": {
+    "evidence": "positive_topic_excess_over_detection_threshold",
+    "propagation": "existing_publisher_edges_uniform",
+    "candidate_count": 54,
+    "tie_policy": "worst_rank"
+  },
+  "evaluation_only": {
+    "onset_s": 30.0,
+    "truth_used_for_calibration": false,
+    "truth_used_for_prediction": false,
+    "independent_normal_targets_required": true
+  },
+  "reliability": {
+    "pilot_is_not_confirmatory": true,
+    "new_independent_source_flights_required_for_confirmation": true
+  }
+}
