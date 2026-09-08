@@ -1,0 +1,6 @@
+{
+  "protected_count": 787,
+  "missing": [],
+  "changed": [],
+  "scope": "Files enumerated in protected_artifacts_before.json; excludes large feature/prediction caches."
+}

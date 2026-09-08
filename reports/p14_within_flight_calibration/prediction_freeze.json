@@ -1,0 +1,12 @@
+{
+  "sealed_at_utc": "2026-09-07T05:32:17.275238+00:00",
+  "truth_joined": false,
+  "protocol_sha256": "5537b57482e8c5ea36fb6ae489a011f111292cc0340a8678916997557abbc174",
+  "files": {
+    "window_predictions.csv": "aeab6f9a92bc945192ae16e0e6a01c90456dcbdc2823723dbc3ce60744148df3",
+    "self_calibration_by_run.csv": "81f777f2028253e725ce3fe4e8165fecf09df901213f2fba6a3d5743117b1dae"
+  },
+  "independent_inputs_sha256": {
+    "reports/p9/paired_residual/independent/window_predictions.csv": "651e035857aa2eb844888b8b213a829621a066dc461c7b83a10f4cfafbf0a5bf"
+  }
+}

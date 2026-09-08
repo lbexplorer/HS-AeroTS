@@ -1,0 +1,33 @@
+{
+  "scope": "Post-30s retrospective mechanism diagnostic; selected known affected signals for explanation only; not detector performance or proposed thresholds",
+  "rows": [
+    {
+      "mutation": "commander_nav_state_override",
+      "signal": "vehicle_status",
+      "all_normal_max": 0.1255190372467041,
+      "fault_min": 65.4560375213623,
+      "fault_max": 65.4560375213623
+    },
+    {
+      "mutation": "ekf2_innovation_bias",
+      "signal": "ekf2_innovations",
+      "all_normal_max": 5.084492537676697,
+      "fault_min": 19.784704443392542,
+      "fault_max": 19.82435702937582
+    },
+    {
+      "mutation": "inav_local_z_freeze",
+      "signal": "vehicle_local_position.z",
+      "all_normal_max": 14.821751713752747,
+      "fault_min": 23.505735397338867,
+      "fault_max": 32.10817575454712
+    },
+    {
+      "mutation": "land_detector_state_inversion",
+      "signal": "vehicle_land_detected",
+      "all_normal_max": 0.8207055926322937,
+      "fault_min": 171.76484525203705,
+      "fault_max": 171.76484525203705
+    }
+  ]
+}

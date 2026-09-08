@@ -1,0 +1,22 @@
+\subsection{Matched-Reference Residual Extension for Controlled Replay}
+\label{sec:paired_replay_method}
+
+The extension tests whether a target replay differs from an independent healthy replay of the same source log. It reuses the 87 channels, 18 descriptors per channel, frozen scaler, and publisher mapping, but replaces both the learned detection score and the downstream SHAP evidence. Neither target mutation type, injected onset, nor ground-truth module is an input to prediction. Distinct file hashes verify that the healthy target and its reference are different replay outputs. Sensor payload matches among the first 256 six-axis samples establish a constant offset to the source clock without using the injected effect. The target header clock is restored only for reporting detection times.
+
+For feature $j$ and window $w$, define the absolute paired difference $d_{wj}=|f^{\mathrm{target}}_{wj}-f^{\mathrm{ref}}_{wj}|$. In the original paired frontend, reference features are interpolated to target feature times only within the shared basic-sensor support. Independent healthy replay pairs from the other two development source flights estimate a feature noise scale
+\begin{equation}
+n_j=\max\{Q_{0.99}(d^{\mathrm{healthy}}_{\cdot j}),0.05\},\qquad
+r_{wt}=\max_{j\in\mathcal F(t)}d_{wj}/n_j,\qquad s_w=\max_t r_{wt},
+\label{eq:paired_residual}
+\end{equation}
+where $Q_{0.99}$ is the implemented higher-order empirical quantile and $\mathcal F(t)$ contains the features of topic $t$. A gate opens at the third consecutive window with $s_w>\theta$, without backfilling earlier windows. Each development fold sets $\theta$ to the maximum healthy three-window sustained score, with a minimum of 3. Before transfer replay, the existing calibration with the largest numerical threshold, $\theta=26.47158145904541$, and its associated noise vector were frozen. A larger threshold does not guarantee more conservative behavior across different noise vectors; all frozen alternatives are retained as sensitivities in the Supplementary Material.
+
+For the gated set $\mathcal G$, topic evidence is
+\begin{equation}
+R_t=\frac{1}{|\mathcal G|}\sum_{w\in\mathcal G}\max(r_{wt}-\theta,0),\qquad
+S_m=\sum_{t:m\in\mathcal M_t^{(\mathrm{producer})}}R_t/|\mathcal M_t^{(\mathrm{producer})}|.
+\label{eq:paired_module}
+\end{equation}
+Both are zero if no window is gated. The original global gate permits different topics to dominate successive windows; same-channel persistence is a separate supplementary calibration variant. Equation~\eqref{eq:paired_module} aggregates all gated windows, not an onset-defined interval, and yields an offline module ranking.
+
+The common-support frontend changes the observation support before computing Equation~\eqref{eq:paired_residual}. For each topic, exact shared source-clock timestamps are used if they contain at least two packets and cover at least half the shorter stream; otherwise each regenerated stream retains its timestamps. At 10 Hz, both streams must support every sample in a 96-sample channel window. There is no endpoint extrapolation, and interpolation gaps may not exceed the larger of 0.1 s and five times the channel-stream median sampling gap. Invalid channel windows contribute no residual evidence and are recorded as unavailable; fault trials remain in the denominator. Original descriptors, noise, threshold, and publisher allocation remain fixed for the principal frontend comparison. Because cadence and interpolation use complete recorded streams, this procedure is offline even though the three-window gate itself uses only present and past scores.

@@ -1,0 +1,23 @@
+\begin{table}[htbp]
+\centering\footnotesize
+\caption{All supplementary calibration comparisons: transfer.}
+\label{tab:s_transfer}
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lccccccc}
+\toprule
+Frontend & Gate / evidence & Detect & Normal & Pre & Clean & T1/T3/T5 & MRR\\
+\midrule
+Channel & New gate / fixed rank & 12 & 8 & 5 & 4 & 6/9/9 & 0.6369\\
+Channel & New gate / new rank & 12 & 8 & 5 & 4 & 6/12/12 & 0.7500\\
+Channel & Frozen paired & 12 & 11 & 10 & 1 & 6/9/9 & 0.6369\\
+Common & New gate / fixed rank & 12 & 9 & 7 & 2 & 6/10/10 & 0.6667\\
+Common & New gate / new rank & 12 & 9 & 7 & 2 & 6/12/12 & 0.7500\\
+Common & Frozen paired & 10 & 3 & 3 & 7 & 6/10/10 & 0.6667\\
+Bank & New gate / fixed rank & 12 & 10 & 3 & 2 & 6/10/10 & 0.6667\\
+Bank & New gate / new rank & 12 & 10 & 3 & 2 & 6/12/12 & 0.7500\\
+Bank & Frozen paired & 10 & 3 & 3 & 7 & 6/10/10 & 0.6667\\
+\bottomrule
+\end{tabular}
+\par\smallskip\parbox{0.98\linewidth}{\scriptsize All count denominators are 12; each Top-K count also has denominator 12. Bank uses new normal targets, while Channel and Common use the older targets. Fixed rank retains the frozen comparator's offline rank and is not a rank computed at the new alarm time. Development normal data participate in calibration; their rates are not independent validation.}
+\end{table}

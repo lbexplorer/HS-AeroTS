@@ -1,0 +1,3 @@
+gate,detected_runs,normal_false_alarms,pre_onset_alarms,top1,top3,top5,mrr
+frozen,12,11,10,6,9,9,0.636904761904762
+optimized_q90_w15,12,11,9,4,5,5,0.4115913521176679

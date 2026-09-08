@@ -1,0 +1,21 @@
+\begin{table}[htbp]
+\centering\footnotesize
+\caption{Corrected development comparison using the same targets and references.}
+\label{tab:s_dev}
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lccc}
+\toprule
+Measure & \shortstack{Original gate\\and SHAP} & \shortstack{Residual gate\\and SHAP} & \shortstack{Residual gate\\and evidence}\\
+\midrule
+Fault detections & 10/12 & 10/12 & 10/12\\
+Normal alarms & 10/12 & 1/12 & 1/12\\
+Top-1 & 2/12 & 2/12 & 4/12\\
+Top-3 & 4/12 & 4/12 & 10/12\\
+Top-5 & 4/12 & 4/12 & 10/12\\
+MRR & 0.2687 & 0.2617 & 0.5833\\
+Clean detections & 0/12 & 9/12 & 9/12\\
+\bottomrule
+\end{tabular}
+\par\smallskip\parbox{0.98\linewidth}{\scriptsize The original gate is the frozen learned Stage 1 detector. All columns retain 54 candidate modules, all 12 fault trials, and independent normal targets. These are development comparisons, not independent confirmation.}
+\end{table}

@@ -5,38 +5,13 @@ This experiment asks whether recorded PX4 telemetry supports reproducible binary
 
 Table~\ref{tab:main_results} provides the principal fixed-chronological comparison. Results are grouped by prediction task because detection metrics, conditional-diagnosis metrics, and complete five-class metrics answer different questions and should not be compared across groups.
 
-\begin{table}[H]
-\caption{Primary fixed-chronological test results grouped by prediction task.}
-\label{tab:main_results}
-\centering
-\footnotesize
-\renewcommand{\arraystretch}{1.12}
-\setlength{\tabcolsep}{2.5pt}
-\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{3.05cm} >{\RaggedRight\arraybackslash}X c c c c@{}}
-\toprule
-\textbf{Task} & \textbf{Method} & \textbf{AUPRC $\uparrow$} & \textbf{AUROC $\uparrow$} & \shortstack{\textbf{Macro-F1}\\$\uparrow$} & \shortstack{\textbf{Balanced}\\\textbf{accuracy $\uparrow$}}\\
-\midrule
-Binary detection & \textbf{HS-AeroTS Stage 1} & $0.7522\pm0.0039$ & $0.9512\pm0.0006$ & -- & --\\
- & CATCH$^{\dagger}$ & $0.2094\pm0.0038$ & $0.7318\pm0.0052$ & -- & --\\
- & GCAD-inspired VAR(1)$^{\ddagger}$ & 0.1991 & -- & -- & --\\
-\addlinespace[2pt]
-Conditional four-domain diagnosis & \textbf{HS-AeroTS Stage 2} & -- & -- & $0.8980\pm0.0020$ & $0.8863\pm0.0021$\\
- & Random Forest & -- & -- & $0.8724\pm0.0037$ & $0.8382\pm0.0052$\\
- & Majority & -- & -- & 0.1608 & --\\
- & Stratified random & -- & -- & $0.2358\pm0.0090$ & --\\
-\addlinespace[2pt]
-Complete five-class prediction & \textbf{HS-AeroTS Cascade} & -- & -- & $0.6902\pm0.0071$ & $0.6755\pm0.0152$\\
- & Direct Five-Class & -- & -- & $0.6599\pm0.0029$ & $0.6144\pm0.0021$\\
-\bottomrule
-\end{tabularx}
-\par\vspace{2pt}{\scriptsize Values are mean $\pm$ model-seed standard deviation over five seeds unless noted; ``--'' denotes a metric that is not applicable or was not reported. $^{\dagger}$Three seeds and a budget-limited normal-only objective. $^{\ddagger}$Single ridge-regularized linear VAR(1) ablation, not the published nonlinear GCAD architecture.}
-\end{table}
+\input{generated/primary_results_table}
 
 The five-seed LightGBM detector reproduced the reference performance level on the fixed chronological test partition. The mean AUROC was $0.9512 \pm 0.0006$ and the mean AUPRC was $0.7522 \pm 0.0039$, with a 95\% flight-log cluster-bootstrap CI of [0.6915, 0.8080]. The independently optimized test-set F1 was $0.6924 \pm 0.0056$; this is an oracle descriptive value and is not an operational estimate because its threshold uses test labels. These values were close to the reference values of 0.9516, 0.7516, and 0.6860, respectively, and preserved the reported detector performance trend. The AUPRC result is the primary threshold-independent measure because anomalous windows were a minority of the evaluated windows.
 
 For operational use, the threshold was selected separately for each seed by maximizing validation F1 and then frozen before test evaluation. With this validation-derived threshold, the test F1 was $0.6895 \pm 0.0067$, and the log-aware event F1 was $0.6051 \pm 0.0218$. Thus, the threshold-dependent operating result remained close to the independently optimized test F1, while the event-level measure was lower because it evaluates the temporal detection behavior at the frozen operating point.
 
-The matched-input CATCH execution used the official model core, all 87 raw channels, and the fixed chronological split. Across three seeds, test AUPRC was $0.2094 \pm 0.0038$, AUROC was $0.7318 \pm 0.0052$, validation-threshold F1 was $0.2992 \pm 0.0038$, and log-aware event F1 was $0.2537 \pm 0.0040$. The GCAD-inspired linear VAR(1) ablation produced AUPRC of 0.1991. These are budget-constrained feasibility references, not competitive benchmark estimates: CATCH followed a normal-only unsupervised objective with 4096 sampled training windows and two epochs, whereas the GCAD result is not the published nonlinear architecture. Their numerical values therefore document the implemented resource-constrained protocols and do not support detector-superiority or state-of-the-art claims.
+The budget-limited CATCH and GCAD-inspired VAR(1) feasibility references use different training objectives and budgets from the supervised models. Their complete results are retained in Supplementary Material Section S6 and do not support a detector-superiority claim.
 
 On the 3602 anomalous test windows, the anomaly-only Stage 2 LightGBM classifier attained Macro-F1 of $0.8980 \pm 0.0020$ (95\% flight-log CI [0.8581, 0.9296]) and Balanced Accuracy of $0.8863 \pm 0.0021$. Its mean per-class recall and F1 were 0.9685 and 0.9390 for External Position, 0.9279 and 0.9162 for Global Position, 0.7916 and 0.8503 for Altitude, and 0.8574 and 0.8865 for Mechanical/Electrical, respectively. The corresponding Random Forest baseline achieved Macro-F1 of $0.8724 \pm 0.0037$ and Balanced Accuracy of $0.8382 \pm 0.0052$. The majority and stratified-random references achieved Macro-F1 values of 0.1608 and $0.2358 \pm 0.0090$. These comparisons indicate that the four-class diagnostic task was learned under the specified ground-truth-anomaly-conditioned label protocol; they do not represent complete online five-class performance.
 

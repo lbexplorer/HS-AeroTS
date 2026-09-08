@@ -1,0 +1,49 @@
+# Prepared protocol; no formal training has been executed.
+official_repository: https://github.com/WindchaserHG/MTCL-UAV
+official_commit: 9a9d4c90c8942023331c0d61ac813b87afb3243a
+repository_path: third_party/MTCL-UAV
+report_dir: reports/mtcl_uav_reproduction
+cache_dir: data/processed/mtcl_uav_reproduction
+protocols:
+  chronological:
+    features: data/processed/p2/features_original
+    groups: reports/p2/group_dictionary.csv
+  purged:
+    features: data/processed/p10/features_purged
+    groups: reports/p10/purged/p2/group_dictionary.csv
+  leave_log_out:
+    features: data/processed/p11/features_leave_log_out
+    groups: reports/p11/llo/p2/group_dictionary.csv
+seeds: [0, 1, 2, 3, 4]
+model:
+  seq_len: 96
+  pred_len: 96
+  num_nodes: 87
+  layer_nums: 3
+  k: 2
+  num_experts_list: [4, 4, 4]
+  patch_size_list: [[16, 12, 8, 32], [12, 8, 6, 4], [8, 6, 4, 2]]
+  d_model: 16
+  d_ff: 16
+  residual_connection: 1
+  revin: 1
+  gpu: 0
+  batch_norm: 1
+  temp: 2
+training:
+  batch_size: 8
+  epochs: 100
+  patience: 30
+  learning_rate: 0.001
+  pct_start: 0.4
+  lambda_contrastive: 0.1
+  cpu_threads: 4
+  normal_windows_only: true
+  subsampling: false
+  precision: float32
+evaluation:
+  checkpoint: normal_validation_reconstruction_plus_contrastive
+  threshold: maximum_validation_f1
+  window_score: mean_squared_reconstruction_error_over_time_and_channels
+  test_point_adjustment: false
+  test_statistics_for_threshold: false

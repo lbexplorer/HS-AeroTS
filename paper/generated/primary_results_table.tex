@@ -1,0 +1,25 @@
+\begin{table}[H]
+\caption{Primary fixed-chronological test results grouped by prediction task.}
+\label{tab:main_results}
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.12}
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{3.05cm} >{\RaggedRight\arraybackslash}X c c c c@{}}
+\toprule
+\textbf{Task} & \textbf{Method} & \textbf{AUPRC $\uparrow$} & \textbf{AUROC $\uparrow$} & \shortstack{\textbf{Macro-F1}\\$\uparrow$} & \shortstack{\textbf{Balanced}\\\textbf{accuracy $\uparrow$}}\\
+\midrule
+Binary detection & \textbf{HS-AeroTS Stage 1} & $0.7522\pm0.0039$ & $0.9512\pm0.0006$ & -- & --\\
+\addlinespace[2pt]
+Conditional four-domain diagnosis & \textbf{HS-AeroTS Stage 2} & -- & -- & $0.8980\pm0.0020$ & $0.8863\pm0.0021$\\
+ & Random Forest & -- & -- & $0.8724\pm0.0037$ & $0.8382\pm0.0052$\\
+ & Majority & -- & -- & 0.1608 & --\\
+ & Stratified random & -- & -- & $0.2358\pm0.0090$ & --\\
+\addlinespace[2pt]
+Complete five-class prediction & \textbf{HS-AeroTS Cascade} & -- & -- & $0.6902\pm0.0071$ & $0.6755\pm0.0152$\\
+ & Direct Five-Class & -- & -- & $0.6599\pm0.0029$ & $0.6144\pm0.0021$\\
+
+\bottomrule
+\end{tabularx}
+\par\vspace{2pt}{\scriptsize Values are mean $\pm$ model-seed standard deviation over five seeds unless noted; ``--'' denotes a metric that is not applicable or was not reported. Budget-limited normal-only references are reported separately in Supplementary Material Section S6.}
+\end{table}

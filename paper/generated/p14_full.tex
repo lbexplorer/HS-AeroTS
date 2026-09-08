@@ -1,0 +1,17 @@
+\begin{table}[htbp]
+\centering\footnotesize
+\caption{Within-flight calibration: original exposure schedules.}
+\label{tab:s_p14_full}
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcccccc}
+\toprule
+Gate & Detect & Normal & Pre & Clean & T1/T3/T5 & MRR\\
+\midrule
+Frozen paired & 12 & 11 & 10 & 1 & 6/9/9 & 0.6369\\
+q90 + 15-s warm-up & 12 & 11 & 9 & 1 & 6/9/9 & 0.6369\\
+Within-flight & 3 & 2 & 0 & 2 & 1/3/3 & 0.1667\\
+\bottomrule
+\end{tabular}
+\par\smallskip\parbox{0.98\linewidth}{\scriptsize All count denominators are 12. These gate comparisons hold the original offline module ranks fixed. Within-flight detection starts at 30 s, so its zero pre-onset count is imposed by the schedule. Post-30 exposure also excludes earlier comparator alarms; it is not evidence that they did not occur.}
+\end{table}

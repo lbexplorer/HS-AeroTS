@@ -1,0 +1,2 @@
+gate,fault_runs,detected_runs,fault_recall,normal_runs,normal_false_alarms,normal_false_alarm_rate,pre_onset_alarms,clean_fault_only_detected,top1,top3,top5,mrr
+within_flight,12,11,0.9166666666666666,12,1,0.08333333333333333,0,10,4,10,10,0.5833333333333334

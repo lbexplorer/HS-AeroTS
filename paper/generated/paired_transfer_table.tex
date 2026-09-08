@@ -1,0 +1,24 @@
+\begin{table}[htbp]
+\centering\footnotesize
+\caption{Paired residuals on the same transfer targets: frozen parameters and exploratory common-support processing.}
+\label{tab:paired_transfer}
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{p{6.0cm}cc}
+\toprule
+Measure & \shortstack{Frozen paired\\residual frontend} & \shortstack{Common-support\\frontend}\\
+\midrule
+Fault detections & 12/12 & 10/12\\
+Normal runs with an alarm & 11/12 & 3/12\\
+Fault runs with pre-onset alarms & 10/12 & 3/12\\
+Clean fault-specific detections & 1/12 & 7/12\\
+Top-1 & 6/12 & 6/12\\
+Top-3 & 9/12 & 10/12\\
+Top-5 & 9/12 & 10/12\\
+MRR & 0.6369 & 0.6667\\
+Median detection delay (s) & 2.023 & 11.623\\
+Maximum detection delay (s) & 54.819 & 107.623\\
+\bottomrule
+\end{tabular}
+\par\smallskip\parbox{0.98\linewidth}{\scriptsize The threshold, feature noise and publisher allocation are unchanged. Both columns use 12 fault and 12 normal targets from the same three sources; normal alarms cover the complete available run. Delays are conditional on detection (12 and 10 detections, respectively); misses are retained in ranking denominators. The right column was evaluated after transfer data exposure.}
+\end{table}

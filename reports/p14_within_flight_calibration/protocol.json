@@ -1,0 +1,47 @@
+{
+  "experiment": "P14 within-flight score self-calibration",
+  "sealed_at_utc": "2026-09-07T05:32:06.067502+00:00",
+  "threshold": 30.691756916624588,
+  "threshold_rule": "max(3, second-largest of 12 development Normal post-30s three-window maxima)",
+  "target_development_normal_false_alarms": 1,
+  "faults_used_to_select_threshold": false,
+  "independent_scores_used_to_select_threshold": false,
+  "selection_attempts": 1,
+  "warmup_s": [
+    0,
+    15
+  ],
+  "calibration_s": [
+    15,
+    25
+  ],
+  "idle_s": [
+    25,
+    30
+  ],
+  "detection_start_s": 30,
+  "consecutive_windows": 3,
+  "formula": "z=max(0,(score-median)/(max(1.4826*MAD,0.05*abs(median),0.05)))",
+  "mad_multiplier": 1.4826,
+  "relative_scale_floor": 0.05,
+  "absolute_scale_floor": 0.05,
+  "minimum_calibration_windows": 8,
+  "calibration_interval": "15 <= score-window end time < 25",
+  "scope": "Self-calibrate existing max-topic scalar residual scores; leave upstream feature noise and aggregation unchanged",
+  "ranking_policy": "Use primary frozen independent per-run module ranking for ALL three gates; nondetection counts as rank unavailable",
+  "timestamps": "Use time_s as stored: development source-aligned elapsed clock; independent target-header elapsed clock",
+  "temporal_limits": "Cached 9.6s trailing descriptors overlap warm-up; 30s start is user-provided known-onset schedule, not autonomous onset discovery",
+  "transport_limits": "No raw ULog/feature NPZ caches needed; uses existing serialized score and ranking CSVs",
+  "independence_limits": "Previously examined three independent P9 source flights; historical P2 scaler exposure remains. This is a prespecified follow-up ablation, not fresh confirmation.",
+  "comparison": "Primary fixed-ranking gate-only table; historical optimized-gate SHAP ranks also reported separately; common >=30s exposure control included",
+  "implementation_sha256": {
+    "scripts/p14/run_experiment.py": "49fc08716431c601e4829a19e96d23006c371bb7b9af7bcd349232c93b1f280c",
+    "src/hs_aerots/within_flight_gate.py": "6aacdba64f75c2809bc721ccc772437c25570a6b25b695a8a2b2435164c65601",
+    "src/hs_aerots/replay_detection.py": "b92349854e58aa276b3e5f46a1412040380f9ecb546e7269f21c2fb786ab0faa"
+  },
+  "development_inputs_sha256": {
+    "reports/p9/paired_residual/corrected_results/window_predictions.csv": "64a35d52901066efa1b907f62f6f0a1a098ebd1d2edf2d119ff86dae3891ebbb",
+    "reports/p9/paired_residual/corrected_results/calibration.json": "2913027f1b330f8fe412f1a395d2476d8dc0d38dadec46cd9c853aac782b1bd3",
+    "reports/p9/paired_residual/corrected_results/protocol.json": "56e5d5191f64fcfc2954499f47639ae3f86827faa10cbead541d16f4e5f796bd"
+  }
+}

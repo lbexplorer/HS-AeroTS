@@ -30,10 +30,16 @@ reports/p9/stage1_reassessment/native_replay/logs/
 reports/p9/paired_residual/**/logs/
 reports/p9/paired_residual/**/cache/
 reports/p9/paired_residual/independent/*.pid
+reports/p15*/cache/
+reports/p15*/**/logs/
+reports/p15*/*.pid
 third_party/ulog_annotation_tool/data/
 
 # Local run logs
 *.log
+reports/paper_finalization_20260908/*.pid
+paper/revision_build_pids.json
+reports/paper_finalization_20260908/pre_revision_manuscript.zip
 
 # Generated manuscript build files
 paper/build/

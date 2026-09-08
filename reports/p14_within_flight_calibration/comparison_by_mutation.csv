@@ -1,0 +1,13 @@
+mutation_id,gate,fault_runs,detected_runs,fault_recall,normal_runs,normal_false_alarms,normal_false_alarm_rate,pre_onset_alarms,clean_fault_only_detected,top1,top3,top5,mrr
+commander_nav_state_override,frozen,3,3,1.0,3,3,1.0,2,0,3,3,3,1.0
+ekf2_innovation_bias,frozen,3,3,1.0,3,3,1.0,3,0,3,3,3,1.0
+inav_local_z_freeze,frozen,3,3,1.0,3,3,1.0,3,0,0,0,0,0.047619047619047616
+land_detector_state_inversion,frozen,3,3,1.0,3,2,0.6666666666666666,2,1,0,3,3,0.5
+commander_nav_state_override,optimized_q90_w15,3,3,1.0,3,3,1.0,2,0,3,3,3,1.0
+ekf2_innovation_bias,optimized_q90_w15,3,3,1.0,3,3,1.0,3,0,3,3,3,1.0
+inav_local_z_freeze,optimized_q90_w15,3,3,1.0,3,3,1.0,3,0,0,0,0,0.047619047619047616
+land_detector_state_inversion,optimized_q90_w15,3,3,1.0,3,2,0.6666666666666666,1,1,0,3,3,0.5
+commander_nav_state_override,within_flight,3,0,0.0,3,0,0.0,0,0,0,0,0,0.0
+ekf2_innovation_bias,within_flight,3,1,0.3333333333333333,3,1,0.3333333333333333,0,1,1,1,1,0.3333333333333333
+inav_local_z_freeze,within_flight,3,0,0.0,3,0,0.0,0,0,0,0,0,0.0
+land_detector_state_inversion,within_flight,3,2,0.6666666666666666,3,1,0.3333333333333333,0,1,0,2,2,0.3333333333333333

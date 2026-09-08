@@ -1,0 +1,13 @@
+run_id,source,event_maximum
+commander_nav_state_override__2019-01-18__08_39_38__baseline,2019-01-18__08_39_38,4.572563171386719
+ekf2_innovation_bias__2019-01-18__08_39_38__baseline,2019-01-18__08_39_38,1.0815697129860862
+inav_local_z_freeze__2019-01-18__08_39_38__baseline,2019-01-18__08_39_38,1.8043338397126834
+land_detector_state_inversion__2019-01-18__08_39_38__baseline,2019-01-18__08_39_38,0.35596270171793004
+commander_nav_state_override__2019-01-25__17_38_05__baseline,2019-01-25__17_38_05,0.0
+ekf2_innovation_bias__2019-01-25__17_38_05__baseline,2019-01-25__17_38_05,2.049780363925789
+inav_local_z_freeze__2019-01-25__17_38_05__baseline,2019-01-25__17_38_05,0.383341894284285
+land_detector_state_inversion__2019-01-25__17_38_05__baseline,2019-01-25__17_38_05,0.09122200922552581
+commander_nav_state_override__2019-03-06__08_02_26__baseline,2019-03-06__08_02_26,0.0029574445009885957
+ekf2_innovation_bias__2019-03-06__08_02_26__baseline,2019-03-06__08_02_26,26.47158145904541
+inav_local_z_freeze__2019-03-06__08_02_26__baseline,2019-03-06__08_02_26,0.05628964552950494
+land_detector_state_inversion__2019-03-06__08_02_26__baseline,2019-03-06__08_02_26,3.153394055875686

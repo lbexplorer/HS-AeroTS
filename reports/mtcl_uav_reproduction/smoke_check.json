@@ -1,0 +1,11 @@
+{
+  "status": "interface_check_only",
+  "protocol": "chronological",
+  "seed": 0,
+  "source_split": "train",
+  "windows": 4,
+  "finite_loss_and_gradients": true,
+  "test_data_accessed": false,
+  "parameters": 3148478,
+  "torch": "2.8.0+cu128"
+}

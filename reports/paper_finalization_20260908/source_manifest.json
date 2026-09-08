@@ -1,0 +1,196 @@
+{
+  "date": "2026-09-08",
+  "scope": "local content review and revision plan; no manuscript edits, new experiments or external citation verification",
+  "files": [
+    {
+      "path": "paper/main.tex",
+      "sha256": "d6d8fa1af8871bf1838a5a14bede05bafa979faed6a75afda0fe35066f0250b0",
+      "bytes": 20374
+    },
+    {
+      "path": "paper/sections/appendices/appendix_a_semantic_mapping.tex",
+      "sha256": "0cac2dae46cd8b791ed2c18750a1d0b98243567c99872ba2c9b7598d1a65855c",
+      "bytes": 8637
+    },
+    {
+      "path": "paper/sections/appendices/appendix_b_reproducibility_details.tex",
+      "sha256": "1380030aa657e70c989a3eadd1a5edab49c9e9aa0b2edaa7b4f6e4a71d2156a1",
+      "bytes": 2385
+    },
+    {
+      "path": "paper/sections/section_1_introduction/1_introduction.tex",
+      "sha256": "4dc29acedb8db5b12c1f809492fa8beea9792471bf719a973de86cee9c20d677",
+      "bytes": 10307
+    },
+    {
+      "path": "paper/sections/section_2_related_work/2_1_uav_telemetry_anomaly_detection_fault_diagnosis.tex",
+      "sha256": "8192ee1a20518a305e0757095be2fbe6826e26a0d868f5ab797a1d86f763e2ae",
+      "bytes": 4792
+    },
+    {
+      "path": "paper/sections/section_2_related_work/2_2_explainable_time_series_models.tex",
+      "sha256": "f78d58562e14d301ffd4b45ae03184b51397c3100019a88d3d5cd020e4a4567f",
+      "bytes": 4035
+    },
+    {
+      "path": "paper/sections/section_2_related_work/2_3_px4_architecture_aware_diagnostic_evidence.tex",
+      "sha256": "c863c7732cad9b5c1d40b6b364d164d37c8a61419b72eb682838345e0283093b",
+      "bytes": 6477
+    },
+    {
+      "path": "paper/sections/section_3_methodology/3_0_method_overview.tex",
+      "sha256": "47b2dd0b3585f5de199e027da913e33c59511868e678eaf7b311286f755a5104",
+      "bytes": 1963
+    },
+    {
+      "path": "paper/sections/section_3_methodology/3_0_problem_formulation.tex",
+      "sha256": "555d0c9849eb2e6daa18869dba96b517c19d359c18cdcdd657cd50184370a7f5",
+      "bytes": 3721
+    },
+    {
+      "path": "paper/sections/section_3_methodology/3_1_data_preprocessing_feature_representation.tex",
+      "sha256": "0045479371f8ac28d904c0124a4bcf6773b3b2d7a73fcaf7ad2d9b85d06dbdb7",
+      "bytes": 5082
+    },
+    {
+      "path": "paper/sections/section_3_methodology/3_2_hierarchical_anomaly_detection_fault_domain_diagnosis.tex",
+      "sha256": "7acad4b958d15b08bc4694d43cc7017e22d5890cfcdc1566763ccc05cdd72966",
+      "bytes": 3123
+    },
+    {
+      "path": "paper/sections/section_3_methodology/3_3_shap_based_explainable_evidence.tex",
+      "sha256": "378f1f1206be447949ff222eb6ce4f49616e2275e572f47ae900cd3834c21c5a",
+      "bytes": 5011
+    },
+    {
+      "path": "paper/sections/section_3_methodology/3_4_px4_software_module_suspect_ranking.tex",
+      "sha256": "5690c9d24e27fcb9266d364ad040328779edfdcfaff7458c32bc7b4a4058ebb6",
+      "bytes": 4981
+    },
+    {
+      "path": "paper/sections/section_4_experiments_results/4_1_experimental_setup_protocols.tex",
+      "sha256": "e5ba7fb2d5d81d4dd7b6f2fed95fe253d92820bbabef8572609c4f89f0653b25",
+      "bytes": 5379
+    },
+    {
+      "path": "paper/sections/section_4_experiments_results/4_2_evaluation_metrics.tex",
+      "sha256": "46f61a0e1b7c86d8b5951adb68f89bc7f5c60d6a1210678ac09e4dd18f449b1a",
+      "bytes": 4434
+    },
+    {
+      "path": "paper/sections/section_4_experiments_results/4_2_real_telemetry_detection_fault_domain_diagnosis.tex",
+      "sha256": "0bb188e3e7a08ac6398d96ba91d18040421693c6f85a82028fa41ac9b912a028",
+      "bytes": 6211
+    },
+    {
+      "path": "paper/sections/section_4_experiments_results/4_3_shap_evidence_software_module_suspect_ranking.tex",
+      "sha256": "61c44c8f125da0488466855fc7d5e58735a7a84941b011f1c28fd13e17597c27",
+      "bytes": 8850
+    },
+    {
+      "path": "paper/sections/section_4_experiments_results/4_4_strict_external_capability_boundaries.tex",
+      "sha256": "ac3cff82fa86077931cee276a7087e827698d93a151b6b4df83b9c4427de547d",
+      "bytes": 8057
+    },
+    {
+      "path": "paper/sections/section_5_discussion/5_1_principal_findings.tex",
+      "sha256": "435e1c67fdf2007c7b5679cb1dc3fbd4f52d675838f0898eef0e47b9add94b2c",
+      "bytes": 2936
+    },
+    {
+      "path": "paper/sections/section_5_discussion/5_2_hierarchical_model_and_strict_protocols.tex",
+      "sha256": "32788b78025ff6fad653588bce7cc4ae1e96851ec140e94efca4df5853029d28",
+      "bytes": 2873
+    },
+    {
+      "path": "paper/sections/section_5_discussion/5_3_replay_negative_result_and_capability_boundary.tex",
+      "sha256": "6d3eea8b59d0ac21700c1cbedb2cc893b2210c2dc7497cb8ab260664a3cc7273",
+      "bytes": 1935
+    },
+    {
+      "path": "paper/sections/section_5_discussion/5_4_limitations_and_future_work.tex",
+      "sha256": "3b31f60baa8ce23f85d0e269a07b4cc1aa3c9ea18affaa39b546fd2a223b5950",
+      "bytes": 3701
+    },
+    {
+      "path": "paper/sections/section_6_conclusions/6_1_conclusion_summary.tex",
+      "sha256": "45749ae21271df46494a1f5f15e0d390b9f72d38a96dcf24733a9d9d8e2938e5",
+      "bytes": 3114
+    },
+    {
+      "path": "paper/figures/figure_1_hs_aerots_fl_overview.tex",
+      "sha256": "732c17fd4af666d189d22b3ab85482a7e144d5acf45c0f7b24774ae9363074d3",
+      "bytes": 2760
+    },
+    {
+      "path": "reports/p9/stage1_reassessment/README.md",
+      "sha256": "ef9b3310f6186a42686f1a6b66ccaf5fd4beea44e6625190a51654cbabce87e5",
+      "bytes": 12875
+    },
+    {
+      "path": "reports/p9/paired_residual/README.md",
+      "sha256": "dce697e3ec07c4e99e3df563348bded9a10ef8efe975034c4db8293728a9dda5",
+      "bytes": 13611
+    },
+    {
+      "path": "reports/p9/paired_residual/corrected_results/summary.csv",
+      "sha256": "0b3b0683f9784ac9406c5577c28046dba5e82f3f73985ea5d158594909229144",
+      "bytes": 656
+    },
+    {
+      "path": "reports/p9/paired_residual/independent/README.md",
+      "sha256": "b4810bfc2613addbf01855927f6a8db6c6c8dfe92490d49a1626cfbf6cde6edb",
+      "bytes": 9889
+    },
+    {
+      "path": "reports/p9/paired_residual/independent/summary.csv",
+      "sha256": "ca0a392bbeab4e8abed9685f2de4a9193a2ea82a9acd32b07bfcb4fe272b76d2",
+      "bytes": 812
+    },
+    {
+      "path": "reports/p14_within_flight_calibration/README.md",
+      "sha256": "328e45249948618d7a473dacee4bc9f942eba1410bfd5b3688bb670fad74b1e4",
+      "bytes": 13929
+    },
+    {
+      "path": "reports/p15_channel_optimization/README.md",
+      "sha256": "953410e70c616f9ee741a6532ef8551a317619a77636559e00ee69911b8af6d2",
+      "bytes": 9853
+    },
+    {
+      "path": "reports/p15_channel_optimization/all_summaries.csv",
+      "sha256": "8722940d15cfa83583555132ed50fb19a54b5f65353f05d6d61011e2d5e714e6",
+      "bytes": 3290
+    },
+    {
+      "path": "reports/p15_channel_optimization/integrity_check.json",
+      "sha256": "04763e91e9c78c11524d69ec7621f6ed94090007ddd796d7091739eb8dbcef7b",
+      "bytes": 476
+    },
+    {
+      "path": "reports/p13/README.md",
+      "sha256": "9eb78243a059973cdf43ea5b0f299ea111cb3e6267a8494671afb020bd26b257",
+      "bytes": 1234
+    },
+    {
+      "path": "reports/p13/absolute_uncertainty/absolute_metric_cluster_ci.csv",
+      "sha256": "50d8272df4d8bcc0c1ea197265d3bca92a33a4b6fed0eae7541ca200bc9325aa",
+      "bytes": 2197
+    },
+    {
+      "path": "reports/p12/statistics/replay/two_way_cluster_bootstrap.csv",
+      "sha256": "30c32af1f8c3b9c7a663759f466b5499b678defec7e5e4c6b6fc6d8953b37d14",
+      "bytes": 1886
+    },
+    {
+      "path": "paper/README.md",
+      "sha256": "ea731d3eb5008cb2fe0aa16a34c26cc4342baa33dbc39022c9bf183e4fd910d6",
+      "bytes": 2678
+    },
+    {
+      "path": "paper/figures/figure-2-hs-aerots-fl-methodological-pipeline-preview2.png",
+      "sha256": "c0f9f2d0a5e55874d888f8474f8743935d102001331f46c54be610fdc20a5a8e",
+      "bytes": 971396
+    }
+  ]
+}

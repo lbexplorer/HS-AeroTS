@@ -1,0 +1,26 @@
+{
+  "input_hash_checks": {
+    "window_predictions.csv": true,
+    "self_calibration_by_run.csv": true,
+    "protocol.json": true
+  },
+  "targets_checked": 48,
+  "maximum_formula_error": 1.1368683772161603e-12,
+  "causal_gate_mismatches": 0,
+  "threshold_recomputed": 30.691756916624588,
+  "threshold_matches": true,
+  "independent_faults_detected": 3,
+  "independent_normal_alarms": 2,
+  "calibration_windows": [
+    13
+  ],
+  "overlap_fraction": 0.9166666666666666,
+  "diagnostic_only_max_recall_count_at_most_two_normal_alarms": 5,
+  "diagnostic_only_min_normal_alarms_at_least_eight_faults": 3,
+  "implementation_files_present": {
+    "scripts/p14/run_experiment.py": false,
+    "src/hs_aerots/within_flight_gate.py": false,
+    "src/hs_aerots/replay_detection.py": true
+  },
+  "note": "No P14 files changed, no new gate fitted, no replay or SHAP run. Feasibility counts are post-hoc descriptions, not independent performance."
+}

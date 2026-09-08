@@ -1,0 +1,5 @@
+comparator,metric,new_minus_old,source_flights,two_sided_sign_flip_p,interpretation
+frozen,normal_false_alarm_rate,-0.75,3,0.25,"Exploratory cluster diagnostic; three previously examined source flights, not confirmation"
+frozen,fault_recall,-0.75,3,0.25,"Exploratory cluster diagnostic; three previously examined source flights, not confirmation"
+optimized_q90_w15,normal_false_alarm_rate,-0.75,3,0.25,"Exploratory cluster diagnostic; three previously examined source flights, not confirmation"
+optimized_q90_w15,fault_recall,-0.75,3,0.25,"Exploratory cluster diagnostic; three previously examined source flights, not confirmation"

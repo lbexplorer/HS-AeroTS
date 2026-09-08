@@ -1,0 +1,94 @@
+{
+  "status": "preparation_only",
+  "protocols": {
+    "chronological": {
+      "train": {
+        "windows": 152340,
+        "normal_windows": 143329,
+        "logs": 1389
+      },
+      "validation": {
+        "windows": 32138,
+        "normal_windows": 29057,
+        "logs": 1370
+      },
+      "test": {
+        "windows": 34059,
+        "normal_windows": 30457,
+        "logs": 1369
+      },
+      "train_test_log_overlap": 1369
+    },
+    "purged": {
+      "train": {
+        "windows": 133353,
+        "normal_windows": 126725,
+        "logs": 1308
+      },
+      "validation": {
+        "windows": 8536,
+        "normal_windows": 8235,
+        "logs": 415
+      },
+      "test": {
+        "windows": 17966,
+        "normal_windows": 16718,
+        "logs": 826
+      },
+      "train_test_log_overlap": 826
+    },
+    "leave_log_out": {
+      "train": {
+        "windows": 149774,
+        "normal_windows": 139363,
+        "logs": 970
+      },
+      "validation": {
+        "windows": 37324,
+        "normal_windows": 34530,
+        "logs": 206
+      },
+      "test": {
+        "windows": 31439,
+        "normal_windows": 28950,
+        "logs": 213
+      },
+      "train_test_log_overlap": 0
+    }
+  },
+  "input_sha256": {
+    "data\\processed\\p2\\features_original\\group_train.npy": "9a729ce6b132c2e3a94c80bc1e4f2e84a6d3cf2d42cbcf5d477889a834b86c56",
+    "data\\processed\\p2\\features_original\\start_train.npy": "a2219d415d248ead3b420be133b12ec2324d69ae24ee8a691e0c8f1a7e1c1a6f",
+    "data\\processed\\p2\\features_original\\y_train.npy": "5e7285e35a585f87e600cfc00df4f516ec14d7356d621b64e4a9134e88b83d6c",
+    "data\\processed\\p2\\features_original\\group_validation.npy": "40242d94ba69c9cc3c1598e7dd4befe12109cbfddbd1159918b8acb3acab249c",
+    "data\\processed\\p2\\features_original\\start_validation.npy": "e6d0aeb32f315da3687b8fedd378576a6e1c612b32b5eb7eec89c32eae7d930b",
+    "data\\processed\\p2\\features_original\\y_validation.npy": "891c5931e6bbb817305a013561260cd8808ff7cfc8cd63b56f962f6aec1122d2",
+    "data\\processed\\p2\\features_original\\group_test.npy": "f40e4110024ce1fe2948f07edf564b89c09e17017412f3b1f5e2fb9c4a488d45",
+    "data\\processed\\p2\\features_original\\start_test.npy": "6ca22e2b21f3c7b3ebdc46c8b806eb29d0939349944b32687f9fba8e0c612614",
+    "data\\processed\\p2\\features_original\\y_test.npy": "12b661bf9047dba23d148afa97b0545bfa34bddddc7706a1d544888eb9df0398",
+    "data\\processed\\p2\\features_original\\scaler_mean.npy": "b7e92db7c4843280138e271ead26f0bc68deecccfa7d2b3040b4383645ddfe45",
+    "data\\processed\\p2\\features_original\\scaler_std.npy": "62602af2f562410a3674dfd25cd548da8f36b1a7b197553ac09a7ae6e26bbc22",
+    "data\\processed\\p10\\features_purged\\group_train.npy": "d01c7829d769af61bc1fb0ce4c27174202e8663af9765a7bf84a2d1657489352",
+    "data\\processed\\p10\\features_purged\\start_train.npy": "2077c3e9c2611d63bd09552ee8b53c7aecd90db20f28ccfcc2b71a9fa669d068",
+    "data\\processed\\p10\\features_purged\\y_train.npy": "5b7a85056e8ad8176cdd24f4e67e2973686c05ffaff474a20b5a9d0ba37e04d6",
+    "data\\processed\\p10\\features_purged\\group_validation.npy": "839889ee820a480eaa7c82b0ee81d8563a2154e472b83b29580db5cad3118d45",
+    "data\\processed\\p10\\features_purged\\start_validation.npy": "4c2c4c65c32da2ae2e17160ca839d49d34f9e85bc774ebdd638396f6099c2790",
+    "data\\processed\\p10\\features_purged\\y_validation.npy": "850a06c8561e4178fbfadcbed33dde6bcdd81d33b8c72cdc45ec5a3116977a06",
+    "data\\processed\\p10\\features_purged\\group_test.npy": "739514f0d7c5f672c3d63368fae98258f1065aa13e2480f2d97629601264574a",
+    "data\\processed\\p10\\features_purged\\start_test.npy": "6439e518d8f2a9d59700f59f32a52838faad2efa8fa6b25c6e6a7effe06cf615",
+    "data\\processed\\p10\\features_purged\\y_test.npy": "9ca534993bff2cd0255a1f548a0c37be3bc0819e11a7db72701f0f4e2502b06a",
+    "data\\processed\\p10\\features_purged\\scaler_mean.npy": "eea6a1216a606b74e033a2d2ce840c0a7b1db94ab4527308cf21e0ef269621f0",
+    "data\\processed\\p10\\features_purged\\scaler_std.npy": "9ca5dc51dc6e6e78c0a7b88df474c292eb3c8bbf0d849ac931da435472962d83",
+    "data\\processed\\p11\\features_leave_log_out\\group_train.npy": "e934afca53a497f517fd95ee6391477261befb2849086adc56ddf66abb5fdd16",
+    "data\\processed\\p11\\features_leave_log_out\\start_train.npy": "de9f3e7ea6dc091731e6642ca8c47d7f3de9714b9a2fbc7156a56deee38cdbf9",
+    "data\\processed\\p11\\features_leave_log_out\\y_train.npy": "a8d638a0b92b5ecbfa36d62be9ae9bfca2098e810ded5d4561be4070a0697d47",
+    "data\\processed\\p11\\features_leave_log_out\\group_validation.npy": "135b281ae5ebca06cbf44de9ce5350b0d4e37e515ed20fad5dde74730cb81aa5",
+    "data\\processed\\p11\\features_leave_log_out\\start_validation.npy": "38844456358c9dbc26b2a13197a3d3b5bca7dd28865d1fd0759e6a7d1bf368b5",
+    "data\\processed\\p11\\features_leave_log_out\\y_validation.npy": "f43aff323570d7275a5ddfde885c071552db0eed0cfda55f36584c4615a55310",
+    "data\\processed\\p11\\features_leave_log_out\\group_test.npy": "2fa6082a8e80b5bb4f4a2deaa2b96ec55d44529a3c079cf488ac8ff3c6792aae",
+    "data\\processed\\p11\\features_leave_log_out\\start_test.npy": "1770b911de9826673e5b4684afc295ca48781a28778d2def27b3ba663b00625d",
+    "data\\processed\\p11\\features_leave_log_out\\y_test.npy": "701208fdc5e8f6d5ec75f09e46665beb4b541fd5fa29d35e27f484d96c140e0b",
+    "data\\processed\\p11\\features_leave_log_out\\scaler_mean.npy": "4cf1f17c691bb955514e2e82f487ff929eae774aae6f3151ddb6701798b6c074",
+    "data\\processed\\p11\\features_leave_log_out\\scaler_std.npy": "21130976f93d2c86607cefd399a3c2954a576bda5d7c4dad89be7d34ae4e1c33"
+  }
+}

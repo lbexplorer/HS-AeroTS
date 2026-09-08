@@ -5,7 +5,7 @@ HS-AeroTS implements the tasks defined in Section~\ref{sec:problem_formulation} 
 
 \begin{figure}[!t]
     \centering
-    \includegraphics[width=\textwidth]{figures/figure-2-hs-aerots-fl-methodological-pipeline-preview2.png}
-    \caption{Methodological pipeline. Runtime telemetry is transformed into temporal-statistical windows for anomaly detection and conditional fault-domain diagnosis. TreeSHAP evidence is aggregated through the feature--channel--topic--subsystem hierarchy, while a static source-tree graph reconstructed at the majority PX4 firmware commit maps topic evidence to software-module inspection candidates. Ground-truth-anomaly-conditioned and Stage-1-gated evaluations are reported separately. The architecture branch is associative and version-dependent, not causal or deployment-build validated.}
+    \resizebox{\textwidth}{!}{\input{figures/figure_2_method_interfaces}}
+    \caption{Method interfaces. (A) The learned real-flight chain uses Stage 1 screening, conditional Stage 2 diagnosis, and predicted-class SHAP evidence. Channels have separate topic and semantic-domain aggregations; topic evidence supplies the static graph. (B) The separately evaluated paired-replay extension uses independent healthy references and residual evidence with fixed publisher allocation. Ground-truth-anomaly-conditioned analyses of branch A are distinguished from its deployment-style gate. Neither branch validates causal module localization or onboard real-time operation.}
     \label{fig:methodological_pipeline}
 \end{figure}

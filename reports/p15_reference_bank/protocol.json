@@ -1,0 +1,43 @@
+{
+  "threshold": 2.4808009775929616,
+  "calibration_sha256": "884d222e7e7ba7d6870c6a9f174e47b8ccee36e3dfc3c6d4152fec4a16b963bb",
+  "sealed_at_utc": "2026-09-07T11:26:41.373038+00:00",
+  "config": {
+    "status": "protocol_before_collecting_new_healthy_targets",
+    "scope": "paired_two_healthy_reference_bank_exploratory",
+    "reference_members": "existing_baseline_and_existing_independent_normal_replay",
+    "heldout_normal": "newly_executed_third_healthy_replay",
+    "faults": "existing_fault_replay_never_used_for_bank_or_threshold",
+    "frontend": "p15_joint_support_fixed",
+    "channel_distance": "min_distance_to_either_healthy_reference_per_channel_window",
+    "reference_scale": "max_1_q99_channel_distance_between_two_healthy_references",
+    "target_self_fit": false,
+    "event": "same_channel_three_consecutive",
+    "threshold": "max_1_second_largest_development_new_healthy_run_event_maximum",
+    "threshold_transfer_use": false,
+    "ranking": "persistent_channel_excess_to_topic_to_existing_publishers",
+    "onset_in_prediction": false,
+    "retune_after_transfer": false
+  },
+  "faults_used": false,
+  "transfer_targets_used": false,
+  "target_self_fit": false,
+  "normal_reference_budget": "Two existing independent healthy references; newly executed third healthy replay is the held-out target",
+  "scope": "Fresh normal repeats but previously examined source flights and faults; not unseen-flight confirmation",
+  "protected_sha256": {
+    "scripts/p9/run_reference_bank.py": "df1077e7e12bc75bddcf7c4b7004e9bba1baacff7aa12c6511d2dcbcc9373bb0",
+    "scripts/p9/prepare_reference_bank.py": "c7e9ac3a196b596b2a39a341a7db48dc1d9f5b4fe6d98371a58a3ebf552dd7df",
+    "src/hs_aerots/reference_bank.py": "89ec24859bb1fff6ac1358756b923c01c6377fafc18fe1c56d42ede885d4d174",
+    "src/hs_aerots/channel_gate.py": "aebc63c23f0bebe73d37a5d6f9daee3a2157571713d4ff1df9125c8bb4c9f710",
+    "configs/p15_reference_bank.yaml": "4aa42723ffc391fd6285a83f4ec5e8742ac91f9dbf30d2f631a529dfb327663d",
+    "scripts/p9/build_joint_replay_cache.py": "3b649383b9399b85ad33aa3e48e0684495ddbbf42c029eab267b023d45f7835c",
+    "reports/p15_reference_bank/cache_index.csv": "25bab7f91480741fd711328956c17273b3d34aadf9928085c4f0a13701a4d88d",
+    "reports/p15_reference_bank/preregistered_protocol.yaml": "4aa42723ffc391fd6285a83f4ec5e8742ac91f9dbf30d2f631a529dfb327663d",
+    "reports/p14_within_flight_calibration/analysis_checks.json": "d4e90a8cc9443a0cc50954719160205854d1bb44bfed993cb795832dc0fc8e1f",
+    "reports/p14_within_flight_calibration/completion_summary.json": "8a9be014d177797b47f32f70e909baa0ca1e0380f849ad4424765bc0767acfe4",
+    "reports/p14_within_flight_calibration/prediction_freeze.json": "226fcd27ab3b544aaff0e466a1631b33f3d8733b761db2c482b1619a31d16059",
+    "reports/p14_within_flight_calibration/protected_inputs_before.json": "8ee53dc6d7f9c963b2d4159cf19ab1af14ebbe79d038036ed2f3f648abf502c2",
+    "reports/p14_within_flight_calibration/protocol.json": "5537b57482e8c5ea36fb6ae489a011f111292cc0340a8678916997557abbc174",
+    "reports/p14_within_flight_calibration/verification.json": "e28599883e7f976513e376ff8fb6709417fcfdabd17a60f2012e830ab15c709e"
+  }
+}

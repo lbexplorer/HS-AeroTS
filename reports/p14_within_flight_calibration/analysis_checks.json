@@ -1,0 +1,184 @@
+{
+  "independent_calibration_status_all_ok": true,
+  "calibration_window_counts": [
+    13
+  ],
+  "independent_scale_floor_active_runs": 6,
+  "manual_formula_and_causal_three_window_check_passed": true,
+  "historical_comparator_detection_counts_reproduced": true,
+  "timestamp_grid_checks": [
+    {
+      "run_id": "commander_nav_state_override__2018-12-19__07_49_17__fault",
+      "first_window_grid_offset_s": 0.024025999999999215,
+      "regular_grid": true,
+      "calibration_membership_unchanged": true,
+      "detection_membership_unchanged": true
+    },
+    {
+      "run_id": "commander_nav_state_override__2018-12-20__07_47_50__fault",
+      "first_window_grid_offset_s": 0.022316000000000003,
+      "regular_grid": true,
+      "calibration_membership_unchanged": true,
+      "detection_membership_unchanged": true
+    },
+    {
+      "run_id": "commander_nav_state_override__2018-12-25__08_44_40__fault",
+      "first_window_grid_offset_s": 0.024953000000000003,
+      "regular_grid": true,
+      "calibration_membership_unchanged": true,
+      "detection_membership_unchanged": true
+    },
+    {
+      "run_id": "ekf2_innovation_bias__2018-12-19__07_49_17__fault",
+      "first_window_grid_offset_s": 0.02259800000000034,
+      "regular_grid": true,
+      "calibration_membership_unchanged": true,
+      "detection_membership_unchanged": true
+    },
+    {
+      "run_id": "ekf2_innovation_bias__2018-12-20__07_47_50__fault",
+      "first_window_grid_offset_s": 0.01887600000000056,
+      "regular_grid": true,
+      "calibration_membership_unchanged": true,
+      "detection_membership_unchanged": true
+    },
+    {
+      "run_id": "ekf2_innovation_bias__2018-12-25__08_44_40__fault",
+      "first_window_grid_offset_s": 0.024724000000000856,
+      "regular_grid": true,
+      "calibration_membership_unchanged": true,
+      "detection_membership_unchanged": true
+    },
+    {
+      "run_id": "inav_local_z_freeze__2018-12-19__07_49_17__fault",
+      "first_window_grid_offset_s": 0.021414999999999296,
+      "regular_grid": true,
+      "calibration_membership_unchanged": true,
+      "detection_membership_unchanged": true
+    },
+    {
+      "run_id": "inav_local_z_freeze__2018-12-20__07_47_50__fault",
+      "first_window_grid_offset_s": 0.01860100000000031,
+      "regular_grid": true,
+      "calibration_membership_unchanged": true,
+      "detection_membership_unchanged": true
+    },
+    {
+      "run_id": "inav_local_z_freeze__2018-12-25__08_44_40__fault",
+      "first_window_grid_offset_s": 0.02304700000000004,
+      "regular_grid": true,
+      "calibration_membership_unchanged": true,
+      "detection_membership_unchanged": true
+    },
+    {
+      "run_id": "land_detector_state_inversion__2018-12-19__07_49_17__fault",
+      "first_window_grid_offset_s": 0.02612300000000012,
+      "regular_grid": true,
+      "calibration_membership_unchanged": true,
+      "detection_membership_unchanged": true
+    },
+    {
+      "run_id": "land_detector_state_inversion__2018-12-20__07_47_50__fault",
+      "first_window_grid_offset_s": 0.018300999999999235,
+      "regular_grid": true,
+      "calibration_membership_unchanged": true,
+      "detection_membership_unchanged": true
+    },
+    {
+      "run_id": "land_detector_state_inversion__2018-12-25__08_44_40__fault",
+      "first_window_grid_offset_s": 0.024174999999999613,
+      "regular_grid": true,
+      "calibration_membership_unchanged": true,
+      "detection_membership_unchanged": true
+    },
+    {
+      "run_id": "commander_nav_state_override__2018-12-19__07_49_17__baseline",
+      "first_window_grid_offset_s": 0.032557999999999865,
+      "regular_grid": true,
+      "calibration_membership_unchanged": true,
+      "detection_membership_unchanged": true
+    },
+    {
+      "run_id": "commander_nav_state_override__2018-12-20__07_47_50__baseline",
+      "first_window_grid_offset_s": 0.015897999999999968,
+      "regular_grid": true,
+      "calibration_membership_unchanged": true,
+      "detection_membership_unchanged": true
+    },
+    {
+      "run_id": "commander_nav_state_override__2018-12-25__08_44_40__baseline",
+      "first_window_grid_offset_s": 0.016792000000000584,
+      "regular_grid": true,
+      "calibration_membership_unchanged": true,
+      "detection_membership_unchanged": true
+    },
+    {
+      "run_id": "ekf2_innovation_bias__2018-12-19__07_49_17__baseline",
+      "first_window_grid_offset_s": 0.017917000000000627,
+      "regular_grid": true,
+      "calibration_membership_unchanged": true,
+      "detection_membership_unchanged": true
+    },
+    {
+      "run_id": "ekf2_innovation_bias__2018-12-20__07_47_50__baseline",
+      "first_window_grid_offset_s": 0.018490999999999147,
+      "regular_grid": true,
+      "calibration_membership_unchanged": true,
+      "detection_membership_unchanged": true
+    },
+    {
+      "run_id": "ekf2_innovation_bias__2018-12-25__08_44_40__baseline",
+      "first_window_grid_offset_s": 0.020495999999999626,
+      "regular_grid": true,
+      "calibration_membership_unchanged": true,
+      "detection_membership_unchanged": true
+    },
+    {
+      "run_id": "inav_local_z_freeze__2018-12-19__07_49_17__baseline",
+      "first_window_grid_offset_s": 0.029510000000000147,
+      "regular_grid": true,
+      "calibration_membership_unchanged": true,
+      "detection_membership_unchanged": true
+    },
+    {
+      "run_id": "inav_local_z_freeze__2018-12-20__07_47_50__baseline",
+      "first_window_grid_offset_s": 0.02027200000000029,
+      "regular_grid": true,
+      "calibration_membership_unchanged": true,
+      "detection_membership_unchanged": true
+    },
+    {
+      "run_id": "inav_local_z_freeze__2018-12-25__08_44_40__baseline",
+      "first_window_grid_offset_s": 0.01706000000000074,
+      "regular_grid": true,
+      "calibration_membership_unchanged": true,
+      "detection_membership_unchanged": true
+    },
+    {
+      "run_id": "land_detector_state_inversion__2018-12-19__07_49_17__baseline",
+      "first_window_grid_offset_s": 0.03127899999999961,
+      "regular_grid": true,
+      "calibration_membership_unchanged": true,
+      "detection_membership_unchanged": true
+    },
+    {
+      "run_id": "land_detector_state_inversion__2018-12-20__07_47_50__baseline",
+      "first_window_grid_offset_s": 0.018195000000000405,
+      "regular_grid": true,
+      "calibration_membership_unchanged": true,
+      "detection_membership_unchanged": true
+    },
+    {
+      "run_id": "land_detector_state_inversion__2018-12-25__08_44_40__baseline",
+      "first_window_grid_offset_s": 0.01624400000000037,
+      "regular_grid": true,
+      "calibration_membership_unchanged": true,
+      "detection_membership_unchanged": true
+    }
+  ],
+  "timestamp_interval_memberships_unchanged": true,
+  "post_result_threshold_or_parameter_changes": 0,
+  "tests_command": "python -X utf8 -m unittest discover -s tests -p test_within_flight_gate.py -v (PYTHONPATH=src)",
+  "unit_tests_passed": 7,
+  "interpretation": "Normal alarms fall substantially but 9/12 faults are missed; no promotion; no post-test retuning."
+}

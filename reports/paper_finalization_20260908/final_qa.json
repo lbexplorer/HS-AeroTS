@@ -1,0 +1,20 @@
+{
+  "main": {
+    "pages": 32,
+    "sha256": "028a87c6a5c64fbdb9323ec585080d65b97fdcb898ffc5373212b7d21bba48d6",
+    "missing_references": [],
+    "missing_citations": [],
+    "duplicate_labels": [],
+    "overfull_boxes": 0,
+    "undefined_warnings": []
+  },
+  "supplement": {
+    "pages": 6,
+    "sha256": "5f76fc4c812a14605f01078c4dbd9207c293930559d61b0456a10b2049d51b6c",
+    "missing_references": [],
+    "missing_citations": [],
+    "duplicate_labels": [],
+    "overfull_boxes": 0,
+    "undefined_warnings": []
+  }
+}

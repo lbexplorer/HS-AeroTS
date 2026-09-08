@@ -1,0 +1,13 @@
+{
+  "protected_files": 768,
+  "changed_protected_files": [],
+  "upstream_unchanged": true,
+  "ranking_recomputed": false,
+  "shap_recomputed": false,
+  "models_retrained": false,
+  "threshold_tuned_on_independent": false,
+  "threshold": 30.691756916624588,
+  "new_independent_targets": 24,
+  "protocol_sha256": "5537b57482e8c5ea36fb6ae489a011f111292cc0340a8678916997557abbc174",
+  "prediction_seal_sha256": "226fcd27ab3b544aaff0e466a1631b33f3d8733b761db2c482b1619a31d16059"
+}

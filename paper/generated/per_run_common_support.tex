@@ -1,0 +1,26 @@
+\begin{table}[htbp]
+\centering\footnotesize
+\caption{All transfer fault trials under common-support processing.}
+\label{tab:s_runs}
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcccccc}
+\toprule
+Mutation & Source date & Detect & Normal & Pre & Rank & Delay (s)\\
+\midrule
+Commander & 2018-12-19 & Yes & No & No & 1 & 11.624\\
+Commander & 2018-12-20 & Yes & No & No & 1 & 11.622\\
+Commander & 2018-12-25 & Yes & No & No & 1 & 11.625\\
+EKF2 & 2018-12-19 & Yes & Yes & Yes & 1 & 0.423\\
+EKF2 & 2018-12-20 & Yes & Yes & Yes & 1 & 0.419\\
+EKF2 & 2018-12-25 & Yes & Yes & Yes & 1 & 5.225\\
+INAV & 2018-12-19 & No & No & No & -- & --\\
+INAV & 2018-12-20 & No & No & No & -- & --\\
+INAV & 2018-12-25 & Yes & No & No & 2 & 107.623\\
+Land Detector & 2018-12-19 & Yes & No & No & 2 & 11.626\\
+Land Detector & 2018-12-20 & Yes & No & No & 2 & 11.618\\
+Land Detector & 2018-12-25 & Yes & No & No & 2 & 11.624\\
+\bottomrule
+\end{tabular}
+\par\smallskip\parbox{0.98\linewidth}{\scriptsize The 2018-12-20 Commander effect-exclusivity check failed and the trial remains in the denominator. Rank 2 can include a tied publisher. Full source times are identified in Section S1.}
+\end{table}

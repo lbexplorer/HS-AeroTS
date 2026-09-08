@@ -1,0 +1,20 @@
+[
+  {
+    "experiment": "p15_channel_gate",
+    "predictions_verified": 48,
+    "protected_files_verified": 33,
+    "threshold": 10.199277400970459
+  },
+  {
+    "experiment": "p15_joint_support",
+    "predictions_verified": 48,
+    "protected_files_verified": 37,
+    "threshold": 4.572563171386719
+  },
+  {
+    "experiment": "p15_reference_bank",
+    "predictions_verified": 48,
+    "protected_files_verified": 14,
+    "threshold": 2.4808009775929616
+  }
+]

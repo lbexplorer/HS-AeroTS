@@ -1,0 +1,8 @@
+{
+  "Title": true,
+  "Author": true,
+  "AuthorNames": true,
+  "address": true,
+  "corres": true,
+  "firstnote": true
+}

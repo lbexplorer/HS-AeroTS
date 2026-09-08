@@ -1,0 +1,9 @@
+{
+  "sealed_at_utc": "2026-09-07T10:42:22.520709+00:00",
+  "source": "Existing 72 replay outputs; unchanged raw data",
+  "shared_fraction_min": 0.5,
+  "gap_rule": "max(0.1 s, 5 times median gap), both streams must support all 96 window samples",
+  "missing_channel": "No evidence; invalid channel windows explicitly recorded, fault denominators retained",
+  "descriptors": "Original 18 unchanged",
+  "selection": "All 87 channels, no mutation/GT/onset input"
+}

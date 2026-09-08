@@ -1,0 +1,60 @@
+{
+  "status": "complete_negative_result",
+  "threshold": 30.691756916624588,
+  "independent_prediction_passes": 1,
+  "post_independent_tuning_attempts": 0,
+  "ranking_policy": "same primary frozen ranking for all gates",
+  "comparison": [
+    {
+      "gate": "frozen",
+      "fault_runs": "12",
+      "detected_runs": "12",
+      "fault_recall": "1.0",
+      "normal_runs": "12",
+      "normal_false_alarms": "11",
+      "normal_false_alarm_rate": "0.9166666666666666",
+      "pre_onset_alarms": "10",
+      "clean_fault_only_detected": "1",
+      "top1": "6",
+      "top3": "9",
+      "top5": "9",
+      "mrr": "0.636904761904762"
+    },
+    {
+      "gate": "optimized_q90_w15",
+      "fault_runs": "12",
+      "detected_runs": "12",
+      "fault_recall": "1.0",
+      "normal_runs": "12",
+      "normal_false_alarms": "11",
+      "normal_false_alarm_rate": "0.9166666666666666",
+      "pre_onset_alarms": "9",
+      "clean_fault_only_detected": "1",
+      "top1": "6",
+      "top3": "9",
+      "top5": "9",
+      "mrr": "0.636904761904762"
+    },
+    {
+      "gate": "within_flight",
+      "fault_runs": "12",
+      "detected_runs": "3",
+      "fault_recall": "0.25",
+      "normal_runs": "12",
+      "normal_false_alarms": "2",
+      "normal_false_alarm_rate": "0.16666666666666666",
+      "pre_onset_alarms": "0",
+      "clean_fault_only_detected": "2",
+      "top1": "1",
+      "top3": "3",
+      "top5": "3",
+      "mrr": "0.16666666666666666"
+    }
+  ],
+  "paper_modified": false,
+  "promote_gate": false,
+  "paper_recommendation": "negative ablation or supplement, not positive main-method improvement",
+  "upstream_unchanged": true,
+  "unit_tests_passed": 7,
+  "report": "README.md"
+}

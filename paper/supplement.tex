@@ -1,0 +1,104 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=22mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,booktabs,longtable,array,tabularx,graphicx,amsmath,amssymb}
+\usepackage[hidelinks]{hyperref}
+\usepackage{placeins}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\title{Supplementary Material\\\large Hierarchical Runtime Anomaly Diagnosis from Real PX4 Telemetry with Commit-Level Architecture-Aware Inspection Evidence}
+\author{Jiao Wu, Bo Liu, Yilan Li, Chenglie Du and Junsheng Wu}
+\date{Revision of 8 September 2026}
+\begin{document}
+\maketitle
+This supplement retains auxiliary comparisons and execution checks underlying the revised manuscript. It distinguishes the original learned Stage 1--Stage 2--SHAP chain, paired residual detection and evidence, frozen-parameter transfer, and subsequent exploratory analyses. No supervised model was trained or tuned for the manuscript revision. Counts derived from overlapping windows and repeated runs do not imply independent source flights.
+
+\section{Replay Execution Validity and Source Roles}
+
+The historical replay attempt did not complete input publication: the last \texttt{sensor\_combined} timestamps were approximately 9.9--19.4 s, before the planned 30-s injection. The console lacked a replay-completion message and the processes exited with code 137. Endpoint extension produced apparently complete feature sequences despite absent later input. Historical detector recall of 0/12 and onset-conditioned propagation estimates from those runs are therefore archived as execution diagnostics, not valid capability estimates. Their old bootstrap intervals are not used for corrected results.
+
+Staging byte-identical inputs on the WSL local filesystem restored complete publication. A separate time-origin correction retained the valid header origin, followed by exact prefix sensor-payload alignment. For generic EKF2 replay, removing the inappropriate dedicated \texttt{-r} handshake improved quaternion validity from approximately 13.7--19.1\% in the nine old EKF2 records to 100\% in the nine corrected records, without changing the binary. The baseline, fault, and independent-normal conditions all received the same execution correction. Completion and valid coverage are distinct from the mutation-effect check: one Commander trial per source set did not meet the original effect-exclusivity criterion and remains in the primary 12-trial denominator.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Source-flight identities and data roles.}
+\begin{tabular}{lll}
+\toprule ID & Source date and start time & Role\\\midrule
+D1 & 2019-01-18 / 08:39:38 & Development\\
+D2 & 2019-01-25 / 17:38:05 & Development\\
+D3 & 2019-03-06 / 08:02:26 & Development\\
+T1 & 2018-12-19 / 07:49:17 & Frozen transfer, later exploratory\\
+T2 & 2018-12-20 / 07:47:50 & Frozen transfer, later exploratory\\
+T3 & 2018-12-25 / 08:44:40 & Frozen transfer, later exploratory\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+For each source and each of four mutation mechanisms, the corrected main paired protocol has one healthy reference, one fault target, and one independent normal target: 36 selected replay outputs per source group, or 72 across the two groups. Source IDs are shared across conditions. The transfer sources were selected by normal metadata, required-field coverage, distinct dates and lexical order; replay scores were not used in selection. They were new to the replay development set but not to the historical P2 scaler. Thus, only the replay parameter freeze precedes transfer; a globally untouched feature pipeline is not claimed.
+
+The common-support analysis reuses these existing outputs. The two-reference analysis adds 24 healthy runs, one per source--mutation condition across the same six sources. It uses the two older healthy outputs as reference members and the newly executed third healthy output as the normal target. File hashes distinguish each target from its references. This additional budget does not create new source flights or new fault trials.
+
+After constant clock alignment, basic-sensor support bounds the analyzed interval. The common-support frontend records per-channel validity rather than accepting endpoint-filled values as observations. Its transfer valid channel--run window fraction is 83.3\% on average (97.6\% median), and the two-reference variant is 84.7\% (97.6\% median). These percentages summarize channel--run fractions, not independent observations or detection sensitivity. All fault trials remain in the denominator.
+\FloatBarrier
+
+\section{Semantic Agreement and Perturbation Sensitivity}
+
+The document-derived semantic map was defined from topic and field meaning without consulting SHAP values. Eleven assignments differ from the original string rule, including ambiguous yaw and manual-control axis tokens. The complete 87-channel reference is supplied in the article appendix. Shared channels count as non-matches for each specific fault domain. The table below retains all tested $K$ values and categories, including weak agreement.
+\input{generated/semantic_sensitivity}
+
+The main masking figure shows means without uncertainty bars to avoid conflating seed variation and repeated random masks. Across 20 random subsets nested in five model seeds, the paired SHAP-minus-random Macro-F1 decrease was 0.0404 (95\% flight-log CI [0.0102, 0.0713]) at $k=10$ and 0.2646 [0.2052, 0.3300] at $k=100$. Joint-donor replacement produced respective drops of 0.0516 [0.0277, 0.0752] and 0.4955 [0.4604, 0.5283]. The reference map is not expert-adjudicated physical ground truth, and donor replacement may still produce off-manifold combinations with unreplaced features.
+\FloatBarrier
+
+\section{Corrected Development Comparisons}
+
+All three columns below use the corrected reference, fault and independent-normal outputs. The learned Stage 1 model and its original validation threshold remain unchanged. Replacing the detector alone does not give the same module ranking as replacing both the detector and its evidence source. These comparisons retain the full set of trials, including the Commander D1 effect-exclusivity failure.
+\input{generated/development_comparison}
+
+The residual calibration for a development target excludes that target's source and all its conditions, fitting noise and a sustained-event threshold on eight healthy pairs from the other two sources. The first transfer evaluation reuses one pre-existing calibration rather than refitting on transfer targets. The primary threshold is 26.47158145904541; its noise vector and numerical threshold were frozen together. The other frozen calibrations are sensitivities, not candidates selected by transfer scores.
+\input{generated/frozen_fold_sensitivity}
+\FloatBarrier
+
+\section{Transfer Mutation and Run Results}
+
+The following tables use the common-support frontend and the frozen paired-residual gate. The modified frontend was evaluated after inspecting the transfer sources and is an exploratory analysis. Normal alarms cover the whole available target replay. Fault detections count post-onset alarms, with pre-onset alarms separately recorded. All-gated-window ranking is offline, and delay is defined only for detected trials.
+\input{generated/mutation_comparison}
+\input{generated/per_run_common_support}
+
+The baseline Commander T2 trajectory itself entered the target navigation state sufficiently often to fail the original effect-exclusivity check. Keeping this case in the denominator prevents favorable deletion, but its detection is not counted as unambiguous causal evidence. For EKF2, the coexistence of all three normal alarms and all three pre-onset fault alarms undermines an interpretation of its post-onset recall as recognizing the injected bias. The single INAV detection occurs late, and the other two misses have no assigned finite delay. Land Detector and INAV can share their publisher evidence with another module, so worst-tie rank 2 denotes a candidate set rather than unique identification.
+\FloatBarrier
+
+\section{Complete Calibration and Reference Ablations}
+
+\subsection*{Channel calibration and common-support calibration}
+All 87 channels receive the same rule. The maximum of the 18 noise-normalized descriptor residuals forms a channel score. Its center is the median of healthy-run medians; its scale is the largest per-run 99th percentile minus that center, with a floor of 1. Positive standardized scores must persist for three consecutive windows in the same channel before an OR gate opens. Excess over threshold is maximized within each topic, averaged over gated windows, and allocated over the frozen publishers.
+
+Thresholds use the second-largest leave-source-out healthy-run sustained maximum, with a floor of 1. The original-cache threshold is 10.199277400970459 and the common-support threshold 4.572563171386719. Deployment center and scale use all development healthy pairs, whereas the threshold uses leave-source-out scores. This finite-sample fitting mismatch is retained, and development normal performance is not independent validation. Neither fault outcomes nor transfer targets fit these parameters.
+
+\subsection*{Two healthy references}
+Each channel--window uses the minimum valid distance to either of two independent healthy references. The channel scale is their healthy--healthy 99th-percentile distance with a floor of 1; fewer than three valid calibration windows makes that channel unavailable. The same three-window persistence is applied. The threshold, 2.4808009775929616, is the second-largest event maximum over the 12 newly executed development normal targets, with a floor of 1. Transfer normal targets do not fit it. Both the single-reference comparator and bank method are evaluated on the same newly executed normal target set.
+
+\input{generated/all_ablations_development}
+\input{generated/all_ablations_transfer}
+
+In these tables, Channel means the original paired feature cache with channel calibration; Common adds common-support feature construction; Bank uses the new normal targets and two healthy references. Frozen paired denotes the original paired-residual gate, not the learned LightGBM detector. New gate / fixed rank changes detection but retains the comparator's pre-existing whole-run ranking; New gate / new rank uses the associated calibrated evidence. The fixed-rank rows isolate gating availability and do not estimate localization at the new alarm time. The transfer bank's 10/12 normal alarms are compared with 3/12 from the single-reference comparator on those same targets.
+\FloatBarrier
+
+\subsection*{Within-flight calibration and alarm exposure}
+The within-flight branch compresses topic residuals into a single global score, estimates its median and MAD from the fixed 15--25-s interval, and begins detection at 30 s. The scale is the maximum of $1.4826\,\mathrm{MAD}$, $0.05|\mathrm{median}|$ and 0.05; the positive standardized score uses a development-normal threshold of 30.6918 (the full-precision value is retained in the frozen calibration) and three-window persistence. Only 13 strongly overlapping calibration windows are available. The 30-s detection start coincides with the experimental injection schedule, so zero pre-onset alarms cannot validate autonomous onset recognition. Scores and fixed offline ranks are not re-estimated using the target mutation label.
+\input{generated/p14_full}
+\input{generated/p14_post30}
+
+The q90 gate in this comparison uses its existing 15-s warm-up and the original fixed offline ranks solely for the gate comparison. Its historical SHAP-based evidence variant had different ranking metrics (Top-1/3/5 of 4/12, 5/12 and 5/12; MRR 0.4116), which are not interchangeable with the fixed-rank rows. Under common post-30-s exposure, the within-flight method and frozen paired comparator each have only 2/12 clean fault-specific detections. Accordingly, the reduction in reported normal alarms does not establish an improvement in overall diagnostic specificity at a comparable recall.
+\FloatBarrier
+
+\section{Resource-Limited References and Reproducibility}
+
+The CATCH execution uses its official core, 87 raw channels and the fixed chronological windows, but a normal-only objective with 4096 sampled training windows, two epochs and three seeds. It yielded AUPRC $0.2094\pm0.0038$, AUROC $0.7318\pm0.0052$, validation-threshold F1 $0.2992\pm0.0038$, and log-aware event F1 $0.2537\pm0.0040$. The GCAD-inspired reference is a single ridge-regularized linear VAR(1) score fitted on 8192 normal windows and yielded AUPRC 0.1991. It is not the published nonlinear GCAD architecture. These budgets and objectives differ from supervised LightGBM and do not support state-of-the-art comparison.
+
+The manuscript revision reads frozen result tables; it does not rerun these baselines, fit calibration parameters, or execute replay. Source SHA-256 records and exact unrounded table rows accompany the local revision package. The main transfer table is derived from the transfer/original-primary rows of the original-cache and common-support reports. Corrected development comparisons come from the corrected paired-result summary, not the earlier native-replay reassessment. Semantic agreement comes from the document-derived mapping report. P14 comparisons retain the original exposure and post-30 exposure as distinct tables. Original experiment files and historical manuscript sources are retained separately.
+
+The analysis package separates raw data, intermediate caches, frozen predictions, and generated presentation files. Generating the manuscript tables and figure from the local frozen reports uses the script \path{paper/generate_revision_assets.py}; compiling the article and this supplement uses their separate LaTeX entry points. The fixed feature/model protocol and the 87-channel semantic map remain in the main appendices. Access to large raw replay outputs and trained model files must not be inferred from the presence of public summary tables.
+\end{document}

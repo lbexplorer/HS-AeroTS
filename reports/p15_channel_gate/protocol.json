@@ -1,0 +1,88 @@
+{
+  "config": {
+    "status": "fixed_before_new_predictions",
+    "scope": "exploratory_transfer_on_previously_examined_sources",
+    "frontend": "existing_primary_feature_noise_original_descriptors",
+    "channel_count": 87,
+    "within_channel_aggregation": "max_original_18_descriptors",
+    "normal_location": "median_of_normal_run_medians",
+    "normal_scale": "max_per_run_q99_minus_location",
+    "normal_scale_floor": 1.0,
+    "normal_quantile": 0.99,
+    "consecutive_windows": 3,
+    "threshold_rule": "max_1_second_largest_leave_source_out_normal_run_maximum",
+    "fit_sources": "original_three_development_sources_only",
+    "target_self_calibration": false,
+    "detection_start": "first_three_available_windows",
+    "onset_in_prediction": false,
+    "mapping": "existing_54_candidates_publisher_uniform",
+    "ranking": "positive_persistent_channel_excess_max_per_topic_then_publisher",
+    "confirmatory": false
+  },
+  "threshold": 10.199277400970459,
+  "sealed_at_utc": "2026-09-07T10:37:23.462418+00:00",
+  "folds": [
+    {
+      "heldout_source": "2019-01-18__08_39_38",
+      "fit_sources": [
+        "2019-01-25__17_38_05",
+        "2019-03-06__08_02_26"
+      ]
+    },
+    {
+      "heldout_source": "2019-01-25__17_38_05",
+      "fit_sources": [
+        "2019-01-18__08_39_38",
+        "2019-03-06__08_02_26"
+      ]
+    },
+    {
+      "heldout_source": "2019-03-06__08_02_26",
+      "fit_sources": [
+        "2019-01-18__08_39_38",
+        "2019-01-25__17_38_05"
+      ]
+    }
+  ],
+  "calibration_sha256": "ee0af904abc3979eade2b861aec1d1ef48365ebcd2c92809746cd737c939e2b9",
+  "faults_used": false,
+  "transfer_data_used": false,
+  "detection_schedule": "First three available windows; no onset gating or target self-calibration",
+  "scope": "Previously examined transfer flights; exploratory, not independent confirmation",
+  "deployment_scale": "All development normals; threshold from leave-source-out normals; limited-sample crossfit/deployment mismatch disclosed",
+  "protected_sha256": {
+    "src/hs_aerots/paired_replay.py": "b367f0af9dfb2595e26745d0054135715c164710352229263e4ffc91c32acf83",
+    "src/hs_aerots/replay_detection.py": "31e9aa3bc4abe2515bd3b90a9e70852147042f1f4eae5310e60ff72c3bc467af",
+    "src/hs_aerots/channel_gate.py": "aebc63c23f0bebe73d37a5d6f9daee3a2157571713d4ff1df9125c8bb4c9f710",
+    "scripts/p9/run_channel_experiment.py": "95f5e190ab1ae70bff486b04bf0da52a588c0f4dc2c0b1adefa57b9ba25625eb",
+    "configs/p15_channel_gate.yaml": "34c3e7d2a0f00013016194d226922561ba7001fe37e985e083e40fca7f43dce8",
+    "reports/p9/paired_residual/independent/sealed/noise_2019-01-18__08_39_38.npy": "cc3261f5832924fa4cc3308e7c6b90d983e70865df73ea7bc54c95839596b8f9",
+    "reports/p9/paired_residual/independent/sealed/noise_2019-01-25__17_38_05.npy": "e053cdbec2654ea864ef35a68e6080aabb27aa32970727c8582d4ed6d1138e2f",
+    "reports/p9/paired_residual/independent/sealed/noise_2019-03-06__08_02_26.npy": "ca3a8a88c63dca5fbd036570e3caa490ce90bee58b62ff6677e46ff40d2a8688",
+    "reports/p9/paired_residual/independent/sealed/scaler_mean.npy": "b7e92db7c4843280138e271ead26f0bc68deecccfa7d2b3040b4383645ddfe45",
+    "reports/p9/paired_residual/independent/sealed/scaler_std.npy": "62602af2f562410a3674dfd25cd548da8f36b1a7b197553ac09a7ae6e26bbc22",
+    "reports/p9/paired_residual/independent/sealed/feature_dictionary.csv": "bf771c3efd3695c90cbb3a80d0983c21eb6cf24f0cd2e5343e8c7201781f96e1",
+    "reports/p9/paired_residual/independent/sealed/topic_module_mapping.csv": "de8d59bdfc2596e81e1ed63e1f9ef5b33ef0b4e65348b462a62c4f6f31b50be0",
+    "reports/p9/paired_residual/independent/sealed/modules.json": "5c7b32ef4479cd501f55cdfeb870fd3a34e6dc77be64b0bfc447d2f65997a2e1",
+    "reports/p14_within_flight_calibration/analysis_checks.json": "d4e90a8cc9443a0cc50954719160205854d1bb44bfed993cb795832dc0fc8e1f",
+    "reports/p14_within_flight_calibration/comparison_by_mutation.csv": "0f6dc2bbb581767e76bdc4dab203495c2b6fdee445e4616633bfbf331dbae8d5",
+    "reports/p14_within_flight_calibration/comparison_by_source.csv": "e10c3c35e19e13f2f729572ae89907ec2576584631ac707f13d8adad3906afdb",
+    "reports/p14_within_flight_calibration/comparison_fixed_rank.csv": "ecbafc119fdc15ef204bef6e23bd83246b51730546eae730b817b082cb8935df",
+    "reports/p14_within_flight_calibration/comparison_post30_common_exposure.csv": "fe13ff7ff82df18312c6242327bdb4358a6a32e07513f0408f8f91ce56faf77d",
+    "reports/p14_within_flight_calibration/completion_summary.json": "8a9be014d177797b47f32f70e909baa0ca1e0380f849ad4424765bc0767acfe4",
+    "reports/p14_within_flight_calibration/development_normal_calibration.csv": "bd223b8e27bb5e1be78f53c635fec60ddee495c3169051cdeb42c8eb8238b10e",
+    "reports/p14_within_flight_calibration/development_results_by_run.csv": "d673decf2278f0c9f9d7311d8e1ad0fef0ff80e57a9946f621e94245e7ded79d",
+    "reports/p14_within_flight_calibration/development_summary.csv": "2f616bbe7a59bff7338b68c14d643a66ff78c64d702a9ffa59d99b4d07feba6c",
+    "reports/p14_within_flight_calibration/failure_analysis_by_run.csv": "2ee0f1929cf77690fde45ad6fe347e925d13f2035259e34119e30a6dd92f0692",
+    "reports/p14_within_flight_calibration/historical_published_metrics.csv": "b67e1534afffd3188c2390ec18a3b303fa24beeca6e63401762b12f0d92586dc",
+    "reports/p14_within_flight_calibration/prediction_freeze.json": "226fcd27ab3b544aaff0e466a1631b33f3d8733b761db2c482b1619a31d16059",
+    "reports/p14_within_flight_calibration/protected_inputs_before.json": "8ee53dc6d7f9c963b2d4159cf19ab1af14ebbe79d038036ed2f3f648abf502c2",
+    "reports/p14_within_flight_calibration/protocol.json": "5537b57482e8c5ea36fb6ae489a011f111292cc0340a8678916997557abbc174",
+    "reports/p14_within_flight_calibration/README.md": "328e45249948618d7a473dacee4bc9f942eba1410bfd5b3688bb670fad74b1e4",
+    "reports/p14_within_flight_calibration/results_by_run.csv": "22f8426da5052f91e049f527111f2fe153ef9fc3a5fdf503322a0c894b7b4d55",
+    "reports/p14_within_flight_calibration/self_calibration_by_run.csv": "81f777f2028253e725ce3fe4e8165fecf09df901213f2fba6a3d5743117b1dae",
+    "reports/p14_within_flight_calibration/source_cluster_comparison.csv": "4e86573242ce379f69f0ed2027188d2453c91f9aca2a89f207860d8910c7f4ff",
+    "reports/p14_within_flight_calibration/verification.json": "e28599883e7f976513e376ff8fb6709417fcfdabd17a60f2012e830ab15c709e",
+    "reports/p14_within_flight_calibration/window_predictions.csv": "aeab6f9a92bc945192ae16e0e6a01c90456dcbdc2823723dbc3ce60744148df3"
+  }
+}

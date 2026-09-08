@@ -1,0 +1,17 @@
+\begin{table}[htbp]
+\centering\footnotesize
+\caption{All calibrations frozen before the first transfer replay.}
+\label{tab:s_folds}
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcccccc}
+\toprule
+Excluded development date & Primary & Detect & Normal & Pre & T1/T3/T5 & MRR\\
+\midrule
+2019-01-18 & Yes & 12 & 11 & 10 & 6/9/9 & 0.6369\\
+2019-01-25 & No & 12 & 11 & 8 & 6/9/10 & 0.6675\\
+2019-03-06 & No & 12 & 11 & 11 & 6/9/12 & 0.6750\\
+\bottomrule
+\end{tabular}
+\par\smallskip\parbox{0.98\linewidth}{\scriptsize All count denominators are 12. The primary calibration was selected before transfer using the largest numerical threshold and its associated noise vector, not transfer outcomes.}
+\end{table}
