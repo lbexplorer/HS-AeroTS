@@ -43,6 +43,12 @@ reports/paper_finalization_20260908/pre_revision_manuscript.zip
 
 # Generated manuscript build files
 paper/build/
+!paper/build/
+paper/build/*
+!paper/build/HS-AeroTS_Drones_revision_v1.9.pdf
+!paper/build/packages/
+!paper/build/packages/HS-AeroTS_revision_v1.1_sources.zip
+!paper/build/packages/HS-AeroTS_revision_v1.9_sources.zip
 paper/*.aux
 paper/*.out
 paper/*.log
