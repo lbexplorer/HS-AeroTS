@@ -64,30 +64,25 @@ $^{3}$ \quad Xi'an University of Technology, Xi'an, Shaanxi, China}
 \input{sections/section_2_related_work/2_3_px4_architecture_aware_diagnostic_evidence}
 
 \section{Materials and Methods}
-\input{sections/section_3_methodology/3_0_problem_formulation}
-\input{sections/section_3_methodology/3_0_method_overview}
-\input{sections/section_3_methodology/3_1_data_preprocessing_feature_representation}
-\input{sections/section_3_methodology/3_2_hierarchical_anomaly_detection_fault_domain_diagnosis}
-\input{sections/section_3_methodology/3_3_shap_based_explainable_evidence}
-\input{sections/section_3_methodology/3_4_px4_software_module_suspect_ranking}
-\input{sections/section_3_methodology/3_5_paired_replay_extension}
+\input{sections/section_3_methodology/3_1_problem_formulation}
+\input{sections/section_3_methodology/3_2_telemetry_representation_and_hierarchical_diagnosis}
+\input{sections/section_3_methodology/3_3_explainable_evidence_and_architecture_aware_inspection}
+\input{sections/section_3_methodology/3_4_paired_replay_extension}
 
-\section{Experiments and Results}
-\input{sections/section_4_experiments_results/4_1_experimental_setup_protocols}
-\input{sections/section_4_experiments_results/4_2_evaluation_metrics}
-\input{sections/section_4_experiments_results/4_2_real_telemetry_detection_fault_domain_diagnosis}
-\input{sections/section_4_experiments_results/4_3_shap_evidence_software_module_suspect_ranking}
-\input{sections/section_4_experiments_results/4_4_strict_external_capability_boundaries}
-\input{sections/section_4_experiments_results/4_5_controlled_paired_replay}
+\section{Experimental Results}
+\input{sections/section_4_experiments_results/4_1_experimental_setup}
+\input{sections/section_4_experiments_results/4_2_evaluation_metrics_and_statistical_analysis}
+\input{sections/section_4_experiments_results/4_3_anomaly_detection_and_fault_domain_diagnosis}
+\input{sections/section_4_experiments_results/4_4_diagnostic_evidence_and_architecture_aware_inspection}
+\input{sections/section_4_experiments_results/4_5_generalization_and_controlled_validation}
 
 \section{Discussion}
-\input{sections/section_5_discussion/5_1_principal_findings}
-\input{sections/section_5_discussion/5_2_hierarchical_model_and_strict_protocols}
-\input{sections/section_5_discussion/5_3_replay_negative_result_and_capability_boundary}
-\input{sections/section_5_discussion/5_4_limitations_and_future_work}
+\input{sections/section_5_discussion/5_1_interpretation_of_main_findings}
+\input{sections/section_5_discussion/5_2_engineering_implications_and_controlled_replay}
+\input{sections/section_5_discussion/5_3_limitations_and_future_work}
 
 \section{Conclusions}
-\input{sections/section_6_conclusions/6_1_conclusion_summary}
+\input{sections/section_6_conclusions/6_conclusions}
 
 \supplementary{Supplementary Material: corrected replay validity and source roles; semantic-map sensitivity; corrected development comparisons; transfer per-mutation and per-run results; complete calibration and reference ablations; resource-limited baselines and reproducibility details.}
 
@@ -95,15 +90,9 @@ $^{3}$ \quad Xi'an University of Technology, Xi'an, Shaanxi, China}
 \funding{This research received no external funding.}
 \institutionalreview{Not applicable.}
 \informedconsent{Not applicable.}
-\dataavailability{The UAV-SEAD data used for the primary experiments and weak-label screening are publicly available from Hugging Face at \url{https://huggingface.co/datasets/aykutkabaoglu/uav-flight-anomaly-dataset} under the Creative Commons Attribution 4.0 International license; the analyses used repository revision \texttt{\seqsplit{774a336a1d1d06b248927a35c2ea1f6869e9e1a4}}. The processed ALFA data used for zero-shot external validation are publicly available from Figshare at \url{https://figshare.com/articles/dataset/12707963} (article 12707963, file 24095870) under the Creative Commons Attribution 4.0 International license. The controlled replay experiments used PX4-Autopilot source code at commit \texttt{\seqsplit{82aa24adfca29321cfd1209e287eab6c2b16780e}}, available at \url{https://github.com/PX4/PX4-Autopilot/commit/82aa24adfca29321cfd1209e287eab6c2b16780e}. No new primary flight data were collected. The accompanying Supplementary Material reports corrected replay protocols, complete auxiliary comparisons, and per-trial outcomes. The public analysis repository at \url{https://github.com/lbexplorer/HS-AeroTS}, checked on 8 September 2026 at commit \texttt{\seqsplit{264d1f70ef78bba19d56eed1b8b9fd679056db84}}, contains selected code and corrected P9 summaries. The subsequent common-support (P15) artifacts and this manuscript revision were not present at that public commit; their result tables and source manifest accompany the revision package. Raw replay outputs and trained model files are not implied to be included by this repository reference. The article and appendices provide the complete semantic mapping, software versions, exclusion rules, split counts, and statistical settings. Requests for additional artifacts remain subject to the underlying data and software licenses.}
+\dataavailability{The UAV-SEAD data used for the primary experiments and weak-label screening are publicly available from Hugging Face at \url{https://huggingface.co/datasets/aykutkabaoglu/uav-flight-anomaly-dataset} under the Creative Commons Attribution 4.0 International license; the analyses used repository revision \texttt{\seqsplit{774a336a1d1d06b248927a35c2ea1f6869e9e1a4}}. The processed ALFA data used for zero-shot external validation are publicly available from Figshare at \url{https://figshare.com/articles/dataset/12707963} (article 12707963, file 24095870) under the Creative Commons Attribution 4.0 International license. The controlled replay experiments used PX4-Autopilot source code at commit \texttt{\seqsplit{82aa24adfca29321cfd1209e287eab6c2b16780e}}, available at \url{https://github.com/PX4/PX4-Autopilot/commit/82aa24adfca29321cfd1209e287eab6c2b16780e}. No new primary flight data were collected. The accompanying Supplementary Material reports corrected replay protocols, complete auxiliary comparisons, and per-trial outcomes. The analysis code, raw replay outputs, trained model files, and related generated artifacts are not publicly released. The article and supplementary materials provide the available semantic mapping, software versions, exclusion rules, split counts, and statistical settings. Requests for additional artifacts remain subject to the underlying data and software licenses.}
 \acknowledgments{During the preparation of this manuscript and study, the authors used OpenAI Codex during August--September 2026 to assist with analysis and replay-experiment code, result interpretation, manuscript revision, and figure preparation. The authors executed and checked the analyses, reviewed and edited the output, and take full responsibility for the content of this publication. No individuals or organizations are otherwise acknowledged.}
 \conflictsofinterest{The authors declare no conflicts of interest.}
-
-\appendixtitles{yes}
-\appendixstart
-\appendix
-\input{sections/appendices/appendix_a_semantic_mapping}
-\input{sections/appendices/appendix_b_reproducibility_details}
 
 \reftitle{References}
 \begin{thebibliography}{999}

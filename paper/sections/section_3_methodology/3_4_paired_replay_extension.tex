@@ -1,0 +1,69 @@
+\subsection{Matched-Reference Residual Extension for Controlled Replay}
+\label{sec:paired_replay_method}
+
+The real-flight annotations provide anomaly intervals and fault-domain labels, but they do not identify faulty PX4 source modules. To obtain source-level references under controlled conditions, HS-AeroTS therefore includes a matched-reference replay extension. For each replay target, an independently generated healthy replay from the same source flight is used as a reference. The extension retains the telemetry representation and PX4 topic-to-module mapping of the main framework, but replaces the learned anomaly score and TreeSHAP evidence with paired residual evidence. Mutation type, injection time, and ground-truth module identity are not used as prediction inputs.
+
+Let $f^{\mathrm{tar}}_{w,j}$ and $f^{\mathrm{ref}}_{w,j}$ denote feature $j$ of the target and matched healthy-reference windows, respectively. Their absolute residual is
+\begin{equation}
+d_{w,j}
+=
+\left|
+f^{\mathrm{tar}}_{w,j}
+-
+f^{\mathrm{ref}}_{w,j}
+\right|.
+\label{eq:paired_residual}
+\end{equation}
+
+Because different telemetry features exhibit different levels of replay-to-replay variation, each residual is normalized using a feature-specific noise scale estimated from independent healthy replay pairs. For feature $j$,
+\begin{equation}
+n_j
+=
+\max
+\left\{
+Q_{0.99}\left(d^{\mathrm{healthy}}_{\cdot,j}\right),
+\delta
+\right\},
+\label{eq:replay_noise_scale}
+\end{equation}
+where $Q_{0.99}(\cdot)$ denotes the empirical 99th percentile and $\delta$ is a small lower bound used to avoid unstable normalization. For uORB topic $t$, the window-level residual evidence is defined as
+\begin{equation}
+r_{w,t}
+=
+\max_{j\in\mathcal{F}(t)}
+\frac{d_{w,j}}{n_j},
+\label{eq:topic_residual_evidence}
+\end{equation}
+where $\mathcal{F}(t)$ denotes the features associated with topic $t$. The corresponding global replay score is
+\begin{equation}
+s_w
+=
+\max_{t} r_{w,t}.
+\label{eq:global_replay_score}
+\end{equation}
+
+A replay is considered abnormal only when the global score exceeds a calibration threshold $\theta$ for three consecutive windows. The threshold and feature-specific noise scales are estimated from healthy development replays and frozen before transfer evaluation. This persistence requirement suppresses isolated residual spikes while preserving sustained deviations between the target and its matched healthy reference.
+
+For the set of gated windows $\mathcal{G}$, topic-level residual evidence is aggregated as
+\begin{equation}
+R_t
+=
+\frac{1}{|\mathcal{G}|}
+\sum_{w\in\mathcal{G}}
+\max\left(r_{w,t}-\theta,0\right).
+\label{eq:replay_topic_evidence}
+\end{equation}
+
+The resulting topic evidence is propagated to PX4 software modules using the same architecture-aware allocation principle as the main evidence chain. Under producer-oriented propagation, the replay-based module score is
+\begin{equation}
+S_m
+=
+\sum_{\substack{t:\,m\in\mathcal{M}^{(\mathrm{prod})}(t)}}
+\frac{R_t}{|\mathcal{M}^{(\mathrm{prod})}(t)|}.
+\label{eq:paired_module}
+\end{equation}
+Modules are ranked according to $S_m$, yielding an offline source-tree inspection list for the replay trial. If no window satisfies the replay gate, the corresponding topic and module evidence remains zero.
+
+A key source of false replay residuals is inconsistent observation support between the target and reference streams. To reduce this effect, the common-support frontend restricts residual computation to telemetry samples that are supported by both replay streams. Shared source-clock timestamps are used where available, endpoint extrapolation is prohibited, and large interpolation gaps are excluded. A channel window that lacks sufficient support in either stream is marked unavailable rather than interpreted as normal evidence. The residual definition, calibration parameters, gating rule, and module-propagation mechanism otherwise remain unchanged.
+
+The matched-reference extension is therefore separate from the learned Stage 1--Stage 2--TreeSHAP pipeline. Its purpose is to provide a controlled setting in which telemetry deviations and module-ranking behavior can be examined against known source-level mutations while retaining the same telemetry and PX4 architectural representations.

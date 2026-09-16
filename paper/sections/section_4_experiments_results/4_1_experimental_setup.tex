@@ -1,0 +1,29 @@
+\subsection{Experimental Setup}
+\label{sec:experimental_protocols}
+
+The experiments were designed to evaluate HS-AeroTS-FL on real UAV telemetry from three complementary perspectives: runtime anomaly detection and fault-domain diagnosis, the reliability of the resulting diagnostic evidence, and architecture-aware software-module suspect ranking. UAV-SEAD was used as the primary dataset for model development and evaluation, while ALFA and controlled PX4 replay were used for external anomaly-detection validation and source-level mutation analysis, respectively. Each dataset was used according to its available annotation scope, and no cross-dataset fault-domain mapping was introduced.
+
+For UAV-SEAD, the telemetry signals were aligned to 10 Hz and represented by 87 retained channels. Sliding windows of 96 samples with a stride of 8 were used throughout the main experiments, corresponding to 9.6 s of telemetry per window. Three data-partition protocols were considered to examine the influence of temporal dependence and cross-flight generalization. The fixed chronological protocol preserves the temporal order within each flight and serves as the basic experimental setting. The purged protocol further removes windows around split boundaries to reduce the influence of temporally adjacent samples. The strictest protocol adopts leave-log-out partitioning, where complete flight logs are assigned to mutually exclusive training, validation, and test sets. This setting contains 970 training, 206 validation, and 213 test flight logs and is used as the primary protocol for evaluating cross-flight generalization.
+
+For binary anomaly detection, HS-AeroTS-FL was compared with both conventional machine-learning and recent deep-learning baselines. Random Forest was included as a supervised ensemble baseline under the same UAV-SEAD partition. MTCL-UAV was further introduced as a recent UAV-specific deep anomaly-detection method \cite{hu2025mtcl}. It employs adaptive multiscale Transformer modeling based on sparse mixture-of-experts routing and contrastive learning, and detects abnormal samples according to reconstruction errors. To ensure a controlled comparison, MTCL-UAV was adapted to the same UAV-SEAD leave-log-out split and received the same 10 Hz, 87-channel telemetry with a sequence length of 96. Following its original normal-only training paradigm, only normal windows from the training partition were used for optimization. Data normalization was fitted exclusively on the training data, while the anomaly threshold was selected using the validation partition and then fixed for final test evaluation.
+
+The MTCL-UAV implementation retained the principal architecture and hyperparameter settings reported in the original study, including three sparse MoE blocks, four expert networks per block, Top-2 routing, an embedding dimension of 16, and the original multiscale patch pool. The model was optimized using Adam with a learning rate of $1\times10^{-4}$. To accommodate the available GPU memory, the batch size was set to 8, with automatic mixed-precision training and gradient accumulation. These changes affected the training configuration but did not modify the core MTCL-UAV architecture. Five random seeds were used for the final evaluation.
+
+For fault-domain diagnosis, the Stage 2 LightGBM classifier was evaluated against Random Forest and simple statistical reference predictors. A Direct Five-Class classifier was also included to directly distinguish Normal and the four fault domains, providing a non-hierarchical reference for the two-stage diagnostic organization. ALFA was used only for external binary anomaly-detection evaluation because its fault definitions are not directly aligned with the four UAV-SEAD fault domains. Controlled PX4 replay was evaluated independently and used only to assess software-module suspect rankings under known source-level mutations.
+
+\begin{table}[H]
+\caption{UAV-SEAD data-partition protocols used for model evaluation.}
+\label{tab:protocol}
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.14}
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{2.35cm} >{\RaggedRight\arraybackslash}p{4.35cm} >{\RaggedRight\arraybackslash}p{4.05cm} >{\RaggedRight\arraybackslash}X@{}}
+\toprule
+\textbf{Protocol} & \textbf{Train / Validation / Test} & \textbf{Isolation strategy} & \textbf{Evaluation role}\\
+\midrule
+Fixed chronological & 152,340 / 32,138 / 34,059 windows & Chronological split within each flight & Within-flight evaluation\\
+Purged & 133,353 / 8,536 / 17,966 windows & 14-window boundary purge & Temporal-proximity sensitivity\\
+Leave-log-out & 970 / 206 / 213 flight logs (149,774 / 37,324 / 31,439 windows) & Complete flight-level separation & Unseen-flight generalization\\
+\bottomrule
+\end{tabularx}
+\end{table}

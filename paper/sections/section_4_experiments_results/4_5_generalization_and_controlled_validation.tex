@@ -1,0 +1,31 @@
+\subsection{Generalization and Controlled Validation}
+\label{sec:generalization_controlled_validation}
+
+The generalization of HS-AeroTS was first evaluated under complete flight-level isolation. Under the leave-log-out protocol, Stage 1 achieved an AUPRC of $0.6296\pm0.0023$ and an AUROC of $0.9265\pm0.0008$. The conditional Stage 2 classifier remained comparatively stable, with a Macro-F1 of $0.9041\pm0.0029$ and a Balanced Accuracy of $0.8876\pm0.0040$. On the complete five-class task, the Cascade and Direct Five-Class models achieved Macro-F1 scores of $0.5962\pm0.0048$ and $0.6092\pm0.0043$, respectively. Their paired difference was small and its 95\% flight-log bootstrap confidence interval included zero, indicating that the principal degradation under strict isolation originates from anomaly screening rather than conditional fault-domain classification.
+
+Cross-dataset transfer was further assessed on ALFA using the shared telemetry channels without adapting the detector to ALFA labels. The transferred model achieved an AUPRC of $0.3181\pm0.0086$ and an AUROC of $0.6679\pm0.0069$ across 46 flight sequences. A complementary weak-label experiment on UAV-SEAD Uncategorized flights yielded a flight-level AUPRC of $0.2784\pm0.0046$ and an AUROC of $0.6610\pm0.0049$. The lower performance in both settings indicates that detector generalization becomes substantially more difficult when the data distribution or annotation scheme departs from the supervised UAV-SEAD setting.
+
+Controlled PX4 replay provides a stronger source-level reference for evaluating the software-inspection stage. Table~\ref{tab:controlled_replay_summary} compares the frozen paired-residual frontend with the common-support variant on the transfer source flights. The frozen reference detected all 12 fault runs but also produced alarms on 11 of 12 paired healthy runs. Common-support processing reduced these normal alarms to 3/12 while retaining 10/12 fault detections. The number of clean fault-specific detections consequently increased from 1/12 to 7/12. Under the same setting, Top-3 and Top-5 module coverage were both 10/12, with an MRR of 0.6667.
+
+The remaining errors were concentrated in specific mutation types. Commander and Land Detector mutations were consistently detected without paired healthy-run alarms, whereas EKF2 remained affected by normal-run alarms and pre-injection detections. INAV was the most difficult case, with only one of three trials detected and a substantially longer delay. These results show that matched replay can provide useful module-level evidence under controlled conditions, while detection specificity and mutation-dependent sensitivity remain the main limitations of the current replay extension.
+
+\begin{table}[H]
+\caption{Controlled paired-replay results on the same 12 transfer fault and 12 normal targets.}
+\label{tab:controlled_replay_summary}
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.12}
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}X cc@{}}
+\toprule
+\textbf{Measure} & \textbf{Frozen paired residual} & \textbf{Common support}\\
+\midrule
+Fault detections & 12/12 & 10/12\\
+Normal alarms & 11/12 & 3/12\\
+Clean fault-specific detections & 1/12 & 7/12\\
+Top-3 & 9/12 & 10/12\\
+Top-5 & 9/12 & 10/12\\
+MRR & 0.6369 & 0.6667\\
+\bottomrule
+\end{tabularx}
+\par\vspace{2pt}{\scriptsize The common-support evaluation was conducted after transfer-data exposure. Ranking denominators retain all 12 fault targets.}
+\end{table}

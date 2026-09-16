@@ -1,0 +1,79 @@
+\subsection{Explainable Evidence and Architecture-Aware Inspection}
+\label{sec:shap_evidence}
+\label{sec:module_ranking}
+
+The fault-domain classifier identifies the most likely anomaly category, but its prediction is derived from a high-dimensional temporal-statistical representation rather than directly from engineering entities. HS-AeroTS therefore converts model attributions into a hierarchical evidence representation and subsequently relates this evidence to the PX4 software architecture. The resulting chain preserves the provenance of the prediction from statistical features to telemetry channels, uORB topics, functional subsystems, and software-module inspection candidates.
+
+For a diagnosed anomalous window $i$, let $\hat{c}_i$ denote the predicted fault domain. TreeSHAP is applied to the Stage 2 LightGBM classifier, and the attribution vector associated with $\hat{c}_i$ is retained. If $\phi^{(\hat{c}_i)}_{ij}$ denotes the contribution of feature $j$ to the raw score of the predicted class, the feature-level evidence is defined as
+\begin{equation}
+e_{ij}
+=
+\left|\phi^{(\hat{c}_i)}_{ij}\right|,
+\qquad
+j=1,\ldots,D,
+\label{eq:feature_evidence}
+\end{equation}
+where the expected-value term returned by TreeSHAP is excluded from aggregation. The absolute contribution is used because the subsequent hierarchy represents attribution magnitude rather than the positive or negative direction of a feature effect.
+
+The explicit provenance retained during telemetry representation allows feature-level evidence to be aggregated without learning an additional mapping. Let $\mathcal{F}(q)$ denote the set of statistical features derived from telemetry channel $q$, $\mathcal{Q}(t)$ the channels associated with uORB topic $t$, and $\mathcal{Q}(s)$ the channels assigned to functional subsystem $s$. The corresponding evidence scores are
+\begin{equation}
+E^{\mathrm{ch}}_{i,q}
+=
+\sum_{j\in\mathcal{F}(q)} e_{ij},
+\label{eq:channel_evidence}
+\end{equation}
+and
+\begin{equation}
+E^{\mathrm{topic}}_{i,t}
+=
+\sum_{q\in\mathcal{Q}(t)}E^{\mathrm{ch}}_{i,q},
+\qquad
+E^{\mathrm{sub}}_{i,s}
+=
+\sum_{q\in\mathcal{Q}(s)}E^{\mathrm{ch}}_{i,q}.
+\label{eq:topic_subsystem_evidence}
+\end{equation}
+
+Channel-level evidence combines the statistical descriptors derived from the same physical telemetry variable, whereas topic-level and subsystem-level evidence provide complementary architectural and functional views of the same attribution mass. Because each higher-level representation is obtained by grouping and summing lower-level contributions, the aggregation is designed to preserve the total evidence magnitude. For an aggregation level $L$ with units $\mathcal{U}_L$, the conservation residual is
+\begin{equation}
+\epsilon_{i,L}
+=
+\sum_{u\in\mathcal{U}_L}E^{(L)}_{i,u}
+-
+\sum_{j=1}^{D}e_{ij},
+\qquad
+L\in\{\mathrm{channel},\mathrm{topic},\mathrm{subsystem}\}.
+\label{eq:evidence_conservation_error}
+\end{equation}
+An ideal aggregation gives $\epsilon_{i,L}=0$, providing a direct consistency check on the evidence transformation.
+
+Topic-level evidence is then related to the PX4 source architecture through a firmware-specific uORB dependency graph. For firmware revision $v$, the graph is represented as
+\begin{equation}
+G_v=(\mathcal{T},\mathcal{M},\mathcal{E}_v),
+\label{eq:px4_architecture_graph}
+\end{equation}
+where $\mathcal{T}$ is the set of evaluated uORB topics, $\mathcal{M}$ is the set of PX4 source modules, and $\mathcal{E}_v$ contains the topic--role--module relations extracted from the corresponding PX4 source tree. Publisher and subscriber relations are identified from uORB API usage and associated with their source-module paths.
+
+The graph supports producer-oriented, consumer-oriented, and bidirectional propagation. Let $\mathcal{M}^{(r)}(t)$ denote the modules connected to topic $t$ under propagation mode $r$. To prevent a topic connected to several modules from duplicating its total evidence, its contribution is distributed uniformly among the connected modules. The architecture-aware score of module $m$ is therefore
+\begin{equation}
+S^{(r)}_{i,m}
+=
+\sum_{\substack{t\in\mathcal{T}\\m\in\mathcal{M}^{(r)}(t)}}
+\frac{E^{\mathrm{topic}}_{i,t}}
+{|\mathcal{M}^{(r)}(t)|}.
+\label{eq:module_evidence_score}
+\end{equation}
+Modules are ranked in descending order of $S^{(r)}_{i,m}$ to produce the software inspection candidates for window $i$. Producer-oriented propagation emphasizes modules associated with the generation of influential telemetry, consumer-oriented propagation emphasizes modules that depend on the same topics, and the bidirectional mode provides a broader architectural view.
+
+This hierarchical construction transforms class-specific model attribution into a traceable engineering evidence chain,
+\begin{equation}
+\text{feature}
+\rightarrow
+\text{telemetry channel}
+\rightarrow
+\text{uORB topic}
+\rightarrow
+\text{PX4 module},
+\label{eq:evidence_traceability_chain}
+\end{equation}
+while retaining both the diagnostic origin of the evidence and the firmware revision used for architectural mapping. The resulting module ranking is intended to prioritize source-tree inspection rather than to assign a causal software root cause.

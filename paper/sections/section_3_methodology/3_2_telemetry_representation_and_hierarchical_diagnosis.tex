@@ -1,0 +1,56 @@
+\subsection{Telemetry Representation and Hierarchical Diagnosis}
+\label{sec:data_preprocessing}
+\label{sec:hierarchical_diagnosis}
+
+PX4 flight logs contain heterogeneous telemetry streams with different sampling rates, physical units, and temporal characteristics. Directly applying a diagnostic model to these asynchronous measurements would make the representation sensitive to logging frequency and missing observations. HS-AeroTS therefore first converts each flight into a unified window-level representation that preserves short-term telemetry dynamics while maintaining the physical identity of individual channels.
+
+Each flight log is processed independently and aligned to a uniform 10 Hz timeline. Let $x_{c,t}$ denote the observation of telemetry channel $c$ at aligned time index $t$. Finite observations are interpolated according to their timestamps within the same flight, and no interpolation or window construction is allowed to cross flight boundaries. The aligned sequence is divided into overlapping windows of length $L=96$ with a stride of $s=8$. For window $w$,
+\begin{equation}
+\mathbf{x}_{w}
+=
+[\mathbf{x}_{w,1},\ldots,\mathbf{x}_{w,C}]
+\in
+\mathbb{R}^{L\times C},
+\label{eq:telemetry_window_representation}
+\end{equation}
+where $C=87$ denotes the retained telemetry channels. Each window therefore represents 9.6~s of multivariate flight behavior.
+
+Because the retained channels have different numerical ranges and physical units, normalization is performed independently for each channel using statistics estimated exclusively from the training partition. For channel $c$,
+\begin{equation}
+z_{c,t}
+=
+\frac{x_{c,t}-\mu^{\mathrm{tr}}_{c}}
+{\widetilde{\sigma}^{\mathrm{tr}}_{c}},
+\label{eq:channel_standardization}
+\end{equation}
+where $\mu^{\mathrm{tr}}_{c}$ and $\sigma^{\mathrm{tr}}_{c}$ denote the training-set mean and standard deviation. To avoid numerical instability for nearly constant channels,
+\begin{equation}
+\widetilde{\sigma}^{\mathrm{tr}}_{c}
+=
+\begin{cases}
+\sigma^{\mathrm{tr}}_{c}, & \sigma^{\mathrm{tr}}_{c}\geq10^{-6},\\
+1, & \text{otherwise}.
+\end{cases}
+\label{eq:standard_deviation_floor}
+\end{equation}
+
+The normalized temporal signal of each channel is then summarized using 18 statistical descriptors that characterize its distribution and short-term dynamics. These descriptors include measures of central tendency and dispersion, extrema and range, quantiles, endpoint behavior, first-difference statistics, and lag-one autocorrelation. Let $d_k(\mathbf{z}_{w,c})$ denote the $k$-th descriptor of channel $c$. The resulting representation is
+\begin{equation}
+\mathbf{f}_{w}
+=
+\left[
+d_k(\mathbf{z}_{w,c})
+\right]_{
+\substack{c=1,\ldots,87\\k=1,\ldots,18}}
+\in
+\mathbb{R}^{1566}.
+\label{eq:window_feature_vector}
+\end{equation}
+
+This representation converts heterogeneous temporal measurements into a fixed-dimensional feature vector while retaining the correspondence between each statistical descriptor and its source telemetry channel. HS-AeroTS additionally preserves the associated uORB topic for every feature, allowing the same representation used for prediction to be traced to higher-level engineering evidence.
+
+The resulting feature vector is processed by the hierarchical diagnostic model defined above. Stage 1 uses a class-balanced binary LightGBM classifier to distinguish normal and anomalous telemetry windows. Its operating threshold is selected using validation data and remains fixed during test inference. Windows classified as normal terminate at this stage, whereas detected anomalous windows are forwarded to Stage 2.
+
+Stage 2 employs a class-balanced multiclass LightGBM classifier to distinguish the four annotated fault domains: External Position, Global Position, Altitude, and Mechanical/Electrical. The classifier is trained only on anomalous windows with an explicit domain annotation; normal windows and anomalous samples without a defined domain label are excluded from this conditional task. During inference, Stage 2 is therefore activated only after the Stage 1 anomaly gate has been triggered.
+
+This design separates two different diagnostic decisions: detecting whether the current telemetry is abnormal and determining the fault domain associated with a detected anomaly. The separation also preserves a direct correspondence between the diagnosed fault domain and the class-specific evidence subsequently extracted from the Stage 2 model, providing the basis for architecture-aware inspection.
